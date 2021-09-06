@@ -56,66 +56,46 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 ## Part A. Plan 
 
-To stage the interaction with your interactive device, think about:
+# Scenario
 
-_Setting:_ Where is this interaction happening? (e.g., a jungle, the kitchen) When is it happening?
+Under the social pressure and other psychological aspects of depression and anxiety, increasing numbers of young urban dwellers choose to self-isolate in their bedrooms with minimal physical contact with the outside world. This phenomenon is also known as Hikikomori. 
 
-_Players:_ Who is involved in the interaction? Who else is there? If you reflect on the design of current day interactive devices like the Amazon Alexa, it’s clear they didn’t take into account people who had roommates, or the presence of children. Think through all the people who are in the setting.
+The furry ball device mimics a cute furry cat that aims to construct an emotional bond with the Hikikomori person, who could release his/her stress through petting the furry ball, without worrying about the cost and mess of a real cat. The furry ball reacts to the player through colored lights. It also flashes to alert and remind the player to eat/work/sleep on time, and gradually encourages him/her to embrace a more organized lifestyle.
 
-_Activity:_ What is happening between the actors?
-
-_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
-
-The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
-
-\*\***Describe your setting, players, activity and goals here.**\*\*
-
-Under the social pressure and other psychological aspects of depression and anxiety, increasing numbers of young urban dwellers choose to self-isolate in their bedrooms with minimal physical contact with the outside world. This phenomenon is also known as Hikikomori.  The furry ball device aims to construct an emotional bond with the Hikikomori person, releases his/her stress, and gradually encourages him/her to embrace a more organized and open lifestyle.
 
 _Setting:_ In the living space of a reclusive urban dweller
+
 _Players:_ The Hikikomori person and his/her friends
-_Activity:_ The players pet the furry ball by touching different parts of it, and the furry ball reminds the player to eat/sleep on time through lights of different colors.
+
+_Activity:_ The players pet the furry ball by touching different parts of it, and the furry ball reminds the player to do tasks on time through lights of different colors.
+
 _Goals:_ Stress relief and emotional sustenance.
 
+# Storyboard
 
-Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch1.jpg)
 
-\*\***Include a picture of your storyboard here**\*\*
-
-![alt text](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch1.jpg)
 ![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch2.jpg)
 
-Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
+# Feedback
 
-\*\***Summarize feedback you got here.**\*\*
+Think carefully about color coding. Warmer colors could represent both happiness and alerts. 
 
+The color can flash at different frequencies to indicate various emotions. It can even flash morse code to “talk” to the player.
 
 ## Part B. Act out the Interaction
 
-Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
+The interaction was tested using Tinkerbelle on my phone. The color response when petting the device works really well but the colored light is too dim to attract attention while the player is concentrating on something else. A brighter light or an ambient indoor light might be needed to draw players attention.
 
-\*\***Are there things that seemed better on paper than acted out?**\*\*
-
-\*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
-
+The new idea of using different colored lights to remind the user to eat, work, or sleep on time occurred to me from the acting. Instead of the player feeding the pet, this furry ball could remind the player to have food during lunch hour by flashing red lights. Therefore, the player could be viewed as the pet of the device, which helps him/her stay organized. 
 
 ## Part C. Prototype the device
 
-You will be using your smartphone as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device. 
-
-Code for the "Tinkerbelle" tool, and instructions for setting up the server and your phone are [here](https://github.com/FAR-Lab/tinkerbelle).
-
-We invented this tool for this lab! 
-
-If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
-
-\*\***Give us feedback on Tinkerbelle.**\*\*
-
+The Tinkerbelle works really well for static color. However, flashing color or color changes could not be controlled easily. It would be helpful if I could create a timeline of a sequence of colors, or record some flashing patterns and easily play it while testing the interaction.
 
 ## Part D. Wizard the device
-Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
 
-\*\***Include your first attempts at recording the set-up video here.**\*\*
+![video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/DeviceSetUpVideo.mp4)
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
