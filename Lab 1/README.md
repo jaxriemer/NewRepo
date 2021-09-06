@@ -70,9 +70,19 @@ The interactive device can be anything *except* a computer, a tablet computer or
 
 \*\***Describe your setting, players, activity and goals here.**\*\*
 
+Under the social pressure and other psychological aspects of depression and anxiety, increasing numbers of young urban dwellers choose to self-isolate in their bedrooms with minimal physical contact with the outside world. This phenomenon is also known as Hikikomori.  The furry ball device aims to construct an emotional bond with the Hikikomori person, releases his/her stress, and gradually encourages him/her to embrace a more organized and open lifestyle.
+
+_Setting:_ In the living space of a reclusive urban dweller
+_Players:_ The Hikikomori person and his/her friends
+_Activity:_ The players pet the furry ball by touching different parts of it, and the furry ball reminds the player to eat/sleep on time through lights of different colors.
+_Goals:_ Stress relief and emotional sustenance.
+
+
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 
 \*\***Include a picture of your storyboard here**\*\*
+![plot](Lab 1/StorySketch1.jpg)
+![plot](Lab 1/StorySketch2.jpg)
 
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 
