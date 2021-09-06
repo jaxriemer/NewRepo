@@ -81,8 +81,9 @@ _Goals:_ Stress relief and emotional sustenance.
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 
 \*\***Include a picture of your storyboard here**\*\*
-![plot](Lab 1/StorySketch1.jpg)
-![plot](Lab 1/StorySketch2.jpg)
+
+![alt text](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch1.jpg)
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch2.jpg)
 
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 
