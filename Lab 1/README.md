@@ -95,7 +95,19 @@ The Tinkerbelle works really well for static color. However, flashing color or c
 
 ## Part D. Wizard the device
 
-![video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/DeviceSetUpVideo.mp4)
+![video](https://drive.google.com/file/d/1jlZioLg_WIBsfyjVsQlIiKUNEEtjNcFG/view?usp=sharing)
+
+<html>
+<body>
+  
+  <iframe src="url video in google drive/preview" ></iframe>
+  
+  <!--aloow full screen add tag -->
+  
+<iframe allowfullscreen="allowfullscreen" src="your_page_url/preview" ></iframe>
+
+</body>
+</html>
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
