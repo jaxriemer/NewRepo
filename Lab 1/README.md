@@ -56,7 +56,7 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 ## Part A. Plan 
 
-# Scenario
+### Scenario
 
 Under the social pressure and other psychological aspects of depression and anxiety, increasing numbers of young urban dwellers choose to self-isolate in their bedrooms with minimal physical contact with the outside world. This phenomenon is also known as Hikikomori. 
 
@@ -71,13 +71,13 @@ _Activity:_ The players pet the furry ball by touching different parts of it, an
 
 _Goals:_ Stress relief and emotional sustenance.
 
-# Storyboard
+### Storyboard
 
 ![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch1.jpg)
 
 ![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch2.jpg)
 
-# Feedback
+### Feedback
 
 Think carefully about color coding. Warmer colors could represent both happiness and alerts. 
 
@@ -97,11 +97,6 @@ The Tinkerbelle works really well for static color. However, flashing color or c
 
 [![Device Setup Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/DeviceSetupVideoCover.jpg)](https://drive.google.com/file/d/1jlZioLg_WIBsfyjVsQlIiKUNEEtjNcFG/view?usp=sharing)
 
-Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
-
-\*\***Show the follow-up work here.**\*\*
-
-
 ## Part E. Costume the device
 
 ![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/DeviceCostume.jpg)
@@ -116,12 +111,16 @@ The costume used in the interaction studies is a stuffed toy with a phone attach
 
 [![Staging Interaction Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StagingInteractionVideoCover.jpg)](https://drive.google.com/file/d/1twF8J0gW2cSI7fr0c_EmMZ4K1dQq4cGg/view?usp=sharing)
 
-\*\***Please indicate anyone you collaborated with on this Lab.**\*\*
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+I would love to thank Daan, Jiejun, and Sara for the feedback of initial sketches. I would also thank my dog-octopus stuffed toy for the contributions. 
 
-All videos are also uploaded to the google drive folder
+Below are links to the images included in the Staging Action Video:
+https://www.sciencefocus.com/news/hikikomori-identifying-extreme-social-isolation-around-the-globe/
+https://icanhas.cheezburger.com/lolcats/tag/mess
+https://www.pinterest.com/pin/773071092288261611/
+https://memegenerator.net/instance/66291296/walking-cat-walk-in-mess-stuff-up-walk-out
+
+All videos above are also uploaded to the google drive folder
 https://drive.google.com/drive/folders/1Ioo8vzdstu7_5mBIDMtbUvkpNEnvVQrY?usp=sharing
-
 
 
 # Staging Interaction, Part 2 
