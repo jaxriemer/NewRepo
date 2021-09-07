@@ -95,19 +95,7 @@ The Tinkerbelle works really well for static color. However, flashing color or c
 
 ## Part D. Wizard the device
 
-![video](https://drive.google.com/file/d/1jlZioLg_WIBsfyjVsQlIiKUNEEtjNcFG/view?usp=sharing)
-
-<html>
-<body>
-  
-  <iframe src="url video in google drive/preview" ></iframe>
-  
-  <!--aloow full screen add tag -->
-  
-<iframe allowfullscreen="allowfullscreen" src="your_page_url/preview" ></iframe>
-
-</body>
-</html>
+[![Device Setup Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch1.jpg)](https://drive.google.com/file/d/1jlZioLg_WIBsfyjVsQlIiKUNEEtjNcFG/view?usp=sharing)
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
@@ -116,14 +104,13 @@ Now, hange the goal within the same setting, and update the interaction with the
 
 ## Part E. Costume the device
 
-Only now should you start worrying about what the device should look like. Develop a costume so that you can use your phone as this device.
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/DeviceCostume.jpg)
 
-Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
+The key feature of the device costume is that it could be personalized at low cost. Around the core of the processing components of the device, a soft and furry skin is added, which can not only be removed for cleaning purposes, but also be changed to skins of different colorations and textures. Custom holiday or cosplay costumes are available for the player. 
 
-\*\***Include sketches of what your device might look like here.**\*\*
+The processing core contains several touching sensors to feel the player’s gestures. With connection to wifi, the device could access data from the player’s computer or smart furniture to know the player’s status, in order to generate notifications timely. 
 
-\*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
-
+The costume used in the interaction studies is a stuffed toy with a phone attached to it.
 
 ## Part F. Record
 
