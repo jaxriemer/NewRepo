@@ -95,7 +95,7 @@ The Tinkerbelle works really well for static color. However, flashing color or c
 
 ## Part D. Wizard the device
 
-[![Device Setup Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StorySketch1.jpg)](https://drive.google.com/file/d/1jlZioLg_WIBsfyjVsQlIiKUNEEtjNcFG/view?usp=sharing)
+[![Device Setup Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/DeviceSetupVideoCover.jpg)](https://drive.google.com/file/d/1jlZioLg_WIBsfyjVsQlIiKUNEEtjNcFG/view?usp=sharing)
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
@@ -114,10 +114,13 @@ The costume used in the interaction studies is a stuffed toy with a phone attach
 
 ## Part F. Record
 
-\*\***Take a video of your prototyped interaction.**\*\*
+[![Staging Interaction Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/StagingInteractionVideoCover.jpg)](https://drive.google.com/file/d/1twF8J0gW2cSI7fr0c_EmMZ4K1dQq4cGg/view?usp=sharing)
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+
+All videos are also uploaded to the google drive folder
+https://drive.google.com/drive/folders/1Ioo8vzdstu7_5mBIDMtbUvkpNEnvVQrY?usp=sharing
 
 
 
