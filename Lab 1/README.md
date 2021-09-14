@@ -227,7 +227,7 @@ The plastic shell in the previous design is replaced by Poly-fil synthetic fiber
 
 The video has audio.
 
-[![Part 2 Staging Interaction Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_StagingInteractionVideoCover.jpg)](https://drive.google.com/file/d/1Q7UXLy-zBdnDHqyVU0mOH-czoq9Gd0_N/view?usp=sharing)
+[![Part 2 Staging Interaction Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_StagingInteractionVideoCover.jpg)](https://drive.google.com/file/d/1CH1_bHnRyMTOcmfWNsfvF-yOicsmqhXD/view?usp=sharing)
 
 
 All videos above are also uploaded to the google drive folder
