@@ -207,7 +207,7 @@ The facial expressions work extremely well at representing mood. However, the an
 
 ## Part C. Prototype the device
 
-Instead of using Tinkerbelle, this time I choose to customize my own animations with Premiere Pro. Below is the composed video I am using for prototyping the device. The vibration audio is integrated in the video
+Instead of using Tinkerbelle, this time I choose to customize my own animations with Premiere Pro. Below is the composed video I am using for prototyping the device. The vibration audio is integrated in the video.
 
 [![Faces Animation](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/FacesAnimationCover.jpg)](https://drive.google.com/file/d/1LwLQ9eaP0KlRAFMNADoZTlIecePOuyVI/view?usp=sharing)
 
@@ -224,6 +224,8 @@ The plastic shell in the previous design is replaced by Poly-fil synthetic fiber
 ![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_DeviceCostume2.jpg)
 
 ## Part F. Record
+
+The video has audio.
 
 [![Part 2 Staging Interaction Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_StagingInteractionVideoCover.jpg)](https://drive.google.com/file/d/1Q7UXLy-zBdnDHqyVU0mOH-czoq9Gd0_N/view?usp=sharing)
 
