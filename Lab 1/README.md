@@ -130,9 +130,33 @@ This describes the second week's work for this lab activity.
 
 ## Prep (to be done before Lab on Wednesday)
 
-You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
+**Below is the feedback I received from school mates through Canvas.**
 
-\*\***Summarize feedback from your partners here.**\*\*
+Rebecca Lassman:
+
+Really great idea!! I think the idea of helping people with anxiety/depression establish a healthy routine is an extremely interesting and important place to be innovating!! Your sketches are amazing and videos are really well done. They get across the look and feel of the device and the use case. A few remaining questions: Is the furry ball a robot/can it move on its own? Does it intuit what the person needs or is it on a schedule set by a third party (e.g. therapist or family member)? Would there be text on the screen or how would the user know what the colors mean?
+
+In terms of the video: I see a fluffy ball that sends reminders to a person to do various activities throughout the day (go to sleep, go outside etc.). The device also encourages the person to interact with it like a pet but without the stress of a pet.
+
+Angela Chen:
+
+Hey Yuzheng! This is so cute :) I love your inspiration from Hikikomori and the idea of the furry ball! My only feedback would be about the color choices for different moods, and it would be a good idea to list a standard color sheet that each represents a category or mood.
+
+Yunzhu Pan:
+
+This is a really cool idea! I especially enjoyed the level of details in your storyboard and sketches, including the scenarios and inner-designs of your device.
+
+One thing I do have some questions about though, is the ultimate effectiveness of this device, in regards to its goal of “stress relief and emotional sustenance”. As for a Hikikomori person, would the ultimate goal be encouraging a more socially-connected life with the society, or to provide an emotionally self-sufficient in-doors life? Or does it not need a well-defined goal at all and just focus on the emotionally-supporting interaction, and leave the decision of its purpose to the user？
+
+Another thing that came to my mind is the power supply of the device. In your sketch, the device is powered by a battery (forgive me if I’m wrong), and I think a potential problem of battery power supply is that the battery changing process could break the pet-like companion illusion this device is trying to create. Having to open up this device and change its battery might bring inconsistencies in the pet-like experience you’re trying to give the user. Maybe a solar battery would be better? (So that the device can sit under the sun and charge itself like an actual act, instead of needing battery changes.)
+
+Overall this is a great idea and the feedback above is a stretch. Cool work!
+
+**After discussing the project with classmates in class, I received several additional comments:**
+
+In contrary with Rebecca and Yunzhu’s love of the task-notification functionality, Ken suggested that I could focus more on the idea of a pet, and invent more ways to pet the furry ball, such as adding multiple sensitive spots to it, or letting the player use a sequential set of petting gestures to make the ball super happy. The entire task-notification system could be removed. 
+
+Similar comments were received regarding communicating moods and warnings. Besides different colorations, I could invent animated facial expressions for mood, add vibrations for tactile feedback, or use sound to “talk” to the player.
 
 ## Make it your own
 
@@ -141,4 +165,67 @@ Do last week’s assignment again, but this time:
 2) You can use any modality (e.g., vibration, sound) to prototype the behaviors! Again, be creative!
 3) We will be grading with an emphasis on creativity. 
 
-\*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
+## Part A. Plan
+
+Based on the feedback I received, I decided to add the following additional features to make the furry ball more responsive and interactive as a pet, while keeping the task-notification function and allowing the player to customize tasks through mobile apps.
+
+**Vibration**
+
+  Adding a vibration system that generates tactile feedback when the furry ball is being pet
+
+**Sound**
+
+	Adding a sound system that purrs when being pet and meows when alarming
+  
+**Visual**
+
+	Designing facial expressions to be displayed on the screen to communicate moods
+  
+**Accessory**
+
+	Designing a sitting pad for it that supports wireless charging
+  
+	Designing different costumes for it
+  
+**Software**
+
+	Designing more pet-like interactions that let the player explore different petting gestures to make the furry ball happy
+
+### Storyboard
+
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_StoryBoard.jpg)
+
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_StoryBoard2.jpg)
+
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_StoryBoard3.jpg)
+
+## Part B. Act out the Interaction
+
+I designed a series of facial expressions that the furry ball could use to represent mood and compiled a video to animate the expressions and the color transitions. The video was played on a phone that is embedded into the stuffed toy. Additionally, I added animal-mimicking sound to the video to strengthen the interactions and vibration audio to represent physical vibrations.
+
+The facial expressions work extremely well at representing mood. However, the animal-mimicking sound is distracting during interactions and I decided to completely remove it in the following steps. The vibration audio really helps with mimicking physical vibrations without an actual motor. 
+
+
+## Part C. Prototype the device
+
+Instead of using Tinkerbelle, this time I choose to customize my own animations with Premiere Pro. Below is the composed video I am using for prototyping the device. The vibration audio is integrated in the video
+
+
+[![Faces Animation](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/FacesAnimationCover.jpg)](https://drive.google.com/file/d/1LwLQ9eaP0KlRAFMNADoZTlIecePOuyVI/view?usp=sharing)
+
+## Part D. Wizard the device
+
+[![Part 2 Device Setup Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_DeviceSetUpVideoCover.jpg)](https://drive.google.com/file/d/1bCYp1w_FN0vHS86K5wPZl-wwKOke6nqO/view?usp=sharing)
+
+## Part E. Costume the device
+
+The plastic shell in the previous design was replaced by Poly-fil synthetic fiber stuffing to create a soft and squeezable touch while giving structural support to internal components. Within the skin of the device, haptic motors, wireless charging unit, and multiple touch sensors are added. A pad that supports wireless charging (the stuffed turtle in my staging interaction video) is added to make power transfer unnoticeable to the player. I also designed several costumes for possible further customization based on the player’s preferences. 
+
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_DeviceCostume.jpg)
+
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_DeviceCostume2.jpg)
+
+## Part F. Record
+
+
+[![Part 2 Staging Interaction Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%201/Part2_StagingInteractionVideoCover.jpg)](https://drive.google.com/file/d/1Q7UXLy-zBdnDHqyVU0mOH-czoq9Gd0_N/view?usp=sharing)
