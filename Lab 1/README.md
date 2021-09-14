@@ -134,23 +134,23 @@ This describes the second week's work for this lab activity.
 
 Rebecca Lassman:
 
-	Really great idea!! I think the idea of helping people with anxiety/depression establish a healthy routine is an extremely interesting and important place to be innovating!! Your sketches are amazing and videos are really well done. They get across the look and feel of the device and the use case. A few remaining questions: Is the furry ball a robot/can it move on its own? Does it intuit what the person needs or is it on a schedule set by a third party (e.g. therapist or family member)? Would there be text on the screen or how would the user know what the colors mean?
+_Really great idea!! I think the idea of helping people with anxiety/depression establish a healthy routine is an extremely interesting and important place to be innovating!! Your sketches are amazing and videos are really well done. They get across the look and feel of the device and the use case. A few remaining questions: Is the furry ball a robot/can it move on its own? Does it intuit what the person needs or is it on a schedule set by a third party (e.g. therapist or family member)? Would there be text on the screen or how would the user know what the colors mean?
 
-	In terms of the video: I see a fluffy ball that sends reminders to a person to do various activities throughout the day (go to sleep, go outside etc.). The device also encourages the person to interact with it like a pet but without the stress of a pet.
+_In terms of the video: I see a fluffy ball that sends reminders to a person to do various activities throughout the day (go to sleep, go outside etc.). The device also encourages the person to interact with it like a pet but without the stress of a pet.
 
 Angela Chen:
 
-	Hey Yuzheng! This is so cute :) I love your inspiration from Hikikomori and the idea of the furry ball! My only feedback would be about the color choices for different moods, and it would be a good idea to list a standard color sheet that each represents a category or mood.
+_Hey Yuzheng! This is so cute :) I love your inspiration from Hikikomori and the idea of the furry ball! My only feedback would be about the color choices for different moods, and it would be a good idea to list a standard color sheet that each represents a category or mood.
 
 Yunzhu Pan:
 
-	This is a really cool idea! I especially enjoyed the level of details in your storyboard and sketches, including the scenarios and inner-designs of your device.
+_This is a really cool idea! I especially enjoyed the level of details in your storyboard and sketches, including the scenarios and inner-designs of your device.
 
-	One thing I do have some questions about though, is the ultimate effectiveness of this device, in regards to its goal of “stress relief and emotional sustenance”. As for a Hikikomori person, would the ultimate goal be encouraging a more socially-connected life with the society, or to provide an emotionally self-sufficient in-doors life? Or does it not need a well-defined goal at all and just focus on the emotionally-supporting interaction, and leave the decision of its purpose to the user？
+_One thing I do have some questions about though, is the ultimate effectiveness of this device, in regards to its goal of “stress relief and emotional sustenance”. As for a Hikikomori person, would the ultimate goal be encouraging a more socially-connected life with the society, or to provide an emotionally self-sufficient in-doors life? Or does it not need a well-defined goal at all and just focus on the emotionally-supporting interaction, and leave the decision of its purpose to the user？
 
-	Another thing that came to my mind is the power supply of the device. In your sketch, the device is powered by a battery (forgive me if I’m wrong), and I think a potential problem of battery power supply is that the battery changing process could break the pet-like companion illusion this device is trying to create. Having to open up this device and change its battery might bring inconsistencies in the pet-like experience you’re trying to give the user. Maybe a solar battery would be better? (So that the device can sit under the sun and charge itself like an actual act, instead of needing battery changes.)
+_Another thing that came to my mind is the power supply of the device. In your sketch, the device is powered by a battery (forgive me if I’m wrong), and I think a potential problem of battery power supply is that the battery changing process could break the pet-like companion illusion this device is trying to create. Having to open up this device and change its battery might bring inconsistencies in the pet-like experience you’re trying to give the user. Maybe a solar battery would be better? (So that the device can sit under the sun and charge itself like an actual act, instead of needing battery changes.)
 
-	Overall this is a great idea and the feedback above is a stretch. Cool work!
+_Overall this is a great idea and the feedback above is a stretch. Cool work!
 
 **After discussing the project with classmates in class, I received several additional comments:**
 
@@ -169,27 +169,27 @@ Do last week’s assignment again, but this time:
 
 Based on the feedback I received, I decided to add the following additional features to make the furry ball more responsive and interactive as a pet, while keeping the task-notification function and allowing the player to customize tasks through mobile apps.
 
-**Vibration**
+- **Vibration**
 
-Adding a vibration system that generates tactile feedback when the furry ball is being pet
+    - Adding a vibration system that generates tactile feedback when the furry ball is being pet
 
-**Sound**
+- **Sound**
 
-Adding a sound system that purrs when being pet and meows when alarming
+    - Adding a sound system that purrs when being pet and meows when alarming
   
-**Visual**
+- **Visual**
 
-Designing facial expressions to be displayed on the screen to communicate moods
+    - Designing facial expressions to be displayed on the screen to communicate moods
   
-**Accessory**
+- **Accessory**
 
-Designing a sitting pad for it that supports wireless charging
+    - Designing a sitting pad for it that supports wireless charging
   
-Designing different costumes for it
+    - Designing different costumes for it
   
-**Software**
+- **Software**
 
-Designing more pet-like interactions that let the player explore different petting gestures to make the furry ball happy
+    - Designing more pet-like interactions that let the player explore different petting gestures to make the furry ball happy
 
 ### Storyboard
 
