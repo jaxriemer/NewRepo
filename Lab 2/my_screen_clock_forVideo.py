@@ -5,8 +5,6 @@ import digitalio
 import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
-import datetime
-
 from time import strftime
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
@@ -77,7 +75,7 @@ for h in range(24):
     hour_img.append((cwd + "/imgs/time_" + str(h) + ".jpg"))
 
 day_img = []
-for d in range(15):
+for d in range(1,16):
     for i in range(2):
         day_img.append((cwd + "/imgs/day_" + str(d) + ".jpg"))
 
@@ -89,17 +87,18 @@ year_img = cwd + "/imgs/year.jpg"
 
 max_page, min_page = 4, 1
 curr_page = 1
-start_day = 1
 
-while start_day <= 30:
+mydate = 1
+mymonth = 1
+mytime = 1
+
+while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
 
     # Parse date & time
-    start_day = 1
-    curr_time = datetime.datetime(2021, start_day, 8, 00, 00)
-    curr_time = curr_time.strftime("%m/%d/%Y %H:%M:%S")
+    curr_time = strftime("%m/%d/%Y %H:%M:%S")
     date_str, time_str = curr_time.split(" ")
     hour, min, sec = time_str.split(":")
     month, day, year = date_str.split("/")
@@ -112,28 +111,47 @@ while start_day <= 30:
     elif (not buttonA.value) and buttonB.value: # button A pressed
         if min_page < curr_page:
             curr_page -= 1
+    # speed up for demonstration
+    elif buttonA.value and buttonB.value:
+        if curr_page == 1:
+            hour = mytime
+            mytime = mytime + 1
+            if mytime > 23:
+                mytime = 0
+        elif curr_page == 2:
+            day = str(mydate)
+            mydate = mydate + 1
+            if mydate > 30:
+                mydate = 1
+        elif curr_page == 3:
+            month = mymonth
+            mymonth = mymonth + 1
+            if mymonth > 12:
+                mymonth = 1
+            
+        
 
     if curr_page == 1:
-        image = Image.open(hour_img[int(hour) - 1])
+        image = Image.open(hour_img[int(hour)])
         draw = ImageDraw.Draw(image)
         draw.text((70, 110), time_str, font=font, fill="#FFFFFF")
     elif curr_page == 2:
-        image = Image.open(day_img[int(day) - 1])
+        image = Image.open(day_img[int(day)])
         draw = ImageDraw.Draw(image)
         draw.text((90, 110), ("DAY " + day), font=font, fill="#FFFFFF")
     elif curr_page == 3:
         month_list = ["January", "February", "March", "April", "May", "June",
                       "July", "August", "September", "October", "November", "December"]
-        image = Image.open(month_img[int(month) - 1])
+        image = Image.open(month_img[int(month)])
         draw = ImageDraw.Draw(image)
         draw.text((90, 110), month_list[int(month) - 1], font=font, fill="#FFFFFF")
     elif curr_page == 4:
         image = Image.open(year_img)
         draw = ImageDraw.Draw(image)
         draw.text((95, 110), year, font=font, fill="#FFFFFF")
+                  
 
     # Display image.
 
     disp.image(image, rotation)
-    start_day += 1
     time.sleep(1)
