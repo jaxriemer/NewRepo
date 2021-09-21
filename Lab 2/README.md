@@ -1,5 +1,7 @@
 # Interactive Prototyping: The Clock of Pi
 
+### This project is done collaborately with Xinning Fang xf49
+
 Does it feel like time is moving strangely during this semester?
 
 For our first Pi project, we will pay homage to the [timekeeping devices of old](https://en.wikipedia.org/wiki/History_of_timekeeping_devices) by making simple clocks.
@@ -174,9 +176,21 @@ Can you make time interactive? You can look in `screen_test.py` for examples for
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
 
+\*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
+
 ![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%202/Part1Diagram.PNG)
 
-\*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%202/Part1Drawings.jpg)
+
+For our own clock, we decide to investigate the origin of time and present the internal relation between days, months, years with the movement of the earth, the moon and the sun. Therefore, with the hand-drawn animations of the cyclical movement of the planets, we are able to represent hours with the shadows on the earth, days in a month with moon phases, and months with the earth’s orbital path around the sun.
+
+Pressing on the two buttons can change the scale of time. The upper button zooms into smaller scales, while the lower button zooms out and finally to the 13.77 billion years of the universe’s age. 
+
+Several objects (the ufo, the rocket, and the astronaut) are introduced to give the user a surprise. 
+
+The code is named my_screen_clock.py. We also created another code named my_screen_clock_forVideo.py to help with recording timelapse.
+
+
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
@@ -194,9 +208,15 @@ After that, Git will ask you to login to your GitHub account to push the updates
 
 \*\*\***Take a video of your PiClock.**\*\*\*
 
+
+[![Part 1 Video Demo](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%202/Part1DemoVideoCover.jpg)](https://drive.google.com/file/d/11T1-vMcjxDexiKTwCHnQpYWjh1Tt7gyi/view?usp=sharing)
+
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%202/Part1PlanSketch.jpg)
+
+For our next phase, we are planning to push the idea of the cosmos and especially the possibility of the existence of alien lives. We are thinking of adding a space fighting game to the clock, which will work as an alarm clock. For example, if the alarm is set at 7am, then sound will be played then and the user has to start playing the game in order to end the alarm. The user needs to control the buttons for directions (and possibly other sensors for triggering different types of weapons) to fight against the alien spacecraft. Sound will be kept playing until the user wins the game. Such concentration helps wake the user up and the duration of the game ensures that the user does not fall asleep again. 
 
 # Prep for Part 2
 
