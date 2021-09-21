@@ -190,7 +190,7 @@ Several objects (the ufo, the rocket, and the astronaut) are introduced to give 
 
 The code is named my_screen_clock.py. We also created another code named my_screen_clock_forVideo.py to help with recording timelapse.
 
-
+\*\*\*** ------------------------------------------- **\*\*\*
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
