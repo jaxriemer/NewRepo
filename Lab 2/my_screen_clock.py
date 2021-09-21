@@ -119,7 +119,7 @@ while True:
             if mytime > 23:
                 mytime = 0
         elif curr_page == 2:
-            day = mydate
+            day = str(mydate)
             mydate = mydate + 1
             if mydate > 30:
                 mydate = 1
