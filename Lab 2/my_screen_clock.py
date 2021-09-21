@@ -89,8 +89,8 @@ max_page, min_page = 4, 1
 curr_page = 1
 
 mydate = 0
-mymonth = 1
-mytime = 1
+mymonth = 0
+mytime = 0
 
 while True:
     # Draw a black filled box to clear the image.
@@ -136,13 +136,13 @@ while True:
         draw = ImageDraw.Draw(image)
         draw.text((70, 110), time_str, font=font, fill="#FFFFFF")
     elif curr_page == 2:
-        image = Image.open(day_img[int(day) - 1])
+        image = Image.open(day_img[int(day)])
         draw = ImageDraw.Draw(image)
         draw.text((90, 110), ("DAY " + day), font=font, fill="#FFFFFF")
     elif curr_page == 3:
         month_list = ["January", "February", "March", "April", "May", "June",
                       "July", "August", "September", "October", "November", "December"]
-        image = Image.open(month_img[int(month) - 1])
+        image = Image.open(month_img[int(month)])
         draw = ImageDraw.Draw(image)
         draw.text((90, 110), month_list[int(month) - 1], font=font, fill="#FFFFFF")
     elif curr_page == 4:
