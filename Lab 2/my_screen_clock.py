@@ -98,8 +98,8 @@ while start_day <= 30:
 
     # Parse date & time
     start_day = 1
-    curr_time = datetime.datetime(2021, start_day, 8, 00, 00)
-    curr_time = curr_time.strftime("%m/%d/%Y %H:%M:%S")
+    #curr_time = datetime.datetime(2021, start_day, 8, 00, 00)
+    curr_time = time.strftime("%m/%d/%Y %H:%M:%S")
     print(curr_time)
     date_str, time_str = curr_time.split(" ")
     hour, min, sec = time_str.split(":")
