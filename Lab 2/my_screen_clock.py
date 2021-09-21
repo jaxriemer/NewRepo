@@ -75,7 +75,7 @@ for h in range(24):
     hour_img.append((cwd + "/imgs/time_" + str(h) + ".jpg"))
 
 day_img = []
-for d in range(15):
+for d in range(1,16):
     for i in range(2):
         day_img.append((cwd + "/imgs/day_" + str(d) + ".jpg"))
 
