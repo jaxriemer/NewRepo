@@ -88,6 +88,10 @@ year_img = cwd + "/imgs/year.jpg"
 max_page, min_page = 4, 1
 curr_page = 1
 
+mydate = 0
+mymonth = 1
+mytime = 1
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
@@ -107,9 +111,28 @@ while True:
     elif (not buttonA.value) and buttonB.value: # button A pressed
         if min_page < curr_page:
             curr_page -= 1
+    # speed up for demonstration
+    elif buttonA.value and buttonB.value:
+        if curr_page == 1:
+            hour = mytime
+            mytime = mytime + 1
+            if mytime > 23:
+                mytime = 0
+        elif curr_page == 2:
+            day = mydate
+            mydate = mydate + 1
+            if mydate > 30:
+                mydate = 1
+        elif curr_page == 3:
+            month = mymonth
+            mymonth = mymonth + 1
+            if mymonth > 12:
+                mymonth = 1
+            
+        
 
     if curr_page == 1:
-        image = Image.open(hour_img[int(hour) - 1])
+        image = Image.open(hour_img[int(hour)])
         draw = ImageDraw.Draw(image)
         draw.text((70, 110), time_str, font=font, fill="#FFFFFF")
     elif curr_page == 2:
@@ -126,6 +149,7 @@ while True:
         image = Image.open(year_img)
         draw = ImageDraw.Draw(image)
         draw.text((95, 110), year, font=font, fill="#FFFFFF")
+                  
 
     # Display image.
 
