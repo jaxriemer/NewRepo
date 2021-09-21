@@ -88,8 +88,8 @@ year_img = cwd + "/imgs/year.jpg"
 max_page, min_page = 4, 1
 curr_page = 1
 
-mydate = 0
-mymonth = 0
+mydate = 1
+mymonth = 1
 mytime = 1
 
 while True:
