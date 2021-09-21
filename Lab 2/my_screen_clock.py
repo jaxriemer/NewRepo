@@ -90,7 +90,7 @@ curr_page = 1
 
 mydate = 0
 mymonth = 0
-mytime = 0
+mytime = 1
 
 while True:
     # Draw a black filled box to clear the image.
