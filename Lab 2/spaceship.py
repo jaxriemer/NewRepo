@@ -1,5 +1,5 @@
 import math
-
+from PIL import Image, ImageDraw, ImageFont
 
 # our space ship
 
@@ -11,4 +11,4 @@ class spaceship:
 
     def draw(self, img):
         offset = (self.x-7, self.y-7, self.x+8, self.y+8)
-        img.paste(self.image, offset)
+        img.paste(Image.open(self.image), offset)
