@@ -37,17 +37,15 @@ class bullet:
 
 
 class bullets:
-    def __int__(self, buls):
-        self.bs = buls
+    def __int__(self):
+        self.bs = []
 
     def addBullet(self, x, y, vx, vy):
         self.bs.append(bullet(x,y,vx,vy))
 
     def moveBullets(self):
-        lst = self.bs
-        for b in lst:
+        for b in self.bs:
             b.move()
-        self.bs = lst
 
     def removeBullets(self):
         for b in self.bs:
