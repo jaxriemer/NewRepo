@@ -105,7 +105,7 @@ start_day = 1
 
 # create spaceship
 spaceship_img = (cwd + "/imgs/spaceship.png")
-spaceship = spaceship(50, 25, spaceship_img)
+the_ship = spaceship.spaceship(50, 25, spaceship_img)
 
 while start_day <= 30:
     # debug joystick
@@ -163,7 +163,7 @@ while start_day <= 30:
     # Display image.
 
     # draw spaceship
-    spaceship.draw(draw)
+    the_ship.draw(draw)
 
 
     disp.image(image, rotation)
