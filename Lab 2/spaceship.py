@@ -36,7 +36,8 @@ class bullet:
 
 
 
-class bulls:
+class bullets:
+    bs = []
     def __int__(self):
         self.bs = []
         print("initialized bullets")
