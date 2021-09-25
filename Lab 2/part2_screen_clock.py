@@ -109,14 +109,14 @@ the_ship = spaceship.spaceship(50, 25, spaceship_img)
 
 while start_day <= 30:
     # debug joystick
-    print("joystick get horizontal")
-    print(joystick.get_horizontal())
-    print("joystick get vertical")
-    print(joystick.get_vertical())
+    #print("joystick get horizontal")
+    #print(joystick.get_horizontal())
+    #print("joystick get vertical")
+    #print(joystick.get_vertical())
 
     # debug button
-    if button.is_button_pressed():
-        print("button pressed")
+    #if button.is_button_pressed():
+    #    print("button pressed")
 
 
 
@@ -163,7 +163,8 @@ while start_day <= 30:
     # Display image.
 
     # draw spaceship
-    the_ship.draw(draw)
+    the_ship.draw(image)
+    draw = ImageDraw.Draw(image)
 
 
     disp.image(image, rotation)
