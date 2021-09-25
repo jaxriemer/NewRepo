@@ -7,6 +7,7 @@ from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 import datetime
 
+import busio
 import qwiic_joystick
 import qwiic_button
 
@@ -24,10 +25,10 @@ BAUDRATE = 64000000
 spi = board.SPI()
 
 # Setup joystick
-joystick = qwiic_joystick.QwiicJoystick()
+joystick = QwiicJoystick()
 joystick.begin()
 # Setup button
-button = qwiic_button.QwiicButton()
+button = QwiicButton()
 button.begin()
 
 # Create the ST7789 display:
