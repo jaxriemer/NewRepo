@@ -10,6 +10,7 @@ import datetime
 import busio
 import qwiic_joystick
 import qwiic_button
+import spaceship
 
 from time import strftime
 
@@ -102,6 +103,10 @@ max_page, min_page = 4, 1
 curr_page = 1
 start_day = 1
 
+# create spaceship
+spaceship_img = (cwd + "/imgs/spaceship.png")
+spaceship = spaceship(50, 25, spaceship_img)
+
 while start_day <= 30:
     # debug joystick
     print("joystick get horizontal")
@@ -156,6 +161,10 @@ while start_day <= 30:
         draw.text((95, 110), year, font=font, fill="#FFFFFF")
 
     # Display image.
+
+    # draw spaceship
+    spaceship.draw(draw)
+
 
     disp.image(image, rotation)
     start_day += 1
