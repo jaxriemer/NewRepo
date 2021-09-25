@@ -38,22 +38,22 @@ class bullet:
 
 class bullets:
     def __int__(self):
-        self.bullets = []
+        self.bs = []
 
     def addBullet(self, x, y, vx, vy):
-        self.bullets.append(bullet(x,y,vx,vy))
+        self.bs.append(bullet(x,y,vx,vy))
 
     def moveBullets(self):
-        for b in self.bullets:
+        for b in self.bs:
             b.move()
 
     def removeBullets(self):
-        for b in self.bullets:
+        for b in self.bs:
             if b.x > 250 or b.x < -10 or b.y > 145 or b.y < -10:
-                self.bullets.remove(b)
+                self.bs.remove(b)
 
     def drawBullets(self, draw):
-        for b in self.bullets:
+        for b in self.bs:
             b.draw(draw)
 
     def updateBullets(self, draw):
