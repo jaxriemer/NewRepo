@@ -181,7 +181,6 @@ while start_day <= 30:
             the_bullets.addBullet(the_ship.x, the_ship.y, 0, -1)
 
     # process and draw bullets
-    the_bullets.moveBullets()
     the_bullets.updateBullets(draw)
 
     disp.image(image, rotation)

@@ -39,6 +39,8 @@ class bullet:
 class bullets:
     def __int__(self):
         self.bs = []
+        print("initialized bullets")
+        print(self.bs)
 
     def addBullet(self, x, y, vx, vy):
         self.bs.append(bullet(x,y,vx,vy))
