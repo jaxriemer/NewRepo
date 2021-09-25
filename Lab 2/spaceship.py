@@ -62,4 +62,4 @@ class bullets:
     def updateBullets(self, draw):
         self.moveBullets()
         self.removeBullets()
-        self.drawBullets()
+        self.drawBullets(draw)
