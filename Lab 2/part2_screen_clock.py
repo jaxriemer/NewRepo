@@ -105,7 +105,7 @@ start_day = 1
 
 # create spaceship
 spaceship_img = (cwd + "/imgs/spaceship.png")
-the_ship = spaceship.spaceship(50, 25, spaceship_img)
+the_ship = spaceship.spaceship(120, 120, spaceship_img)
 # create list of bullets
 the_bullets = spaceship.bullets()
 
@@ -185,4 +185,4 @@ while start_day <= 30:
 
     disp.image(image, rotation)
     start_day += 1
-    time.sleep(1)
+    time.sleep(0.1)
