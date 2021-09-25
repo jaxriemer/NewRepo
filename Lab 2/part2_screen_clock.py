@@ -25,10 +25,10 @@ BAUDRATE = 64000000
 spi = board.SPI()
 
 # Setup joystick
-joystick = QwiicJoystick()
+joystick = qwiic_joystick.QwiicJoystick()
 joystick.begin()
 # Setup button
-button = QwiicButton()
+button = qwiic_button.QwiicButton()
 button.begin()
 
 # Create the ST7789 display:
