@@ -37,8 +37,8 @@ class bullet:
 
 
 class bullets:
-    def __int__(self):
-        self.bs = []
+    def __int__(self, buls):
+        self.bs = buls
 
     def addBullet(self, x, y, vx, vy):
         self.bs.append(bullet(x,y,vx,vy))

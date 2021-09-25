@@ -107,7 +107,7 @@ start_day = 1
 spaceship_img = (cwd + "/imgs/spaceship.png")
 the_ship = spaceship.spaceship(50, 25, spaceship_img)
 # create list of bullets
-bullets = spaceship.bullets()
+bullets = spaceship.bullets([])
 
 while start_day <= 30:
     # debug joystick
