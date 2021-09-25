@@ -15,5 +15,5 @@ class spaceship:
         img.paste(Image.open(self.image), offset)
 
     def move(self, dx, dy):
-        self.x += dx * self.velocity
-        self.y += dy * self.velocity
+        self.x += int(dx * self.velocity)
+        self.y += int(dy * self.velocity)
