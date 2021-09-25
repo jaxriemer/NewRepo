@@ -44,8 +44,10 @@ class bullets:
         self.bs.append(bullet(x,y,vx,vy))
 
     def moveBullets(self):
-        for b in self.bs:
+        lst = self.bs
+        for b in lst:
             b.move()
+        self.bs = lst
 
     def removeBullets(self):
         for b in self.bs:
