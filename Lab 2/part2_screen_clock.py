@@ -106,6 +106,8 @@ start_day = 1
 # create spaceship
 spaceship_img = (cwd + "/imgs/spaceship.png")
 the_ship = spaceship.spaceship(50, 25, spaceship_img)
+# create list of bullets
+bullets = spaceship.bullets()
 
 while start_day <= 30:
     # debug joystick
@@ -142,11 +144,11 @@ while start_day <= 30:
             curr_page -= 1
 
     if curr_page == 1:
-        image = Image.open(hour_img[int(hour) - 1])
+        image = Image.open(hour_img[int(hour)])
         draw = ImageDraw.Draw(image)
         draw.text((70, 110), time_str, font=font, fill="#FFFFFF")
     elif curr_page == 2:
-        image = Image.open(day_img[int(day) - 1])
+        image = Image.open(day_img[int(day)])
         draw = ImageDraw.Draw(image)
         draw.text((90, 110), ("DAY " + day), font=font, fill="#FFFFFF")
     elif curr_page == 3:
@@ -173,6 +175,13 @@ while start_day <= 30:
     the_ship.draw(image)
     draw = ImageDraw.Draw(image)
 
+    # shoot bullet
+    if button.is_button_pressed():
+        # add bullet to bullets
+            bullets.addBullet(the_ship.x, the_ship.y, 0, -1)
+
+    # process and draw bullets
+    bullets.updateBullets(draw)
 
     disp.image(image, rotation)
     start_day += 1
