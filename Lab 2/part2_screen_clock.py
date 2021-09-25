@@ -164,6 +164,10 @@ while start_day <= 30:
 
     # move spaceship
     the_ship.move(joystick.get_horizontal() - 520, joystick.get_vertical() - 508)
+    print("ship x")
+    print(the_ship.x)
+    print("ship y")
+    print(the_ship.y)
 
     # draw spaceship
     the_ship.draw(image)

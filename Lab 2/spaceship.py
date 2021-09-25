@@ -8,7 +8,7 @@ class spaceship:
         self.x = x
         self.y = y
         self.image = image
-        self.velocity = 0.5
+        self.velocity = 0.01
 
     def draw(self, img):
         offset = (self.x-7, self.y-7, self.x+8, self.y+8)
