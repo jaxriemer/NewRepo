@@ -10,5 +10,5 @@ class spaceship:
         self.image = image
 
     def draw(self, img):
-        offset = (self.x, self.y)
+        offset = (self.x-7, self.y-7, self.x+8, self.y+8)
         img.paste(self.image, offset)
