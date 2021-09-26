@@ -179,7 +179,7 @@ while start_day <= 30:
 
     # add enemies
     if enemy_tick == 0:
-        the_enemies.addEnemy(30, -10, 1, 3, enemy_img)
+        the_enemies.addEnemy(30, 0, 1, 3, enemy_img)
         enemy_tick = 20
     else:
         enemy_tick -= 1
