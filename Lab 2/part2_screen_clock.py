@@ -110,6 +110,8 @@ the_ship = spaceship.spaceship(120, 120, spaceship_img)
 the_bullets = spaceship.bullets()
 # bullet spacer
 bullet_tick = 0
+# create list of enemies
+the_enemies = spaceship.enemies()
 
 while start_day <= 30:
     # debug joystick
@@ -173,6 +175,10 @@ while start_day <= 30:
     the_ship.draw(image)
     draw = ImageDraw.Draw(image)
 
+    # add enemies
+    # draw enemies
+
+
     # shoot bullet
     if button.is_button_pressed():
         # add bullet to bullets
@@ -181,6 +187,9 @@ while start_day <= 30:
             bullet_tick = 5
         else:
             bullet_tick -= 1
+
+    # collide
+    spaceship.collideEnemies(the_enemies, the_ship, the_bullets)
 
     # process and draw bullets
     the_bullets.updateBullets(draw)

@@ -1,6 +1,7 @@
 import math
 from PIL import Image, ImageDraw, ImageFont
 
+# collision
 def collide(a, b, ra, rb):
     dx = a.x - b.x
     dy = a.y - b.y
@@ -9,6 +10,17 @@ def collide(a, b, ra, rb):
         return True
     else:
         return False
+
+def collideEnemies(enemies, spaceship, bullets):
+    for e in enemies:
+        if collide(spaceship, e, 8, 8):
+            return True
+        for b in bullets:
+            if collide(e, b, 2, 2):
+                enemies.removeEnemy(e)
+                bullets.removeBullet(b)
+    return False
+
 
 # our space ship
 
@@ -20,7 +32,7 @@ class spaceship:
         self.velocity = 0.005
 
     def draw(self, img):
-        offset = (self.x-7, self.y-7, self.x+8, self.y+8)
+        offset = (self.x-10, self.y-10, self.x+10, self.y+10)
         img.paste(Image.open(self.image), offset)
 
     def move(self, dx, dy):
@@ -74,6 +86,9 @@ class bullets:
             if b.x > 250 or b.x < -10 or b.y > 145 or b.y < -10:
                 self.bs.remove(b)
 
+    def removeBullet(self, b):
+        self.bs.remove(b)
+
     def drawBullets(self, draw):
         for b in self.bs:
             b.draw(draw)
@@ -93,7 +108,7 @@ class enemy:
         self.velocity = 0.01
 
     def draw(self, img):
-        offset = (self.x-7, self.y-7, self.x+8, self.y+8)
+        offset = (self.x-15, self.y-15, self.x+15, self.y+15)
         img.paste(Image.open(self.image), offset)
 
     def move(self, dx, dy):
@@ -116,6 +131,9 @@ class enemies:
         for e in self.es:
             if e.x > 250 or e.x < -10 or e.y > 145 or e.y < -10:
                 self.es.remove(e)
+
+    def removeEnemy(self, e):
+        self.es.remove(e)
 
     def drawEnemies(self, draw, img):
         for e in self.es:
