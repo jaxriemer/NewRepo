@@ -215,6 +215,8 @@ while start_day <= 30:
             failed = spaceship.collideEnemies(the_enemies, the_ship, the_bullets, explode_img)
 
         if failed and fail_tick > 0:
+            the_enemies.removeAll()
+            the_bullets.removeAll()
             live = False
             draw.text((95, 50), "Failed", font=font, fill="#FFFFFF")
             fail_tick -= 1

@@ -90,6 +90,10 @@ class bullets:
 
     def removeBullet(self, b):
         self.bs.remove(b)
+    
+    def removeAll(self):
+        for b in self.bs:
+            self.bs.remove(b)
 
     def drawBullets(self, draw):
         for b in self.bs:
@@ -139,6 +143,10 @@ class enemies:
         for e in self.es:
             if e.x > 250 or e.x < -10 or e.y > 145 or e.y < -10:
                 self.es.remove(e)
+
+    def removeAll(self):
+        for e in self.es:
+            self.es.remove(e)
 
     def removeEnemy(self, e):
         self.es.remove(e)
