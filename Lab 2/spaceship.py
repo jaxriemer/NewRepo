@@ -135,11 +135,11 @@ class enemies:
     def removeEnemy(self, e):
         self.es.remove(e)
 
-    def drawEnemies(self, draw, img):
+    def drawEnemies(self, img):
         for e in self.es:
-            e.draw(draw)
+            e.draw(img)
 
-    def updateEnemies(self, draw, img):
+    def updateEnemies(self, img):
         self.moveEnemies()
         self.removeEnemies()
-        self.drawEnemies(draw, img)
+        self.drawEnemies(img)

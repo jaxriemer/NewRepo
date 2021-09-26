@@ -184,7 +184,7 @@ while start_day <= 30:
     else:
         enemy_tick -= 1
     # draw enemies
-    the_enemies.updateEnemies(draw, image)
+    the_enemies.updateEnemies(image)
 
     # shoot bullet
     if button.is_button_pressed():
