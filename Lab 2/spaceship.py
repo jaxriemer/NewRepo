@@ -36,7 +36,7 @@ class spaceship:
         img.paste(Image.open(self.image), offset)
 
     def move(self, dx, dy):
-        if -5< dx < 5:
+        if -5 < dx < 5:
             dx = 0
         if -5 < dy < 5:
             dy = 0

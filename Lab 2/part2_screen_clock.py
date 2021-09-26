@@ -49,7 +49,7 @@ disp = st7789.ST7789(
 # Make sure to create image with mode 'RGB' for full color.
 height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
-image = Image.new("RGB", (width, height))
+image = Image.new("RGBA", (width, height))
 rotation = 90
 
 buttonA = digitalio.DigitalInOut(board.D23)
@@ -61,7 +61,7 @@ buttonB.switch_to_input()
 draw = ImageDraw.Draw(image)
 
 # Draw a black filled box to clear the image.
-draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0, 0))
 disp.image(image, rotation)
 # Draw some shapes.
 # First define some constants to allow easy resizing of shapes.
