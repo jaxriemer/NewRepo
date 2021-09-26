@@ -17,6 +17,14 @@ class spaceship:
     def move(self, dx, dy):
         self.x += int(dx * self.velocity)
         self.y += int(dy * self.velocity)
+        if self.x > 232:
+            self.x = 232
+        elif self.x < 7:
+            self.x = 7
+        if self.y > 127:
+            self.y = 127
+        elif self.y < 7:
+            self.y = 7
 
 class bullet:
     def __init__(self, x, y, vx, vy):
