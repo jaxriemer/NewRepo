@@ -187,4 +187,4 @@ while start_day <= 30:
 
     disp.image(image, rotation)
     start_day += 1
-    time.sleep(0.1)
+    time.sleep(0.03)
