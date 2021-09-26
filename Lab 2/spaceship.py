@@ -105,7 +105,7 @@ class enemy:
         self.vx = vx
         self.vy = vy
         self.image = image
-        self.velocity = 0.01
+        self.velocity = 3
 
     def draw(self, img):
         offset = (self.x-15, self.y-15, self.x+15, self.y+15)
