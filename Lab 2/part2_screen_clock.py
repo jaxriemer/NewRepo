@@ -187,7 +187,7 @@ while start_day <= 30:
             if enemy_tick == 0:
                 the_enemies.addEnemy(random.randint(20, 220), 0, random.randint(-1, 1), random.randint(1, 2), enemy_img)
                 enemy_tick = hardness
-                if hardness > 5:
+                if hardness > 8:
                     hardness -= 2
             else:
                 enemy_tick -= 1
