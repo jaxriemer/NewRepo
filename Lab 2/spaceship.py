@@ -34,7 +34,7 @@ class spaceship:
     def draw(self, img):
         offset = (self.x-10, self.y-10, self.x+10, self.y+10)
         image = Image.open(self.image).convert("RGBA")
-        img.paste(image, offset)
+        img.paste(image, offset, image)
 
     def move(self, dx, dy):
         if -5 < dx < 5:
@@ -111,7 +111,7 @@ class enemy:
     def draw(self, img):
         offset = (self.x-15, self.y-15, self.x+15, self.y+15)
         image = Image.open(self.image).convert("RGBA")
-        img.paste(image, offset)
+        img.paste(image, offset, image)
 
     def move(self):
         self.x += int(self.vx * self.velocity)
