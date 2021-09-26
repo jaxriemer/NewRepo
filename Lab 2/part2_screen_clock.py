@@ -107,7 +107,7 @@ start_day = 1
 
 # create spaceship
 spaceship_img = (cwd + "/imgs/spaceship.png")
-the_ship = spaceship.spaceship(120, 120, spaceship_img)
+the_ship = spaceship.spaceship(120, 100, spaceship_img)
 # create list of bullets
 the_bullets = spaceship.bullets()
 # bullet spacer
@@ -192,7 +192,7 @@ while start_day <= 30:
 
             # add enemies
             if enemy_tick == 0:
-                the_enemies.addEnemy(random.randint(20, 220), 0, random.randint(-1, 1), random.randint(1, 3), enemy_img)
+                the_enemies.addEnemy(random.randint(20, 220), 0, random.randint(-1, 1), random.randint(1, 2), enemy_img)
                 enemy_tick = 20
             else:
                 enemy_tick -= 1
@@ -218,7 +218,7 @@ while start_day <= 30:
             the_enemies.removeAll()
             the_bullets.removeAll()
             live = False
-            draw.text((95, 50), "Failed", font=font, fill="#FFFFFF")
+            draw.text((95, 50), "FAILED", font=font, fill="#FF0000")
             fail_tick -= 1
         else:
             fail_tick = 10

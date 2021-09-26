@@ -30,7 +30,7 @@ class spaceship:
         self.x = x
         self.y = y
         self.image = image
-        self.velocity = 0.005
+        self.velocity = 0.01
 
     def draw(self, img):
         offset = (self.x-10, self.y-10, self.x+10, self.y+10)
@@ -126,6 +126,8 @@ class enemy:
     def move(self):
         self.x += int(self.vx * self.velocity)
         self.y += int(self.vy * self.velocity)
+        if self.x > 230 or self.x < 10:
+            self.vx = -self.vx
 
 class enemies:
     es = []
