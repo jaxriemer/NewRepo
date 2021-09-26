@@ -36,23 +36,20 @@ class spaceship:
         img.paste(Image.open(self.image), offset)
 
     def move(self, dx, dy):
-        if dx < 5:
+        if -5< dx < 5:
             dx = 0
-        if dy < 5:
+        if -5 < dy < 5:
             dy = 0
         self.x += int(dx * self.velocity)
         self.y += int(dy * self.velocity)
         if self.x > 232:
             self.x = 232
         elif self.x < 7:
-            self.x = 7
+            self.x = 7s
         if self.y > 127:
             self.y = 127
         elif self.y < 7:
             self.y = 7
-        print("x, y")
-        print(self.x)
-        print(self.y)
 
 class bullet:
     def __init__(self, x, y, vx, vy):
