@@ -112,6 +112,8 @@ the_bullets = spaceship.bullets()
 bullet_tick = 0
 # create list of enemies
 the_enemies = spaceship.enemies()
+enemy_img = (cwd + "/imgs/enemy.png")
+enemy_tick = 20
 
 while start_day <= 30:
     # debug joystick
@@ -176,8 +178,13 @@ while start_day <= 30:
     draw = ImageDraw.Draw(image)
 
     # add enemies
+    if enemy_tick == 0:
+        the_enemies.addEnemy(30, -10, 1, 3, enemy_img)
+        enemy_tick = 20
+    else:
+        enemy_tick -= 1
     # draw enemies
-
+    the_enemies.updateEnemies(draw, image)
 
     # shoot bullet
     if button.is_button_pressed():

@@ -57,7 +57,7 @@ class bullet:
         self.y = y
         self.vx = vx
         self.vy = vy
-        self.velocity = 2
+        self.velocity = 4
 
     def draw(self, draw):
         offset = (self.x-2, self.y-2, self.x+2, self.y+2)
