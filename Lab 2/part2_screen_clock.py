@@ -86,7 +86,7 @@ cwd = os.getcwd()
 
 hour_img = []
 for h in range(24):
-    hour_img.append((cwd + "/imgs/time_" + str(h) + ".png"))
+    hour_img.append((cwd + "/imgs/time_" + str(h) + ".jpg"))
 
 day_img = []
 for d in range(15):
@@ -151,6 +151,7 @@ while start_day <= 30:
 
     if curr_page == 1:
         image = Image.open(hour_img[int(hour)])
+        image = image.convert("RGBA")
         draw = ImageDraw.Draw(image)
         draw.text((70, 110), time_str, font=font, fill="#FFFFFF")
     elif curr_page == 2:
