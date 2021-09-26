@@ -108,6 +108,8 @@ spaceship_img = (cwd + "/imgs/spaceship.png")
 the_ship = spaceship.spaceship(120, 120, spaceship_img)
 # create list of bullets
 the_bullets = spaceship.bullets()
+# bullet spacer
+bullet_tick = 0
 
 while start_day <= 30:
     # debug joystick
@@ -174,7 +176,11 @@ while start_day <= 30:
     # shoot bullet
     if button.is_button_pressed():
         # add bullet to bullets
+        if bullet_tick == 0:
             the_bullets.addBullet(the_ship.x, the_ship.y, 0, -1)
+            bullet_tick = 5
+        else:
+            bullet_tick -= 1
 
     # process and draw bullets
     the_bullets.updateBullets(draw)
