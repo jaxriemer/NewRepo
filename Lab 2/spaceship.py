@@ -50,6 +50,9 @@ class spaceship:
             self.y = 127
         elif self.y < 7:
             self.y = 7
+        print("x, y")
+        print(self.x)
+        print(self.y)
 
 class bullet:
     def __init__(self, x, y, vx, vy):
