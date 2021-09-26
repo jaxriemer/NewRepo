@@ -12,15 +12,17 @@ def collide(a, b, ra, rb):
         return False
 
 def collideEnemies(enemies, spaceship, bullets, explode_img, img):
+    time = 0
     for e in enemies.es:
         if collide(spaceship, e, 10, 15):
-            return True
+            return True, time
         for b in bullets.bs:
             if collide(e, b, 15, 2):
+                time += 1
                 enemies.removeEnemy(e)
                 bullets.removeBullet(b)
                 e.explode(explode_img, img)
-    return False
+    return False, time
 
 
 # our space ship

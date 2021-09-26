@@ -126,20 +126,10 @@ fail_tick = 10
 live = True
 # art
 game_background = (cwd + "/imgs/game_background.png")
+# score
+score = 0
 
 while start_day <= 30:
-    # debug joystick
-    #print("joystick get horizontal")
-    #print(joystick.get_horizontal())
-    #print("joystick get vertical")
-    #print(joystick.get_vertical())
-
-    # debug button
-    #if button.is_button_pressed():
-    #    print("button pressed")
-
-
-
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
@@ -181,9 +171,6 @@ while start_day <= 30:
         draw = ImageDraw.Draw(image)
         draw.text((95, 110), year, font=font, fill="#FFFFFF")
 
-    # Display image.
-
-
     # play game
     if timeToPlay:
         background = Image.open(game_background).convert("RGBA")
@@ -200,8 +187,8 @@ while start_day <= 30:
             if enemy_tick == 0:
                 the_enemies.addEnemy(random.randint(20, 220), 0, random.randint(-1, 1), random.randint(1, 2), enemy_img)
                 enemy_tick = hardness
-                if hardness > 10:
-                    hardness -= 1
+                if hardness > 5:
+                    hardness -= 2
             else:
                 enemy_tick -= 1
             # draw enemies
@@ -220,16 +207,23 @@ while start_day <= 30:
             the_bullets.updateBullets(draw)
 
             # collide
-            failed = spaceship.collideEnemies(the_enemies, the_ship, the_bullets, explode_img, image)
+            failed, time = spaceship.collideEnemies(the_enemies, the_ship, the_bullets, explode_img, image)
+            score += time
+
+            # print score
+            draw.text((2, 2), str(score), font=font, fill="#FF0000")
 
         if failed and fail_tick > 0:
             the_enemies.removeAll()
             the_bullets.removeAll()
             live = False
-            draw.text((95, 50), "FAILED", font=font, fill="#FF0000")
+            draw.text((95, 60), "FAILED", font=font, fill="#FF0000")
+            draw.text((95, 40), "Score: " + str(score), font=font, fill="#FFFFFF")
             fail_tick -= 1
         else:
             fail_tick = 10
+            hardness = 30
+            score = 0
             live = True
 
 
