@@ -212,7 +212,7 @@ while start_day <= 30:
             the_bullets.updateBullets(draw)
 
             # collide
-            failed = spaceship.collideEnemies(the_enemies, the_ship, the_bullets, explode_img)
+            failed = spaceship.collideEnemies(the_enemies, the_ship, the_bullets, explode_img, image)
 
         if failed and fail_tick > 0:
             the_enemies.removeAll()

@@ -11,7 +11,7 @@ def collide(a, b, ra, rb):
     else:
         return False
 
-def collideEnemies(enemies, spaceship, bullets, explode_img):
+def collideEnemies(enemies, spaceship, bullets, explode_img, img):
     for e in enemies.es:
         if collide(spaceship, e, 10, 15):
             return True
@@ -19,7 +19,7 @@ def collideEnemies(enemies, spaceship, bullets, explode_img):
             if collide(e, b, 15, 2):
                 enemies.removeEnemy(e)
                 bullets.removeBullet(b)
-                e.explode(explode_img)
+                e.explode(explode_img, img)
     return False
 
 
@@ -90,7 +90,7 @@ class bullets:
 
     def removeBullet(self, b):
         self.bs.remove(b)
-    
+
     def removeAll(self):
         for b in self.bs:
             self.bs.remove(b)
@@ -118,9 +118,9 @@ class enemy:
         image = Image.open(self.image).convert("RGBA")
         img.paste(image, offset, image)
 
-    def explode(self, img):
+    def explode(self, explode_img, img):
         offset = (self.x-20, self.y-20, self.x+20, self.y+20)
-        image = Image.open(img).convert("RGBA")
+        image = Image.open(explode_img).convert("RGBA")
         img.paste(image, offset, image)
 
     def move(self):
