@@ -45,7 +45,7 @@ class spaceship:
         if self.x > 232:
             self.x = 232
         elif self.x < 7:
-            self.x = 7s
+            self.x = 7
         if self.y > 127:
             self.y = 127
         elif self.y < 7:
