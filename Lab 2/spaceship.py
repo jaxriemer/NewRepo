@@ -11,7 +11,7 @@ def collide(a, b, ra, rb):
     else:
         return False
 
-def collideEnemies(enemies, spaceship, bullets):
+def collideEnemies(enemies, spaceship, bullets, explode_img):
     for e in enemies.es:
         if collide(spaceship, e, 10, 15):
             return True
@@ -19,6 +19,7 @@ def collideEnemies(enemies, spaceship, bullets):
             if collide(e, b, 15, 2):
                 enemies.removeEnemy(e)
                 bullets.removeBullet(b)
+                e.explode(explode_img)
     return False
 
 
@@ -111,6 +112,11 @@ class enemy:
     def draw(self, img):
         offset = (self.x-15, self.y-15, self.x+15, self.y+15)
         image = Image.open(self.image).convert("RGBA")
+        img.paste(image, offset, image)
+
+    def explode(self, img):
+        offset = (self.x-20, self.y-20, self.x+20, self.y+20)
+        image = Image.open(img).convert("RGBA")
         img.paste(image, offset, image)
 
     def move(self):
