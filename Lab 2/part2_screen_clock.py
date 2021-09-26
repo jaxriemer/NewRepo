@@ -86,7 +86,7 @@ cwd = os.getcwd()
 
 hour_img = []
 for h in range(24):
-    hour_img.append((cwd + "/imgs/time_" + str(h) + ".jpg"))
+    hour_img.append((cwd + "/imgs/time_" + str(h) + ".png"))
 
 day_img = []
 for d in range(15):
