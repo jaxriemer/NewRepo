@@ -122,7 +122,7 @@ hardness = 30
 explode_img = (cwd + "/imgs/explode.png")
 # whether time to play game
 timeToPlay = True
-fail_tick = 10
+fail_tick = 20
 live = True
 # art
 game_background = (cwd + "/imgs/game_background.png")
@@ -217,13 +217,13 @@ while start_day <= 30:
             the_enemies.removeAll()
             the_bullets.removeAll()
             live = False
-            draw.text((95, 60), "FAILED", font=font, fill="#FF0000")
-            draw.text((95, 40), "Score: " + str(score), font=font, fill="#FFFFFF")
+            draw.text((90, 60), "FAILED", font=font, fill="#FF0000")
+            draw.text((90, 40), "Score: " + str(score), font=font, fill="#FFFFFF")
             fail_tick -= 1
-        else:
-            fail_tick = 10
             hardness = 30
             score = 0
+        else:
+            fail_tick = 20
             live = True
 
 
