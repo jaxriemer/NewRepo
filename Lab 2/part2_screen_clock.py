@@ -214,14 +214,16 @@ while start_day <= 30:
             draw.text((2, 2), str(score), font=font, fill="#FFFFFF")
 
         if failed and fail_tick > 0:
-            the_enemies.removeAll()
-            the_bullets.removeAll()
             live = False
             draw.text((90, 60), "FAILED", font=font, fill="#FF0000")
             draw.text((90, 40), "Score: " + str(score), font=font, fill="#FFFFFF")
             fail_tick -= 1
-            hardness = 30
+        if failed and fail_tick == 0:
+            the_enemies.removeAll()
+            the_bullets.removeAll()
             score = 0
+            hardness = 30
+            fail_tick -= 1
         else:
             fail_tick = 20
             live = True
