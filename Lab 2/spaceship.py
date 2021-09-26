@@ -111,7 +111,7 @@ class enemy:
         offset = (self.x-15, self.y-15, self.x+15, self.y+15)
         img.paste(Image.open(self.image), offset)
 
-    def move(self, dx, dy):
+    def move(self):
         self.x += self.vx * self.velocity
         self.y += self.vy * self.velocity
 
