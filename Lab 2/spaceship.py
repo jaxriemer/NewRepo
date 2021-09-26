@@ -12,10 +12,10 @@ def collide(a, b, ra, rb):
         return False
 
 def collideEnemies(enemies, spaceship, bullets):
-    for e in enemies:
+    for e in enemies.es:
         if collide(spaceship, e, 8, 8):
             return True
-        for b in bullets:
+        for b in bullets.bs:
             if collide(e, b, 2, 2):
                 enemies.removeEnemy(e)
                 bullets.removeBullet(b)
