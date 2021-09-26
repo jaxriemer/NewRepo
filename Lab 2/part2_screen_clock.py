@@ -115,13 +115,17 @@ bullet_tick = 0
 # create list of enemies
 the_enemies = spaceship.enemies()
 enemy_img = (cwd + "/imgs/enemy.png")
-enemy_tick = 20
+enemy_tick = 30
+# hardness = enemy tick
+hardness = 30
 # explosion effect
 explode_img = (cwd + "/imgs/explode.png")
 # whether time to play game
 timeToPlay = True
 fail_tick = 10
 live = True
+# art
+game_background = (cwd + "/imgs/game_background.png")
 
 while start_day <= 30:
     # debug joystick
@@ -182,6 +186,8 @@ while start_day <= 30:
 
     # play game
     if timeToPlay:
+        background = Image.open(game_background).convert("RGBA")
+        image.paste(background, (0,0,240,135), background)
         if live:
             # move spaceship
             the_ship.move(joystick.get_horizontal() - 520, joystick.get_vertical() - 508)
@@ -193,7 +199,9 @@ while start_day <= 30:
             # add enemies
             if enemy_tick == 0:
                 the_enemies.addEnemy(random.randint(20, 220), 0, random.randint(-1, 1), random.randint(1, 2), enemy_img)
-                enemy_tick = 20
+                enemy_tick = hardness
+                if hardness > 10:
+                    hardness -= 1
             else:
                 enemy_tick -= 1
             # draw enemies
@@ -203,7 +211,7 @@ while start_day <= 30:
             if button.is_button_pressed():
                 # add bullet to bullets
                 if bullet_tick == 0:
-                    the_bullets.addBullet(the_ship.x, the_ship.y, 0, -1)
+                    the_bullets.addBullet(the_ship.x, the_ship.y - 10, 0, -1)
                     bullet_tick = 5
                 else:
                     bullet_tick -= 1
