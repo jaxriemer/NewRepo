@@ -13,10 +13,10 @@ def collide(a, b, ra, rb):
 
 def collideEnemies(enemies, spaceship, bullets):
     for e in enemies.es:
-        if collide(spaceship, e, 8, 8):
+        if collide(spaceship, e, 10, 15):
             return True
         for b in bullets.bs:
-            if collide(e, b, 2, 2):
+            if collide(e, b, 15, 2):
                 enemies.removeEnemy(e)
                 bullets.removeBullet(b)
     return False
@@ -105,7 +105,7 @@ class enemy:
         self.vx = vx
         self.vy = vy
         self.image = image
-        self.velocity = 3
+        self.velocity = 1
 
     def draw(self, img):
         offset = (self.x-15, self.y-15, self.x+15, self.y+15)

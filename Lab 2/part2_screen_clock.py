@@ -195,12 +195,13 @@ while start_day <= 30:
         else:
             bullet_tick -= 1
 
-    # collide
-    spaceship.collideEnemies(the_enemies, the_ship, the_bullets)
-
     # process and draw bullets
     the_bullets.updateBullets(draw)
 
+    # collide
+    failed = spaceship.collideEnemies(the_enemies, the_ship, the_bullets)
+    if failed:
+        draw.text((95, 50), "Failed", font=font, fill="#FFFFFF")
     disp.image(image, rotation)
     start_day += 1
     time.sleep(0.03)
