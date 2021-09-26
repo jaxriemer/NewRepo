@@ -121,6 +121,7 @@ explode_img = (cwd + "/imgs/explode.png")
 # whether time to play game
 timeToPlay = True
 fail_tick = 10
+live = True
 
 while start_day <= 30:
     # debug joystick
@@ -181,41 +182,46 @@ while start_day <= 30:
 
     # play game
     if timeToPlay:
-        # move spaceship
-        the_ship.move(joystick.get_horizontal() - 520, joystick.get_vertical() - 508)
+        if live:
+            # move spaceship
+            the_ship.move(joystick.get_horizontal() - 520, joystick.get_vertical() - 508)
 
-        # draw spaceship
-        the_ship.draw(image)
-        draw = ImageDraw.Draw(image)
+            # draw spaceship
+            the_ship.draw(image)
+            draw = ImageDraw.Draw(image)
 
-        # add enemies
-        if enemy_tick == 0:
-            the_enemies.addEnemy(random.randint(20, 220), 0, random.randint(-1, 1), random.randint(1, 3), enemy_img)
-            enemy_tick = 20
-        else:
-            enemy_tick -= 1
-        # draw enemies
-        the_enemies.updateEnemies(image)
-
-        # shoot bullet
-        if button.is_button_pressed():
-            # add bullet to bullets
-            if bullet_tick == 0:
-                the_bullets.addBullet(the_ship.x, the_ship.y, 0, -1)
-                bullet_tick = 5
+            # add enemies
+            if enemy_tick == 0:
+                the_enemies.addEnemy(random.randint(20, 220), 0, random.randint(-1, 1), random.randint(1, 3), enemy_img)
+                enemy_tick = 20
             else:
-                bullet_tick -= 1
+                enemy_tick -= 1
+            # draw enemies
+            the_enemies.updateEnemies(image)
 
-        # process and draw bullets
-        the_bullets.updateBullets(draw)
+            # shoot bullet
+            if button.is_button_pressed():
+                # add bullet to bullets
+                if bullet_tick == 0:
+                    the_bullets.addBullet(the_ship.x, the_ship.y, 0, -1)
+                    bullet_tick = 5
+                else:
+                    bullet_tick -= 1
 
-        # collide
-        failed = spaceship.collideEnemies(the_enemies, the_ship, the_bullets, explode_img)
-        if failed:
-            timeToPlay = False
-    elif fail_tick > 0:
-        draw.text((95, 50), "Failed", font=font, fill="#FFFFFF")
-        fail_tick -= 1
+            # process and draw bullets
+            the_bullets.updateBullets(draw)
+
+            # collide
+            failed = spaceship.collideEnemies(the_enemies, the_ship, the_bullets, explode_img)
+
+        if failed and fail_tick > 0:
+            live = False
+            draw.text((95, 50), "Failed", font=font, fill="#FFFFFF")
+            fail_tick -= 1
+        else:
+            fail_tick = 10
+            live = True
+
 
     disp.image(image, rotation)
     start_day += 1
