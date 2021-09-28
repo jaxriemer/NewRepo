@@ -242,7 +242,7 @@ The features of the game are shown in the video below. The functionalities of th
 
 [![Part 2 Video Demo](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%202/Part2DemoVideoCover.jpg)](https://drive.google.com/file/d/1BzCzd05g0fVW-yoOTPEuVHBMQk2ul3rq/view?usp=sharing)
 
-After we discussed the skeleton and the logic of the game, Yuzhen Zhang was in charge of the draft code of the game classes. Then Xinning did the debugging while looking for the resources that could be used as the spacecraft and the UFOs. 
+After we discussed the skeleton and the logic of the game, Yuzhen Zhang drafted the classes and the logic of the game. Then Xinning did the debugging while looking for the resources that could be used as the spacecraft and the UFOs. 
 
 After the second draft, we invited our schoolmate Ken He to play the game. He commented that we should “design a way to terminate the game”. Therefore, we decided to add two ways to terminate the game. The game will automatically stop when the user’s score reaches 20 points, or when the user presses both buttons on the mini PiTFT. 
 
