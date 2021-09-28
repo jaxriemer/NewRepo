@@ -250,4 +250,4 @@ Plus, we found that we should also improve how the game would be started as it w
 
 The parts that implemented the start and the end of the game were mainly implemented by Xinning and debugged by Yuzhen.
 
-Icons of spacecrafts made by www.freepik.com. Background images of the planets are hand-drawn by Yuzhen.
+Icons of the spacecraft and the UFO are made by www.freepik.com. Background images of the planets are hand-drawn by Yuzhen.
