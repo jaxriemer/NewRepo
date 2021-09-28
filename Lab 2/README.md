@@ -193,7 +193,7 @@ Pressing on the two buttons can change the scale of time. The upper button zooms
 
 Several objects (the ufo, the rocket, and the astronaut) are introduced to give the user a surprise. 
 
-The code is named my_screen_clock.py. We also created another code named my_screen_clock_forVideo.py to help with recording timelapse.
+The code is named [my_screen_clock.py](my_screen_clock.py). We also created another code named my_screen_clock_forVideo.py to help with recording timelapse.
 
  ------------------------------------------- 
 
@@ -232,12 +232,20 @@ For our next phase, we are planning to push the idea of the cosmos and especiall
 
 # Lab 2 Part 2
 
-Pull Interactive Lab Hub updates to your repo.
+For part 2, we decide to add a wake-up alarm feature as part of the clock. Pushing forward the concept of the planets and the universe, we designed a game, “Battle of the earth”, that lets the user drive a spacecraft and fight against invading UFOs in the morning, during which, the user wakes up because of the concentration on the game, therefore, reducing the pain of waking up. 
 
-Modify the code from last week's lab to make a new visual interface for your new clock. You may [extend the Pi](Extending%20the%20Pi.md) by adding sensors or buttons, but this is not required.
+We included the Qwiic joystick and the red Qwiic button upon our initial design in Part 1. The joystick is used to control the location and the moving direction of the spacecraft that will be controlled by the user, while pressing the button will emit bullets from the spacecraft that can destroy enemy UFOs upon collision. The goal of the user is to destroy 20 malicious UFOs and avoid colliding with them. 
 
-As always, make sure you document contributions and ideas from others explicitly in your writeup.
+The code for part 2 is [part2_screen_clock.py](part2_screen_clock.py); the extra code and classes for the game is [spaceship.py](spaceship.py).
 
-You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
+The features of the game are shown in the video below. The functionalities of the clock are represented in the Part 1 video above.
 
+[![Part 2 Video Demo](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%202/Part2DemoVideoCover.jpg)](https://drive.google.com/file/d/1BzCzd05g0fVW-yoOTPEuVHBMQk2ul3rq/view?usp=sharing)
 
+After we discussed the skeleton and the logic of the game, Yuzhen Zhang was in charge of the draft code of the game classes. Then Xinning did the debugging while looking for the resources that could be used as the spacecraft and the UFOs. 
+
+After the second draft, we invited our schoolmate Ken He to play the game. He commented that we should “design a way to terminate the game”. Therefore, we decided to add two ways to terminate the game. The game will automatically stop when the user’s score reaches 20 points, or when the user presses both buttons on the mini PiTFT. 
+
+Plus, we found that we should also improve how the game would be started as it would start every time the program started to run at the beginning. To resolve this problem, we also added two ways to start the game: when the current time matches the pre-set alarm time, or when the user presses on both buttons on the mini PiTFT like how he would stop the game. 
+
+The parts that implemented the start and the end of the game were mainly implemented by Xinning and debugged by Yuzhen.
