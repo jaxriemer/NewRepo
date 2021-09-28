@@ -232,7 +232,7 @@ For our next phase, we are planning to push the idea of the cosmos and especiall
 
 # Lab 2 Part 2
 
-For part 2, we decide to add a wake-up alarm feature as part of the clock. Pushing forward the concept of the planets and the universe, we designed a game, “Battle of the earth”, that lets the user drive a spacecraft and fight against invading UFOs in the morning, during which, the user wakes up because of the concentration on the game, therefore, reducing the pain of waking up. 
+For part 2, we decide to add a wake-up alarm feature as part of the clock. Pushing forward the concept of the planets and the universe, we designed a game, “Battle of the earth”, that lets the user drive a spacecraft and fight against invading UFOs in the morning, during which, the user wakes up because of the concentration on the game, therefore, reducing the pain of this process. 
 
 We included the Qwiic joystick and the red Qwiic button upon our initial design in Part 1. The joystick is used to control the location and the moving direction of the spacecraft that will be controlled by the user, while pressing the button will emit bullets from the spacecraft that can destroy enemy UFOs upon collision. The goal of the user is to destroy 20 malicious UFOs and avoid colliding with them. 
 
