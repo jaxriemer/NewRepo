@@ -103,7 +103,6 @@ year_img = cwd + "/imgs/year.jpg"
 
 max_page, min_page = 4, 1
 curr_page = 1
-start_day = 1
 
 # create spaceship
 spaceship_img = (cwd + "/imgs/spaceship.png")
@@ -121,28 +120,25 @@ hardness = 30
 # explosion effect
 explode_img = (cwd + "/imgs/explode.png")
 # whether time to play game
-timeToPlay = True
+timeToPlay, live, justSet = False, True, False
+# used to show the fail page
 fail_tick = 20
-live = True
 # art
 game_background = (cwd + "/imgs/game_background.png")
 # score
 score = 0
+alarm_str = "16:36:00"
 
-while start_day <= 30:
+while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
     #TODO: Lab 2 part D work should be filled in here. You should be able to look in cli_clock.py and stats.py
 
     # Parse date & time
-    start_day = 1
-    #curr_time = datetime.datetime(2021, start_day, 8, 00, 00)
     curr_time = time.strftime("%m/%d/%Y %H:%M:%S")
     date_str, time_str = curr_time.split(" ")
     hour, min, sec = time_str.split(":")
     month, day, year = date_str.split("/")
-
-    # is_hour, is_day, is_month, is_year = False, False, False, False
 
     if buttonA.value and (not buttonB.value): # button B pressed
         if max_page > curr_page:
@@ -150,6 +146,20 @@ while start_day <= 30:
     elif (not buttonA.value) and buttonB.value: # button A pressed
         if min_page < curr_page:
             curr_page -= 1
+
+    if (not buttonA.value) and (not buttonB.value): # both buttons pressed
+        if justSet == False:
+            if timeToPlay:
+                timeToPlay = False
+            else:
+                timeToPlay = True
+            justSet = True
+
+    if buttonA.value and buttonB.value:
+        justSet = False
+
+    if time_str == alarm_str:
+        timeToPlay = True
 
     if curr_page == 1:
         image = Image.open(hour_img[int(hour)])
@@ -176,12 +186,12 @@ while start_day <= 30:
         background = Image.open(game_background).convert("RGBA")
         image.paste(background, (0,0,240,135), background)
         if live:
-            # move spaceship
-            the_ship.move(joystick.get_horizontal() - 520, joystick.get_vertical() - 508)
-
             # draw spaceship
             the_ship.draw(image)
             draw = ImageDraw.Draw(image)
+
+            # move spaceship
+            the_ship.move(joystick.get_horizontal() - 520, joystick.get_vertical() - 508)
 
             # add enemies
             if enemy_tick == 0:
@@ -226,7 +236,12 @@ while start_day <= 30:
             fail_tick = 20
             live = True
 
+        # Game will automatically stop when the score reaches 20
+        if score == 20:
+            the_enemies.removeAll()
+            the_bullets.removeAll()
+            draw.text((90, 60), "SUCCESS", font=font, fill="#00FF00")
+            timeToPlay = False
 
     disp.image(image, rotation)
-    start_day += 1
     time.sleep(0.05)
