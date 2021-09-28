@@ -193,7 +193,7 @@ Pressing on the two buttons can change the scale of time. The upper button zooms
 
 Several objects (the ufo, the rocket, and the astronaut) are introduced to give the user a surprise. 
 
-The code is named [my_screen_clock.py](my_screen_clock.py). We also created another code named my_screen_clock_forVideo.py to help with recording timelapse.
+The code is named [my_screen_clock.py](my_screen_clock.py). We also created another code named [my_screen_clock_forVideo.py](my_screen_clock_forVideo.py) to help with recording timelapse.
 
  ------------------------------------------- 
 
