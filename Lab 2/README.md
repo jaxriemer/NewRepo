@@ -249,3 +249,5 @@ After the second draft, we invited our schoolmate Ken He to play the game. He co
 Plus, we found that we should also improve how the game would be started as it would start every time the program started to run at the beginning. To resolve this problem, we also added two ways to start the game: when the current time matches the pre-set alarm time, or when the user presses on both buttons on the mini PiTFT like how he would stop the game. 
 
 The parts that implemented the start and the end of the game were mainly implemented by Xinning and debugged by Yuzhen.
+
+Icons of spacecrafts made by www.freepik.com. Background images of the planets are hand-drawn by Yuzhen.
