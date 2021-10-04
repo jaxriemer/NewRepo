@@ -56,6 +56,12 @@ You can also play audio files directly with `aplay filename`. Try typing `aplay 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
 (This shell file should be saved to your own repo for this lab.)
 
+[![Text2SpeechVideo](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Text2Speech_cover.jpg)](https://drive.google.com/file/d/16iMoJOi39CqeSEUKsWBcNcEgNHM3XvWg/view?usp=sharing)
+
+Our text to speech shell file is [text2speech_test.sh](text2speech_test.sh). When runing from the folder of this repository, we call:
+
+      sh text2speech_test.sh
+
 Bonus: If this topic is very exciting to you, you can try out this new TTS system we recently learned about: https://github.com/rhasspy/larynx
 
 ### Speech to Text
@@ -67,6 +73,13 @@ In particular, look at `test_words.py` and make sure you understand how the voca
 One thing you might need to pay attention to is the audio input setting of Pi. Since you are plugging the USB cable of your webcam to your Pi at the same time to act as speaker, the default input might be set to the webcam microphone, which will not be working for recording.
 
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
+
+[![Speech2TextVideo](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Speech2Text_cover.jpg)](https://drive.google.com/file/d/1Sb6804PlM5Navicr85CAQDMEblU0BYmO/view?usp=sharing)
+
+
+Our speech to text shell file is [speech2text_test.sh](speech2text_test.sh). We also pushed the corresponding python code [test_words.py](test_words.py). When runing from the folder of this repository, we call:
+
+      sh speech2text_test.sh
 
 Bonus Activity:
 
@@ -103,15 +116,46 @@ Storyboard and/or use a Verplank diagram to design a speech-enabled device. (Stu
 
 \*\***Post your storyboard and diagram here.**\*\*
 
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Story1.jpg)
+
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Story2.jpg)
+
 Write out what you imagine the dialogue to be. Use cards, post-its, or whatever method helps you develop alternatives or group responses. 
 
 \*\***Please describe and document your process.**\*\*
+
+Our device is an assistant that gives users reminders at their door when users are about to leave their home. It gives two main categories of reminders.
+
+The first category is a home-device reminder. The assistant is connected to all the other smart home devices and automatically detects the conditions of those devices when users are about to leave their home. The assistant can remind users to turn off the light, shut off the stove, lock the garden’s door, etc. 
+
+- One sample interaction of home devices reminder: 
+
+Assistant: “Your air purifier and your stove are still on. Should I turn them off?”
+User: “Turn off the stove, but leave the air purifier on. ”
+Assistant: “No problem, the stove is off.”
+
+
+The second category is a personal reminder. The user can tell the assistant what they want to be reminded when they are about to leave home. 
+
+- One sample interaction of personal reminder:
+
+User: “Remind me to take the trash out next time I leave home”
+Assistant: “Okay. I will remind to take the trash out”
+
+When users are about to leave,
+Assistant: “Don’t forget to take the trash out”
+User: “Cool. Thanks ”
+
+There are two ways to activate the reminder. 1) A button can be placed near the door. When users are about to leave, they press the button, and the assistant starts the reminder. 2) Install proximity sensor at the door to detect the approaching users. The reminder can be automatically activated while users change their shoes.
+
 
 ### Acting out the dialogue
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+
+[![Acting Out Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_ActOutInteraction_cover.jpg)](https://drive.google.com/file/d/1b0r1y6c9nH7dRVJZ6TsWFIV_4rgvH9ON/view?usp=sharing)
 
 ### Wizarding with the Pi (optional)
 In the [demo directory](./demo), you will find an example Wizard of Oz project. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser.  You may use this demo code as a template. By running the `app.py` script, you can see how audio and sensor data (Adafruit MPU-6050 6-DoF Accel and Gyro Sensor) is streamed from the Pi to a wizard controller that runs in the browser `http://<YouPiIPAddress>:5000`. You can control what the system says from the controller as well!
