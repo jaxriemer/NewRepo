@@ -181,17 +181,17 @@ def remove_task(input):
     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
     print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
-def getInstruction(commands):
+def getInstruction():
     # for test
-    # recordAudio()
-    # input = audio2text()
+    recordAudio()
+    input = audio2text()
 
-    input = commands
+    # input = commands
 
     #for test
-    playAudio('You said')
+    # playAudio('You said')
+    # # playAudio(input)
     # playAudio(input)
-    playAudio(input)
 
     if "task" in input:
         if "add" in input:
@@ -203,6 +203,10 @@ def getInstruction(commands):
                 remove_task_number(input)
             else:
                 remove_task(input)
+    else:
+        playAudio("You said")
+        playAudio(input)
+        playAudio("But I have no idea")
 
 # while True:
 #     if button.is_button_pressed():
@@ -224,7 +228,7 @@ if __name__ == "__main__":
     index = 0
     while True:
         playAudio('How can I help you?')
-        getInstruction(commands[index])
+        getInstruction()
         index += 1
 
 
