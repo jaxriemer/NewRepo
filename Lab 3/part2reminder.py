@@ -12,9 +12,9 @@ from playsound import playsound
 import speech_recognition as sr
 import qwiic_button
 
-# Setup button
-button = qwiic_button.QwiicButton()
-button.begin()
+# # Setup button
+# button = qwiic_button.QwiicButton()
+# button.begin()
 
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
@@ -90,7 +90,7 @@ def audio2text():
 
     return text
 
-class reminder:
+class Reminder(object):
     tasks = []
     def __init__(self):
         self.tasks = []
@@ -133,11 +133,16 @@ def word2Number(text):
     return results
 
 # add task
+
 def add_task(input):
     input = input.strip('add')
     input = input.strip('task')
     input = input.strip()
     reminder.addTask(input)
+
+    # for test:
+    playAudio('Okay! %s is removed' % input)
+
 
 # read tasks
 def read_tasks():
@@ -168,25 +173,31 @@ def remove_task(input):
     if reminder.existTask(input):
         reminder.removeTask(input)
 
+    # for test
+    task_num = 1
+    task_removed = Reminder.tasks[task_num-1]
+    playAudio('Got it! %s removed' % (task_removed))
+
 def getInstruction():
     recordAudio()
     input = audio2text()
     if "task" in input:
         if "add" in input:
-            # add task
+            add_task(input)
         elif "read" in input:
-            # read tasks
+            read_tasks(input)
         elif "remove" in input:
             if "number" in input:
-                # remove task number
+                remove_task_number(input)
             else:
                 # remove task
+                pass
 
 while True:
     if button.is_button_pressed():
         getInstruction()
 
-playAudio('Hello!')
+playAudio('Hello! I am your amazing assistant.')
 recordAudio()
 #time.sleep(5)
 #text = audio2Text()
@@ -196,3 +207,9 @@ recordAudio()
 text2 = audio2text()
 playAudio("your recording")
 playAudio(text2)
+
+if __name__ == "__main__":
+    reminder = Reminder()
+    getInstruction()
+
+
