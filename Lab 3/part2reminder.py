@@ -151,7 +151,7 @@ def read_tasks():
     task = reminder.getAllTasks()
     for i in task:
         num = num + 1
-        read_all_task = read_all_task + num + " " + i + ". "
+        read_all_task = read_all_task + str(num) + " " + i + ". "
     playAudio(read_all_task)
 
 # remove task number xx
@@ -179,8 +179,11 @@ def remove_task(input):
     playAudio('Got it! %s removed' % (task_removed))
 
 def getInstruction():
-    recordAudio()
-    input = audio2text()
+    # for test
+    # recordAudio()
+    # input = audio2text()
+
+    val = input("Enter your sentence: ")
 
     #for test
     playAudio('You said')
@@ -198,7 +201,6 @@ def getInstruction():
             else:
                 remove_task(input)
 
-
 # while True:
 #     if button.is_button_pressed():
 #         getInstruction()
@@ -212,7 +214,6 @@ def getInstruction():
 if __name__ == "__main__":
     reminder = Reminder()
     playAudio('Hello! I am your amazing assistant.')
-
 
     #for test
     reminder.tasks = ['wash dishes','take trash out']
