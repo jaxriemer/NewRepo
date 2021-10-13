@@ -183,13 +183,12 @@ def getInstruction():
     # recordAudio()
     # input = audio2text()
 
-    input = input("Enter your sentence: ")
+    input = ("read task")
 
     #for test
     playAudio('You said')
     # playAudio(input)
     playAudio(input)
-
 
     if "task" in input:
         if "add" in input:
