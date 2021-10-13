@@ -220,7 +220,7 @@ def getInstruction():
 
 if __name__ == "__main__":
     reminder = Reminder()
-    playAudio('Hello!')
+    playAudio('Hello! I am your amazing assistant')
 
     #for test
     reminder.tasks = ['wash dishes','take trash out']
