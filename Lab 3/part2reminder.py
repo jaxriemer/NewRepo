@@ -64,7 +64,7 @@ def recordAudio():
 
 def audio2Text():
     print("Audio to Text")
-    playsound(filename)
+    #playsound(filename)
     fin = wave.open(filename, 'rb')
     frames = fin.readframes(fin.getnframes())
     audio = np.frombuffer(frames, np.int16)
@@ -77,7 +77,7 @@ r = sr.Recognizer()
 def audio2text2():
     print("Audio to Text")
     sound = sr.AudioFile(filename)
-    playsound(filename)
+    #playsound(filename)
     with sound as source:
         audio = r.record(source)
     text = ''
