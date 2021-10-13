@@ -80,10 +80,15 @@ def audio2text2():
     playsound(filename)
     with sound as source:
         audio = r.record(source)
-    #text = ''
-    s = r.recognize_google(audio)
-    print("Text: " + s)
-    return s
+    text = ''
+    try:
+        s = r.recognize_google(audio)
+        print("Text: " + s)
+        text = s
+    except Exception as e:
+        print("Exception: " + str(e))
+
+    return text
 
 
 # class Reminder:
