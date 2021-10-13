@@ -10,11 +10,11 @@ import time
 import wave
 from playsound import playsound
 import speech_recognition as sr
-import qwiic_button
+# import qwiic_button
 
 # Setup button
-button = qwiic_button.QwiicButton()
-button.begin()
+# button = qwiic_button.QwiicButton()
+# button.begin()
 
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
@@ -123,17 +123,17 @@ class reminder:
 # while True:
 #     if button.is_button_pressed():
 #         #
-
-def read_tasks(self):
-    read_all_task = ""
-    num = 0
-
-    for i in self.task:
-        num = num + 1
-        read_all_task = read_all_task + num + " " + i + " "
-    playAudio(read_all_task)
-
-def remove_task_number(self, input):
+#
+# def read_tasks(self):
+#     read_all_task = ""
+#     num = 0
+#
+#     for i in self.task:
+#         num = num + 1
+#         read_all_task = read_all_task + num + " " + i + " "
+#     playAudio(read_all_task)
+#
+# def remove_task_number(self, input):
 
 reminder = reminder()
 
