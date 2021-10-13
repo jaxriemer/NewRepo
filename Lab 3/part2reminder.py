@@ -12,6 +12,7 @@ import array
 import numpy as np
 import time
 import wave
+from playsound import playsound
 
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
@@ -61,6 +62,7 @@ def recordAudio():
 
 def audio2Text():
     print("Audio to Text")
+    playsound(filename)
     fin = wave.open(filename, 'rb')
     frames = fin.readframes(fin.getnframes())
     audio = np.frombuffer(frames, np.int16)
@@ -68,8 +70,9 @@ def audio2Text():
     print(text)
     return text
 
-playAudio('Hello! @@@@@@@@@@@')
+playAudio('Hello! hehehehehehehe')
 recordAudio()
+
 text = audio2Text()
 playAudio("your audio")
 playAudio(text)
