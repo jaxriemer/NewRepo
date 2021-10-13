@@ -169,9 +169,7 @@ def remove_task_number(input):
 
 # remove task xx
 def remove_task(input):
-    input = input.strip('remove')
-    input = input.strip('task')
-    input = input.strip()
+    input = input.replace('remove task','')
     if reminder.existTask(input):
         reminder.removeTask(input)
 
@@ -216,7 +214,7 @@ if __name__ == "__main__":
 
     #for test
     reminder.tasks = ['wash dishes','take trash out']
-    commands = ["add task go for a run",'remove task go for a run' ,'read tasks']
+    commands = ["remove task go take trash out" ,'read tasks']
     index = 0
     while True:
         playAudio('How can I help you?')
