@@ -1,19 +1,20 @@
 import gtts
-import sys
-import os
 from pydub import AudioSegment
 from pydub.playback import play
 from io import BytesIO
 
 from deepspeech import Model
 import pyaudio
-from sys import byteorder
-import array
 import numpy as np
 import time
 import wave
 from playsound import playsound
 import speech_recognition as sr
+import qwiic_button
+
+# Setup button
+button = qwiic_button.QwiicButton()
+button.begin()
 
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
@@ -74,7 +75,7 @@ def audio2Text():
     return text
 
 r = sr.Recognizer()
-def audio2text2():
+def audio2text():
     print("Audio to Text")
     sound = sr.AudioFile(filename)
     #playsound(filename)
@@ -102,13 +103,28 @@ class reminder:
     def getAllTasks(self):
         return self.tasks
 
-    def removeTask(self, task):
-        self.tasks.remove(task)
+    def removeTask(self, i):
+        del self.tasks[i]
 
 # push button
 # add task
 # read tasks
 # remove task number xx
+
+def getInstruction():
+    recordAudio()
+    input = audio2text()
+    if "task" in input:
+        if "add" in input:
+            # add task
+        elif "read" in input:
+            # read tasks
+        elif "remove" in input:
+            # remove task
+
+while True:
+    if button.is_button_pressed():
+        #
 
 reminder = reminder()
 
@@ -119,6 +135,6 @@ recordAudio()
 #playAudio("your audio 1")
 #playAudio(text)
 
-text2 = audio2text2()
+text2 = audio2text()
 playAudio("your audio 2")
 playAudio(text2)
