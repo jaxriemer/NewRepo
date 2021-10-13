@@ -16,7 +16,6 @@ import qwiic_button
 button = qwiic_button.QwiicButton()
 button.begin()
 
-
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
 model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
@@ -124,6 +123,17 @@ class reminder:
 # while True:
 #     if button.is_button_pressed():
 #         #
+
+def read_tasks(self):
+    read_all_task = ""
+    num = 0
+
+    for i in self.task:
+        num = num + 1
+        read_all_task = read_all_task + num + " " + i + " "
+    playAudio(read_all_task)
+
+def remove_task_number(self, input):
 
 reminder = reminder()
 
