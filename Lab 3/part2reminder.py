@@ -90,7 +90,7 @@ def audio2text2():
     return text
 
 
-class Reminder:
+# class Reminder:
 
 
 
