@@ -183,8 +183,11 @@ def remove_task(input):
 
 def getInstruction():
     # for test
-    recordAudio()
-    input = audio2text()
+    try:
+        recordAudio()
+        input = audio2text()
+    except:
+        input = "No response"
 
     # input = commands
 
