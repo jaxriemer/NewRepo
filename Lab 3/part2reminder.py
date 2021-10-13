@@ -99,6 +99,18 @@ class reminder:
     def addTask(self, task):
         self.tasks.append(task)
 
+    def getAllTasks(self):
+        return self.tasks
+
+    def removeTask(self, task):
+        self.tasks.remove(task)
+
+# push button
+# add task
+# read tasks
+# remove task number xx
+
+reminder = reminder()
 
 playAudio('Hello!')
 recordAudio()
