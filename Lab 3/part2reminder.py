@@ -64,7 +64,7 @@ def recordAudio():
 
 def audio2Text():
     print("Audio to Text")
-    playsound(filename)
+    # playsound(filename)
     fin = wave.open(filename, 'rb')
     frames = fin.readframes(fin.getnframes())
     audio = np.frombuffer(frames, np.int16)
@@ -75,13 +75,13 @@ def audio2Text():
 r = sr.Recognizer()
 def audio2text2():
     sound = sr.AudioFile(filename)
-    playsound(filename)
+    # playsound(filename)
     audio = r.record(sound)
     text = ''
     try:
         s = r.recognize_google(audio)
         print("Text: " + s)
-        text + s
+        text = s
     except Exception as e:
         print("Exception: " + str(e))
 
