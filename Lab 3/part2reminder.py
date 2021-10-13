@@ -191,7 +191,7 @@ def getInstruction():
         if "add" in input:
             add_task(input)
         elif "read" in input:
-            read_tasks(input)
+            read_tasks()
         elif "remove" in input:
             if "number" in input:
                 remove_task_number(input)
