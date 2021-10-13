@@ -91,8 +91,13 @@ def audio2text2():
     return text
 
 
-# class Reminder:
+class reminder:
+    tasks = []
+    def __init__(self):
+        self.tasks = []
 
+    def addTask(self, task):
+        self.tasks.append(task)
 
 
 
