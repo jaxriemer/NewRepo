@@ -13,6 +13,7 @@ import numpy as np
 import time
 import wave
 from playsound import playsound
+import speech_recognition as sr
 
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
@@ -71,9 +72,25 @@ def audio2Text():
     print(text)
     return text
 
+r = sr.Recognizer()
+def audio2text2():
+    sound = sr.AudioFile(filename)
+    playsound(filename)
+    audio = r.record(sound)
+    text = ''
+    try:
+        s = r.recognize_google(audio)
+        print("Text: " + s)
+        text + s
+    except Exception as e:
+        print("Exception: " + str(e))
+
+    return text
+
+
 playAudio('Hello!')
 recordAudio()
 
-text = audio2Text()
+text = audio2text2()
 playAudio("your audio")
 playAudio(text)
