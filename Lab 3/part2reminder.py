@@ -74,9 +74,11 @@ def audio2Text():
 
 r = sr.Recognizer()
 def audio2text2():
+    print("Audio to Text")
     sound = sr.AudioFile(filename)
     # playsound(filename)
-    audio = r.record(sound)
+    with sound as source:
+        audio = r.record(source)
     text = ''
     try:
         s = r.recognize_google(audio)
