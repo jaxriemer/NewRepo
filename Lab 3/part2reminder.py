@@ -170,6 +170,7 @@ def remove_task_number(input):
 # remove task xx
 def remove_task(input):
     input = input.replace('remove task','')
+    input = input.strip()
     if reminder.existTask(input):
         reminder.removeTask(input)
 
