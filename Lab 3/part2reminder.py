@@ -5,7 +5,7 @@ from pydub import AudioSegment
 from pydub.playback import play
 from io import BytesIO
 
-import deepspeech
+from deepspeech import Model
 import pyaudio
 from sys import byteorder
 import array
@@ -13,7 +13,7 @@ import numpy as np
 import time
 
 # DeepSpeech Model
-model = deepspeech.Model('deepspeech-0.9.3-models.tflite')
+model = Model('deepspeech-0.9.3-models.pbmm')
 model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
 
 def is_silent(data_chunk):
