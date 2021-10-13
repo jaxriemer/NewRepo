@@ -11,6 +11,7 @@ from sys import byteorder
 import array
 import numpy as np
 import time
+import wave
 
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.pbmm')
@@ -53,6 +54,8 @@ class AudioListener(object):
         return self.end_recording
 
 def playAudio(text):
+    print('Play Audio')
+    print(text)
     tts = gtts.gTTS(text, lang='en')
     mp3 = BytesIO()
     tts.write_to_fp(mp3)
@@ -72,8 +75,8 @@ def getAudio():
     def process_audio(in_data, frame_count, time_info, status):
         data16 = np.frombuffer(in_data, dtype=np.int16)
         capture.add_recording(data16)
-        silent = is_silent(data16)
-        capture.set_end_record(silent)
+        # silent = is_silent(data16)
+        # capture.set_end_record(silent)
         return (in_data, pyaudio.paContinue)
 
     # PyAudio parameters
@@ -102,7 +105,50 @@ def getAudio():
     return text
 
 
+
+
+chunk = 1024  # Record in chunks of 1024 samples
+sample_format = pyaudio.paInt16  # 16 bits per sample
+channels = 1
+fs = 44100  # Record at 44100 samples per second
+seconds = 3
+filename = "output.wav"
+
+def recordAudio():
+    port = pyaudio.PyAudio()
+    print('Recording Audio')
+    stream = port.open(format=sample_format,
+                       channels=channels,
+                       rate=fs,
+                       frames_per_buffer=chunk,
+                       input=True)
+    frames=[]
+    for i in range(0, int(fs/chunk*seconds)):
+        data = stream.read(chunk)
+        frames.append(data)
+    stream.stop_stream()
+    stream.close()
+    port.terminate()
+    print('Finished Recording Audio')
+    # Save the recorded data as a WAV file
+    wf = wave.open(filename, 'wb')
+    wf.setnchannels(channels)
+    wf.setsampwidth(port.get_sample_size(sample_format))
+    wf.setframerate(fs)
+    wf.writeframes(b''.join(frames))
+    wf.close()
+
+def audio2Text():
+    print("Audio to Text")
+    fin = wave.open(filename, 'rb')
+    frames = fin.readframes(fin.getnframes())
+    audio = np.frombuffer(frames, np.int16)
+    text = model.stt(audio)
+    print(text)
+    return text
+
 playAudio('Hello! @@@@@@@@@@@')
-text = getAudio()
+recordAudio()
+text = audio2Text()
 playAudio("your audio")
 playAudio(text)
