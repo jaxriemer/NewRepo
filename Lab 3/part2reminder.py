@@ -217,7 +217,7 @@ if __name__ == "__main__":
 
     #for test
     reminder.tasks = ['wash dishes','take trash out']
-    commands = ["add task go for a run", 'read tasks' , 'remove task number three', 'remove task go for a run' ]
+    commands = ["add task go for a run", 'read tasks' , 'remove task number three', 'read tasks','remove task go for a run' ,'read tasks']
     index = 0
     while True:
         playAudio('How can I help you?')
