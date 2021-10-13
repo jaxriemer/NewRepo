@@ -90,9 +90,14 @@ def audio2text2():
     return text
 
 
+class Reminder:
+
+
+
+
 playAudio('Hello!')
 recordAudio()
-
+time.sleep(5)
 text = audio2text2()
 playAudio("your audio")
 playAudio(text)
