@@ -153,9 +153,9 @@ def getInstruction():
                 # remove task
                 pass
 
-while True:
-    if button.is_button_pressed():
-        getInstruction()
+# while True:
+#     if button.is_button_pressed():
+#         getInstruction()
 
 playAudio('Hello! I am your amazing assistant.')
 recordAudio()
