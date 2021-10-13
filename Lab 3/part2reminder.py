@@ -221,7 +221,7 @@ if __name__ == "__main__":
     index = 0
     while True:
         playAudio('How can I help you?')
-        getInstruction(index)
+        getInstruction(commands[index])
         index += 1
 
 
