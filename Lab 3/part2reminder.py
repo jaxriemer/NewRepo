@@ -186,7 +186,7 @@ def getInstruction():
     try:
         recordAudio()
         input = audio2text()
-    except:
+    except :
         input = "No response"
 
     # input = commands
