@@ -15,9 +15,11 @@ import wave
 from playsound import playsound
 import speech_recognition as sr
 
+
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
 model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
+
 
 def playAudio(text):
     print('Play Audio')
@@ -91,12 +93,11 @@ def audio2text2():
     return text
 
 
-# class Reminder:
+class Remindder:
 
 
 
-
-playAudio('Hello!')
+playAudio('Hello!'df)
 recordAudio()
 #time.sleep(5)
 text = audio2Text()
