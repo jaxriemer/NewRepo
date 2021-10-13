@@ -12,9 +12,9 @@ from playsound import playsound
 import speech_recognition as sr
 import qwiic_button
 
-# Setup button
-button = qwiic_button.QwiicButton()
-button.begin()
+# # Setup button
+# button = qwiic_button.QwiicButton()
+# button.begin()
 
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
