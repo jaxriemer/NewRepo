@@ -99,9 +99,9 @@ def audio2text2():
 playAudio('Hello!')
 recordAudio()
 #time.sleep(5)
-text = audio2Text()
-playAudio("your audio 1")
-playAudio(text)
+#text = audio2Text()
+#playAudio("your audio 1")
+#playAudio(text)
 
 text2 = audio2text2()
 playAudio("your audio 2")
