@@ -215,7 +215,7 @@ def getInstruction(commands):
 
 if __name__ == "__main__":
     reminder = Reminder()
-    playAudio('Hello! I am your amazing assistant.')
+    playAudio('Hello!')
 
     #for test
     reminder.tasks = ['wash dishes','take trash out']
