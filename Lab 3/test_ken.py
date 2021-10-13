@@ -13,6 +13,8 @@ import numpy as np
 import time
 import wave
 from playsound import playsound
+import speech_recognition as sr
+
 
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
@@ -34,7 +36,6 @@ channels = 1
 fs = 44100  # Record at 44100 samples per second
 seconds = 3
 filename = "output.wav"
-
 
 def recordAudio():
     port = pyaudio.PyAudio()
@@ -61,23 +62,78 @@ def recordAudio():
     wf.writeframes(b''.join(frames))
     wf.close()
 
-
-rec = KaldiRecognizer(model, wf.getframerate(), "weather [unk]")
-
-
 def audio2Text():
     print("Audio to Text")
-    playsound(filename)
+    #playsound(filename)
     fin = wave.open(filename, 'rb')
     frames = fin.readframes(fin.getnframes())
     audio = np.frombuffer(frames, np.int16)
+    fin.close()
     text = model.stt(audio)
     print(text)
     return text
 
+r = sr.Recognizer()
+def audio2text2():
+    print("Audio to Text")
+    sound = sr.AudioFile(filename)
+    #playsound(filename)
+    with sound as source:
+        audio = r.record(source)
+    text = ''
+    try:
+        s = r.recognize_google(audio)
+        print("Text: " + s)
+        text = s
+    except Exception as e:
+        print("Exception: " + str(e))
+
+    return text
+
+class reminder:
+    tasks = []
+    def __init__(self):
+        self.tasks = []
+
+    def addTask(self, task):
+        self.tasks.append(task)
+
+    def getAllTasks(self):
+        return self.tasks
+
+    def removeTask(self, task):
+        self.tasks.remove(task)
+
+    # push button
+
+    # add task
+    # read tasks
+
+    def read_tasks(self):
+        read_all_task = ""
+        num = 0
+
+        for i in self.task:
+            num = num + 1
+            read_all_task = read_all_task + num + " " + i + " "
+        playAudio(read_all_task)
+
+    def remove_task_number(self, input):
+
+
+
+
+
+
+reminder = reminder()
+
 playAudio('Hello!')
 recordAudio()
+#time.sleep(5)
+#text = audio2Text()
+#playAudio("your audio 1")
+#playAudio(text)
 
-text = audio2Text()
-playAudio("your audio")
-playAudio(text)
+text2 = audio2text2()
+playAudio("your audio 2")
+playAudio(text2)

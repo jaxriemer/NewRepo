@@ -16,6 +16,7 @@ import qwiic_button
 button = qwiic_button.QwiicButton()
 button.begin()
 
+
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
 model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
@@ -29,7 +30,6 @@ def playAudio(text):
     mp3.seek(0)
     audio = AudioSegment.from_file(mp3, format='mp3')
     play(audio)
-
 
 chunk = 1024  # Record in chunks of 1024 samples
 sample_format = pyaudio.paInt16  # 16 bits per sample
@@ -91,7 +91,6 @@ def audio2text():
 
     return text
 
-
 class reminder:
     tasks = []
     def __init__(self):
@@ -110,21 +109,21 @@ class reminder:
 # add task
 # read tasks
 # remove task number xx
-
-def getInstruction():
-    recordAudio()
-    input = audio2text()
-    if "task" in input:
-        if "add" in input:
-            # add task
-        elif "read" in input:
-            # read tasks
-        elif "remove" in input:
-            # remove task
-
-while True:
-    if button.is_button_pressed():
-        #
+#
+# def getInstruction():
+#     recordAudio()
+#     input = audio2text()
+#     if "task" in input:
+#         if "add" in input:
+#             # add task
+#         elif "read" in input:
+#             # read tasks
+#         elif "remove" in input:
+#             # remove task
+#
+# while True:
+#     if button.is_button_pressed():
+#         #
 
 reminder = reminder()
 
