@@ -1,10 +1,10 @@
-# import deepspeech
+import deepspeech
 import numpy as np
 import queue, os, os.path
 import pyaudio
 import board
 import adafruit_apds9960.apds9960
-import adafruit_mpr121
+# import adafruit_mpr121
 import busio
 import random
 
