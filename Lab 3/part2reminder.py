@@ -117,7 +117,7 @@ class Reminder(object):
         self.tasks.remove(task)
 
 # create a new reminder
-reminder = reminder()
+reminder = Reminder()
 
 def word2Number(text):
     numbers = ["zero", "one", "two", "three", "four", "five", "six",
@@ -141,7 +141,7 @@ def add_task(input):
     reminder.addTask(input)
 
     # for test:
-    playAudio('Okay! %s is removed' % input)
+    playAudio('Okay! %s is added' % input)
 
 
 # read tasks
@@ -181,6 +181,12 @@ def remove_task(input):
 def getInstruction():
     recordAudio()
     input = audio2text()
+
+    #for test
+    playAudio('You said')
+    playAudio(input)
+
+
     if "task" in input:
         if "add" in input:
             add_task(input)
@@ -190,26 +196,29 @@ def getInstruction():
             if "number" in input:
                 remove_task_number(input)
             else:
-                # remove task
-                pass
+                remove_task(input)
+
 
 # while True:
 #     if button.is_button_pressed():
 #         getInstruction()
 
-playAudio('Hello! I am your amazing assistant.')
-recordAudio()
-#time.sleep(5)
-#text = audio2Text()
-#playAudio("your audio 1")
-#playAudio(text)
-
-text2 = audio2text()
-playAudio("your recording")
-playAudio(text2)
+# playAudio('Hello! I am your amazing assistant.')
+# recordAudio()
+# text2 = audio2text()
+# playAudio("your recording")
+# playAudio(text2)
 
 if __name__ == "__main__":
     reminder = Reminder()
-    getInstruction()
+    playAudio('Hello! I am your amazing assistant.')
+
+
+    #for test
+    reminder.tasks['wash dishes','take trash out']
+
+    while True:
+        playAudio('How can I help you?')
+        getInstruction()
 
 
