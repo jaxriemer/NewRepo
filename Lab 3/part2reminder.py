@@ -147,7 +147,7 @@ def add_task(input):
 # read tasks
 def read_tasks():
     read_all_task = ""
-    num = 1
+    num = 0
     task = reminder.getAllTasks()
     for i in task:
         num = num + 1
@@ -183,7 +183,7 @@ def getInstruction():
     # recordAudio()
     # input = audio2text()
 
-    input = ("read task")
+    input = ("add task go for a run")
 
     #for test
     playAudio('You said')
