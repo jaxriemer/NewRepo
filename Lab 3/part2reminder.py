@@ -100,7 +100,6 @@ class reminder:
         self.tasks.append(task)
 
 
-
 playAudio('Hello!')
 recordAudio()
 #time.sleep(5)

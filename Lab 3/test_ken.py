@@ -1,37 +1,26 @@
-import deepspeech
-import numpy as np
-import queue, os, os.path
-import pyaudio
-import board
-import adafruit_apds9960.apds9960
-# import adafruit_mpr121
-import busio
-import random
-
-from sys import byteorder
-from array import array
-import time
 import gtts
+import sys
+import os
 from pydub import AudioSegment
 from pydub.playback import play
 from io import BytesIO
-from pydub.utils import which, mediainfo
 
+from deepspeech import Model
+import pyaudio
+from sys import byteorder
+import array
+import numpy as np
+import time
+import wave
+from playsound import playsound
 
-# Make DeepSpeech Model
-model = deepspeech.Model('deepspeech-0.9.3-models.tflite')
+# DeepSpeech Model
+model = Model('deepspeech-0.9.3-models.tflite')
 model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
 
-# i2c = busio.I2C(board.SCL, board.SDA)
-# mpr121 = adafruit_mpr121.MPR121(i2c)
-#
-# sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
-# sensor.enable_gesture = True
-# sensor.enable_proximity = True
-# # sensor.rotation = 270 # 270 for CLUE
-# THRESHOLD = 850
-
 def playAudio(text):
+    print('Play Audio')
+    print(text)
     tts = gtts.gTTS(text, lang='en')
     mp3 = BytesIO()
     tts.write_to_fp(mp3)
@@ -39,8 +28,56 @@ def playAudio(text):
     audio = AudioSegment.from_file(mp3, format='mp3')
     play(audio)
 
-if __name__ == "__main__":
-    playAudio("Hello, finally working now.")
+chunk = 1024  # Record in chunks of 1024 samples
+sample_format = pyaudio.paInt16  # 16 bits per sample
+channels = 1
+fs = 44100  # Record at 44100 samples per second
+seconds = 3
+filename = "output.wav"
 
 
+def recordAudio():
+    port = pyaudio.PyAudio()
+    print('Recording Audio')
+    stream = port.open(format=sample_format,
+                       channels=channels,
+                       rate=fs,
+                       frames_per_buffer=chunk,
+                       input=True)
+    frames=[]
 
+    for i in range(0, int(fs/chunk*seconds)):
+        data = stream.read(chunk)
+        frames.append(data)
+    stream.stop_stream()
+    stream.close()
+    port.terminate()
+    print('Finished Recording Audio')
+    # Save the recorded data as a WAV file
+    wf = wave.open(filename, 'wb')
+    wf.setnchannels(channels)
+    wf.setsampwidth(port.get_sample_size(sample_format))
+    wf.setframerate(fs)
+    wf.writeframes(b''.join(frames))
+    wf.close()
+
+
+rec = KaldiRecognizer(model, wf.getframerate(), "weather [unk]")
+
+
+def audio2Text():
+    print("Audio to Text")
+    playsound(filename)
+    fin = wave.open(filename, 'rb')
+    frames = fin.readframes(fin.getnframes())
+    audio = np.frombuffer(frames, np.int16)
+    text = model.stt(audio)
+    print(text)
+    return text
+
+playAudio('Hello!')
+recordAudio()
+
+text = audio2Text()
+playAudio("your audio")
+playAudio(text)
