@@ -101,14 +101,38 @@ class reminder:
     def getAllTasks(self):
         return self.tasks
 
-    def removeTask(self, i):
+    def existTaskNumber(self, i):
+        if i < 0 or i > len(self.tasks):
+            return False
+        else:
+            return True
+
+    def removeTaskNumber(self, i):
         del self.tasks[i]
 
+    def existTask(self, task):
+        return task in self.tasks
 
+    def removeTask(self, task):
+        self.tasks.remove(task)
+
+# create a new reminder
 reminder = reminder()
-# push button
-# add task
 
+def word2Number(text):
+    numbers = ["zero", "one", "two", "three", "four", "five", "six",
+             "seven", "eight", "nine", "ten", "eleven", "twelve",
+             "thirteen", "fourteen", "fifteen", "sixteen", "seventeen",
+             "eighteen", "nineteen"]
+    tokens = text.split(" ")
+    results = []
+    for word in tokens:
+        if word in numbers:
+            i = numbers.index(word)
+            results.append(i)
+    return results
+
+# add task
 def add_task(input):
     input = input.strip('add')
     input = input.strip('task')
@@ -125,11 +149,24 @@ def read_tasks():
         read_all_task = read_all_task + num + " " + i + ". "
     playAudio(read_all_task)
 
-# remove task xx
+# remove task number xx
 def remove_task_number(input):
     input = input.strip('remove')
     input = input.strip('task')
     input = input.strip('number')
+    input = input.strip()
+    numbers = word2Number(input)
+    for i in numbers:
+        if reminder.existTaskNumber(i-1):
+            reminder.removeTaskNumber(i-1)
+
+# remove task xx
+def remove_task(input):
+    input = input.strip('remove')
+    input = input.strip('task')
+    input = input.strip()
+    if reminder.existTask(input):
+        reminder.removeTask(input)
 
 def getInstruction():
     recordAudio()
