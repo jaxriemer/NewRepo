@@ -215,7 +215,7 @@ if __name__ == "__main__":
 
 
     #for test
-    reminder.tasks['wash dishes','take trash out']
+    reminder.tasks = ['wash dishes','take trash out']
 
     while True:
         playAudio('How can I help you?')
