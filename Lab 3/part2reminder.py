@@ -104,38 +104,48 @@ class reminder:
     def removeTask(self, i):
         del self.tasks[i]
 
+reminder = reminder()
 # push button
 # add task
 # read tasks
-# remove task number xx
-#
-# def getInstruction():
-#     recordAudio()
-#     input = audio2text()
-#     if "task" in input:
-#         if "add" in input:
-#             # add task
-#         elif "read" in input:
-#             # read tasks
-#         elif "remove" in input:
-#             # remove task
-#
-# while True:
-#     if button.is_button_pressed():
-#         #
-
-def read_tasks(self):
+def read_tasks():
     read_all_task = ""
-    num = 0
-
-    for i in self.task:
+    num = 1
+    task = reminder.getAllTasks()
+    for i in task:
         num = num + 1
-        read_all_task = read_all_task + num + " " + i + " "
+        read_all_task = read_all_task + num + " " + i + ". "
     playAudio(read_all_task)
 
-def remove_task_number(self, input):
+# remove task xx
+def remove_task_number(input):
+    input = input.strip('remove')
+    input = input.strip('task')
+    input = input.strip('number')
 
-reminder = reminder()
+
+def getInstruction():
+    recordAudio()
+    input = audio2text()
+    if "task" in input:
+        if "add" in input:
+            # add task
+        elif "read" in input:
+            # read tasks
+        elif "remove" in input:
+            if "number" in input:
+                # remove task number
+            else:
+                # remove task
+
+
+while True:
+    if button.is_button_pressed():
+        getInstruction()
+
+
+
+
 
 playAudio('Hello!')
 recordAudio()
