@@ -187,7 +187,8 @@ def getInstruction():
 
     #for test
     playAudio('You said')
-    playAudio(input)
+    # playAudio(input)
+    playAudio(val)
 
 
     if "task" in input:
