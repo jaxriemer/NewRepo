@@ -135,14 +135,11 @@ def word2Number(text):
 # add task
 
 def add_task(input):
-    input = input.strip('add')
-    input = input.strip('task')
-    input = input.strip()
+    input = input.replace('add task','')
     reminder.addTask(input)
 
     # for test:
     playAudio('Okay! %s is added' % input)
-
 
 # read tasks
 def read_tasks():
@@ -156,14 +153,19 @@ def read_tasks():
 
 # remove task number xx
 def remove_task_number(input):
-    input = input.strip('remove')
-    input = input.strip('task')
-    input = input.strip('number')
+    input = input.replace('remove task number','')
     input = input.strip()
     numbers = word2Number(input)
     for i in numbers:
         if reminder.existTaskNumber(i-1):
             reminder.removeTaskNumber(i-1)
+        print(i)
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
+    playAudio('Okay! %s is removed' % input)
 
 # remove task xx
 def remove_task(input):
