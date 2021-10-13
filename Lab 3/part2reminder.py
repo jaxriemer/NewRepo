@@ -68,6 +68,7 @@ def audio2Text():
     fin = wave.open(filename, 'rb')
     frames = fin.readframes(fin.getnframes())
     audio = np.frombuffer(frames, np.int16)
+    fin.close()
     text = model.stt(audio)
     print(text)
     return text
@@ -95,9 +96,9 @@ def audio2text2():
 
 
 
-playAudio('Hello!')
-recordAudio()
-time.sleep(5)
+#playAudio('Hello!')
+#recordAudio()
+#time.sleep(5)
 text = audio2text2()
 playAudio("your audio")
 playAudio(text)
