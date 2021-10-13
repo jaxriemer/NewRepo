@@ -178,12 +178,12 @@ def remove_task(input):
     task_removed = Reminder.tasks[task_num-1]
     playAudio('Got it! %s removed' % (task_removed))
 
-def getInstruction():
+def getInstruction(commands):
     # for test
     # recordAudio()
     # input = audio2text()
 
-    input = ("add task go for a run")
+    input = commands
 
     #for test
     playAudio('You said')
@@ -217,9 +217,11 @@ if __name__ == "__main__":
 
     #for test
     reminder.tasks = ['wash dishes','take trash out']
-
+    commands = ["add task go for a run", 'read tasks' , 'remove task number three', 'remove task go for a run' ]
+    index = 0
     while True:
         playAudio('How can I help you?')
-        getInstruction()
+        getInstruction(index)
+        index += 1
 
 
