@@ -45,6 +45,7 @@ def recordAudio():
                        frames_per_buffer=chunk,
                        input=True)
     frames=[]
+
     for i in range(0, int(fs/chunk*seconds)):
         data = stream.read(chunk)
         frames.append(data)
@@ -70,7 +71,7 @@ def audio2Text():
     print(text)
     return text
 
-playAudio('Hello! hehehehehehehe')
+playAudio('Hello!')
 recordAudio()
 
 text = audio2Text()

@@ -29,8 +29,7 @@ model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
 # sensor.enable_gesture = True
 # sensor.enable_proximity = True
 # # sensor.rotation = 270 # 270 for CLUE
-
-THRESHOLD = 850
+# THRESHOLD = 850
 
 def playAudio(text):
     tts = gtts.gTTS(text, lang='en')
@@ -42,4 +41,6 @@ def playAudio(text):
 
 if __name__ == "__main__":
     playAudio("Hello, finally working now.")
+
+
 
