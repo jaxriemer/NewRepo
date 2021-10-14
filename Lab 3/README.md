@@ -156,7 +156,7 @@ There are two ways to activate the reminder. 1) A button can be placed near the 
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
-\*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+\*\***When acting out, we found that both parties (the user of the device and the device) tend to speak in a more natural way that we tend to speak in our daily lives. We imagined the prompt to be more rigid, from a pre-set dictionaries, but it turned out that actors tended to use longer phrases and sentences when the user promoting the device to take a reminder or when the device responding the user.**\*\*
 
 [![Acting Out Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_ActOutInteraction_cover.jpg)](https://drive.google.com/file/d/1b0r1y6c9nH7dRVJZ6TsWFIV_4rgvH9ON/view?usp=sharing)
 
@@ -190,7 +190,8 @@ The system should:
 * require participants to speak to it. 
 
 **
-
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Part2Diagram2.png)
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Part2Diagram.jpg)
 The system consists of two parts: When the user is inside the house and when the user is about to leave:
 1. Inside the house: Prompts users can trigger the device are: "Add task", "Remove task", "Read Task" and "Bye". When "Add task" is said, the device will record the task that the user chooses to add and append to the list of tasks. When "Remove task" is triggered, the device will first read the list of the tasks, and each task will come with a number at the beginning. Users can delete a task by either indicating the number of the task or directly telling the device the name of the task. "Read task" command will have the device read out all the tasks in the list, and "Bye" is used to terminate the reminder functionality.
 
