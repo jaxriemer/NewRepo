@@ -146,11 +146,6 @@ def remove_task_number(input):
     for i in numbers:
         if reminder.existTaskNumber(i-1):
             reminder.removeTaskNumber(i-1)
-        print(i)
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     playAudio('Okay! %s is removed' % input)
 
@@ -160,11 +155,7 @@ def remove_task(input):
         reminder.removeTask(input)
 
     playAudio('Got it! %s removed' % (input))
-    print(input)
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+
 
 def getInstruction():
     try:
@@ -202,14 +193,42 @@ def getInstruction():
 
     return True
 
+def home_condition():
+    # home condition: for demo
+    oven = 1
+    light = 1
+    air_conditioner = 0
+    device_on = 0
+
+    playAudio('Before you head out, I can help you manage your home devices')
+    if oven == 1:
+        playAudio('Your oven is on')
+        device_on += 1
+
+    if light == 1:
+        playAudio('Your light is on')
+        device_on += 1
+
+    if device_on > 0:
+        playAudio('Do you need help to turn them off?')
+
+    recordAudio()
+    command = audio2text()
+
+    if command == "yes":
+        playAudio('Okay, they are all off now.')
+    else:
+        playAudio('Okay, no problem.')
+
+
 if __name__ == "__main__":
     reminder = Reminder()
     playAudio('Hello! I am your amazing assistant')
+    home_condition()
 
     # default tasks for test purposes
-    reminder.tasks = ['wash dishes','take trash out']
-    commands = ["remove task take trash out" ,'read tasks']
-    index = 0
+    reminder.tasks = ['bring birthday present with you','take trash out']
+
     while True:
         playAudio('How can I help you?')
         res = getInstruction()
