@@ -191,8 +191,11 @@ The system should:
 
 **
 ![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Part2Diagram2.png)
+
 ![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Part2Diagram.jpg)
+
 The system consists of two parts: When the user is inside the house and when the user is about to leave:
+
 1. Inside the house: Prompts users can trigger the device are: "Add task", "Remove task", "Read Task" and "Bye". When "Add task" is said, the device will record the task that the user chooses to add and append to the list of tasks. When "Remove task" is triggered, the device will first read the list of the tasks, and each task will come with a number at the beginning. Users can delete a task by either indicating the number of the task or directly telling the device the name of the task. "Read task" command will have the device read out all the tasks in the list, and "Bye" is used to terminate the reminder functionality.
 
 2. When the user is about to leave the house and puts his hand on the door handle (here we choose to use the touch sensor in the interaction), the device will be triggered to remind the user of the tasks in the list that he needs to do. 
@@ -201,6 +204,8 @@ The system consists of two parts: When the user is inside the house and when the
 **
 
 *Include videos or screencaptures of both the system and the controller.*
+
+[![Acting Out Video 2](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Part2Video_cover.jpg)](https://drive.google.com/file/d/1sk2_QIOqMpsP9k2jbFFu4aLGT57ZwPtZ/view?usp=sharing)
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
