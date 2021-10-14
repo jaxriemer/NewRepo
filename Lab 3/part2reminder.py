@@ -190,7 +190,6 @@ def getInstruction():
             playAudio("You said")
             playAudio(input)
             playAudio("But I have no idea")
-
     return True
 
 def home_condition():
@@ -224,7 +223,6 @@ def home_condition():
 if __name__ == "__main__":
     reminder = Reminder()
     playAudio('Hello! I am your amazing assistant')
-    home_condition()
 
     # default tasks for test purposes
     reminder.tasks = ['bring birthday present with you','take trash out']
@@ -243,6 +241,7 @@ if __name__ == "__main__":
         touched = mpr121.touched_pins
     playAudio("Do not forget the following tasks before you leave.")
     read_tasks()
+    home_condition()
     playAudio("Have a nice day. See you later.")
     mpr121.reset()
 
