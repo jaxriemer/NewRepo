@@ -156,7 +156,7 @@ There are two ways to activate the reminder. 1) A button can be placed near the 
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
-\*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
+\*\***When acting out, we found that both parties (the user of the device and the device) tend to speak in a more natural way that we tend to speak in our daily lives. We imagined the prompt to be more rigid, from a pre-set dictionaries, but it turned out that actors tended to use longer phrases and sentences when the user promoting the device to take a reminder or when the device responding the user.**\*\*
 
 [![Acting Out Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_ActOutInteraction_cover.jpg)](https://drive.google.com/file/d/1b0r1y6c9nH7dRVJZ6TsWFIV_4rgvH9ON/view?usp=sharing)
 
