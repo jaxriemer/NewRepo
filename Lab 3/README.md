@@ -172,7 +172,14 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 ## Prep for Part 2
 
 1. What are concrete things that could use improvement in the design of your device? For example: wording, timing, anticipation of misunderstandings...
+
+- During the act out in the previous section, we found that we are used to speak in a more natural way which can be relatively harder for the device to parse and receive accurate information. Therefore we decided to improve the wording of the prompts users give to avoid confusion
+- We also got feedback mentioning that the content of what we planned in the previous part is too much and a bit messy, as we also thought about the device turning gas and light off when a user is leaving the house while having the reminder functionality. So we chose to keep only the reminder feature but adding the ability for users to remove and read the tasks in the list.  
+
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+
+- We added a touch sensor that simulates the action of opening a door. The sensor is supposed to be installed on the door handle that will be triggered once touched. When the sensor is triggered, the device will then remind the user the tasks to do before the user leaves the house.
+
 3. Make a new storyboard, diagram and/or script based on these reflections.
 
 ## Prototype your system
@@ -182,7 +189,15 @@ The system should:
 * use one or more sensors
 * require participants to speak to it. 
 
-*Document how the system works*
+**
+
+The system consists of two parts: When the user is inside the house and when the user is about to leave:
+1. Inside the house: Prompts users can trigger the device are: "Add task", "Remove task", "Read Task" and "Bye". When "Add task" is said, the device will record the task that the user chooses to add and append to the list of tasks. When "Remove task" is triggered, the device will first read the list of the tasks, and each task will come with a number at the beginning. Users can delete a task by either indicating the number of the task or directly telling the device the name of the task. "Read task" command will have the device read out all the tasks in the list, and "Bye" is used to terminate the reminder functionality.
+
+2. When the user is about to leave the house and puts his hand on the door handle (here we choose to use the touch sensor in the interaction), the device will be triggered to remind the user of the tasks in the list that he needs to do. 
+    
+ 
+**
 
 *Include videos or screencaptures of both the system and the controller.*
 
@@ -192,7 +207,13 @@ Try to get at least two people to interact with your system. (Ideally, you would
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+\*\*
+
+- First, we need to look at what is printed on the terminal to figure out when is the best time for us to say the prompt. It happened several times when we start speaking before the device actually started to record and only part of the prompt was received by the device. After adding prompts to indicate whether the device gets what users say, it is easier to figure the failure out, but this is not the ultimate solution.
+- The device sometimes hears totally different prompts from the ones we actually say. So we tried to speak slowly and to speak word by word. But this is not the natural way a user should talk.
+- If the above problems can be solved, the functions we wrote to add/remove/read tasks work well and the whole process has a nice flow.
+
+\*\*
 
 ### What worked well about the controller and what didn't?
 
@@ -205,5 +226,11 @@ Answer the following:
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
+\*\*
+
+We can also make use of the screen and the joycon when it comes to the removal of tasks. Currently what when the prompt of removing a task is triggered, the device will read the tasks in the list out with a number for each task. Then the user needs to either tell the device the name of the task or the number of the task. 
+
+If all the tasks are printed on the screen with an option to choose, users can also choose the task they want to delete with the joycon, and confirm the deletion by pressing on the joycon.
+
+\*\*
 
