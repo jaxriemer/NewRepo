@@ -238,9 +238,10 @@ if __name__ == "__main__":
     # wait until any is touched
     while True not in touched:
         touched = mpr121.touched_pins
-    playAudio("Do not forget the following tasks before you leave.")
-    read_tasks()
+
     home_condition()
+    playAudio("Also, do not forget the following tasks before you leave.")
+    read_tasks()
     playAudio("Have a nice day. See you later.")
     mpr121.reset()
 
