@@ -225,7 +225,7 @@ if __name__ == "__main__":
     playAudio('Hello! I am your amazing assistant')
 
     # default tasks for test purposes
-    reminder.tasks = ['bring birthday present with you','take trash out','Buy steak']
+    reminder.tasks = ['bring birthday present with you','take trash out']
 
     while True:
         playAudio('How can I help you?')
