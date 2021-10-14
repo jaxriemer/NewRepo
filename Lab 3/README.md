@@ -190,7 +190,8 @@ The system should:
 * require participants to speak to it. 
 
 **
-
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Part2Diagram2.png)
+![plot](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%203/Lab3_Part2Diagram.jpg)
 The system consists of two parts: When the user is inside the house and when the user is about to leave:
 1. Inside the house: Prompts users can trigger the device are: "Add task", "Remove task", "Read Task" and "Bye". When "Add task" is said, the device will record the task that the user chooses to add and append to the list of tasks. When "Remove task" is triggered, the device will first read the list of the tasks, and each task will come with a number at the beginning. Users can delete a task by either indicating the number of the task or directly telling the device the name of the task. "Read task" command will have the device read out all the tasks in the list, and "Bye" is used to terminate the reminder functionality.
 
