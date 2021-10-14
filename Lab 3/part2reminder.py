@@ -242,7 +242,7 @@ if __name__ == "__main__":
     home_condition()
     playAudio("Also, do not forget the following tasks before you leave.")
     read_tasks()
-    playAudio("Have a nice day. See you later.")
+    playAudio("Wear a mask and stay safe.Have a nice day. See you later.")
     mpr121.reset()
 
 
