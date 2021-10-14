@@ -12,6 +12,10 @@ from playsound import playsound
 import speech_recognition as sr
 import qwiic_button
 
+import adafruit_mpr121
+import busio
+import board
+
 # # Setup button
 # button = qwiic_button.QwiicButton()
 # button.begin()
@@ -19,6 +23,10 @@ import qwiic_button
 # DeepSpeech Model
 model = Model('deepspeech-0.9.3-models.tflite')
 model.enableExternalScorer('deepspeech-0.9.3-models.scorer')
+
+# Setup MPR121
+i2c = busio.I2C(board.SCL, board.SDA)
+mpr121 = adafruit_mpr121.MPR121(i2c)
 
 def playAudio(text):
     print('Play Audio')
@@ -135,7 +143,7 @@ def word2Number(text):
 # add task
 
 def add_task(input):
-    input = input.replace('add task','')
+    # input = input.replace('add task','')
     reminder.addTask(input)
 
     # for test:
@@ -153,8 +161,8 @@ def read_tasks():
 
 # remove task number xx
 def remove_task_number(input):
-    input = input.replace('remove task number','')
-    input = input.strip()
+    # input = input.replace('remove task number','')
+    # input = input.strip()
     numbers = word2Number(input)
     for i in numbers:
         if reminder.existTaskNumber(i-1):
@@ -169,8 +177,8 @@ def remove_task_number(input):
 
 # remove task xx
 def remove_task(input):
-    input = input.replace('remove task','')
-    input = input.strip()
+    # input = input.replace('remove task','')
+    # input = input.strip()
     if reminder.existTask(input):
         reminder.removeTask(input)
 
@@ -186,7 +194,7 @@ def getInstruction():
     try:
         recordAudio()
         input = audio2text()
-    except :
+    except:
         input = "No response"
 
     # input = commands
@@ -198,18 +206,32 @@ def getInstruction():
 
     if "task" in input:
         if "add" in input:
-            add_task(input)
+            playAudio("What task do you want to add?")
+            recordAudio()
+            task = audio2text()
+            add_task(task)
         elif "read" in input:
             read_tasks()
         elif "remove" in input:
-            if "number" in input:
-                remove_task_number(input)
+            playAudio("Which task do you want to remove? You have")
+            read_tasks()
+            recordAudio()
+            task = audio2text()
+            if "number" in task:
+                remove_task_number(task)
             else:
-                remove_task(input)
+                remove_task(task)
+    elif "bye" in input:
+        return False
     else:
-        playAudio("You said")
-        playAudio(input)
-        playAudio("But I have no idea")
+        if not input:
+            playAudio("I didn't hear anything. Please repeat.")
+        else:
+            playAudio("You said")
+            playAudio(input)
+            playAudio("But I have no idea")
+
+    return True
 
 # while True:
 #     if button.is_button_pressed():
@@ -231,7 +253,19 @@ if __name__ == "__main__":
     index = 0
     while True:
         playAudio('How can I help you?')
-        getInstruction()
+        res = getInstruction()
+        if not res:
+            playAudio('Bye')
+            break
         index += 1
+
+    touched = mpr121.touched_pins
+    while True not in touched:
+        touched = mpr121.touched_pins
+    # task_selected = touched.index(True)
+    playAudio("Do not forget the following tasks before you leave.")
+    read_tasks()
+    playAudio("Have a nice day. See you later.")
+    mpr121.reset()
 
 
