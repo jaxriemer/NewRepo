@@ -233,7 +233,6 @@ if __name__ == "__main__":
         if not res:
             playAudio('Bye')
             break
-        index += 1
 
     touched = mpr121.touched_pins
     # wait until any is touched
