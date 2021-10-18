@@ -175,9 +175,12 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 **\*\*\*Draw 5 sketches of different ways you might use your sensor, and how the larger device needs to be shaped in order to make the sensor useful.\*\*\***
 
-<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/bomb_game.jpeg"  width="400"/>
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/bomb_game.jpeg"  width="400"/>
 
-Using rotary, the red button and the green button, the users can play a game of triggering the bomb on the device. The rotary allows the user to set the number of how many presses are there in total. Then two players, each controlling one button, can press from 0 to 3 times each round. For each press, the number will decrease by 1. The user who makes the count to 0 loses the game.
+- Using rotary, the red button and the green button, the users can play a game of triggering the bomb on the device. The rotary allows the user to set the number of how many presses are there in total. Then two players, each controlling one button, can press from 0 to 3 times each round. For each press, the number will decrease by 1. The user who makes the count to 0 loses the game.
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game1.jpeg"  width="400"/>
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game2.jpeg"  width="400"/>
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
@@ -229,9 +232,9 @@ Think about how you want to present the information about what your sensor is se
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
 
-![Squid Game](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/SquidGameIdea_1.jpg)
+![Squid Game](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/SquidGameIdea_1.jpg)
 
-![Squid Game](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/SquidGameIdea_2.jpg)
+![Squid Game](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/SquidGameIdea_2.jpg)
 
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
