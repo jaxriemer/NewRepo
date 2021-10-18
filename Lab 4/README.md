@@ -1,6 +1,6 @@
 # Ph-UI!!!
 
-For lab this week, we focus on both on sensing, to bring in new modes of input into your devices, as well as prototyping the physical look and feel of the device. You will think about the physical form the device needs to perform the sensing as well as present the display or feedback about what was sensed. 
+For lab this week, we focus on both on sensing, to bring in new modes of input into your devices, as well as prototyping the physical look and feel of the device. You will think about the physical form the device needs to perform the sensing as well as present the display or feedback about what was sensed.
 
 ## Part 1 Lab Preparation
 
@@ -19,12 +19,12 @@ pi@ixe00:~/Interactive-Lab-Hub $ git push
 
 Option 2: On your your own GitHub repo, [create pull request](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Fall/readings/Submitting%20Labs.md) to get updates from the class Interactive-Lab-Hub. After you have latest updates online, go on your Pi, `cd` to your `Interactive-Lab-Hub` and use `git pull` to get updates from your own GitHub repo.
 
-### Start brasinstorming ideas by reading: 
+### Start brasinstorming ideas by reading:
 * [What do prototypes prototype?](https://www.semanticscholar.org/paper/What-do-Prototypes-Prototype-Houde-Hill/30bc6125fab9d9b2d5854223aeea7900a218f149)
-* [Paper prototyping](https://www.uxpin.com/studio/blog/paper-prototyping-the-practical-beginners-guide/) is used by UX designers to quickly develop interface ideas and run them by people before any programming occurs. 
-* [Cardboard prototypes](https://www.youtube.com/watch?v=k_9Q-KDSb9o) help interactive product designers to work through additional issues, like how big something should be, how it could be carried, where it would sit. 
+* [Paper prototyping](https://www.uxpin.com/studio/blog/paper-prototyping-the-practical-beginners-guide/) is used by UX designers to quickly develop interface ideas and run them by people before any programming occurs.
+* [Cardboard prototypes](https://www.youtube.com/watch?v=k_9Q-KDSb9o) help interactive product designers to work through additional issues, like how big something should be, how it could be carried, where it would sit.
 * [Tips to Cut, Fold, Mold and Papier-Mache Cardboard](https://makezine.com/2016/04/21/working-with-cardboard-tips-cut-fold-mold-papier-mache/) from Make Magazine.
-* [Surprisingly complicated forms](https://www.pinterest.com/pin/50032245843343100/) can be built with paper, cardstock or cardboard.  The most advanced and challenging prototypes to prototype with paper are [cardboard mechanisms](https://www.pinterest.com/helgangchin/paper-mechanisms/) which move and change. 
+* [Surprisingly complicated forms](https://www.pinterest.com/pin/50032245843343100/) can be built with paper, cardstock or cardboard.  The most advanced and challenging prototypes to prototype with paper are [cardboard mechanisms](https://www.pinterest.com/helgangchin/paper-mechanisms/) which move and change.
 * [Dyson Vacuum Cardboard Prototypes](http://media.dyson.com/downloads/JDF/JDF_Prim_poster05.pdf)
 <p align="center"><img src="https://dysonthedesigner.weebly.com/uploads/2/6/3/9/26392736/427342_orig.jpg"  width="200" > </p>
 
@@ -47,7 +47,7 @@ The deliverables for this lab are, writings, sketches, photos, and videos that s
 
 For submission, the readme.md page for this lab should be edited to include the work you have done:
 * Upload any materials that explain what you did, into your lab 4 repository, and link them in your lab 4 readme.md.
-* Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md. 
+* Link your Lab 4 readme.md in your main Interactive-Lab-Hub readme.md.
 * Group members can turn in one repository, but make sure your Hub readme.md links to the shared repository.
 * Labs are due on Mondays, make sure to submit your Lab 4 readme.md to Canvas.
 
@@ -56,7 +56,7 @@ For submission, the readme.md page for this lab should be edited to include the 
 
 A) [Capacitive Sensing](#part-a)
 
-B) [OLED screen](#part-b) 
+B) [OLED screen](#part-b)
 
 C) [Paper Display](#part-c)
 
@@ -69,7 +69,7 @@ F) [Record the interaction](#part-f)
 ## The Report (Part 1: A-D, Part 2: E-F)
 
 ### Part A
-### Capacitive Sensing, a.k.a. Human-Twizzler Interaction 
+### Capacitive Sensing, a.k.a. Human-Twizzler Interaction
 
 We want to introduce you to the [capacitive sensor](https://learn.adafruit.com/adafruit-mpr121-gator) in your kit. It's one of the most flexible input devices we are able to provide. At boot, it measures the capacitance on each of the 12 contacts. Whenever that capacitance changes, it considers it a user touch. You can attach any conductive material. In your kit, you have copper tape that will work well, but don't limit yourself! In the example below, we use Twizzlers--you should pick your own objects.
 
@@ -89,7 +89,7 @@ Plug in the capacitive sensor board with the QWIIC connector. Connect your Twizz
 These Twizzlers are connected to pads 6 and 10. When you run the code and touch a Twizzler, the terminal will print out the following
 
 ```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python cap_test.py 
+(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python cap_test.py
 Twizzler 10 touched!
 Twizzler 6 touched!
 ```
@@ -99,7 +99,7 @@ Twizzler 6 touched!
 
 #### Light/Proximity/Gesture sensor (APDS-9960)
 
-We here want you to get to know this awesome sensor [Adafruit APDS-9960](https://www.adafruit.com/product/3595). It is capable of sensing proximity, light (also RGB), and gesture! 
+We here want you to get to know this awesome sensor [Adafruit APDS-9960](https://www.adafruit.com/product/3595). It is capable of sensing proximity, light (also RGB), and gesture!
 
 <img src="https://cdn-shop.adafruit.com/970x728/3595-03.jpg" width=200>
 
@@ -132,7 +132,7 @@ Connect it to your pi with Qwiic connector and try running the example script, i
 (circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 4 $ python encoder_test.py
 ```
 
-You can go to the [Adafruit Learn Page](https://learn.adafruit.com/adafruit-i2c-qt-rotary-encoder/python-circuitpython) to learn more about the sensor! The sensor actually comes with an LED (neo pixel): Can you try lighting it up? 
+You can go to the [Adafruit Learn Page](https://learn.adafruit.com/adafruit-i2c-qt-rotary-encoder/python-circuitpython) to learn more about the sensor! The sensor actually comes with an LED (neo pixel): Can you try lighting it up?
 
 #### Joystick
 
@@ -154,7 +154,7 @@ You can go to the [SparkFun GitHub Page](https://github.com/sparkfun/Qwiic_Joyst
 
 Note: We did not distribute this sensor to you, so if you are interested in playing with it, please come pick it up from the TA!
 
-Earlier we have asked you to play with the proximity sensor, which is able to sense object within a short distance. Here, we offer [Qwiic Multi Distance Sensor](https://www.sparkfun.com/products/17072), which has a field of view of about 25° and is able to detect objects up to 3 meters away! 
+Earlier we have asked you to play with the proximity sensor, which is able to sense object within a short distance. Here, we offer [Qwiic Multi Distance Sensor](https://www.sparkfun.com/products/17072), which has a field of view of about 25° and is able to detect objects up to 3 meters away!
 
 <p float="left">
 <img src="https://cdn.sparkfun.com//assets/parts/1/6/0/3/4/17072-Qwiic_Multi_Distance_Sensor_-_VL53L3CX-01.jpg" height="200" />
@@ -177,14 +177,21 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/bomb_game.jpeg"  width="400"/>
 
-**Idea 1:** Using rotary, the red button and the green button, the users can play a game of triggering the bomb on the device. The rotary allows the user to set the number of how many presses are there in total. Then two players, each controlling one button, can press from 0 to 3 times each round. For each press, the number will decrease by 1. The user who makes the count to 0 loses the game.
-
-<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game1.jpeg"  width="400"/>
-<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game2.jpeg"  width="400"/>
+**Idea 1:** Using rotary encoder, the red button and the green button, the users can play a game of triggering the bomb on the device. The rotary allows the user to set the number of how many presses are there in total. Then two players, each controlling one button, can press from 0 to 3 times each round. For each press, the number will decrease by 1. The user who makes the count to 0 loses the game.
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/SquidGameIdea_0.jpg"  width="400"/>
 
 **Idea 2:** Squid Game's Red Light, Green Light Game. The device is placed on a table and will detect player's movement as he/she moves towards the device from a distance using the distance sensor. A servo is used to control the rotation of the "head". There will also be a controller that allows the game organizer or the VIPs in the Squid Game to manually control the head rotation. Audio will be played through the speaker. More info on [Squid Game](https://en.wikipedia.org/wiki/Squid_Game).
+
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game1.jpeg"  width="400"/>
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game2.jpeg"  width="400"/>
+
+**Idea 3:**
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/Diffuse_or_explode.jpeg"  width="400"/>
+
+Using the 12 Capacitive Touch Sensors, the device will randomly choose an integer between 0 to 11 to be the index of the bomb that will explode. There will be two screens on the device, each will display 6 bombs as the sensors. During each round, the two players will touch one sensor, and the corresponding screen will show whether the bomb chosen is diffused or explodes. Once the "bomb" sensor is touched, the user who touches that sensor loses the game. The red button will restart the game by resetting all the bombs and choosing a new bomb to explode.
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
@@ -219,16 +226,16 @@ It holds a Pi and usb power supply, and provides a front stage on which to put w
 This design can be made by scoring a long strip of corrugated cardboard of width X, with the following measurements:
 
 | Y height of box <br> <sub><sup>- thickness of cardboard</sup></sub> | Z  depth of box <br><sub><sup>- thickness of cardboard</sup></sub> | Y height of box  | Z  depth of box | H height of faceplate <br><sub><sup>* * * * * (don't make this too short) * * * * *</sup></sub>|
-| --- | --- | --- | --- | --- | 
+| --- | --- | --- | --- | --- |
 
-Fold the first flap of the strip so that it sits flush against the back of the face plate, and tape, velcro or hot glue it in place. This will make a H x X interface, with a box of Z x X footprint (which you can adapt to the things you want to put in the box) and a height Y in the back. 
+Fold the first flap of the strip so that it sits flush against the back of the face plate, and tape, velcro or hot glue it in place. This will make a H x X interface, with a box of Z x X footprint (which you can adapt to the things you want to put in the box) and a height Y in the back.
 
 Here is an example:
 
 <img src="https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2020Fall/images/horoscope.png?raw=true"  width="250"/>
 
 Think about how you want to present the information about what your sensor is sensing! Design a paper display for your project that communicates the state of the Pi and a sensor. Ideally you should design it so that you can slide the Pi out to work on the circuit or programming, and then slide it back in and reattach a few wires to be back in operation.
- 
+
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
@@ -289,4 +296,3 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 * "Works like": shows what the device can do
 * "Acts like": shows how a person would interact with the device
-
