@@ -241,10 +241,15 @@ Think about how you want to present the information about what your sensor is se
 
 **\*\*\*Sketch 5 designs for how you would physically position your display and any buttons or knobs needed to interact with it.\*\*\***
 
+![Squid Game 5 designs](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/SquidGameIdea_5Sketches.jpg)
+
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
+
+We would love to physically prototype the rotating mechanism of the head and the clock, because we are not sure if the mechanisms are reliable since they are made of cardboard. We would also prototype the arrangements of the components because we would love to integrate all of them into one design. We will use 3D modeling software to quickly iterate through this. 
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
+In our final design, we decide to integrate all elements we designed (the rotating head, the moving countdown clock, the user controller, and the touching sensor). We arranged them three-dimensionally and created a 3D model of it, as shown in the images below. 
 
 ![Squid Game](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/SquidGameIdea_1.jpg)
 
