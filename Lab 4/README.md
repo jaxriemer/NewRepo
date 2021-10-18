@@ -184,14 +184,17 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 **Idea 2:** Squid Game's Red Light, Green Light Game. The device is placed on a table and will detect player's movement as he/she moves towards the device from a distance using the distance sensor. A servo is used to control the rotation of the "head". There will also be a controller that allows the game organizer or the VIPs in the Squid Game to manually control the head rotation. Audio will be played through the speaker. More info on [Squid Game](https://en.wikipedia.org/wiki/Squid_Game).
 
 
-<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game1.jpeg"  width="400"/>
-<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game2.jpeg"  width="400"/>
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game.jpeg"  width="400"/>
 
 **Idea 3:**
 
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/spaceship_game.jpeg"  width="400"/>
+
+**Idea 4:**
+
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/Diffuse_or_explode.jpeg"  width="400"/>
 
-Using the 12 Capacitive Touch Sensors, the device will randomly choose an integer between 0 to 11 to be the index of the bomb that will explode. There will be two screens on the device, each will display 6 bombs as the sensors. During each round, the two players will touch one sensor, and the corresponding screen will show whether the bomb chosen is diffused or explodes. Once the "bomb" sensor is touched, the user who touches that sensor loses the game. The red button will restart the game by resetting all the bombs and choosing a new bomb to explode.
+**Idea 5:** Using the 12 Capacitive Touch Sensors, the device will randomly choose an integer between 0 to 11 to be the index of the bomb that will explode. There will be two screens on the device, each will display 6 bombs as the sensors. During each round, the two players will touch one sensor, and the corresponding screen will show whether the bomb chosen is diffused or explodes. Once the "bomb" sensor is touched, the user who touches that sensor loses the game. The red button will restart the game by resetting all the bombs and choosing a new bomb to explode.
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
