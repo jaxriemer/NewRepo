@@ -177,14 +177,14 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/bomb_game.jpeg"  width="400"/>
 
-**Idea 1** Using rotary, the red button and the green button, the users can play a game of triggering the bomb on the device. The rotary allows the user to set the number of how many presses are there in total. Then two players, each controlling one button, can press from 0 to 3 times each round. For each press, the number will decrease by 1. The user who makes the count to 0 loses the game.
+**Idea 1:** Using rotary, the red button and the green button, the users can play a game of triggering the bomb on the device. The rotary allows the user to set the number of how many presses are there in total. Then two players, each controlling one button, can press from 0 to 3 times each round. For each press, the number will decrease by 1. The user who makes the count to 0 loses the game.
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game1.jpeg"  width="400"/>
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game2.jpeg"  width="400"/>
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/SquidGameIdea_0.jpg"  width="400"/>
 
-**Idea 2** Squid Game's Red Light, Green Light Game. The device is placed on a table and will detect player's movement as he/she moves towards the device from a distance using the distance sensor. A servo is used to control the rotation of the "head". There will also be a controller that allows the game organizer or the VIPs in the Squid Game to manually control the head rotation. Audio will be played through the speaker. More info on [Squid Game](https://en.wikipedia.org/wiki/Squid_Game).
+**Idea 2:** Squid Game's Red Light, Green Light Game. The device is placed on a table and will detect player's movement as he/she moves towards the device from a distance using the distance sensor. A servo is used to control the rotation of the "head". There will also be a controller that allows the game organizer or the VIPs in the Squid Game to manually control the head rotation. Audio will be played through the speaker. More info on [Squid Game](https://en.wikipedia.org/wiki/Squid_Game).
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
