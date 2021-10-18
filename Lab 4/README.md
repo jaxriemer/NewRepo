@@ -186,11 +186,13 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/closer_game.jpeg"  width="400"/>
 
-**Idea 3:**
+**Idea 3:** “Come closer, so you will or explode” is a multi-player game. At the beginning, one player “the judge” uses the rotary encoder to set the bomb distance (ex. 5 cm). If any player enter the bomb distance, the bomb explodes, and that player loses. There is 5 turns in each game. For example, in a two player game, at first turn, the first player places his or her hand in front of the distance sensor (ex. 50 cm from the distance sensor). The second player must place his or her hand between the distance sensor and the first player’s hand (ex. 30 cm from the distance sensor). This turn ends, and second turn begin. After 5 turns, who’s hand is the closest win. If one player’s hand enter the explosion distance, the bomb is detonate, and that player loses.
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/spaceship_game.jpeg"  width="400"/>
 
-**Idea 4:**
+**Idea 4:** “Space Fighter” is a two-people shooting game. The first player uses the rotary encoder to control the stationary canon. The canon shoots laser constantly. Turing the rotary encoder change the direction of the canon to shoot the fighter plane. Pressing down the rotary encoder to shoot trip laser. If the canon hits the fighter plane, the canon wins.
+
+The second player uses the joystick to control the movement of the fighter plane to dodge the lasers. Pressing down the joystick cause the higher plane to shoot bullet to counter the laser. If the fighter plane survive 2 minutes of the canon laser attack, the fighter plane wins.
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/Diffuse_or_explode.jpeg"  width="400"/>
 
@@ -245,11 +247,11 @@ Think about how you want to present the information about what your sensor is se
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
-We would love to physically prototype the rotating mechanism of the head and the clock, because we are not sure if the mechanisms are reliable since they are made of cardboard. We would also prototype the arrangements of the components because we would love to integrate all of them into one design. We will use 3D modeling software to quickly iterate through this. 
+We would love to physically prototype the rotating mechanism of the head and the clock, because we are not sure if the mechanisms are reliable since they are made of cardboard. We would also prototype the arrangements of the components because we would love to integrate all of them into one design. We will use 3D modeling software to quickly iterate through this.
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
-In our final design, we decide to integrate all elements we designed (the rotating head, the moving countdown clock, the user controller, and the touching sensor). We arranged them three-dimensionally and created a 3D model of it, as shown in the images below. 
+In our final design, we decide to integrate all elements we designed (the rotating head, the moving countdown clock, the user controller, and the touching sensor). We arranged them three-dimensionally and created a 3D model of it, as shown in the images below.
 
 ![Squid Game](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/SquidGameIdea_1.jpg)
 
