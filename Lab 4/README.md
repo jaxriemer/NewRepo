@@ -200,8 +200,11 @@ The second player uses the joystick to control the movement of the fighter plane
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+We wonder how the components could be put together and how the rotation mechanism could be designed in the idea of the Red Light Green Light game. We will need to put the physical sensors together to study possible designs and make a sketch model of the rotation mechanism to see if it could actually work. 
+
 **\*\*\*Pick one of these designs to prototype.\*\*\***
 
+We decided to further study the idea of the Red Light Green Light game because many sensors could be added to this senario and we would love to explore moving mechanisms with servos. This idea allows us to utilize almost all components from the kit. We also love watching the Squid Game. 
 
 ### Part D
 ### Physical considerations for displaying information and housing parts
@@ -259,10 +262,17 @@ In our final design, we decide to integrate all elements we designed (the rotati
 
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
+The device is designed to be placed on a table, with the game organizer sitting behind it controlling it with the rotary encoder and the button. The player would be standing in front of the table at around 4 meters away and gradually moves towards the table. The device is also compact enough to be easily carried around and easily set up at different locations. 
+
 Build a cardbord prototype of your design.
 
 **\*\*\*Document your rough prototype.\*\*\***
 
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/Paper01.jpg"  width="400"/>
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/Paper02.jpg"  width="400"/>
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/Paper03.jpg"  width="400"/>
 
 LAB PART 2
 
