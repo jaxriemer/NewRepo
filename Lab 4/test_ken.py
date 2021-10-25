@@ -22,22 +22,23 @@ def eliminate_player():
 
 def check_movement(sensitivity = 2):
 
-    ToF = qwiic.QwiicVL53L1X()
+    try:
+        ToF = qwiic.QwiicVL53L1X()
+        # check initial distance
+        ToF.start_ranging()						 # Write configuration bytes to initiate measurement
+        time.sleep(.005)
+        init_distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
+        time.sleep(.005)
+        ToF.stop_ranging()
+        prev_distance = init_distance
+        print("Initial Distance(mm): %d" % (init_distance))
 
-    # check initial distance
-    ToF.start_ranging()						 # Write configuration bytes to initiate measurement
-    time.sleep(.005)
-    init_distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
-    time.sleep(.005)
-    ToF.stop_ranging()
-    prev_distance = init_distance
-
-    print("Initial Distance(mm): %d" % (init_distance))
+    except Exception as e:
+        print(e)
 
     while True:
 
         try:
-
             # check distance
             ToF.start_ranging()						 # Write configuration bytes to initiate measurement
             time.sleep(.05)
@@ -55,7 +56,5 @@ def check_movement(sensitivity = 2):
         except Exception as e:
             print(e)
 
-
 if __name__ == "__main__":
-
     check_movement()
