@@ -8,7 +8,6 @@ from io import BytesIO
 def eliminate_player():
 
     text = "Bye"
-
     tts = gtts.gTTS(text, lang='en')
     mp3 = BytesIO()
     tts.write_to_fp(mp3)
@@ -17,6 +16,7 @@ def eliminate_player():
     play(audio)
     gun_sound = AudioSegment.from_wav("gun_sound.wav")
     play(gun_sound)
+
 
 def check_movement(sensitivity = 2):
 
@@ -47,7 +47,7 @@ def check_movement(sensitivity = 2):
             print("Distance(mm): %d" % (current_distance))
 
             if abs(current_distance - prev_distance) > sensitivity:
-                eliminate_player()
+                # eliminate_player()
 
                 print("Movement Distance(mm): %d"%(abs(current_distance - prev_distance)))
                 break
@@ -58,6 +58,6 @@ def check_movement(sensitivity = 2):
             print(e)
 
 if __name__ == "__main__":
-    check_movement(100)
+    check_movement(50)
 
     print("test end")
