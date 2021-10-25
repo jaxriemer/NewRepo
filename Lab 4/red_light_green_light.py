@@ -112,7 +112,7 @@ i2c = busio.I2C(board.SCL, board.SDA)
 mpr121 = adafruit_mpr121.MPR121(i2c)
 
 def eliminate_player():
-    text = "You are eliminated!"
+    text = "Eliminated!"
     tts = gtts.gTTS(text, lang='en')
     mp3 = BytesIO()
     tts.write_to_fp(mp3)
