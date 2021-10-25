@@ -247,6 +247,7 @@ while new_game:
             draw.text((x, 43), "to restart the game.", font=font, fill="#FFFFFF")
             disp.image(image, rotation)
             eliminate_player()
+            break
 
         if True in mpr121.touched_pins:
             continue_game = False
