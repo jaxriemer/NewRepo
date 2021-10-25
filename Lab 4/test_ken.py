@@ -30,8 +30,9 @@ def check_movement(sensitivity = 2):
     init_distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
     time.sleep(.005)
     ToF.stop_ranging()
-
     prev_distance = init_distance
+
+    print("Initial Distance(mm): %d" % (init_distance))
 
     while True:
 
