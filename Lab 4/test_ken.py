@@ -46,8 +46,6 @@ def check_movement(sensitivity = 2):
             time.sleep(.05)
             ToF.stop_ranging()
 
-            print("Current Distance(mm): %d" % (current_distance))
-
             if abs(current_distance - prev_distance) > sensitivity:
                 # eliminate_player()
                 # print("Distance(mm): %d" % (current_distance))
@@ -60,4 +58,4 @@ def check_movement(sensitivity = 2):
             print(e)
 
 if __name__ == "__main__":
-    check_movement(20)
+    check_movement(50)
