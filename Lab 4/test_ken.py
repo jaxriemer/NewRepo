@@ -20,27 +20,41 @@ def eliminate_player():
     play(gun_sound)
 
 
-def check_movement():
+def check_movement(sensitivity):
 
-    # print("VL53L1X Qwiic Test\n")
     ToF = qwiic.QwiicVL53L1X()
-    # if (ToF.sensor_init() == None):					 # Begin returns 0 on a good init
-    #     print("Sensor online!\n")
 
-    prev_distance = None
-    sensivity = 2
+    # set how sensitive is the distance measure
+
+    sensitivity = 10
+
+
+    # check initial distance
+    ToF.start_ranging()						 # Write configuration bytes to initiate measurement
+    time.sleep(.005)
+    init_distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
+    time.sleep(.005)
+    ToF.stop_ranging()
+
+    prev_distance = init_distance
 
     while True:
+
         try:
+
+            # check distance
             ToF.start_ranging()						 # Write configuration bytes to initiate measurement
-            time.sleep(.005)
-            distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
-            time.sleep(.005)
+            time.sleep(.05)
+            current_distance= ToF.get_distance()	 # Get the result of the measurement from the sensor
+            time.sleep(.05)
             ToF.stop_ranging()
 
-            # distance= distance / 25.4/2
+            if abs(current_distance - prev_distance) > sensitivity:
+                eliminate_player()
+                # print("Distance(mm): %d" % (current_distance))
+                print("Movement Distance(mm): %d"%(abs(current_distance - prev_distance)))
 
-            print("Distance(mm): %d" % (distance))
+            prev_distance = current_distance
 
         except Exception as e:
             print(e)
