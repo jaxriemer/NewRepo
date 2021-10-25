@@ -23,8 +23,7 @@ if __name__ == "__main__":
     theme_song = AudioSegment.from_wav("ThemeSong.wav")
     gun_sound = AudioSegment.from_wav("gun_sound.wav")
 
-    combined = gun_sound + theme_song
-
+    combined = gun_sound*10 + theme_song
 
     play(combined)
     # play(simida_sound)
