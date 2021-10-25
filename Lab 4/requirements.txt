@@ -22,3 +22,8 @@ rpi-ws281x==4.2.6
 RPi.GPIO==0.7.0
 spidev==3.5
 sysv-ipc==1.1.0
+
+adafruit-circuitpython-rgb-display==3.10.5
+circuitpython-i2c-button==2.2.1
+Pillow==8.1.1
+webcolors==1.11.1
