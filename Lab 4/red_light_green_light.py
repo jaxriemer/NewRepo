@@ -250,6 +250,7 @@ while new_game:
             break
 
         if True in mpr121.touched_pins:
+            print("Touched!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             continue_game = False
             while not button.is_button_pressed():
                 draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
