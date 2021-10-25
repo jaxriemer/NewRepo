@@ -87,7 +87,7 @@ oled = ssd1306(serial, rotate=2) # rotate=2 is 180 degrees
 #oled.show()
 #image_oled = Image.new("1", (oled.width, oled.height))
 #draw_oled = ImageDraw.Draw(image_oled)
-with canvas(device) as draw:
+with canvas(oled) as draw:
     draw.text((10, 20), "Hello World", fill="white")
 
 # servo
