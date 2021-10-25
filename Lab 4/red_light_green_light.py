@@ -129,6 +129,7 @@ while not button.is_button_pressed():
 
 while new_game:
     # initiate last position of the encoder
+    rotate_head(0)
     last_position = -encoder.position
 
     new_game = False
