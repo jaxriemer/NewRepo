@@ -83,10 +83,12 @@ if (ToF.sensor_init() == None):					 # Begin returns 0 on a good init
 #oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 serial = i2c(port=1, address=0x3C)
 oled = ssd1306(serial, rotate=2) # rotate=2 is 180 degrees
-oled.fill(0)
-oled.show()
-image_oled = Image.new("1", (oled.width, oled.height))
-draw_oled = ImageDraw.Draw(image_oled)
+#oled.fill(0)
+#oled.show()
+#image_oled = Image.new("1", (oled.width, oled.height))
+#draw_oled = ImageDraw.Draw(image_oled)
+with canvas(device) as draw:
+    draw.text((10, 20), "Hello World", fill="white")
 
 # servo
 kit = ServoKit(channels=16)
