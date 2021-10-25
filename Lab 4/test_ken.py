@@ -43,14 +43,12 @@ def check_movement(sensitivity = 2):
             current_distance= ToF.get_distance()	 # Get the result of the measurement from the sensor
             time.sleep(.05)
             ToF.stop_ranging()
-            print("current Distance(mm): %d"%(current_distance))
 
             if abs(current_distance - prev_distance) > sensitivity:
-                pass
-                # eliminate_player()
+                eliminate_player()
                 # print("Distance(mm): %d" % (current_distance))
                 # print("Movement Distance(mm): %d"%(abs(current_distance - prev_distance)))
-                # break
+                break
 
             prev_distance = current_distance
 
@@ -58,4 +56,6 @@ def check_movement(sensitivity = 2):
             print(e)
 
 if __name__ == "__main__":
-    check_movement(50)
+    check_movement(100)
+
+    print("test end")
