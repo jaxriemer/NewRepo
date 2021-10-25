@@ -88,8 +88,7 @@ oled = ssd1306(serial,width=128, height=32, rotate=2) # rotate=2 is 180 degrees
 #image_oled = Image.new("1", (oled.width, oled.height))
 #draw_oled = ImageDraw.Draw(image_oled)
 with canvas(oled) as draw:
-    draw.text((10, 20), "Hello World", fill="white", font=font)
-
+    draw.text((0, 0), "Game starts.", fill="white", font=font)
 # servo
 kit = ServoKit(channels=16)
 servo = kit.servo[0]
@@ -146,10 +145,12 @@ while new_game:
 
     t = 60
 
-    draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
-    draw_oled.text((0, 0), "Game starts.", font=font, fill=255)
-    oled.image(image_oled)
-    oled.show()
+    #draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
+    #draw_oled.text((0, 0), "Game starts.", font=font, fill=255)
+    #oled.image(image_oled)
+    #oled.show()
+    with canvas(oled) as draw:
+        draw.text((0, 0), "Game starts.", fill="white", font=font)
 
     time.sleep(3)
 
