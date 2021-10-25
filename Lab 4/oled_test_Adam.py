@@ -21,7 +21,7 @@ def draw1(xpos, ypos, col=1):
 
 def draw8(xpos,ypos,col=1):
     draw_circle(xpos+4,ypos+4,8,col)
-    draw_circle(xpos + 4, ypos + 7, 6, col)
+    draw_circle(xpos + 4, ypos + 11, 6, col)
 
 # Helper function to draw a circle from a given position with a given radius
 # This is an implementation of the midpoint circle algorithm,
@@ -68,6 +68,6 @@ while True:
 
     draw_circle(center_x,center_y,radius)
     draw1(center_x,center_y)
-    draw8(10, 2)
+    draw8(10, 4)
     # show all the changes we just made
     oled.show()
