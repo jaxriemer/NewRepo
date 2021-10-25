@@ -27,6 +27,7 @@ def check_movement(sensitivity = 2):
         ToF.start_ranging()						 # Write configuration bytes to initiate measurement
         time.sleep(.005)
         init_distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
+        print("Initial Distance 1 (mm): %d" % (init_distance))
         time.sleep(.005)
         ToF.stop_ranging()
 
@@ -36,7 +37,15 @@ def check_movement(sensitivity = 2):
         time.sleep(.005)
         ToF.stop_ranging()
         prev_distance = init_distance
-        print("Initial Distance(mm): %d" % (init_distance))
+        print("Initial Distance 2 (mm): %d" % (init_distance))
+
+        ToF.start_ranging()						 # Write configuration bytes to initiate measurement
+        time.sleep(.005)
+        init_distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
+        time.sleep(.005)
+        ToF.stop_ranging()
+        prev_distance = init_distance
+        print("Initial Distance 3 (mm): %d" % (init_distance))
 
     except Exception as e:
         print(e)
