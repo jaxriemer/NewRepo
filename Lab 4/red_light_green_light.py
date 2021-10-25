@@ -148,7 +148,6 @@ while new_game:
     PlayerMoved = False
     CheckForFail = False
     rotate_head(180)
-    print("head 180")
     sensitivity = 200
 
     while continue_game:
@@ -171,6 +170,10 @@ while new_game:
         draw_oled.text((0,0),timer,font=font,fill=255)
         oled.image(image_oled)
         oled.show()
+
+        if not CheckForFail:
+            girlSound = AudioSegment.from_wav("Simida.wav")
+            play(girlSound)
 
         # Player dead
         if timer == "00:00":
@@ -225,8 +228,6 @@ while new_game:
             print("Position: {}".format(position))
             print("head rotated towards the player")
             rotate_head(0)
-            girlSound = AudioSegment.from_wav("Simida.wav")
-            play(girlSound)
             CheckForFail = True
 
         if (-50 <= position <= 50) and (0 <= last_position <= 50) and (position < last_position) and toward_player:
