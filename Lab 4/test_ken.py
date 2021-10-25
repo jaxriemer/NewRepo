@@ -20,14 +20,9 @@ def eliminate_player():
     play(gun_sound)
 
 
-def check_movement(sensitivity):
+def check_movement(sensitivity = 2):
 
     ToF = qwiic.QwiicVL53L1X()
-
-    # set how sensitive is the distance measure
-
-    sensitivity = 10
-
 
     # check initial distance
     ToF.start_ranging()						 # Write configuration bytes to initiate measurement
