@@ -35,7 +35,6 @@ def rotate_head(degree):
         # Once interrupted, set the servo back to 0 degree position
         servo.angle = 0
         time.sleep(0.5)
-        break
 
 def check_movement(sensitivity = 2):
 
