@@ -20,6 +20,7 @@ def eliminate_player():
 
 def check_movement(sensitivity = 2):
 
+    ToF = qwiic.QwiicVL53L1X()
 
     try:
         # check initial distance
