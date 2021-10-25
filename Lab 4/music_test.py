@@ -18,15 +18,23 @@ def eliminate_player():
 
 if __name__ == "__main__":
 
-    # for i in range(10):
-    #     simida_sound = AudioSegment.from_wav("Simida.wav")
-    #     theme_song = AudioSegment.from_wav("ThemeSong.wav")
-    #     gun_sound = AudioSegment.from_wav("gun_sound.wav")
-    #     play(simida_sound)
-    #     play(theme_song)
-    #     play(gun_sound)
 
-    eliminate_player()
+    simida_sound = AudioSegment.from_wav("Simida.wav")
+    theme_song = AudioSegment.from_wav("ThemeSong.wav")
+    gun_sound = AudioSegment.from_wav("gun_sound.wav")
+
+    combined = gun_sound + theme_song
+
+
+    play(combined)
+    # play(simida_sound)
+    # play(theme_song)
+    # play(gun_sound)
+
+    # eliminate_player()
+
+
+
 
 
 
