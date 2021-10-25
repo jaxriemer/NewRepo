@@ -38,7 +38,7 @@ def check_movement():
             time.sleep(.005)
             ToF.stop_ranging()
 
-            distance= distance / 25.4/2
+            # distance= distance / 25.4/2
 
             print("Distance(mm): %d" % (distance))
 
