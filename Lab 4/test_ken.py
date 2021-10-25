@@ -16,9 +16,7 @@ def eliminate_player():
     audio = AudioSegment.from_file(mp3, format='mp3')
     play(audio)
     gun_sound = AudioSegment.from_wav("gun_sound.wav")
-
     play(gun_sound)
-
 
 def check_movement(sensitivity = 2):
 
@@ -47,7 +45,7 @@ def check_movement(sensitivity = 2):
             ToF.stop_ranging()
 
             if abs(current_distance - prev_distance) > sensitivity:
-                # eliminate_player()
+                eliminate_player()
                 # print("Distance(mm): %d" % (current_distance))
                 print("Movement Distance(mm): %d"%(abs(current_distance - prev_distance)))
                 # break
