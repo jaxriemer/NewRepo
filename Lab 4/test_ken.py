@@ -20,8 +20,15 @@ def eliminate_player():
 
 def check_movement(sensitivity = 2):
 
+
     try:
         # check initial distance
+        ToF.start_ranging()						 # Write configuration bytes to initiate measurement
+        time.sleep(.005)
+        init_distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
+        time.sleep(.005)
+        ToF.stop_ranging()
+
         ToF.start_ranging()						 # Write configuration bytes to initiate measurement
         time.sleep(.005)
         init_distance = ToF.get_distance()	 # Get the result of the measurement from the sensor
