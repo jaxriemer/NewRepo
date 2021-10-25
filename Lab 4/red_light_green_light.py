@@ -17,6 +17,10 @@ import gtts
 from io import BytesIO
 from adafruit_servokit import ServoKit
 
+from luma.core.interface.serial import i2c
+from luma.core.render import canvas
+from luma.oled.device import ssd1306
+
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = dio.DigitalInOut(board.CE0)
 dc_pin = dio.DigitalInOut(board.D25)
@@ -75,8 +79,10 @@ if (ToF.sensor_init() == None):					 # Begin returns 0 on a good init
     print("Sensor online!\n")
 
 # oled
-i2c = busio.I2C(board.SCL, board.SDA)
-oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
+#i2c = busio.I2C(board.SCL, board.SDA)
+#oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
+serial = i2c(port=1, address=0x3C)
+oled = ssd1306(serial, rotate=2) # rotate=2 is 180 degrees
 oled.fill(0)
 oled.show()
 image_oled = Image.new("1", (oled.width, oled.height))
