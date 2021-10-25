@@ -87,8 +87,7 @@ oled = ssd1306(serial,width=128, height=32, rotate=2) # rotate=2 is 180 degrees
 #oled.show()
 #image_oled = Image.new("1", (oled.width, oled.height))
 #draw_oled = ImageDraw.Draw(image_oled)
-with canvas(oled) as draw:
-    draw.text((0, 0), "Game starts.", fill="white", font=font)
+
 # servo
 kit = ServoKit(channels=16)
 servo = kit.servo[0]
@@ -176,10 +175,12 @@ while new_game:
         time.sleep(1)
         t -= 1
 
-        draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
-        draw_oled.text((0,0),timer,font=font,fill=255)
-        oled.image(image_oled)
-        oled.show()
+        #draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
+        #draw_oled.text((0,0),timer,font=font,fill=255)
+        #oled.image(image_oled)
+        #oled.show()
+        with canvas(oled) as draw:
+            draw.text((0, 0), "timer", fill="white", font=font)
 
         if not CheckForFail:
             girlSound = AudioSegment.from_wav("Simida.wav")
@@ -263,10 +264,12 @@ while new_game:
             print("Touched!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             continue_game = False
             while not button.is_button_pressed():
-                draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
-                draw_oled.text((0, 0), "You win.", font=font, fill=255)
-                oled.image(image_oled)
-                oled.show()
+                #draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
+                #draw_oled.text((0, 0), "You win.", font=font, fill=255)
+                #oled.image(image_oled)
+                #oled.show()
+                with canvas(oled) as draw:
+                    draw.text((0, 0), "You win!", fill="white", font=font)
 
                 draw.rectangle((0, 0, width, height), outline=0, fill=0)
                 draw.text((x, top), "The player wins.", font=font, fill="#FFFFFF")
