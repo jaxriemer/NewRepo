@@ -180,7 +180,7 @@ while new_game:
         #oled.image(image_oled)
         #oled.show()
         with canvas(oled) as draw:
-            draw.text((0, 0), "timer", fill="white", font=font)
+            draw.text((0, 0), timer, fill="white", font=font)
 
         if not CheckForFail:
             girlSound = AudioSegment.from_wav("Simida.wav")
