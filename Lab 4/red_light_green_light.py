@@ -135,7 +135,7 @@ while new_game:
     continue_game = True
     toward_player = False
 
-    t = 10
+    t = 60
 
     draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
     draw_oled.text((0, 0), "Game starts.", font=font, fill=255)
@@ -148,6 +148,7 @@ while new_game:
     PlayerMoved = False
     CheckForFail = False
     rotate_head(180)
+    sensitivity = 200
 
     while continue_game:
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
