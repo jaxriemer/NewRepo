@@ -148,6 +148,7 @@ while new_game:
     PlayerMoved = False
     CheckForFail = False
     rotate_head(180)
+    print("head 180")
     sensitivity = 200
 
     while continue_game:
