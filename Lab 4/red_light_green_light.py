@@ -82,7 +82,7 @@ if (ToF.sensor_init() == None):					 # Begin returns 0 on a good init
 #i2c = busio.I2C(board.SCL, board.SDA)
 #oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 serial = i2c(port=1, address=0x3C)
-oled = ssd1306(serial, rotate=2) # rotate=2 is 180 degrees
+oled = ssd1306(serial,width=128, height=32, rotate=2) # rotate=2 is 180 degrees
 #oled.fill(0)
 #oled.show()
 #image_oled = Image.new("1", (oled.width, oled.height))
