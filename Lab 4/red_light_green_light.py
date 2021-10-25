@@ -11,6 +11,11 @@ from adafruit_servokit import ServoKit
 import qwiic_button
 import adafruit_mpr121
 import time
+from pydub import AudioSegment
+from pydub.playback import play
+import gtts
+from io import BytesIO
+from adafruit_servokit import ServoKit
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = dio.DigitalInOut(board.CE0)
@@ -63,7 +68,6 @@ button_held = False
 
 encoder = rotaryio.IncrementalEncoder(seesaw)
 
-
 # distance
 ToF = qwiic.QwiicVL53L1X()
 print("Distance Sensor Test\n")
@@ -72,7 +76,6 @@ if (ToF.sensor_init() == None):					 # Begin returns 0 on a good init
 
 # oled
 i2c = busio.I2C(board.SCL, board.SDA)
-# TODO: check screen size
 oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 oled.fill(0)
 oled.show()
@@ -85,6 +88,15 @@ servo = kit.servo[2]
 # TODO: check servo datasheet
 servo.set_pulse_width_range(500, 2500)
 
+def rotate_head(degree):
+    try:
+        # Set the servo to 180 degree position
+        servo.angle = degree
+    except KeyboardInterrupt:
+        # Once interrupted, set the servo back to 0 degree position
+        servo.angle = 0
+        time.sleep(0.5)
+
 # button
 button = qwiic_button.QwiicButton()
 button.begin()
@@ -92,6 +104,17 @@ button.begin()
 # touch sensor (MPR121)
 i2c = busio.I2C(board.SCL, board.SDA)
 mpr121 = adafruit_mpr121.MPR121(i2c)
+
+def eliminate_player():
+    text = "You are eliminated!"
+    tts = gtts.gTTS(text, lang='en')
+    mp3 = BytesIO()
+    tts.write_to_fp(mp3)
+    mp3.seek(0)
+    audio = AudioSegment.from_file(mp3, format='mp3')
+    play(audio)
+    gun_sound = AudioSegment.from_wav("gun_sound.wav")
+    play(gun_sound)
 
 new_game = False
 
@@ -121,6 +144,11 @@ while new_game:
 
     time.sleep(3)
 
+    distanceCount = 0
+    PlayerMoved = False
+    CheckForFail = False
+    rotate_head(180)
+
     while continue_game:
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
         draw.text((x, top), "Game starts.", font=font, fill="#FFFFFF")
@@ -142,6 +170,7 @@ while new_game:
         oled.image(image_oled)
         oled.show()
 
+        # Player dead
         if timer == "00:00":
             continue_game = False
             while not button.is_button_pressed():
@@ -164,6 +193,26 @@ while new_game:
             time.sleep(5)
             break
 
+        # Distance Sensor
+        try:
+            # check distance
+            ToF.start_ranging()						 # Write configuration bytes to initiate measurement
+            time.sleep(.05)
+            current_distance= ToF.get_distance()	 # Get the result of the measurement from the sensor
+            time.sleep(.05)
+            ToF.stop_ranging()
+            #print("Distance(mm): %d" % (current_distance))
+            if (distanceCount > 5) and (abs(current_distance - prev_distance) > sensitivity):
+                   # eliminate_player()
+                    #print("Movement Distance(mm): %d"%(abs(current_distance - prev_distance)))
+                PlayerMoved = True
+            else:
+                PlayerMoved = False
+            prev_distance = current_distance
+            distanceCount += 1
+        except Exception as e:
+            print(e)
+
         # negate the position to make clockwise rotation positive
         position = -encoder.position
 
@@ -173,6 +222,10 @@ while new_game:
             last_position = position
             print("Position: {}".format(position))
             print("head rotated towards the player")
+            rotate_head(0)
+            girlSound = AudioSegment.from_wav("Simida.wav")
+            play(girlSound)
+            CheckForFail = True
 
         if (-50 <= position <= 50) and (0 <= last_position <= 50) and (position < last_position) and toward_player:
             # TODO: face rotates back (servo)
@@ -180,6 +233,17 @@ while new_game:
             last_position = position
             print("Position: {}".format(position))
             print("head rotated towards the controller")
+            rotate_head(180)
+            CheckForFail = False
+
+        # Player dead
+        if (CheckForFail and PlayerMoved):
+            draw.rectangle((0, 0, width, height), outline=0, fill=0)
+            draw.text((x, top), "You win.", font=font, fill="#FFFFFF")
+            draw.text((x, 25), "Press the red button", font=font, fill="#FFFFFF")
+            draw.text((x, 43), "to restart the game.", font=font, fill="#FFFFFF")
+            disp.image(image, rotation)
+            eliminate_player()
 
         if True in mpr121.touched_pins:
             continue_game = False
