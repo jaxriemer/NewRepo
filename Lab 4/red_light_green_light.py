@@ -84,7 +84,7 @@ draw_oled = ImageDraw.Draw(image_oled)
 
 # servo
 kit = ServoKit(channels=16)
-servo = kit.servo[2]
+servo = kit.servo[0]
 # TODO: check servo datasheet
 servo.set_pulse_width_range(500, 2500)
 
