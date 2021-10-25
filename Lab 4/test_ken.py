@@ -47,7 +47,7 @@ def check_movement(sensitivity = 2):
             print("Distance(mm): %d" % (current_distance))
 
             if abs(current_distance - prev_distance) > sensitivity:
-                eliminate_player()
+                # eliminate_player()
 
                 print("Movement Distance(mm): %d"%(abs(current_distance - prev_distance)))
                 break
