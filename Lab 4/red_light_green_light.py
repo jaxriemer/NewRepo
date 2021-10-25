@@ -157,7 +157,7 @@ while new_game:
     PlayerMoved = False
     CheckForFail = False
     rotate_head(180)
-    sensitivity = 50
+    sensitivity = 200
 
     while continue_game:
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
