@@ -52,6 +52,7 @@ def check_movement(sensitivity = 2):
                 # eliminate_player()
                 # print("Distance(mm): %d" % (current_distance))
                 print("Movement Distance(mm): %d"%(abs(current_distance - prev_distance)))
+                # break
 
             prev_distance = current_distance
 
@@ -59,4 +60,4 @@ def check_movement(sensitivity = 2):
             print(e)
 
 if __name__ == "__main__":
-    check_movement()
+    check_movement(20)
