@@ -5,7 +5,7 @@ from io import BytesIO
 
 def eliminate_player():
 
-    text = "Bye, annyeong"
+    text = "Bye"
     tts = gtts.gTTS(text, lang='en')
     mp3 = BytesIO()
     tts.write_to_fp(mp3)
