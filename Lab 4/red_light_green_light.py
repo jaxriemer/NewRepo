@@ -4,6 +4,13 @@ from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 import digitalio as dio
 import os
+import qwiic
+import busio
+import adafruit_ssd1306
+from adafruit_servokit import ServoKit
+import qwiic_button
+import adafruit_mpr121
+import time
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = dio.DigitalInOut(board.CE0)
@@ -36,7 +43,7 @@ top = padding
 bottom = height - padding
 x = 0
 
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 22)
 
 backlight = dio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -55,32 +62,138 @@ button = digitalio.DigitalIO(seesaw, 24)
 button_held = False
 
 encoder = rotaryio.IncrementalEncoder(seesaw)
-last_position = -encoder.position
 
-toward_player = False
 
-while True:
+# distance
+ToF = qwiic.QwiicVL53L1X()
+print("Distance Sensor Test\n")
+if (ToF.sensor_init() == None):					 # Begin returns 0 on a good init
+    print("Sensor online!\n")
+
+# oled
+i2c = busio.I2C(board.SCL, board.SDA)
+# TODO: check screen size
+oled = adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
+oled.fill(0)
+oled.show()
+image_oled = Image.new("1", (oled.width, oled.height))
+draw_oled = ImageDraw.Draw(image_oled)
+
+# servo
+kit = ServoKit(channels=16)
+servo = kit.servo[2]
+# TODO: check servo datasheet
+servo.set_pulse_width_range(500, 2500)
+
+# button
+button = qwiic_button.QwiicButton()
+button.begin()
+
+# touch sensor (MPR121)
+i2c = busio.I2C(board.SCL, board.SDA)
+mpr121 = adafruit_mpr121.MPR121(i2c)
+
+new_game = False
+
+while not button.is_button_pressed():
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
-    draw.text((x, top), "To start the game,", font=font, fill="#FFFFFF")
-    draw.text((x, 15), "press the red button.", font=font, fill="#FFFFFF")
+    draw.text((x, top), "Press the red button", font=font, fill="#FFFFFF")
+    draw.text((x, 15), "to start the game.", font=font, fill="#FFFFFF")
     disp.image(image, rotation)
 
-    # negate the position to make clockwise rotation positive
-    position = -encoder.position
+    if button.is_button_pressed():
+        new_game = True
 
-    if int(position) > int(last_position) and not toward_player:
-        toward_player = True
-        last_position = position
-        print("Position: {}".format(position))
-        print("head rotated towards the player")
+while new_game:
+    # initiate last position of the encoder
+    last_position = -encoder.position
 
-    if int(position) < int(last_position) and toward_player:
-        toward_player = False
-        last_position = position
-        print("Position: {}".format(position))
-        print("head rotated towards the controller")
+    new_game = False
+    continue_game = True
+    toward_player = False
 
+    t = 10
 
+    draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
+    draw_oled.text((0, 0), "Game starts.", font=font, fill=255)
+    oled.image(image_oled)
+    oled.show()
 
+    time.sleep(3)
 
+    while continue_game:
+        draw.rectangle((0, 0, width, height), outline=0, fill=0)
+        draw.text((x, top), "Game starts.", font=font, fill="#FFFFFF")
 
+        draw.text((x, 25), "Rotate the encoder", font=font, fill="#FFFFFF")
+        draw.text((x, 43), "to control the head.", font=font, fill="#FFFFFF")
+
+        draw.text((x, 70), "Press the red button", font=font, fill="#FFFFFF")
+        draw.text((x, 88), "to restart the game.", font=font, fill="#FFFFFF")
+        disp.image(image, rotation)
+
+        mins, secs = divmod(t, 60)
+        timer = '{:02d}:{:02d}'.format(mins, secs)
+        time.sleep(1)
+        t -= 1
+
+        draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
+        draw_oled.text((0,0),timer,font=font,fill=255)
+        oled.image(image_oled)
+        oled.show()
+
+        if timer == "00:00":
+            continue_game = False
+            while not button.is_button_pressed():
+                draw.rectangle((0, 0, width, height), outline=0, fill=0)
+                draw.text((x, top), "You win.", font=font, fill="#FFFFFF")
+                draw.text((x, 25), "Press the red button", font=font, fill="#FFFFFF")
+                draw.text((x, 43), "to restart the game.", font=font, fill="#FFFFFF")
+                disp.image(image, rotation)
+                if button.is_button_pressed():
+                    new_game = True
+                    break
+
+        if button.is_button_pressed():
+            draw.rectangle((0, 0, width, height), outline=0, fill=0)
+            draw.text((x, top), "Game is about to start.", font=font, fill="#FFFFFF")
+            disp.image(image, rotation)
+
+            new_game = True
+            continue_game = False
+            time.sleep(5)
+            break
+
+        # negate the position to make clockwise rotation positive
+        position = -encoder.position
+
+        # if the controller rotates the encoder so that the face is towards the player
+        if (-50 <= position <= 50) and (0 <= last_position <= 50) and (position > last_position) and (not toward_player):
+            toward_player = True
+            last_position = position
+            print("Position: {}".format(position))
+            print("head rotated towards the player")
+
+        if (-50 <= position <= 50) and (0 <= last_position <= 50) and (position < last_position) and toward_player:
+            # TODO: face rotates back (servo)
+            toward_player = False
+            last_position = position
+            print("Position: {}".format(position))
+            print("head rotated towards the controller")
+
+        if True in mpr121.touched_pins:
+            continue_game = False
+            while not button.is_button_pressed():
+                draw_oled.rectangle((0, 0, oled.width, oled.height), outline=0, fill=0)
+                draw_oled.text((0, 0), "You win.", font=font, fill=255)
+                oled.image(image_oled)
+                oled.show()
+
+                draw.rectangle((0, 0, width, height), outline=0, fill=0)
+                draw.text((x, top), "The player wins.", font=font, fill="#FFFFFF")
+                draw.text((x, 25), "Press the red button", font=font, fill="#FFFFFF")
+                draw.text((x, 43), "to restart the game.", font=font, fill="#FFFFFF")
+                disp.image(image, rotation)
+                if button.is_button_pressed():
+                    new_game = True
+                    break
