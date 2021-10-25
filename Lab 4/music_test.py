@@ -17,8 +17,12 @@ if __name__ == "__main__":
 
     for i in range(10):
 
-        song = AudioSegment.from_wav("gun_sound.wav")
-        play(song)
+        simida_sound = AudioSegment.from_wav("Simida.wav")
+        theme_song = AudioSegment.from_wav("ThemeSong.wav")
+        gun_sound = AudioSegment.from_wav("gun_sound.wav")
+        play(simida_sound)
+        play(theme_song)
+        play(gun_sound)
 
 
 
