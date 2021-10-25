@@ -21,7 +21,6 @@ def eliminate_player():
 def check_movement(sensitivity = 2):
 
     try:
-        ToF = qwiic.QwiicVL53L1X()
         # check initial distance
         ToF.start_ranging()						 # Write configuration bytes to initiate measurement
         time.sleep(.005)
