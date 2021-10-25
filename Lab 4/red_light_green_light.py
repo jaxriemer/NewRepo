@@ -55,7 +55,7 @@ button = digitalio.DigitalIO(seesaw, 24)
 button_held = False
 
 encoder = rotaryio.IncrementalEncoder(seesaw)
-last_position = 0
+last_position = -encoder.position
 
 toward_player = False
 
@@ -69,30 +69,15 @@ while True:
     # negate the position to make clockwise rotation positive
     position = -encoder.position
 
-    if int(position) > int(last_position+2) and not toward_player:
+    if int(position) > int(last_position) and not toward_player:
         toward_player = True
-        print("last position")
-        print(last_position)
-        print("current position")
-        print(position)
-        print("current position")
-        print("int(position) > int(last_position)")
-        print(int(position) > int(last_position))
         last_position = position
-        #position = -encoder.position
         print("Position: {}".format(position))
         print("head rotated towards the player")
 
     if int(position) < int(last_position) and toward_player:
         toward_player = False
-        print("last position")
-        print(last_position)
-        print("current position")
-        print(position)
-        print("int(position) < int(last_position)")
-        print(int(position) < int(last_position))
         last_position = position
-        #position = -encoder.position
         print("Position: {}".format(position))
         print("head rotated towards the controller")
 
