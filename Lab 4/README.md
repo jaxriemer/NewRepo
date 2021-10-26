@@ -320,7 +320,13 @@ Document all the prototypes and iterations you have designed and worked on! Agai
   We constructed our device using cardboards. Through previous physical studies, we discovered that cardboard is structurally too weak to support the rubber belt mechanism for the countdown clock. Therefore, we revised our design by replacing the moving mechanism with a OLED screen that displays time in the chest area of the girl. We also found that normal glue doesn't work well supporting the components so we used hot glue instead.
   
   Using laser cut and putting pieces together, we constructed our device. The device is designed to be placed on a table with the game controller sitting behind, and the player standing in front of it.
-
+  
+  ![Device](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/DevicePhoto.jpg)
+  
+  ![Details](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/DeviceDetails.jpg)
+  
+  Above are details of our device: showing the touching sensor, the packaged components, the rotation neck structure, the embeded screen and distance sensor, and the raspberry pi and buttons facing the game organizer.
+  
 * "Works like": shows what the device can do
 
   Our device uses the following components: Raspberry Pi, mini PiTFT screen, rotary encoder, button, servo controller, servo battery, servo, touch sensor, distance sensor, OLED screen, and speaker. Below is a diagram of how these components are linked and installed, and how they are used. 
