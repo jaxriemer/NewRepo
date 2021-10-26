@@ -317,7 +317,7 @@ We encourage you to try using these controls, **while** paying particular attent
 Document all the prototypes and iterations you have designed and worked on! Again, deliverables for this lab are writings, sketches, photos, and videos that show what your prototype:
 * "Looks like": shows how the device should look, feel, sit, weigh, etc.
 
-  We constructed our device using cardboards. Through previous physical studies, we discovered that cardboard is structurally too weak to support the rubber belt mechanism for the countdown clock. Therefore, we revised our design by replacing the moving mechanism with a OLED screen that displays time in the chest area of the girl. We also found that normal glue doesn't work well supporting the components so we used hot glue instead.
+  We constructed our device using cardboards. Through previous physical studies, we discovered that cardboard is structurally too weak to support the rubber belt mechanism for the countdown clock. Therefore, we revised our design by replacing the moving mechanism with a OLED screen that displays time in the chest area of the girl. We also found that normal glue doesn't work well supporting the components so we used hot glue instead. We also added a cliping mechanism on the shoulders of the girl instead of directly gluing the front and back panels together to make it easy to open while developing.
   
   Using laser cut and putting pieces together, we constructed our device. The device is designed to be placed on a table with the game controller sitting behind, and the player standing in front of it.
   
@@ -330,7 +330,13 @@ Document all the prototypes and iterations you have designed and worked on! Agai
 * "Works like": shows what the device can do
 
   Our device uses the following components: Raspberry Pi, mini PiTFT screen, rotary encoder, button, servo controller, servo battery, servo, touch sensor, distance sensor, OLED screen, and speaker. Below is a diagram of how these components are linked and installed, and how they are used. 
+  
+  The code for the device can be found at [red_light_green_light.py](red_light_green_light.py).
 
 ![Diagram](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%204/imgs/DeviceDiagram.PNG)
   
 * "Acts like": shows how a person would interact with the device
+
+  Below is a video that documents the construction of the device and the operation and interaction of the device.
+
+[![game video](https://img.youtube.com/vi/W5WS1Kb7hN4/0.jpg)](https://www.youtube.com/watch?v=W5WS1Kb7hN4)
