@@ -94,26 +94,26 @@ while(True):
 
     else:
         playAudio("I think you are wearing a " + labels[np.argmax(prediction)])
-
-        if np.argmax(prediction) == what_to_wear:
-            print("Outfit matches")
-            playAudio("You are good to go. Goodbye.")
-            break
-        elif np.argmax(prediction) == 0:
-            if what_to_wear == 1:
-                playAudio("You should wear more clothes. Do not forget your coat.")
-            elif what_to_wear == 2:
-                playAudio("You should wear less clothes. Here is a t shirt.")
-        elif np.argmax(prediction) == 1:
-            if what_to_wear == 0:
-                playAudio("You should wear less clothes. Here is your jacket.")
-            elif what_to_wear == 2:
-                playAudio("You should wear less clothes. Here is a t shirt.")
-        elif np.argmax(prediction) == 2:
-            if what_to_wear == 0:
-                playAudio("You should wear more clothes. Do not forget your jacket.")
-            elif what_to_wear == 1:
-                playAudio("You should wear more clothes. Do not forget your coat.")
+        #
+        # if np.argmax(prediction) == what_to_wear:
+        #     print("Outfit matches")
+        #     playAudio("You are good to go. Goodbye.")
+        #     break
+        # elif np.argmax(prediction) == 0:
+        #     if what_to_wear == 1:
+        #         playAudio("You should wear more clothes. Do not forget your coat.")
+        #     elif what_to_wear == 2:
+        #         playAudio("You should wear less clothes. Here is a t shirt.")
+        # elif np.argmax(prediction) == 1:
+        #     if what_to_wear == 0:
+        #         playAudio("You should wear less clothes. Here is your jacket.")
+        #     elif what_to_wear == 2:
+        #         playAudio("You should wear less clothes. Here is a t shirt.")
+        # elif np.argmax(prediction) == 2:
+        #     if what_to_wear == 0:
+        #         playAudio("You should wear more clothes. Do not forget your jacket.")
+        #     elif what_to_wear == 1:
+        #         playAudio("You should wear more clothes. Do not forget your coat.")
 
     if webCam:
         if sys.argv[-1] == "noWindow":
