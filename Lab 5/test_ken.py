@@ -14,30 +14,30 @@ np.set_printoptions(suppress=True)
 img = None
 webCam = False
 if(len(sys.argv)>1 and not sys.argv[-1]== "noWindow"):
-   try:
-      print("I'll try to read your image");
-      img = cv2.imread(sys.argv[1])
-      if img is None:
-         print("Failed to load image file:", sys.argv[1])
-   except:
-      print("Failed to load the image are you sure that:", sys.argv[1],"is a path to an image?")
+    try:
+        print("I'll try to read your image")
+        img = cv2.imread(sys.argv[1])
+        if img is None:
+            print("Failed to load image file:", sys.argv[1])
+    except:
+        print("Failed to load the image are you sure that:", sys.argv[1],"is a path to an image?")
 else:
-   try:
-      print("Trying to open the Webcam.")
-      cap = cv2.VideoCapture(0)
-      if cap is None or not cap.isOpened():
-         raise("No camera")
-      webCam = True
-   except:
-      print("Unable to access webcam.")
+    try:
+        print("Trying to open the Webcam.")
+        cap = cv2.VideoCapture(0)
+        if cap is None or not cap.isOpened():
+            raise("No camera")
+        webCam = True
+    except:
+        print("Unable to access webcam.")
 
 
 # Load the model
-model = tensorflow.keras.models.load_model('keras_model.h5')
+model = tensorflow.keras.models.load_model('clothing_model.h5')
 
 # Load Labels:
 labels=[]
-f = open("labels.txt", "r")
+f = open("clothes_labels.txt", "r")
 for line in f.readlines():
     if(len(line)<1):
         continue
@@ -67,8 +67,8 @@ while(True):
 
     if webCam:
         if sys.argv[-1] == "noWindow":
-           cv2.imwrite('detected_out.jpg',img)
-           continue
+            cv2.imwrite('detected_out.jpg',img)
+            continue
         cv2.imshow('detected (press q to quit)',img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cap.release()
