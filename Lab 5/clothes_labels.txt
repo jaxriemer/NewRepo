@@ -1,4 +1,4 @@
-0 summer outfit
-1 spring/fall outfit
-2 winter outfit
-
+0 Jacket
+1 Coat
+2 t-shirt
+3 Background

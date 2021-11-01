@@ -161,3 +161,11 @@ while(True):
 
 cv2.imwrite('detected_out.jpg',img)
 cv2.destroyAllWindows()
+
+
+'''
+
+Coat, hoodie, T-shirt.
+
+
+'''
