@@ -118,7 +118,7 @@ while(True):
     print("Today's temperature is " + str(temp) + " degrees")
     playAudio("Today's temperature is " + str(temp) + " degrees")
     print("I think you are wearing the ",labels[np.argmax(prediction)])
-    playAudio("I think you are wearing the ",labels[np.argmax(prediction)])
+    playAudio("I think you are wearing a " + labels[np.argmax(prediction)])
 
     if np.argmax(prediction) == what_to_wear:
         print("Outfit matches")
