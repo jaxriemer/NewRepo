@@ -93,11 +93,12 @@ for line in f.readlines():
         continue
     labels.append(line.split(' ')[1].strip())
 
-# run the weather api
-loop = asyncio.get_event_loop()
-loop.run_until_complete(getweather())
-
 while(True):
+    # run the weather api
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(getweather())
+    playAudio("Today's temperature is " + str(temp) + " degrees")
+
     if webCam:
         ret, img = cap.read()
 
@@ -116,9 +117,6 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
-    print("Today's temperature is " + str(temp) + " degrees")
-    playAudio("Today's temperature is " + str(temp) + " degrees")
-    print("I think you are wearing the ",labels[np.argmax(prediction)])
     playAudio("I think you are wearing a " + labels[np.argmax(prediction)])
 
     if np.argmax(prediction) == what_to_wear:
