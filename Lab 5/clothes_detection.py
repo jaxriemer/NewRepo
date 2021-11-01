@@ -11,8 +11,8 @@ import sys
 import python_weather
 import asyncio
 
-# 0 - summer, 1 - fall/spring, 2 - winter
-current_season = 0
+
+what_to_wear = 0
 rain = False
 temp = -999999
 async def getweather():
@@ -35,11 +35,11 @@ async def getweather():
         rain = True
 
     if today.temperature >= 70:
-        current_season = 0
+        what_to_wear = 2
     elif 50 >= today.temperature <= 70:
-        current_season = 1
+        what_to_wear = 0
     elif today.temperature <= 50:
-        current_season = 2
+        what_to_wear = 1
 
     # close the wrapper once done
     await client.close()
@@ -79,8 +79,7 @@ else:
 
 
 # Load the model
-# TODO: change model
-model = tensorflow.keras.models.load_model('keras_model.h5')
+model = tensorflow.keras.models.load_model('clothing_model.h5')
 # Load Labels:
 labels=[]
 f = open("clothes_labels.txt", "r")
@@ -89,6 +88,9 @@ for line in f.readlines():
         continue
     labels.append(line.split(' ')[1].strip())
 
+# run the weather api
+loop = asyncio.get_event_loop()
+loop.run_until_complete(getweather())
 
 while(True):
     if webCam:
@@ -107,10 +109,6 @@ while(True):
     # Load the image into the array
     data[0] = normalized_image_array
 
-    # run the weather api
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(getweather())
-
     # run the inference
     prediction = model.predict(data)
     print("Today's temperature is " + str(temp) + "degrees")
@@ -118,34 +116,27 @@ while(True):
     print("I think you are wearing the ",labels[np.argmax(prediction)])
     playAudio("I think you are wearing the ",labels[np.argmax(prediction)])
 
-    if np.argmax(prediction) == current_season:
+    if np.argmax(prediction) == what_to_wear:
         print("Outfit matches")
         playAudio("You are good to go. Goodbye.")
     elif np.argmax(prediction) == 0:
-        if current_season == 1:
-            print("More clothes needed.")
-            playAudio("You should wear more clothes. Here is a hoodie.")
-        elif current_season == 2:
-            print("More clothes needed.")
-            playAudio("You should wear more clothes. Here is a coat and jeans.")
+        if what_to_wear == 1:
+            playAudio("You should wear more clothes. Do not forget your coat.")
+        elif what_to_wear == 2:
+            playAudio("You should wear less clothes. Here is a t shirt.")
     elif np.argmax(prediction) == 1:
-        if current_season == 0:
-            print("Less clothes needed.")
-            playAudio("You should wear less clothes. Here is a t-shirt.")
-        elif current_season == 2:
-            print("More clothes needed.")
-            playAudio("You should wear more clothes. Here is a coat and jeans.")
+        if what_to_wear == 0:
+            playAudio("You should wear less clothes. Here is your jacket.")
+        elif what_to_wear == 2:
+            playAudio("You should wear less clothes. Here is a t shirt.")
     elif np.argmax(prediction) == 2:
-        if current_season == 0:
-            print("Less clothes needed.")
-            playAudio("You should wear less clothes. Here is a t-shirt and shorts.")
-        elif current_season == 1:
-            print("Less clothes needed.")
-            playAudio("You should wear less clothes. Here is a hoddie and shorts.")
+        if what_to_wear == 0:
+            playAudio("You should wear more clothes. Do not forget your jacket.")
+        elif what_to_wear == 1:
+            playAudio("You should wear more clothes. Do not forget your coat.")
 
     # determine if umbrella is needed
     if rain:
-        print("Umbrella reminder triggered.")
         playAudio("It is going to rain today. Do not forget your umbrella.")
 
     if webCam:
