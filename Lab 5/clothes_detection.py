@@ -14,6 +14,7 @@ import gtts
 from io import BytesIO
 from pydub.playback import play
 from pydub import AudioSegment
+import pyaudio
 
 
 what_to_wear = 0
