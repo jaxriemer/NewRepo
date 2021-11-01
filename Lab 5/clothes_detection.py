@@ -30,10 +30,6 @@ async def getweather():
     # returns the current day's forecast temperature (int)
     print(weather.current.temperature)
 
-    # get the weather forecast for a few days
-    for forecast in weather.forecasts:
-        print(str(forecast.date), forecast.sky_text, forecast.temperature)
-
     today = weather.forecasts[0]
     global temp
     temp = today.temperature
@@ -96,12 +92,12 @@ for line in f.readlines():
         continue
     labels.append(line.split(' ')[1].strip())
 
-while(True):
-    # run the weather api
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(getweather())
-    playAudio("Today's temperature is " + str(temp) + " degrees")
+# run the weather api
+loop = asyncio.get_event_loop()
+loop.run_until_complete(getweather())
+playAudio("Today's temperature is " + str(temp) + " degrees")
 
+while(True):
     if webCam:
         ret, img = cap.read()
 
@@ -121,6 +117,10 @@ while(True):
     # run the inference
     prediction = model.predict(data)
     playAudio("I think you are wearing a " + labels[np.argmax(prediction)])
+
+    if np.argmax(prediction) == 3:
+        playAudio("Background detected.")
+        continue
 
     if np.argmax(prediction) == what_to_wear:
         print("Outfit matches")
