@@ -11,6 +11,10 @@ import sys
 import python_weather
 import asyncio
 import gtts
+from io import BytesIO
+from pydub.playback import play
+from pydub import AudioSegment
+
 
 what_to_wear = 0
 rain = False
