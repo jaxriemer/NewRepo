@@ -35,11 +35,14 @@ async def getweather():
         print(str(forecast.date), forecast.sky_text, forecast.temperature)
 
     today = weather.forecasts[0]
+    global temp
     temp = today.temperature
     if "rain" in today.sky_text:
+        global rain
         rain = True
 
     if today.temperature >= 70:
+        global what_to_wear
         what_to_wear = 2
     elif 50 >= today.temperature <= 70:
         what_to_wear = 0
