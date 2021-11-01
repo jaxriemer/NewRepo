@@ -10,7 +10,7 @@ import sys
 # weather API: https://pypi.org/project/python-weather/
 import python_weather
 import asyncio
-
+import gtts
 
 what_to_wear = 0
 rain = False
@@ -111,8 +111,8 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
-    print("Today's temperature is " + str(temp) + "degrees")
-    playAudio("Today's temperature is " + str(temp) + "degrees")
+    print("Today's temperature is " + str(temp) + " degrees")
+    playAudio("Today's temperature is " + str(temp) + " degrees")
     print("I think you are wearing the ",labels[np.argmax(prediction)])
     playAudio("I think you are wearing the ",labels[np.argmax(prediction)])
 
