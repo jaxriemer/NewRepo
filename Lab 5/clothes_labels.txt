@@ -1,4 +1,4 @@
-0 Jacket
-1 Coat
-2 t-shirt
-3 Background
+0 jacket
+1 t-shirt
+2 background
+3 coat
