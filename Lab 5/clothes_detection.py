@@ -54,7 +54,7 @@ model = tensorflow.keras.models.load_model('clothing_model.h5')
 
 # Load Labels:
 labels=[]
-f = open("labels.txt", "r")
+f = open("clothes_labels.txt", "r")
 for line in f.readlines():
     if(len(line)<1):
         continue
