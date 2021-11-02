@@ -138,7 +138,7 @@ while(True):
         # os.system("mpg123 background.mp3")
         continue
     else:
-        genenrateAudio("I think you are wearing " + labels[np.argmax(prediction)])
+        # genenrateAudio("I think you are wearing " + labels[np.argmax(prediction)])
         playAudio("I think you are wearing " + labels[np.argmax(prediction)])
 
         if np.argmax(prediction) == what_to_wear:
