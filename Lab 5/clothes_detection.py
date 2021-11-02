@@ -137,26 +137,26 @@ while(True):
 
         if np.argmax(prediction) == what_to_wear:
             print("Outfit matches")
-            playAudio("You are good to go. Goodbye.")
+            # playAudio("You are good to go. Goodbye.")
         elif np.argmax(prediction) == 0:
             if what_to_wear == 1:
-                playAudio("You should wear more clothes. Do not forget your coat.")
+                # playAudio("You should wear more clothes. Do not forget your coat.")
             elif what_to_wear == 2:
-                playAudio("You should wear less clothes. Here is a t shirt.")
+                # playAudio("You should wear less clothes. Here is a t shirt.")
         elif np.argmax(prediction) == 1:
             if what_to_wear == 0:
-                playAudio("You should wear less clothes. Here is your jacket.")
+                # playAudio("You should wear less clothes. Here is your jacket.")
             elif what_to_wear == 2:
-                playAudio("You should wear less clothes. Here is a t shirt.")
+                # playAudio("You should wear less clothes. Here is a t shirt.")
         elif np.argmax(prediction) == 2:
             if what_to_wear == 0:
-                playAudio("You should wear more clothes. Do not forget your jacket.")
+                # playAudio("You should wear more clothes. Do not forget your jacket.")
             elif what_to_wear == 1:
-                playAudio("You should wear more clothes. Do not forget your coat.")
+                # playAudio("You should wear more clothes. Do not forget your coat.")
 
         # determine if umbrella is needed
         if rain:
-            playAudio("It is going to rain today. Do not forget your umbrella.")
+            print("It is going to rain today. Do not forget your umbrella.")
 
 cv2.imwrite('detected_out.jpg',img)
 cv2.destroyAllWindows()
