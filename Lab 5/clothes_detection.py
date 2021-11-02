@@ -107,7 +107,7 @@ def detectClothes(prediction):
         print("Background detected")
         # playAudio("Background detected")
     else:
-        print("I think you are wearing " + labels[np.argmax(prediction)])
+        print("I think you are wearing a " + labels[np.argmax(prediction)])
         # playAudio("I think you are wearing " + labels[np.argmax(prediction)])
 
         if np.argmax(prediction) == what_to_wear:
