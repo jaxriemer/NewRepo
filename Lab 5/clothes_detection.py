@@ -10,6 +10,8 @@ import sys
 # weather API: https://pypi.org/project/python-weather/
 import python_weather
 import asyncio
+
+# play audio
 import gtts
 from io import BytesIO
 from pydub.playback import play
@@ -46,7 +48,7 @@ async def getweather():
     # close the wrapper once done
     await client.close()
 
-def playAudio(text):
+async def playAudio(text):
     print('Play Audio')
     print(text)
     tts = gtts.gTTS(text, lang='en')
@@ -54,7 +56,7 @@ def playAudio(text):
     tts.write_to_fp(mp3)
     mp3.seek(0)
     audio = AudioSegment.from_file(mp3, format='mp3')
-    play(audio)
+    await play(audio)
 
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
@@ -114,6 +116,9 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
+
+    audio_loop = asyncio.get_event_loop()
+    audio_looploop.run_until_complete(playAudio("test"))
 
     if np.argmax(prediction) == 3:
         print("Background")
