@@ -16,6 +16,7 @@ import gtts
 from io import BytesIO
 from pydub.playback import play
 from pydub import AudioSegment
+import os
 
 what_to_wear = 0
 rain = False
@@ -116,7 +117,7 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
-    playAudio("test")
+    os.system("mpg321 test.mp3")
 
     if webCam:
         if sys.argv[-1] == "noWindow":
