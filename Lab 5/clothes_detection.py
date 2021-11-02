@@ -56,7 +56,9 @@ async def playAudio(text):
     tts.write_to_fp(mp3)
     mp3.seek(0)
     audio = AudioSegment.from_file(mp3, format='mp3')
-    await play(audio)
+    play(audio)
+
+    await asyncio.sleep(1)
 
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
