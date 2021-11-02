@@ -134,7 +134,7 @@ async def detectClothes(prediction):
         if rain:
             playAudio("It is going to rain today. Do not forget your umbrella.")
 
-        await asyncio.sleep(3)
+        await asyncio.sleep(5)
         return True
 
 while(True):
