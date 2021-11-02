@@ -151,9 +151,6 @@ while(True):
     # Load the image into the array
     data[0] = normalized_image_array
 
-    # run the inference
-    prediction = model.predict(data)
-
     if webCam:
         detectClothes(prediction)
         if sys.argv[-1] == "noWindow":
@@ -163,6 +160,8 @@ while(True):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cap.release()
             break
+        prediction = model.predict(data)
+
     else:
         break
 
