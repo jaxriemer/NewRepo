@@ -81,6 +81,7 @@ while(True):
     # run the inference
     prediction = model.predict(data)
     print("I think its a:",labels[np.argmax(prediction)])
+    playAudio("I think its a:" + labels[np.argmax(prediction)])
 
     if webCam:
         if sys.argv[-1] == "noWindow":
