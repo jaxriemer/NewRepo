@@ -16,6 +16,7 @@ import gtts
 from io import BytesIO
 from pydub.playback import play
 from pydub import AudioSegment
+import pyttsx3
 
 what_to_wear = 0
 rain = False
@@ -48,7 +49,7 @@ async def getweather():
     # close the wrapper once done
     await client.close()
 
-async def playAudio(text):
+def playAudio(text):
     print('Play Audio')
     print(text)
     tts = gtts.gTTS(text, lang='en')
@@ -57,8 +58,6 @@ async def playAudio(text):
     mp3.seek(0)
     audio = AudioSegment.from_file(mp3, format='mp3')
     play(audio)
-
-    await asyncio.sleep(1)
 
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
@@ -119,8 +118,9 @@ while(True):
     # run the inference
     prediction = model.predict(data)
 
-    audio_loop = asyncio.get_event_loop()
-    audio_loop.run_until_complete(playAudio("test"))
+    engine = pyttsx3.init()
+    engine.say("I will speak this text")
+    engine.runAndWait()
 
     if np.argmax(prediction) == 3:
         print("Background")
