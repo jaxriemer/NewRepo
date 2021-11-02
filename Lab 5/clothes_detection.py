@@ -164,8 +164,8 @@ while(True):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cap.release()
             break
-        await detectClothes(prediction)
-
+        loop1 = asyncio.get_event_loop()
+        loop1.run_until_complete(detectClothes(prediction))
     else:
         break
 
