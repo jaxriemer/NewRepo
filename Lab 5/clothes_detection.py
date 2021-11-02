@@ -49,6 +49,10 @@ async def getweather():
     # close the wrapper once done
     await client.close()
 
+def genenrateAudio(text, fileName):
+    tts = gTTS(text, lang='en')
+    tts.save(fileName)
+
 def playAudio(text):
     print('Play Audio')
     print(text)
@@ -98,9 +102,6 @@ for line in f.readlines():
 loop = asyncio.get_event_loop()
 loop.run_until_complete(getweather())
 
-tts = gTTS("test", lang='en')
-tts.save("test.mp3")
-
 while(True):
     if webCam:
         ret, img = cap.read()
@@ -120,7 +121,6 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
-    os.system("mpg123 test.mp3")
 
     if webCam:
         if sys.argv[-1] == "noWindow":
@@ -134,9 +134,12 @@ while(True):
         break
 
     if np.argmax(prediction) == 3:
-        print("Background")
+        genenrateAudio("Background detected", "background.mp3")
+        # os.system("mpg123 background.mp3")
+        continue
     else:
-        print("I think its a:", labels[np.argmax(prediction)])
+        genenrateAudio("I think you are wearing " + labels[np.argmax(prediction)])
+        playAudio("I think you are wearing " + labels[np.argmax(prediction)])
 
         if np.argmax(prediction) == what_to_wear:
             print("Outfit matches")
