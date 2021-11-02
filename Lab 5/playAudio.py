@@ -1,9 +1,5 @@
-from gtts import gTTS
-import os
+import gtts
+from playsound import playsound
 
-mytext = 'test'
-language = 'en'
-
-myobj = gTTS(text=mytext, lang=language, slow=False)
-myobj.save("test.mp3")
-os.system("mpg321 welcome.mp3")
+tts = gtts.gTTS("Hello world")
+tts.save("hello.mp3")
