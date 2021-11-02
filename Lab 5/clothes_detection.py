@@ -41,11 +41,11 @@ async def getweather():
 
     if today.temperature >= 70:
         global what_to_wear
-        what_to_wear = 2
+        what_to_wear = 1
     elif 50 <= today.temperature <= 70:
         what_to_wear = 0
     elif today.temperature <= 50:
-        what_to_wear = 1
+        what_to_wear = 3
 
     # close the wrapper once done
     await client.close()
@@ -103,7 +103,7 @@ loop.close()
 playAudio("Today's temperature is " + str(temp) + " degrees")
 
 def detectClothes(prediction):
-    if np.argmax(prediction) == 3:
+    if np.argmax(prediction) == 2:
         print("Background detected")
         # playAudio("Background detected")
     else:
