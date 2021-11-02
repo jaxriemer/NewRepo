@@ -16,7 +16,6 @@ import gtts
 from io import BytesIO
 from pydub.playback import play
 from pydub import AudioSegment
-import pyttsx3
 
 what_to_wear = 0
 rain = False
@@ -117,10 +116,18 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
+    playAudio("test")
 
-    engine = pyttsx3.init()
-    engine.say("I will speak this text")
-    engine.runAndWait()
+    if webCam:
+        if sys.argv[-1] == "noWindow":
+           cv2.imwrite('detected_out.jpg',img)
+           continue
+        cv2.imshow('detected (press q to quit)',img)
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            cap.release()
+            break
+    else:
+        break
 
     if np.argmax(prediction) == 3:
         print("Background")
@@ -149,17 +156,6 @@ while(True):
         # determine if umbrella is needed
         if rain:
             playAudio("It is going to rain today. Do not forget your umbrella.")
-
-    if webCam:
-        if sys.argv[-1] == "noWindow":
-           cv2.imwrite('detected_out.jpg',img)
-           continue
-        cv2.imshow('detected (press q to quit)',img)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            cap.release()
-            break
-    else:
-        break
 
 cv2.imwrite('detected_out.jpg',img)
 cv2.destroyAllWindows()
