@@ -42,7 +42,7 @@ async def getweather():
     if today.temperature >= 70:
         global what_to_wear
         what_to_wear = 2
-    elif 50 >= today.temperature <= 70:
+    elif 50 <= today.temperature <= 70:
         what_to_wear = 0
     elif today.temperature <= 50:
         what_to_wear = 1
@@ -98,44 +98,47 @@ for line in f.readlines():
 # run the weather api
 loop = asyncio.get_event_loop()
 loop.run_until_complete(getweather())
+loop.close()
 
-async def detectClothes(prediction):
+playAudio("Today's temperature is " + str(temp) + " degrees")
+
+def detectClothes(prediction):
     if np.argmax(prediction) == 3:
-        playAudio("Background detected")
+        print("Background detected")
+        # playAudio("Background detected")
     else:
-        playAudio("I think you are wearing " + labels[np.argmax(prediction)])
+        print("I think you are wearing " + labels[np.argmax(prediction)])
+        # playAudio("I think you are wearing " + labels[np.argmax(prediction)])
 
         if np.argmax(prediction) == what_to_wear:
             print("Outfit matches")
-            playAudio("You are good to go. Goodbye.")
+            # playAudio("You are good to go. Goodbye.")
         elif np.argmax(prediction) == 0:
             if what_to_wear == 1:
                 print("You should wear more clothes. Do not forget your coat.")
-                playAudio("You should wear more clothes. Do not forget your coat.")
+                # playAudio("You should wear more clothes. Do not forget your coat.")
             elif what_to_wear == 2:
                 print("You should wear less clothes. Here is a t shirt.")
-                playAudio("You should wear less clothes. Here is a t shirt.")
+                # playAudio("You should wear less clothes. Here is a t shirt.")
         elif np.argmax(prediction) == 1:
             if what_to_wear == 0:
                 print("You should wear less clothes. Here is your jacket.")
-                playAudio("You should wear less clothes. Here is your jacket.")
+                # playAudio("You should wear less clothes. Here is your jacket.")
             elif what_to_wear == 2:
                 print("You should wear less clothes. Here is a t shirt.")
-                playAudio("You should wear less clothes. Here is a t shirt.")
+                # playAudio("You should wear less clothes. Here is a t shirt.")
         elif np.argmax(prediction) == 2:
             if what_to_wear == 0:
                 print("You should wear more clothes. Do not forget your jacket.")
-                playAudio("You should wear more clothes. Do not forget your jacket.")
+                # playAudio("You should wear more clothes. Do not forget your jacket.")
             elif what_to_wear == 1:
                 print("You should wear more clothes. Do not forget your coat.")
-                playAudio("You should wear more clothes. Do not forget your coat.")
+                # playAudio("You should wear more clothes. Do not forget your coat.")
 
         # determine if umbrella is needed
         if rain:
-            playAudio("It is going to rain today. Do not forget your umbrella.")
-
-        await asyncio.sleep(10)
-        return True
+            print("It is going to rain today. Do not forget your umbrella.")
+            # playAudio("It is going to rain today. Do not forget your umbrella.")
 
 while(True):
     if webCam:
@@ -164,10 +167,10 @@ while(True):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cap.release()
             break
-        loop1 = asyncio.get_event_loop()
-        loop1.run_until_complete(detectClothes(prediction))
     else:
         break
+
+    detectClothes(prediction)
 
 cv2.imwrite('detected_out.jpg',img)
 cv2.destroyAllWindows()
