@@ -50,10 +50,6 @@ async def getweather():
     # close the wrapper once done
     await client.close()
 
-def genenrateAudio(text, fileName):
-    tts = gTTS(text, lang='en')
-    tts.save(fileName)
-
 def playAudio(text):
     print('Play Audio')
     print(text)
@@ -103,6 +99,41 @@ for line in f.readlines():
 loop = asyncio.get_event_loop()
 loop.run_until_complete(getweather())
 
+def detectClothes(prediction):
+    if np.argmax(prediction) == 3:
+        playAudio("Background detected")
+    else:
+        playAudio("I think you are wearing " + labels[np.argmax(prediction)])
+
+        if np.argmax(prediction) == what_to_wear:
+            print("Outfit matches")
+            playAudio("You are good to go. Goodbye.")
+        elif np.argmax(prediction) == 0:
+            if what_to_wear == 1:
+                print("You should wear more clothes. Do not forget your coat.")
+                playAudio("You should wear more clothes. Do not forget your coat.")
+            elif what_to_wear == 2:
+                print("You should wear less clothes. Here is a t shirt.")
+                playAudio("You should wear less clothes. Here is a t shirt.")
+        elif np.argmax(prediction) == 1:
+            if what_to_wear == 0:
+                print("You should wear less clothes. Here is your jacket.")
+                playAudio("You should wear less clothes. Here is your jacket.")
+            elif what_to_wear == 2:
+                print("You should wear less clothes. Here is a t shirt.")
+                playAudio("You should wear less clothes. Here is a t shirt.")
+        elif np.argmax(prediction) == 2:
+            if what_to_wear == 0:
+                print("You should wear more clothes. Do not forget your jacket.")
+                playAudio("You should wear more clothes. Do not forget your jacket.")
+            elif what_to_wear == 1:
+                print("You should wear more clothes. Do not forget your coat.")
+                playAudio("You should wear more clothes. Do not forget your coat.")
+
+        # determine if umbrella is needed
+        if rain:
+            playAudio("It is going to rain today. Do not forget your umbrella.")
+
 while(True):
     if webCam:
         ret, img = cap.read()
@@ -124,6 +155,7 @@ while(True):
     prediction = model.predict(data)
 
     if webCam:
+        detectClothes(prediction)
         if sys.argv[-1] == "noWindow":
            cv2.imwrite('detected_out.jpg',img)
            continue
@@ -133,44 +165,6 @@ while(True):
             break
     else:
         break
-
-    if np.argmax(prediction) == 3:
-        # genenrateAudio("Background detected", "background.mp3")
-        # os.system("mpg123 background.mp3")
-        playAudio("Background detected")
-        continue
-    else:
-        # genenrateAudio("I think you are wearing " + labels[np.argmax(prediction)])
-        playAudio("I think you are wearing " + labels[np.argmax(prediction)])
-
-        if np.argmax(prediction) == what_to_wear:
-            print("Outfit matches")
-            # playAudio("You are good to go. Goodbye.")
-        elif np.argmax(prediction) == 0:
-            if what_to_wear == 1:
-                print("You should wear more clothes. Do not forget your coat.")
-                # playAudio("You should wear more clothes. Do not forget your coat.")
-            elif what_to_wear == 2:
-                print("You should wear less clothes. Here is a t shirt.")
-                # playAudio("You should wear less clothes. Here is a t shirt.")
-        elif np.argmax(prediction) == 1:
-            if what_to_wear == 0:
-                print("You should wear less clothes. Here is your jacket.")
-                # playAudio("You should wear less clothes. Here is your jacket.")
-            elif what_to_wear == 2:
-                print("You should wear less clothes. Here is a t shirt.")
-                # playAudio("You should wear less clothes. Here is a t shirt.")
-        elif np.argmax(prediction) == 2:
-            if what_to_wear == 0:
-                print("You should wear more clothes. Do not forget your jacket.")
-                # playAudio("You should wear more clothes. Do not forget your jacket.")
-            elif what_to_wear == 1:
-                print("You should wear more clothes. Do not forget your coat.")
-                # playAudio("You should wear more clothes. Do not forget your coat.")
-
-        # determine if umbrella is needed
-        if rain:
-            print("It is going to rain today. Do not forget your umbrella.")
 
 cv2.imwrite('detected_out.jpg',img)
 cv2.destroyAllWindows()
