@@ -14,5 +14,5 @@ s += "You should wear less clothes. Here is a t shirt. "
 # initialize tts, create mp3 and play
 tts = gTTS(s, lang='en')
 tts.save("audio.mp3")
-os.system("mpg123 " + file)
+os.system("mpg123 audio.mp3")
 
