@@ -278,6 +278,8 @@ During the lecture, we mentioned questions to help characterize a material:
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
+[![Acting Out Video](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/DemoVideoCover.jpg)](https://drive.google.com/file/d/12TELZ26dpRTNzY9gsF-hU6i5cUXe7gln/view?usp=sharing)
+
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
