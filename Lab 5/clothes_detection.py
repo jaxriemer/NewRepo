@@ -99,7 +99,7 @@ for line in f.readlines():
 loop = asyncio.get_event_loop()
 loop.run_until_complete(getweather())
 
-def detectClothes(prediction):
+async def detectClothes(prediction):
     if np.argmax(prediction) == 3:
         playAudio("Background detected")
     else:
@@ -134,6 +134,9 @@ def detectClothes(prediction):
         if rain:
             playAudio("It is going to rain today. Do not forget your umbrella.")
 
+        await asyncio.sleep(3)
+        return True
+
 while(True):
     if webCam:
         ret, img = cap.read()
@@ -161,7 +164,7 @@ while(True):
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cap.release()
             break
-        detectClothes(prediction)
+        await detectClothes(prediction)
 
     else:
         break
