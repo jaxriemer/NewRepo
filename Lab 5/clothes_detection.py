@@ -118,7 +118,7 @@ while(True):
     prediction = model.predict(data)
 
     audio_loop = asyncio.get_event_loop()
-    audio_looploop.run_until_complete(playAudio("test"))
+    audio_loop.run_until_complete(playAudio("test"))
 
     if np.argmax(prediction) == 3:
         print("Background")
