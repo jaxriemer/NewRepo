@@ -117,7 +117,7 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
-    os.system("mpg321 test.mp3")
+    os.system("mpg321 file.mp3")
 
     if webCam:
         if sys.argv[-1] == "noWindow":
