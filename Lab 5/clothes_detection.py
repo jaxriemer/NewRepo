@@ -98,6 +98,9 @@ for line in f.readlines():
 loop = asyncio.get_event_loop()
 loop.run_until_complete(getweather())
 
+tts = gTTS("test", lang='en')
+tts.save("test.mp3")
+
 while(True):
     if webCam:
         ret, img = cap.read()
@@ -117,7 +120,7 @@ while(True):
 
     # run the inference
     prediction = model.predict(data)
-    os.system("mpg321 file.mp3")
+    os.system("mpg321 test.mp3")
 
     if webCam:
         if sys.argv[-1] == "noWindow":
