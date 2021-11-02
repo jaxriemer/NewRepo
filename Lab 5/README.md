@@ -1,3 +1,5 @@
+This lab is done collaboratively with Liqin He (lh553) and Xinning Fang (xf49)
+
 # Observant Systems
 
 
@@ -100,10 +102,23 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 
 **\*\*\*Try each of the following four examples in the `openCV-examples`, include screenshots of your use and write about one design for each example that might work based on the individual benefits to each algorithm.\*\*\***
 
+**Contours detection**
+
+  Contour detections can be used for photo filters. For example, sparkling stars or other special effects can be placed on all the detected edges. It could also turn the image into a stylish painting by distinguishing the edges between dark and light and painting areas with different shades of color. 
+  
+**Face detection**
+
+  Face detection can be used on security cameras by alerting the owner or taking photos when suspicious faces are detected. It does not work well when faces are partially covered, and could be used for detecting whether subjects are wearing masks properly. 
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/face-detection.png"  width="400"/>
 
+**Flow detection**
 
+  The flow detection could be used to detect the movements of feature points on people, and can be used as an extension of our red light green light game in Lab 4, where player movements could be detected by this flow detection algorithm and the win/lose state could be determined based on that.
+
+**Object detection**
+
+  Object detection can be used to alert the messiness of one place. For example, in an emergency exit hallway, when the number of objects exceeds a certain threshold, staff should be alerted to be aware and take action.
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/object-detection.png"  width="400"/>
 
@@ -151,6 +166,7 @@ Try the two main features of this script: 1) pinching for percentage control, an
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/hand-pose2.png"  width="400"/>
 
+  The hand pose detection could be used as an input system for the Raspberry Pi. The pinch gesture could be detected and used for selecting a virtual menu, pressing a virtual button, or pushing a virtual joystick. This works best when the user is standing away from the Pi and cannot reach the physical buttons, for instance: the user tells the device that is on a tripod far away from him/her to take a photo. The gesture is also suitable when the user’s hands are covered by mud when sculpturing, covered by sauces when cooking, or just sanitized when doing medical operations. In the above scenarios, a physical button would not work and hand pose could replace it. 
 
 #### Teachable Machines
 Google's [TeachableMachines](https://teachablemachine.withgoogle.com/train) might look very simple. However, its simplicity is very useful for experimenting with the capabilities of this technology.
@@ -187,6 +203,8 @@ This might take a while to get fully installed. After installation, connect your
 
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
 
+Future use: We can train a model to detect packages or food delivery. When packages or foods are delivered at our door, our model will automatically notify us.
+
 
 #### Filtering, FFTs, and Time Series data. (optional)
 Additional filtering and analysis can be done on the sensors that were provided in the kit. For example, running a Fast Fourier Transform over the IMU data stream could create a simple activity classifier between walking, running, and standing.
@@ -211,6 +229,14 @@ Try out different interaction outputs and inputs.
 
 **\*\*\*Describe and detail the interaction, as well as your experimentation here.\*\*\***
 
+**Clothes recommendation according to weather**
+
+Our smart closet obtains weather data online and uses computer vision to detect the cloth the user is wearing. Then, the closet will alert the user if the cloth worn is not appropriate for the current weather, such as temperature or rain. For example, if the temperature is too cold and the user is only wearing a t-shirt, the closet will alert the user about the temperature and recommend the user to wear a jacket. 
+
+Our users do not need to interact with the closet every time they put on clothes because we think that is onerous and unnecessary. The closet will only alert the user when our closet detects that the user’s cloth is not appropriate for the weather. This function is useful during days of sudden temperature change. 
+
+Besides the digital components in this closet, we will also construct a physical mechanism that automatically brings the suggested outfit to the user right after the alert is given. This mechanism will work together with the computer vision to further help the user stay comfortable when outside.
+
 ### Part C
 ### Test the interaction prototype
 
@@ -221,11 +247,18 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
+1. The closet will only detect the outermost layer of your clothes. 
+1. If the misclassification of clothes leads to wrong recommendations of clothes, the user will be too cold or too hot throughout the day. And hate the closet...
+1. When alerting and giving recommendations to the users, the closet can indicate the confidence of their recommendation. For example, if it is snowing but the user is only wearing a t-shirt, the closet can say, “the current snowing weather is too cold for only wearing a t-shirt, I think a coat is more appropriate.” However, if the cloth is only slight appropriate, the closet can say, “I think your clothes is not warm enough for today’s weather, you might want to consider wearing a little bit more”
+
+
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
 1. How bad would they be impacted by a miss classification?
 1. How could change your interactive system to address this?
 1. Are there optimizations you can try to do on your sense-making algorithm.
+
+
 
 ### Part D
 ### Characterize your own Observant system
