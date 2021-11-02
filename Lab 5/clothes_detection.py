@@ -134,8 +134,9 @@ while(True):
         break
 
     if np.argmax(prediction) == 3:
-        genenrateAudio("Background detected", "background.mp3")
+        # genenrateAudio("Background detected", "background.mp3")
         # os.system("mpg123 background.mp3")
+        playAudio("Background detected")
         continue
     else:
         # genenrateAudio("I think you are wearing " + labels[np.argmax(prediction)])
