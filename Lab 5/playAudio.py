@@ -1,7 +1,12 @@
-import gtts
-from playsound import playsound
+from gtts import gTTS
+import os
 
-tts = gtts.gTTS("Hello world")
-tts.save("hello.mp3")
+# define variables
+s = "hello world"
+file = "file.mp3"
 
-playsound("hello.mp3")
+# initialize tts, create mp3 and play
+tts = gTTS(s, 'en')
+tts.save(file)
+os.system("mpg123 " + file)
+
