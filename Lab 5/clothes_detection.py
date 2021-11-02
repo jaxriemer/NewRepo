@@ -12,6 +12,7 @@ import python_weather
 import asyncio
 
 # play audio
+import gtts
 from gtts import gTTS
 from io import BytesIO
 from pydub.playback import play
