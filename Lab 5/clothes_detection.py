@@ -140,18 +140,24 @@ while(True):
             # playAudio("You are good to go. Goodbye.")
         elif np.argmax(prediction) == 0:
             if what_to_wear == 1:
+                print("You should wear more clothes. Do not forget your coat.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
             elif what_to_wear == 2:
+                print("You should wear less clothes. Here is a t shirt.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
         elif np.argmax(prediction) == 1:
             if what_to_wear == 0:
+                print("You should wear less clothes. Here is your jacket.")
                 # playAudio("You should wear less clothes. Here is your jacket.")
             elif what_to_wear == 2:
+                print("You should wear less clothes. Here is a t shirt.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
         elif np.argmax(prediction) == 2:
             if what_to_wear == 0:
+                print("You should wear more clothes. Do not forget your jacket.")
                 # playAudio("You should wear more clothes. Do not forget your jacket.")
             elif what_to_wear == 1:
+                print("You should wear more clothes. Do not forget your coat.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
 
         # determine if umbrella is needed
