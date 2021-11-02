@@ -237,6 +237,9 @@ Our users do not need to interact with the closet every time they put on clothes
 
 Besides the digital components in this closet, we will also construct a physical mechanism that automatically brings the suggested outfit to the user right after the alert is given. This mechanism will work together with the computer vision to further help the user stay comfortable when outside.
 
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/closet_sketch.jpg"/>
+
+
 ### Part C
 ### Test the interaction prototype
 
