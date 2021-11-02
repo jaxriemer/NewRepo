@@ -58,14 +58,14 @@ for line in f.readlines():
         continue
     labels.append(line.split(' ')[1].strip())
 
-playAudio("Today's temperature is 57 degrees.")
-
-global what_to_wear
-what_to_wear = 0
-global rain
-rain = False
-global temp
-temp = -99999
+# playAudio("Today's temperature is 57 degrees.")
+#
+# global what_to_wear
+# what_to_wear = 0
+# global rain
+# rain = False
+# global temp
+# temp = -99999
 
 while(True):
 
