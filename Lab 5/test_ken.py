@@ -62,10 +62,10 @@ while True:
     try:
         # Set the servo to 180 degree position
         servo.angle = 180
-        time.sleep(0.3)
+        time.sleep(0.25)
         # Set the servo to 0 degree position
         servo.angle = 0
-        time.sleep(0.3)
+        time.sleep(0.25)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
