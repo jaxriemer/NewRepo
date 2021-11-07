@@ -32,7 +32,6 @@ def rotate_servo(servo):
         # Once interrupted, set the servo back to 0 degree position
         servo.angle = 0
         time.sleep(0.5)
-        break
 
 def choose_clothes(clothes, curr_pos):
     target_pos = clothes[clothes]
