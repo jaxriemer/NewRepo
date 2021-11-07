@@ -48,10 +48,11 @@ def move_servo_slide(closet_distance):
             time.sleep(0.5)
 
 def push_cloth():
-    print('push cloth')
+    print('about to push cloth')
     try:
         # Set the servo to 180 degree position
         servo_pick.angle = 180
+        print('cloth pushed')
         time.sleep(10)
         # Set the servo to 0 degree position
         servo_pick.angle = 0
@@ -78,7 +79,7 @@ def retrieve_cloth(curr_pos,target_cloth):
 
 
 # test
-curr_pos = 0
+curr_pos = 5
 
 curr_pos = retrieve_cloth(curr_pos,'jacket')
 
