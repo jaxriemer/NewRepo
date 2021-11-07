@@ -19,34 +19,44 @@ servo_pick.set_pulse_width_range(500, 2500)
 degree_pick = 360
 
 
-def rotate_servo(servo):
-    try:
-        # Set the servo to 180 degree position
-        servo.angle = 180
-        time.sleep(0.27) # the best sleep time
-        # Set the servo to 0 degree position
-        servo.angle = 0
-        time.sleep(0.27)
+def rotate_servo(closet_distance):
+    turn = closet_distance * 10 #TODO: need to alter 10 to correct number
 
-    except KeyboardInterrupt:
-        # Once interrupted, set the servo back to 0 degree position
-        servo.angle = 0
-        time.sleep(0.5)
+    for i in range(turn):
+        try:
+            # Set the servo to 180 degree position
+            servo_move.angle = 180
+            time.sleep(0.27) # the best sleep time
+            # Set the servo to 0 degree position
+            servo_move.angle = 0
+            time.sleep(0.27)
+
+        except KeyboardInterrupt:
+            # Once interrupted, set the servo back to 0 degree position
+            servo_move.angle = 0
+            time.sleep(0.5)
 
 def choose_clothes(clothes, curr_pos):
     target_pos = clothes[clothes]
 
 
-def grab_clothes():
-    rotate_servo(servo_pick,degree_pick)
+def push_clothes():
+    try:
+        # Set the servo to 180 degree position
+        servo_pick.angle = 180
+        time.sleep(10)
+        # Set the servo to 0 degree position
+        servo_pick.angle = 0
+    except KeyboardInterrupt:
+    # Once interrupted, set the servo back to 0 degree position
+    servo.angle = 0
     time.sleep(0.5)
-    rotate_servo(servo_pick,0)
 
 
 # clothes = {'coat':0,'tshirt':1}
 # curr_pos = 0
 
-rotate_servo(servo_move)
+rotate_servo(1)
 
 
 
