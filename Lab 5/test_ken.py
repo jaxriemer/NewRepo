@@ -67,7 +67,7 @@ def retrieve_cloth(curr_pos,target_cloth):
     target_pos = closet_cloth[target_cloth]
     print('current position is %d, moving to position %d.'%(curr_pos,target_pos))
 
-    move_distance = curr_pos - target_pos
+    move_distance = target_pos - curr_pos
     move_servo_slide(move_distance)
 
     push_cloth()
