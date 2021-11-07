@@ -1,80 +1,91 @@
+# # control servo to complete the cloth deliver function
+# import time
+# from adafruit_servokit import ServoKit
+#
+# # Set channels to the number of servo channels on your kit.
+# # There are 16 channels on the PCA9685 chip.
+# kit = ServoKit(channels=16)
+#
+# # Name and set up the servo according to the channel you are using.
+# servo_move = kit.servo[0]
+# servo_pick = kit.servo[1]
+#
+# # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
+# # Each servo might be different, you can normally find this information in the servo datasheet
+# servo_move.set_pulse_width_range(500, 2500)
+# servo_pick.set_pulse_width_range(500, 2500)
+#
+# degree_pick = 360
+#
+#
+# def rotate_servo(servo,degree):
+#     try:
+#         # Set the servo to 180 degree position
+#         servo.angle = degree
+#     except KeyboardInterrupt:
+#         # Once interrupted, set the servo back to 0 degree position
+#         servo.angle = 0
+#         time.sleep(0.5)
+#
+# def choose_clothes(clothes, curr_pos):
+#     target_pos = clothes[clothes]
+#
+#
+#
+# def grab_clothes():
+#     rotate_servo(servo_pick,degree_pick)
+#     time.sleep(0.5)
+#     rotate_servo(servo_pick,0)
+#
+#
+# clothes = {'coat':0,'tshirt':1}
+# servo_degree = {0:0, 1:180}
+# curr_pos = 0
 
-#This example is directly copied from the Tensorflow examples provided from the Teachable Machine.
-
-import tensorflow.keras
-from PIL import Image, ImageOps
-import numpy as np
-import cv2
-import sys
 
 
-# Disable scientific notation for clarity
-np.set_printoptions(suppress=True)
+import time
+from adafruit_servokit import ServoKit
 
-img = None
-webCam = False
-if(len(sys.argv)>1 and not sys.argv[-1]== "noWindow"):
+# Set channels to the number of servo channels on your kit.
+# There are 16 channels on the PCA9685 chip.
+kit = ServoKit(channels=16)
+
+# Name and set up the servo according to the channel you are using.
+servo = kit.servo[0]
+
+# Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
+# Each servo might be different, you can normally find this information in the servo datasheet
+servo.set_pulse_width_range(500, 2500)
+
+while True:
     try:
-        print("I'll try to read your image")
-        img = cv2.imread(sys.argv[1])
-        if img is None:
-            print("Failed to load image file:", sys.argv[1])
-    except:
-        print("Failed to load the image are you sure that:", sys.argv[1],"is a path to an image?")
-else:
-    try:
-        print("Trying to open the Webcam.")
-        cap = cv2.VideoCapture(0)
-        if cap is None or not cap.isOpened():
-            raise("No camera")
-        webCam = True
-    except:
-        print("Unable to access webcam.")
+        # Set the servo to 180 degree position
+        servo.angle = 180
+        time.sleep(2)
+        # Set the servo to 0 degree position
+        servo.angle = 0
+        time.sleep(2)
 
-
-# Load the model
-model = tensorflow.keras.models.load_model('clothing_model.h5')
-
-# Load Labels:
-labels=[]
-f = open("clothes_labels.txt", "r")
-for line in f.readlines():
-    if(len(line)<1):
-        continue
-    labels.append(line.split(' ')[1].strip())
-
-
-while(True):
-    if webCam:
-        ret, img = cap.read()
-
-    rows, cols, channels = img.shape
-    data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-
-    size = (224, 224)
-    img =  cv2.resize(img, size, interpolation = cv2.INTER_AREA)
-    #turn the image into a numpy array
-    image_array = np.asarray(img)
-
-    # Normalize the image
-    normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
-    # Load the image into the array
-    data[0] = normalized_image_array
-
-    # run the inference
-    prediction = model.predict(data)
-    print("I think its a:",labels[np.argmax(prediction)])
-
-    if webCam:
-        if sys.argv[-1] == "noWindow":
-            cv2.imwrite('detected_out.jpg',img)
-            continue
-        cv2.imshow('detected (press q to quit)',img)
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            cap.release()
-            break
-    else:
+    except KeyboardInterrupt:
+        # Once interrupted, set the servo back to 0 degree position
+        servo.angle = 0
+        time.sleep(0.5)
         break
 
-cv2.imwrite('detected_out.jpg',img)
-cv2.destroyAllWindows()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

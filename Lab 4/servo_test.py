@@ -20,9 +20,10 @@ while True:
         # Set the servo to 0 degree position
         servo.angle = 0
         time.sleep(2)
-        
+
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
         servo.angle = 0
         time.sleep(0.5)
         break
+
