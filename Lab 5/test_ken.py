@@ -41,7 +41,7 @@ def move_servo_slide(closet_distance):
             # Set the servo to 0 degree position
             servo_slide.angle = 0
             time.sleep(0.27)
-            d
+
         except KeyboardInterrupt:
             # Once interrupted, set the servo back to 0 degree position
             servo_slide.angle = 0
