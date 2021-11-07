@@ -2,7 +2,6 @@
 import time
 from adafruit_servokit import ServoKit
 
-the correct sleep time for servo is 0.27
 
 # Set channels to the number of servo channels on your kit.
 # There are 16 channels on the PCA9685 chip.
