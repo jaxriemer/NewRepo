@@ -133,7 +133,7 @@ def detect_and_recommend_clothes(prediction):
         # playAudio("It is going to rain today. Do not forget your umbrella.")
 
     if np.argmax(prediction) == 2:
-        print("Background detected")
+        # print("Background detected")
         # playAudio("Background detected")
         return cloth_recommendation
     else:
