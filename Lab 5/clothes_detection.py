@@ -103,6 +103,7 @@ loop.close()
 playAudio("Today's temperature is " + str(temp) + " degrees")
 
 def detectClothes(prediction):
+    print(prediction)
     if np.argmax(prediction) == 2:
         print("Background detected")
         # playAudio("Background detected")
