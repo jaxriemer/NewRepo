@@ -198,7 +198,7 @@ def move_servo_slide(closet_distance):
 
     print('move %d position'%closet_distance)
 
-    turn = abs(closet_distance * 34) #TODO: need to alter 5 to correct number
+    turn = abs(closet_distance * 34)
     print('move %d turns'%turn)
 
     for i in range(turn):
