@@ -139,6 +139,7 @@ def detect_and_recommend_clothes(prediction):
     else:
         print("I think you are wearing a " + labels[np.argmax(prediction)])
         # playAudio("I think you are wearing " + labels[np.argmax(prediction)])
+        print('It is currently %d degree in NYC.'%temp)
 
         if np.argmax(prediction) == what_to_wear:
             print("Outfit matches")
