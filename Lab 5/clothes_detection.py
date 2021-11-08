@@ -37,7 +37,7 @@ servo_grab = kit.servo[0]
 # Each servo might be different, you can normally find this information in the servo datasheet
 servo_slide_forward.set_pulse_width_range(500, 2500)
 servo_slide_backward.set_pulse_width_range(500, 2500)
-servo_pick.set_pulse_width_range(500, 2500)
+servo_grab.set_pulse_width_range(500, 2500)
 
 what_to_wear = 0
 rain = False
