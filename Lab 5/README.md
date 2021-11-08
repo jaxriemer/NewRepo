@@ -239,6 +239,9 @@ Besides the digital components in this closet, we will also construct a physical
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/closet_sketch.jpg"/>
 
+In our initial design of the smart closet, we created two conveyor belts to transform the cloths slowly to the left in the closet and quickly to the right when the cloth reaches the very left side. Between the belts a mechanism is designed to pass the cloths from one belt to the other. The cloths rotate 90 degrees on the fast speed belt to reduce the depth needed to install this smart closet. 
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/ClosetDesign2.jpg"/>
 
 ### Part C
 ### Test the interaction prototype
@@ -285,3 +288,5 @@ During the lecture, we mentioned questions to help characterize a material:
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/ClosetDesign.jpg"/>
