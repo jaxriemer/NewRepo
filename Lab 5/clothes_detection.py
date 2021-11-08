@@ -267,7 +267,7 @@ def retrieve_cloth(curr_pos,target_cloth):
     return curr_pos
 
 # initialize the position of servo_slide
-curr_pos = 5
+curr_pos = 0
 
 while(True):
 
