@@ -254,6 +254,7 @@ def retrieve_cloth(curr_pos,target_cloth):
         return curr_pos
 
     closet_cloth = {'coat':0,'tshirt':1,'jacket':2}
+
     target_pos = closet_cloth[target_cloth]
     print('current position is %d, moving to position %d.'%(curr_pos,target_pos))
 
