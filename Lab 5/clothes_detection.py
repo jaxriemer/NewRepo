@@ -31,7 +31,7 @@ kit = ServoKit(channels=16)
 # Name and set up the servo according to the channel you are using.
 servo_slide_forward = kit.servo[0]
 servo_slide_backward = kit.servo[0]
-servo_grab = kit.servo[0]
+servo_grab = kit.servo[2]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
@@ -303,7 +303,6 @@ while(True):
 
     target_cloth = detect_and_recommend_clothes(prediction)
     curr_pos = retrieve_cloth(curr_pos,target_cloth)
-
 
 cv2.imwrite('detected_out.jpg',img)
 cv2.destroyAllWindows()
