@@ -107,7 +107,7 @@ else:
 
 # Load the model
 model = tensorflow.keras.models.load_model('clothing_model.h5')
-clo
+
 # Load Labels:
 labels=[]
 f = open("clothes_labels.txt", "r")
