@@ -152,14 +152,14 @@ def detect_and_recommend_clothes(prediction):
         elif np.argmax(prediction) == 0:
             if what_to_wear == 1:
                 time.sleep(1)
-                print("You should wear less clothes. Here is a t-shirt.")
+                print("You should wear less clothes. I recommend a t-shirt for today.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
                 cloth_recommendation = "tshirt"
                 return cloth_recommendation
 
             elif what_to_wear == 3:
                 time.sleep(1)
-                print("You should wear more clothes. Do not forget your jacket.")
+                print("You should wear more clothes. I recommend a jacket for today.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
                 cloth_recommendation = "jacket"
                 return cloth_recommendation
@@ -168,7 +168,7 @@ def detect_and_recommend_clothes(prediction):
         elif np.argmax(prediction) == 1:
             if what_to_wear == 0:
                 time.sleep(1)
-                print("You should wear more clothes. Do not forget your jacket.")
+                print("You should wear more clothes. I recommend a jacket for today.")
                 # playAudio("You should wear less clothes. Here is your jacket.")
                 cloth_recommendation = "jacket"
                 return cloth_recommendation
@@ -184,14 +184,14 @@ def detect_and_recommend_clothes(prediction):
         elif np.argmax(prediction) == 3:
             if what_to_wear == 0:
                 time.sleep(1)
-                print("You should wear less clothes. Here is your jacket.")
+                print("You should wear less clothes. I recommend a jacket for today.")
                 # playAudio("You should wear more clothes. Do not forget your jacket.")
                 cloth_recommendation = "jacket"
                 return cloth_recommendation
 
             elif what_to_wear == 1:
                 time.sleep(1)
-                print("You should wear less clothes. Here is your t shirt.")
+                print("You should wear less clothes. I recommend a t-shirt for today.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
                 cloth_recommendation = "tshirt"
                 return cloth_recommendation
@@ -313,8 +313,10 @@ while(True):
     else:
         break
 
+    print('\n'* 5)
     target_cloth = detect_and_recommend_clothes(prediction)
     curr_pos = retrieve_cloth(curr_pos,target_cloth)
+    print('\n'* 5)
 
 cv2.imwrite('detected_out.jpg',img)
 cv2.destroyAllWindows()
