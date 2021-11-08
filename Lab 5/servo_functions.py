@@ -18,8 +18,6 @@ servo_slide_forward.set_pulse_width_range(500, 2500)
 servo_slide_backward.set_pulse_width_range(500, 2500)
 servo_pick.set_pulse_width_range(500, 2500)
 
-
-
 def move_servo_slide(closet_distance):
     if closet_distance > 0:
         servo_slide = servo_slide_forward
@@ -75,7 +73,6 @@ def retrieve_cloth(curr_pos,target_cloth):
     curr_pos = target_pos
 
     return curr_pos
-
 
 
 # test
