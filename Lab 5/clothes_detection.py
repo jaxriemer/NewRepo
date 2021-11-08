@@ -137,10 +137,10 @@ def detect_and_recommend_clothes(prediction):
         # playAudio("Background detected")
         return cloth_recommendation
     else:
-        time.sleep(1)
+        # time.sleep(1)
         print("I think you are wearing a " + labels[np.argmax(prediction)])
         # playAudio("I think you are wearing " + labels[np.argmax(prediction)])
-        time.sleep(1)
+        # time.sleep(1)
         print('It is currently %d degree in NYC.'%temp)
 
         if np.argmax(prediction) == what_to_wear:
@@ -151,14 +151,14 @@ def detect_and_recommend_clothes(prediction):
         # wearing jacket
         elif np.argmax(prediction) == 0:
             if what_to_wear == 1:
-                time.sleep(1)
+                # time.sleep(1)
                 print("You should wear less clothes. I recommend a t-shirt for today.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
                 cloth_recommendation = "tshirt"
                 return cloth_recommendation
 
             elif what_to_wear == 3:
-                time.sleep(1)
+                # time.sleep(1)
                 print("You should wear more clothes. I recommend a jacket for today.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
                 cloth_recommendation = "jacket"
@@ -167,14 +167,14 @@ def detect_and_recommend_clothes(prediction):
         # wearing t-shirt
         elif np.argmax(prediction) == 1:
             if what_to_wear == 0:
-                time.sleep(1)
+                # time.sleep(1)
                 print("You should wear more clothes. I recommend a jacket for today.")
                 # playAudio("You should wear less clothes. Here is your jacket.")
                 cloth_recommendation = "jacket"
                 return cloth_recommendation
 
             elif what_to_wear == 3:
-                time.sleep(1)
+                # time.sleep(1)
                 print("You should wear more clothes. Do not forget your coat.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
                 cloth_recommendation = "coat"
@@ -183,14 +183,14 @@ def detect_and_recommend_clothes(prediction):
         # wearing coat
         elif np.argmax(prediction) == 3:
             if what_to_wear == 0:
-                time.sleep(1)
+                # time.sleep(1)
                 print("You should wear less clothes. I recommend a jacket for today.")
                 # playAudio("You should wear more clothes. Do not forget your jacket.")
                 cloth_recommendation = "jacket"
                 return cloth_recommendation
 
             elif what_to_wear == 1:
-                time.sleep(1)
+                # time.sleep(1)
                 print("You should wear less clothes. I recommend a t-shirt for today.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
                 cloth_recommendation = "tshirt"
@@ -266,14 +266,14 @@ def retrieve_cloth(curr_pos,target_cloth):
 
     target_pos = closet_cloth[target_cloth]
     # print('current position is %d, moving to position %d.'%(curr_pos,target_pos))
-    print('Please wait, I am moving to grab the %s for you'%target_cloth)
+    print('Please wait, I will grab you a %s. Have a great day!'%target_cloth)
 
     move_distance = target_pos - curr_pos
-    move_servo_slide(move_distance)
+    # move_servo_slide(move_distance)
 
-    print('Here is your %s. Have a great day!'%target_cloth)
-    grab_cloth()
-    release_cloth()
+    # print('Here is your %s. Have a great day!'%target_cloth)
+    # grab_cloth()
+    # release_cloth()
     curr_pos = target_pos
 
     return curr_pos
