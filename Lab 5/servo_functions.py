@@ -45,19 +45,49 @@ def move_servo_slide(closet_distance):
             servo_slide.angle = 0
             time.sleep(0.5)
 
-def push_cloth():
-    print('about to push cloth')
-    try:
-        # Set the servo to 180 degree position
-        servo_pick.angle = 180
-        print('cloth pushed')
-        time.sleep(10)
-        # Set the servo to 0 degree position
-        servo_pick.angle = 0
-    except KeyboardInterrupt:
-        # Once interrupted, set the servo back to 0 degree position
-        servo_pick.angle = 0
-        time.sleep(0.5)
+# def push_cloth():
+#     print('about to push cloth')
+#     try:
+#         # Set the servo to 180 degree position
+#         servo_pick.angle = 180
+#         print('cloth pushed')
+#         time.sleep(10)
+#         # Set the servo to 0 degree position
+#         servo_pick.angle = 0
+#     except KeyboardInterrupt:
+#         # Once interrupted, set the servo back to 0 degree position
+#         servo_pick.angle = 0
+#         time.sleep(0.5)
+
+def grab_cloth():
+    deg = 0
+    while deg < 110:
+        deg += 1
+        try:
+            # Set the servo to degree position
+            servo_grab.angle = deg
+            time.sleep(0.03)
+
+        except KeyboardInterrupt:
+            # Once interrupted, set the servo back to 0 degree position
+            servo_grab.angle = 0
+            time.sleep(0.5)
+            break
+
+def release_cloth():
+    deg = 110
+    while deg > 0:
+        deg -= 1
+        try:
+            # Set the servo to degree position
+            servo_grab.angle = deg
+            time.sleep(0.03)
+
+        except KeyboardInterrupt:
+            # Once interrupted, set the servo back to 0 degree position
+            servo_grab.angle = 0
+            time.sleep(0.5)
+            break
 
 
 def retrieve_cloth(curr_pos,target_cloth):
@@ -69,14 +99,13 @@ def retrieve_cloth(curr_pos,target_cloth):
     move_distance = target_pos - curr_pos
     move_servo_slide(move_distance)
 
-    push_cloth()
+    grab_cloth()
+    release_cloth()
     curr_pos = target_pos
 
     return curr_pos
 
-
 # test
 curr_pos = 5
-
 curr_pos = retrieve_cloth(curr_pos,'jacket')
 

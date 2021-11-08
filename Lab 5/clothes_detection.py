@@ -109,7 +109,7 @@ def detectClothes(prediction):
     else:
         print("I think you are wearing a " + labels[np.argmax(prediction)])
         # playAudio("I think you are wearing " + labels[np.argmax(prediction)])
-
+g
         if np.argmax(prediction) == what_to_wear:
             print("Outfit matches")
             # playAudio("You are good to go. Goodbye.")
@@ -147,6 +147,8 @@ def detectClothes(prediction):
             # playAudio("It is going to rain today. Do not forget your umbrella.")
 
 while(True):
+
+    # read camera image
     if webCam:
         ret, img = cap.read()
 
