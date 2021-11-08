@@ -78,13 +78,13 @@ def retrieve_cloth(curr_pos,target_cloth):
 
 def servo_distance_test(closet_distance):
     turn = abs(closet_distance * 14) #TODO: need to alter 5 to correct number
-    while True:
+    while True:t
         try:
             # Set the servo to 180 degree position
-            servo.angle = 180
+            servo_slide_forward.angle = 180
             time.sleep(0.27)
             # Set the servo to 0 degree position
-            servo.angle = 0
+            servo_slide_forward.angle = 0
             time.sleep(0.27)
 
         except KeyboardInterrupt:
