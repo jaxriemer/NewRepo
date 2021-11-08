@@ -13,7 +13,6 @@ servo_grab = kit.servo[2]
 servo_grab.set_pulse_width_range(500, 2500)
 
 
-
 def grab_cloth():
     deg = 0
     while deg < 110:

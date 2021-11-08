@@ -53,8 +53,7 @@ def move_servo_slide(closet_distance):
     turn = abs(closet_distance * 34)
     print('move %d turns'%turn)
 
-    # for i in range(turn):
-    while True:
+    for i in range(turn):
         try:
             # Set the servo to 180 degree position
             servo_slide.angle = 180
@@ -124,4 +123,8 @@ def retrieve_cloth(curr_pos,target_cloth):
 curr_pos = 0
 
 move_servo_slide(2)
+
+while True:
+    grab_cloth()
+    release_cloth()
 

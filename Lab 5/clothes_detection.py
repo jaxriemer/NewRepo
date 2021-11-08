@@ -107,7 +107,7 @@ else:
 
 # Load the model
 model = tensorflow.keras.models.load_model('clothing_model.h5')
-
+clo
 # Load Labels:
 labels=[]
 f = open("clothes_labels.txt", "r")
@@ -191,15 +191,15 @@ def detect_and_recommend_clothes(prediction):
 def move_servo_slide(closet_distance):
     if closet_distance > 0:
         servo_slide = servo_slide_forward
-        print('move forward')
+        # print('move forward')
     else:
         servo_slide = servo_slide_backward
-        print('move backward')
+        # print('move backward')
 
-    print('move %d position'%closet_distance)
+    # print('move %d position'%closet_distance)
 
     turn = abs(closet_distance * 34)
-    print('move %d turns'%turn)
+    # print('move %d turns'%turn)
 
     for i in range(turn):
         try:
@@ -256,11 +256,13 @@ def retrieve_cloth(curr_pos,target_cloth):
     closet_cloth = {'coat':0,'tshirt':1,'jacket':2}
 
     target_pos = closet_cloth[target_cloth]
-    print('current position is %d, moving to position %d.'%(curr_pos,target_pos))
+    # print('current position is %d, moving to position %d.'%(curr_pos,target_pos))
+    print('Please wait, I am moving to grab the %s for your'%target_cloth)
 
     move_distance = target_pos - curr_pos
     move_servo_slide(move_distance)
 
+    print('Here is your %s. Have a great day!'%target_cloth)
     grab_cloth()
     release_cloth()
     curr_pos = target_pos
