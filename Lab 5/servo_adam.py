@@ -20,13 +20,29 @@ def grab_cloth():
         deg += 1
         try:
             # Set the servo to degree position
-            servo.angle = deg
+            servo_grab.angle = deg
             time.sleep(0.1)
 
         except KeyboardInterrupt:
             # Once interrupted, set the servo back to 0 degree position
-            servo.angle = 0
+            servo_grab.angle = 0
+            time.sleep(0.5)
+            break
+
+def release_cloth():
+    deg = 180
+    while deg > 0:
+        deg -= 1
+        try:
+            # Set the servo to degree position
+            servo_grab.angle = deg
+            time.sleep(0.1)
+
+        except KeyboardInterrupt:
+            # Once interrupted, set the servo back to 0 degree position
+            servo_grab.angle = 0
             time.sleep(0.5)
             break
 
 grab_cloth()
+release_cloth()
