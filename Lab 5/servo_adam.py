@@ -45,4 +45,4 @@ def release_cloth():
             break
 
 grab_cloth()
-release_cloth()
+#release_cloth()
