@@ -137,8 +137,10 @@ def detect_and_recommend_clothes(prediction):
         # playAudio("Background detected")
         return cloth_recommendation
     else:
+        time.sleep(1)
         print("I think you are wearing a " + labels[np.argmax(prediction)])
         # playAudio("I think you are wearing " + labels[np.argmax(prediction)])
+        time.sleep(1)
         print('It is currently %d degree in NYC.'%temp)
 
         if np.argmax(prediction) == what_to_wear:
@@ -149,12 +151,14 @@ def detect_and_recommend_clothes(prediction):
         # wearing jacket
         elif np.argmax(prediction) == 0:
             if what_to_wear == 1:
+                time.sleep(1)
                 print("You should wear less clothes. Here is a t-shirt.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
                 cloth_recommendation = "tshirt"
                 return cloth_recommendation
 
             elif what_to_wear == 3:
+                time.sleep(1)
                 print("You should wear more clothes. Do not forget your jacket.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
                 cloth_recommendation = "jacket"
@@ -163,12 +167,14 @@ def detect_and_recommend_clothes(prediction):
         # wearing t-shirt
         elif np.argmax(prediction) == 1:
             if what_to_wear == 0:
+                time.sleep(1)
                 print("You should wear more clothes. Do not forget your jacket.")
                 # playAudio("You should wear less clothes. Here is your jacket.")
                 cloth_recommendation = "jacket"
                 return cloth_recommendation
 
             elif what_to_wear == 3:
+                time.sleep(1)
                 print("You should wear more clothes. Do not forget your coat.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
                 cloth_recommendation = "coat"
@@ -177,12 +183,14 @@ def detect_and_recommend_clothes(prediction):
         # wearing coat
         elif np.argmax(prediction) == 3:
             if what_to_wear == 0:
+                time.sleep(1)
                 print("You should wear less clothes. Here is your jacket.")
                 # playAudio("You should wear more clothes. Do not forget your jacket.")
                 cloth_recommendation = "jacket"
                 return cloth_recommendation
 
             elif what_to_wear == 1:
+                time.sleep(1)
                 print("You should wear less clothes. Here is your t shirt.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
                 cloth_recommendation = "tshirt"
