@@ -71,15 +71,15 @@ async def getweather():
     # close the wrapper once done
     await client.close()
 
-def playAudio(text):
-    print('Play Audio')
-    print(text)
-    tts = gtts.gTTS(text, lang='en')
-    mp3 = BytesIO()
-    tts.write_to_fp(mp3)
-    mp3.seek(0)
-    audio = AudioSegment.from_file(mp3, format='mp3')
-    play(audio)
+# def playAudio(text):
+#     print('Play Audio')
+#     print(text)
+#     tts = gtts.gTTS(text, lang='en')
+#     mp3 = BytesIO()
+#     tts.write_to_fp(mp3)
+#     mp3.seek(0)
+#     audio = AudioSegment.from_file(mp3, format='mp3')
+#     play(audio)
 
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
@@ -121,7 +121,7 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(getweather())
 loop.close()
 
-playAudio("Today's temperature is " + str(temp) + " degrees")
+# playAudio("Today's temperature is " + str(temp) + " degrees")
 
 def detect_and_recommend_clothes(prediction):
 
@@ -217,7 +217,7 @@ def move_servo_slide(closet_distance):
 
 def grab_cloth():
     deg = 0
-    print('Grabing cloth')
+    # print('Grabing cloth')
     while deg < 110:
         deg += 1
         try:
@@ -233,7 +233,7 @@ def grab_cloth():
 
 def release_cloth():
     deg = 110
-    print('Releasing cloth')
+    # print('Releasing cloth')
 
     while deg > 0:
         deg -= 1
@@ -257,7 +257,7 @@ def retrieve_cloth(curr_pos,target_cloth):
 
     target_pos = closet_cloth[target_cloth]
     # print('current position is %d, moving to position %d.'%(curr_pos,target_pos))
-    print('Please wait, I am moving to grab the %s for your'%target_cloth)
+    print('Please wait, I am moving to grab the %s for you'%target_cloth)
 
     move_distance = target_pos - curr_pos
     move_servo_slide(move_distance)
