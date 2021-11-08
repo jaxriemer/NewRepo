@@ -19,9 +19,30 @@ from pydub.playback import play
 from pydub import AudioSegment
 import os
 
+# control servo to complete the cloth deliver function
+import time
+from adafruit_servokit import ServoKit
+
+
+# Set channels to the number of servo channels on your kit.
+# There are 16 channels on the PCA9685 chip.
+kit = ServoKit(channels=16)
+
+# Name and set up the servo according to the channel you are using.
+servo_slide_forward = kit.servo[0]
+servo_slide_backward = kit.servo[0]
+servo_pick = kit.servo[0]
+
+# Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
+# Each servo might be different, you can normally find this information in the servo datasheet
+servo_slide_forward.set_pulse_width_range(500, 2500)
+servo_slide_backward.set_pulse_width_range(500, 2500)
+servo_pick.set_pulse_width_range(500, 2500)
+
 what_to_wear = 0
 rain = False
 temp = -999999
+
 async def getweather():
     # declare the client. format defaults to metric system (celcius, km/h, etc.)
     client = python_weather.Client(format=python_weather.IMPERIAL)
@@ -102,17 +123,26 @@ loop.close()
 
 playAudio("Today's temperature is " + str(temp) + " degrees")
 
-def detectClothes(prediction):
-    print(prediction)
+def detect_and_recommend_clothes(prediction):
+
+    cloth_recommendation = "no need"
+
+    # determine if umbrella is needed
+    if rain:
+        print("It is going to rain today. Do not forget your umbrella.")
+        # playAudio("It is going to rain today. Do not forget your umbrella.")
+
     if np.argmax(prediction) == 2:
         print("Background detected")
         # playAudio("Background detected")
+        return cloth_recommendation
     else:
         print("I think you are wearing a " + labels[np.argmax(prediction)])
         # playAudio("I think you are wearing " + labels[np.argmax(prediction)])
 
         if np.argmax(prediction) == what_to_wear:
             print("Outfit matches")
+            return cloth_recommendation
             # playAudio("You are good to go. Goodbye.")
 
         # wearing jacket
@@ -120,32 +150,118 @@ def detectClothes(prediction):
             if what_to_wear == 1:
                 print("You should wear less clothes. Here is a t-shirt.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
+                cloth_recommendation = "tshirt"
+                return cloth_recommendation
+
             elif what_to_wear == 3:
                 print("You should wear more clothes. Do not forget your jacket.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
+                cloth_recommendation = "jacket"
+                return cloth_recommendation
 
         # wearing t-shirt
         elif np.argmax(prediction) == 1:
             if what_to_wear == 0:
                 print("You should wear more clothes. Do not forget your jacket.")
                 # playAudio("You should wear less clothes. Here is your jacket.")
+                cloth_recommendation = "jacket"
+                return cloth_recommendation
+
             elif what_to_wear == 3:
                 print("You should wear more clothes. Do not forget your coat.")
                 # playAudio("You should wear less clothes. Here is a t shirt.")
+                cloth_recommendation = "coat"
+                return cloth_recommendation
 
         # wearing coat
         elif np.argmax(prediction) == 3:
             if what_to_wear == 0:
                 print("You should wear less clothes. Here is your jacket.")
                 # playAudio("You should wear more clothes. Do not forget your jacket.")
+                cloth_recommendation = "jacket"
+                return cloth_recommendation
+
             elif what_to_wear == 1:
                 print("You should wear less clothes. Here is your t shirt.")
                 # playAudio("You should wear more clothes. Do not forget your coat.")
+                cloth_recommendation = "tshirt"
+                return cloth_recommendation
 
-        # determine if umbrella is needed
-        if rain:
-            print("It is going to rain today. Do not forget your umbrella.")
-            # playAudio("It is going to rain today. Do not forget your umbrella.")
+
+def move_servo_slide(closet_distance):
+    if closet_distance > 0:
+        servo_slide = servo_slide_forward
+        print('move forward')
+    else:
+        servo_slide = servo_slide_backward
+        print('move backward')
+
+    print('move %d position'%closet_distance)
+
+    turn = abs(closet_distance * 5) #TODO: need to alter 5 to correct number
+    print('move %d turns'%turn)
+
+    for i in range(turn):
+        try:
+            # Set the servo to 180 degree position
+            servo_slide.angle = 180
+            time.sleep(0.27) # the best sleep time
+            # Set the servo to 0 degree position
+            servo_slide.angle = 0
+            time.sleep(0.27)
+
+        except KeyboardInterrupt:
+            # Once interrupted, set the servo back to 0 degree position
+            servo_slide.angle = 0
+            time.sleep(0.5)
+
+def grab_cloth():
+    deg = 0
+    while deg < 110:
+        deg += 1
+        try:
+            # Set the servo to degree position
+            servo_grab.angle = deg
+            time.sleep(0.03)
+
+        except KeyboardInterrupt:
+            # Once interrupted, set the servo back to 0 degree position
+            servo_grab.angle = 0
+            time.sleep(0.5)
+            break
+
+def release_cloth():
+    deg = 110
+    while deg > 0:
+        deg -= 1
+        try:
+            # Set the servo to degree position
+            servo_grab.angle = deg
+            time.sleep(0.03)
+
+        except KeyboardInterrupt:
+            # Once interrupted, set the servo back to 0 degree position
+            servo_grab.angle = 0
+            time.sleep(0.5)
+            break
+
+def retrieve_cloth(curr_pos,target_cloth):
+
+    closet_cloth = {'coat':0,'tshirt':1,'jacket':2}
+    target_pos = closet_cloth[target_cloth]
+    print('current position is %d, moving to position %d.'%(curr_pos,target_pos))
+
+    move_distance = target_pos - curr_pos
+    move_servo_slide(move_distance)
+
+    grab_cloth()
+    release_cloth()
+    curr_pos = target_pos
+
+    return curr_pos
+
+# initialize the position of servo_slide
+curr_pos = 5
 
 while(True):
 
@@ -179,7 +295,9 @@ while(True):
     else:
         break
 
-    detectClothes(prediction)
+    target_cloth = detect_and_recommend_clothes(prediction)
+    curr_pos = retrieve_cloth(curr_pos,target_cloth)
+
 
 cv2.imwrite('detected_out.jpg',img)
 cv2.destroyAllWindows()
