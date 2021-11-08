@@ -16,7 +16,7 @@ servo_grab.set_pulse_width_range(500, 2500)
 
 def grab_cloth():
     deg = 0
-    while deg < 135:
+    while deg < 120:
         deg += 1
         try:
             # Set the servo to degree position
@@ -30,7 +30,7 @@ def grab_cloth():
             break
 
 def release_cloth():
-    deg = 135
+    deg = 120
     while deg > 0:
         deg -= 1
         try:
