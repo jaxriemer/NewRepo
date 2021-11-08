@@ -122,4 +122,19 @@ def retrieve_cloth(curr_pos,target_cloth):
 # initialize the position of servo_slide
 curr_pos = 0
 
-move_servo_slide(2)
+# move_servo_slide(2)
+
+
+while True:
+    try:
+        # Set the servo to 180 degree position
+        servo_slide.angle = 180
+        time.sleep(0.27) # the best sleep time
+        # Set the servo to 0 degree position
+        servo_slide.angle = 0
+        time.sleep(0.27)
+
+    except KeyboardInterrupt:
+        # Once interrupted, set the servo back to 0 degree position
+        servo_slide.angle = 0
+        time.sleep(0.5)
