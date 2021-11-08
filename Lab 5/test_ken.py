@@ -89,7 +89,7 @@ def servo_distance_test(closet_distance):
 
         except KeyboardInterrupt:
             # Once interrupted, set the servo back to 0 degree position
-            servo.angle = 0
+            servo_slide_forward.angle = 0
             time.sleep(0.5)
             break
 
@@ -99,6 +99,13 @@ def servo_distance_test(closet_distance):
 # curr_pos = 5
 # curr_pos = retrieve_cloth(curr_pos,'jacket')
 servo_distance_test(1)
+print('finished first run')
+servo_distance_test(1)
+print('finished second run')
+servo_distance_test(1)
+print('finished third run')
+servo_distance_test(1)
+print('finished first run')
 
 
 
