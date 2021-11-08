@@ -60,12 +60,12 @@ async def getweather():
         global rain
         rain = True
 
-    if today.temperature >= 70:
+    if today.temperature > 70:
         global what_to_wear
         what_to_wear = 1
-    elif 50 <= today.temperature <= 70:
+    elif 60 <= today.temperature <= 70:
         what_to_wear = 0
-    elif today.temperature <= 50:
+    elif today.temperature < 60:
         what_to_wear = 3
 
     # close the wrapper once done
