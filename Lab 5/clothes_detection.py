@@ -31,7 +31,7 @@ kit = ServoKit(channels=16)
 # Name and set up the servo according to the channel you are using.
 servo_slide_forward = kit.servo[0]
 servo_slide_backward = kit.servo[0]
-servo_pick = kit.servo[0]
+servo_grab = kit.servo[0]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
@@ -217,6 +217,7 @@ def move_servo_slide(closet_distance):
 
 def grab_cloth():
     deg = 0
+    print('Grabing cloth')
     while deg < 110:
         deg += 1
         try:
@@ -232,6 +233,8 @@ def grab_cloth():
 
 def release_cloth():
     deg = 110
+    print('Releasing cloth')
+
     while deg > 0:
         deg -= 1
         try:
