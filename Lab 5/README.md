@@ -303,7 +303,7 @@ Following exploration and reflection from Part 1, finish building your interacti
 
 We iterated the physical mechanisms of our smart closet. We used 3d printing to create a study prototype of our initial design, and discovered that the precision needed for the cloth conveyor belts to work properly is extremely high. Therefore, we created the second design as shown below, that moves the grabbing mechanism across the closet instead of the cloths themselves. We designed a mechanism that grabs the cloth's hanging points automatically as the grabber is pushed outwards by a servo, and releases during the opposite movement, in order to reduce the number of servos needed. This design is modeled with Rhinoceros, and prototyped with 3d printed components. 
 
-During the prototyping process, we discovered that our servo could only make turns below 180 degrees. We updated the design accordingly by creating a ratcheting gear for the horizontal sliding mechanism to only turn one directional while the servo rotates back and forth. We also enlarged the gear controlling the grabber to make sure the controlling servo remains below 180 degrees. 
+During the prototyping process, we discovered that our servo could only make turns below 180 degrees. We updated the design accordingly by creating a ratcheting gear for the horizontal sliding mechanism to only turn one directional while the servo rotates back and forth. We also enlarged the gear controlling the grabber to make sure the corresponding servo remains below 180 degrees. 
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/ClosetDesign.jpg"/>
 
