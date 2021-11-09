@@ -301,8 +301,14 @@ Following exploration and reflection from Part 1, finish building your interacti
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/InitialPrototype.jpg"/>
 
+We iterated the physical mechanisms of our smart closet. We used 3d printing to create a study prototype of our initial design, and discovered that the precision needed for the cloth conveyor belts to work properly is extremely high. Therefore, we created the second design as shown below that moves the cloth grabbing mechanism across the closet instead of the cloths. We designed a mechanism that grabs the cloth's hanging points automatically as the grabber is pushed outwards by a servo, and releases during the opposite movement, in order to reduce the number of servos needed. This design is modeled with Rhinoceros, and prototyped with 3d printed components. 
+
+During the prototyping process, we discovered that our servo could only make turns below 180 degrees. We updated the design accordingly by creating a ratcheting gear for the horizontal sliding mechanism to only turn one directional while the servo rotates back and forth. We also enlarged the gear controlling the grabber to make sure the controlling servo remains below 180 degrees. 
+
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/ClosetDesign.jpg"/>
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/PrototypePhotos.jpg"/>
+
+We created several testing codes for each of these mechanisms. Our final code that combines the moving mechanisms with the computer vision is [clothes_detection.py](clothes_detection.py) Due to precision issues of handcrafting we did not capture their proper functions in one video, but we were able to record their movements individually and compile them into the final video below. 
 
 [![closet video](https://img.youtube.com/vi/-F12KcUUEZ4/0.jpg)](https://www.youtube.com/watch?v=-F12KcUUEZ4)
