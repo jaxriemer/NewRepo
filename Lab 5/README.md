@@ -202,6 +202,7 @@ This might take a while to get fully installed. After installation, connect your
 
 **\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
 <img width="812" alt="Screen Shot 2021-11-08 at 8 22 17 PM" src="https://user-images.githubusercontent.com/39501842/140844395-271916fa-eae7-4404-869c-776234d31d27.png">
+<img width="1082" alt="Screen Shot 2021-11-08 at 8 27 37 PM" src="https://user-images.githubusercontent.com/39501842/140844988-3a1497c9-67cc-4fb2-ae00-36258743495c.png">
 
 We can train a model to detect packages or food delivery. When packages or foods are delivered at our door, our model will automatically notify us. Compared to OpenCV or MediaPipe, Teachable Machine can distinguish and identify different objects. 
 
