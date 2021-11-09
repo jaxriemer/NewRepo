@@ -110,8 +110,8 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 **Face detection**
 
   Face detection can be used on security cameras by alerting the owner or taking photos when suspicious faces are detected. It does not work well when faces are partially covered, and could be used for detecting whether subjects are wearing masks properly. 
+<img width="567" alt="face_detection" src="https://user-images.githubusercontent.com/39501842/140844478-79ba2ed3-b4a0-44ce-a576-ae39c1eaf85f.png">
 
-<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/face-detection.png"  width="400"/>
 
 **Flow detection**
 
