@@ -263,10 +263,7 @@ For example:
 1. When it fails, why does it fail?
 1. Based on the behavior you have seen, what other scenarios could cause problems?
 
-1. The closet will only detect the outermost layer of your clothes. 
-1. If the misclassification of clothes leads to wrong recommendations of clothes, the user will be too cold or too hot throughout the day. And hate the closet...
-1. When alerting and giving recommendations to the users, the closet can indicate the confidence of their recommendation. For example, if it is snowing but the user is only wearing a t-shirt, the closet can say, “the current snowing weather is too cold for only wearing a t-shirt, I think a coat is more appropriate.” However, if the cloth is only slight appropriate, the closet can say, “I think your clothes is not warm enough for today’s weather, you might want to consider wearing a little bit more”
-
+The closet is supposed to be triggered(turned on) when the user stands in front of the closet after he/she has chosen what to wear for the day. However, when the device makes a mistake on what the user is wearing, it will fail. This might be because the device is not recognizing the clothe the user is wearing, thus makes a wrong prediction while the closet will only detect the outermost layer of your clothes. If the misclassification of clothes leads to wrong recommendations of clothes, the user will be too cold or too hot throughout the day. And hate the closet. 
 
 **\*\*\*Think about someone using the system. Describe how you think this will work.\*\*\***
 1. Are they aware of the uncertainties in the system?
@@ -275,6 +272,7 @@ For example:
 1. Are there optimizations you can try to do on your sense-making algorithm.
 
 
+When alerting and giving recommendations to the users, the closet can indicate the confidence of their recommendation. For example, if it is snowing but the user is only wearing a t-shirt, the closet can say, “the current snowing weather is too cold for only wearing a t-shirt, I think a coat is more appropriate.” However, if the cloth is only slight appropriate, the closet can say, “I think your clothes is not warm enough for today’s weather, you might want to consider wearing a little bit more”.
 
 ### Part D
 ### Characterize your own Observant system
@@ -288,6 +286,8 @@ During the lecture, we mentioned questions to help characterize a material:
 * When it breaks how will X break?
 * What are other properties/behaviors of X?
 * How does X feel?
+
+Our device can be used to give advice on what to wear according to the current weather. Environment doesn’t really matter as it will always be under a stable environment. One thing that may affect the performance of the device is whether the model is trained good enough for the device to detect what the user is wearing precisely. When this happens, the device will make a wrong recommendation, which will make the user too cold/hot. 
 
 **\*\*\*Include a short video demonstrating the answers to these questions.\*\*\***
 
