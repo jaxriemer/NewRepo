@@ -297,6 +297,8 @@ Our device can be used to give advice on what to wear according to the current w
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
 
+In our prototype, we thought about adding voice to indicate whether the user is wearing too less/much as well as the suggestion the device gives, and one of the feedbacks we got also mentioned some possible improvements on the sound played when the outfit matches the weather. However, we didn’t manage to make the sound output work eventually because the sound output within the while loop for each detection will make the video output extremely slow and the video will lag. After multiple failures using different ways trying to solve the problem, we decided to give up on the sound output but instead we printed the message out, which can be considered as the user interface. We also got a feedback on the suggestion of hats when the weather is extra cold, but this became a problem when a user has long hair. The device won’t be too accurate on predicting whether the user has a hat on or not. At this stage with relatively less data, the model is not well-trained enough for the device to be able to give advice on hats.
+
 **\*\*\*Include a short video demonstrating the finished result.\*\*\***
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/InitialPrototype.jpg"/>
