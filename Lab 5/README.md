@@ -304,3 +304,5 @@ Following exploration and reflection from Part 1, finish building your interacti
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/ClosetDesign.jpg"/>
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/PrototypePhotos.jpg"/>
+
+[![closet video](https://img.youtube.com/vi/-F12KcUUEZ4/0.jpg)](https://www.youtube.com/watch?v=-F12KcUUEZ4)
