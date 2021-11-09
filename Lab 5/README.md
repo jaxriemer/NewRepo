@@ -309,6 +309,6 @@ During the prototyping process, we discovered that our servo could only make tur
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%205/imgs/PrototypePhotos.jpg"/>
 
-We created several testing codes for each of these mechanisms. Our final code that combines the moving mechanisms with the computer vision is [clothes_detection.py](clothes_detection.py) Due to precision issues of handcrafting we did not capture their proper functions in one video, but we were able to record their movements individually and compile them into the final video below. 
+We created several testing codes for each of these mechanisms. Our final code that combines the moving mechanisms with the computer vision is [clothes_detection.py](clothes_detection.py). Due to precision issues of handcrafting we did not capture their proper functions in one video, but we were able to record their movements individually and compile them into the final video below. 
 
 [![closet video](https://img.youtube.com/vi/-F12KcUUEZ4/0.jpg)](https://www.youtube.com/watch?v=-F12KcUUEZ4)
