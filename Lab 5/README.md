@@ -105,7 +105,8 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 **Contours detection**
 
   Contour detections can be used for photo filters. For example, sparkling stars or other special effects can be placed on all the detected edges. It could also turn the image into a stylish painting by distinguishing the edges between dark and light and painting areas with different shades of color. 
-  
+  <img width="950" alt="contour_detection" src="https://user-images.githubusercontent.com/39501842/140844184-5b2f188c-56d0-4ac7-a81f-3e7a9621cfb5.png">
+
 **Face detection**
 
   Face detection can be used on security cameras by alerting the owner or taking photos when suspicious faces are detected. It does not work well when faces are partially covered, and could be used for detecting whether subjects are wearing masks properly. 
@@ -115,6 +116,7 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 **Flow detection**
 
   The flow detection could be used to detect the movements of feature points on people, and can be used as an extension of our red light green light game in Lab 4, where player movements could be detected by this flow detection algorithm and the win/lose state could be determined based on that.
+<img width="778" alt="flow_detection" src="https://user-images.githubusercontent.com/39501842/140844198-717d0500-e41b-43ca-a4d7-8cf332a5878b.png">
 
 **Object detection**
 
@@ -199,6 +201,10 @@ This might take a while to get fully installed. After installation, connect your
 (**Optionally**: You can train your own model, too. First, visit [TeachableMachines](https://teachablemachine.withgoogle.com/train), select Image Project and Standard model. Second, use the webcam on your computer to train a model. For each class try to have over 50 samples, and consider adding a background class where you have nothing in view so the model is trained to know that this is the background. Then create classes based on what you want the model to classify. Lastly, preview and iterate, or export your model as a 'Tensorflow' model, and select 'Keras'. You will find an '.h5' file and a 'labels.txt' file. These are included in this labs 'teachable_machines' folder, to make the PPE model you used earlier. You can make your own folder or replace these to make your own classifier.)
 
 **\*\*\*Whether you make your own model or not, include screenshots of your use of Teachable Machines, and write how you might use this to create your own classifier. Include what different affordances this method brings, compared to the OpenCV or MediaPipe options.\*\*\***
+<img width="812" alt="Screen Shot 2021-11-08 at 8 22 17 PM" src="https://user-images.githubusercontent.com/39501842/140844395-271916fa-eae7-4404-869c-776234d31d27.png">
+
+We can train a model to detect packages or food delivery. When packages or foods are delivered at our door, our model will automatically notify us. Compared to OpenCV or MediaPipe, Teachable Machine can distinguish and identify different objects. 
+
 
 
 *Don't forget to run ```deactivate``` to end the Teachable Machines demo, and to reactivate with ```source tmachine/bin/activate``` when you want to use it again.*
