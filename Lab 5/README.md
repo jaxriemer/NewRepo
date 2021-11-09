@@ -105,18 +105,21 @@ pi@ixe00:~/openCV-examples/object-detection $ python detect.py
 **Contours detection**
 
   Contour detections can be used for photo filters. For example, sparkling stars or other special effects can be placed on all the detected edges. It could also turn the image into a stylish painting by distinguishing the edges between dark and light and painting areas with different shades of color. 
-  <img width="950" alt="contour_detection" src="https://user-images.githubusercontent.com/39501842/140844184-5b2f188c-56d0-4ac7-a81f-3e7a9621cfb5.png">
+  
+<img width="400" alt="contour_detection" src="https://user-images.githubusercontent.com/39501842/140844184-5b2f188c-56d0-4ac7-a81f-3e7a9621cfb5.png">
 
 **Face detection**
 
-  Face detection can be used on security cameras by alerting the owner or taking photos when suspicious faces are detected. It does not work well when faces are partially covered, and could be used for detecting whether subjects are wearing masks properly. 
-<img width="567" alt="face_detection" src="https://user-images.githubusercontent.com/39501842/140844478-79ba2ed3-b4a0-44ce-a576-ae39c1eaf85f.png">
+  Face detection can be used on security cameras by alerting the owner or taking photos when suspicious faces are detected. It does not work well when faces are partially covered, and could be used for detecting whether subjects are wearing masks properly.
+  
+<img width="400" alt="face_detection" src="https://user-images.githubusercontent.com/39501842/140844478-79ba2ed3-b4a0-44ce-a576-ae39c1eaf85f.png">
 
 
 **Flow detection**
 
   The flow detection could be used to detect the movements of feature points on people, and can be used as an extension of our red light green light game in Lab 4, where player movements could be detected by this flow detection algorithm and the win/lose state could be determined based on that.
-<img width="778" alt="flow_detection" src="https://user-images.githubusercontent.com/39501842/140844198-717d0500-e41b-43ca-a4d7-8cf332a5878b.png">
+  
+<img width="400" alt="flow_detection" src="https://user-images.githubusercontent.com/39501842/140844198-717d0500-e41b-43ca-a4d7-8cf332a5878b.png">
 
 **Object detection**
 
