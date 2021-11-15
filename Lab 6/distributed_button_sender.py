@@ -21,9 +21,8 @@ button = qwiic_button.QwiicButton()
 button.begin()
 
 while True:
-    for i in range(12):
-        if button.is_button_pressed():
-            val = "button pressed"
-            print(val)
-            client.publish(topic, val)
+    if button.is_button_pressed():
+        val = "button pressed"
+        print(val)
+        client.publish(topic, val)
     time.sleep(0.25)
