@@ -93,18 +93,28 @@ while running:
         # mole 0
         if mpr121[5].value or mpr121[4].value:
             the_game.hit(0)
+        else:
+            the_game.reset_hit()
         # mole 1
         if mpr121[3].value or mpr121[2].value:
             the_game.hit(1)
+        else:
+            the_game.reset_hit()
         # mole 2
         if mpr121[1].value or mpr121[0].value:
             the_game.hit(2)
+        else:
+            the_game.reset_hit()
         # mole 3
         if mpr121[6].value or mpr121[7].value or mpr121[8].value:
             the_game.hit(3)
+        else:
+            the_game.reset_hit()
         # mole 4
         if mpr121[9].value or mpr121[10].value or mpr121[11].value:
             the_game.hit(4)
+        else:
+            the_game.reset_hit()
 
     else:
         # mole 0
