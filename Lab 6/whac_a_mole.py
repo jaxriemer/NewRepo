@@ -84,4 +84,4 @@ class whac_a_mole:
     def str_to_game(self, str):
         game = str.split(" ")
         game = [int(s) for s in game]
-        return game
+        self.board = game
