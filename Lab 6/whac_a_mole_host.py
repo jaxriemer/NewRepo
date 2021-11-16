@@ -61,6 +61,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
+        print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
       current_board = list(map(int, msg.payload.decode('UTF-8').split(',')))
 
 
@@ -92,7 +93,7 @@ mpr121 = adafruit_mpr121.MPR121(i2c)
 # setup pygame
 pygame.init()
 #screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-screen = pygame.display.set_mode((600, 400))
+screen = pygame.display.set_mode((800, 450))
 screenX, screenY = pygame.display.get_surface().get_size()
 running = True
 
