@@ -62,7 +62,6 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
-        print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
         cloud_board = msg.payload.decode('UTF-8')
         #current_board = list(map(int, msg.payload.decode('UTF-8').split(',')))
 
@@ -140,6 +139,7 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
+    print(cloud_board)
     the_game.str_to_game(cloud_board)
 
     # player's side
