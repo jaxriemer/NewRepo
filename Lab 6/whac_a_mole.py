@@ -37,7 +37,7 @@ class whac_a_mole:
             self.screen.blit(img, (self.x / 2, self.y / 2))
 
     def draw_game(self):
-        self.screen.blit(img_background, (0, 0))
+        self.screen.blit(self.background, (0, 0))
         i = 0
         for b in self.board:
             draw_mole(i, b)
