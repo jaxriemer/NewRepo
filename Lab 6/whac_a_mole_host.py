@@ -43,7 +43,7 @@ def handler(signum, frame):
 
 # load assets
 cwd = os.getcwd()
-img_background = pygame.image.load("imgs/Background.png")
+img_background = pygame.image.load(cwd + "/imgs/Background.png")
 
 # setup pygame
 pygame.init()
