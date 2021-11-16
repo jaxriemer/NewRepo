@@ -85,6 +85,20 @@ Once connected, you should be able to see all the messages under the IDD topic. 
   ```
 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/remote_control.jpeg" height="450" />
+
+----------------
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/dog_surveillance.jpeg" height="400" />
+
+----------------
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/wac-a-mole.jpeg" height="400" />
+
+----------------
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/shooting_game.jpeg" height="400" />
+
 
 ### Part C
 ### Streaming a Sensor
@@ -106,9 +120,17 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
  ```
 
 **\*\*\*Include a picture of your setup here: what did you see on MQTT Explorer?\*\*\***
+<p>
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/part-c-twizzler.png" height="300" />
+</p>
+
+We changed the name of the topic to "nek/twizzler", and when we ran the program, the subtopic was created with a message being sent to the topic indicating which sensor was touched. When we touched another sensor, the message would be overwritten by the latest sensor touched.
 
 **\*\*\*Pick another part in your kit and try to implement the data streaming with it.\*\*\***
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/part-c-button.png" height="500" />
 
+
+We used the button and implemented the data streaming. Everytime when the butotn is pressed, a "button pressed" message will be sent to the subtopic, which is "nek/button".
 
 ### Part D
 ### The One True ColorNet
@@ -152,11 +174,6 @@ Find at least one class (more are okay) partner, and design a distributed applic
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
 
 **\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
-
-run to install pygame and image library 
-
-    sudo pip3 install pygame
-    sudo apt-get install -y libsdl2-image-2.0-0
 
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
