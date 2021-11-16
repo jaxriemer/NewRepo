@@ -59,5 +59,5 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = Flase
 
-    screen.blit(img_background, (0,0))
+    screen.blit(img_background, pygame.display.get_surface().get_size())
     pygame.display.update()
