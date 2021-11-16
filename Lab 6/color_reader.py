@@ -34,8 +34,6 @@ height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
 image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
-draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-disp.image(image)
 
 padding = -2
 top = padding
