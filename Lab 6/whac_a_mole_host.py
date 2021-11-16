@@ -63,9 +63,9 @@ def on_message(cleint, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
         #print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
-        str = f"msg: {msg.payload.decode('UTF-8')}"
+        str = f"{msg.payload.decode('UTF-8')}"
         print(str)
-        cloud_board = {msg.payload.decode('UTF-8')}
+        cloud_board = str
         #current_board = list(map(int, msg.payload.decode('UTF-8').split(',')))
 
 
