@@ -53,7 +53,7 @@ mpr121 = adafruit_mpr121.MPR121(i2c)
 # setup pygame
 pygame.init()
 #screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-screen = pygame.display.set_mode((0, 0), (400, 600))
+screen = pygame.display.set_mode((400, 600))
 screenX, screenY = pygame.display.get_surface().get_size()
 running = True
 
