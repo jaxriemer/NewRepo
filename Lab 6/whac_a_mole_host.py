@@ -14,7 +14,43 @@ import board
 import busio
 import adafruit_mpr121
 
+import digitalio
+from PIL import Image, ImageDraw, ImageFont
+import adafruit_rgb_display.st7789 as st7789
+
 topic = 'IDD/WacAMole'
+
+cs_pin = digitalio.DigitalInOut(board.CE0)
+dc_pin = digitalio.DigitalInOut(board.D25)
+reset_pin = None
+
+BAUDRATE = 64000000
+
+backlight = digitalio.DigitalInOut(board.D22)
+backlight.switch_to_output()
+backlight.value = True
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
+spi = board.SPI()
+disp = st7789.ST7789(
+    spi,
+    cs=cs_pin,
+    dc=dc_pin,
+    rst=reset_pin,
+    baudrate=BAUDRATE,
+    width=135,
+    height=240,
+    x_offset=53,
+    y_offset=40,
+)
+
+height =  disp.height
+width = disp.width
+image = Image.new("RGB", (width, height))
+draw = ImageDraw.Draw(image)
 
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
@@ -78,8 +114,12 @@ img_hitMole = pygame.transform.scale(img_hitMole, (holeX, screenY/1.5))
 # init game
 the_game = whac_a_mole.whac_a_mole(screen, img_background, img_hammer, img_Mole, img_Hole, img_hitMole, img_hitHole, screenX, screenY, holeX, holeY)
 
-# whether this is player or the host
-Player = True
+# ask the user to choose whether they want to set the mole or hit the mole
+draw.text((7, 7), "SET MOLE", fill="#FFFFFF")
+draw.text((17, 7), "HIT MOLE", fill="#FFFFFF")
+
+if not buttonB.value:
+    Player = True
 
 # our main loop
 while running:
