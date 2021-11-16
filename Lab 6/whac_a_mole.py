@@ -39,9 +39,11 @@ class whac_a_mole:
                 self.hit_mole(i)
 
     def reset_hit(self):
+        i = 0
         for b in self.board:
             if b == 2 or b == 3:
-                b = 0
+                self.board[i] = 0
+            i += 1
 
     def draw_mole(self, i, b):
         if b == 0:
