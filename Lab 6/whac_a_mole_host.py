@@ -74,7 +74,7 @@ img_hitMole = pygame.image.load(cwd + "/imgs/HitMole.png")
 img_hitMole = pygame.transform.scale(img_hitMole, (holeX, screenY/1.5))
 
 # init game
-the_game = whac_a_mole.whac_a_mole(screen, img_background, img_Mole, img_Hole, screenX, screenY, holeX, holeY)
+the_game = whac_a_mole.whac_a_mole(screen, img_background, img_hammer, img_Mole, img_Hole, img_hitMole, img_hitHole, screenX, screenY, holeX, holeY)
 
 # our main loop
 while running:
