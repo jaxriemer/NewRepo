@@ -36,6 +36,8 @@ disp = st7789.ST7789(
     y_offset=40,
 )
 
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+
 height =  disp.height
 width = disp.width
 image = Image.new("RGB", (width, height))
