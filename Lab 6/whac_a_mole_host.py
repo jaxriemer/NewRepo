@@ -117,7 +117,8 @@ the_game = whac_a_mole.whac_a_mole(screen, img_background, img_hammer, img_Mole,
 # ask the user to choose whether they want to set the mole or hit the mole
 draw.text((7, 7), "SET MOLE", fill="#FFFFFF")
 draw.text((17, 7), "HIT MOLE", fill="#FFFFFF")
-
+sleep(3)
+Player = False
 if not buttonB.value:
     Player = True
 
