@@ -6,6 +6,10 @@ import board
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
 
+cs_pin = digitalio.DigitalInOut(board.CE0)
+dc_pin = digitalio.DigitalInOut(board.D25)
+reset_pin = None
+
 # Config for display baudrate (default max is 24mhz):
 BAUDRATE = 64000000
 
