@@ -2,6 +2,7 @@ import pygame
 import random
 import time
 import sys
+import os
 import paho.mqtt.client as mqtt
 import uuid
 
@@ -40,6 +41,10 @@ def handler(signum, frame):
 # hen sigint happens, do the handler callback function
 #signal.signal(signal.SIGINT, handler)
 
+# load assets
+cwd = os.getcwd()
+img_background = pygame.image.load(cwd + "/imgs/Background.png")
+
 # setup pygame
 pygame.init()
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -54,5 +59,5 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = Flase
 
-    screen.fill((0, 100, 0))
+    screen.blit(img_background, (0,0))
     pygame.display.update()
