@@ -17,6 +17,7 @@ def on_message(cleint, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
         # TODO
+        st = 0
 
 client = mqtt.Client(str(uuid.uuid1()))
 client.tls_set()
