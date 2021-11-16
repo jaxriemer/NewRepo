@@ -52,8 +52,9 @@ width = disp.width
 image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
-global current_board
-current_board = [0,0,0,0,0]
+#global current_board
+cloud_board = "0 0 0 0 0"
+
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic)
@@ -62,6 +63,7 @@ def on_message(cleint, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
         print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
+        cloud_board = msg.payload.decode('UTF-8')
         #current_board = list(map(int, msg.payload.decode('UTF-8').split(',')))
 
 
@@ -138,10 +140,12 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
+    the_game.str_to_game(cloud_board)
+
     # player's side
     if Player_hit:
-        print("current board:")
-        print(current_board)
+        #print("current board:")
+        #print(current_board)
         hitting = [0,0,0,0,0]
         # mole 0
         if mpr121[5].value or mpr121[4].value:
