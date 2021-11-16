@@ -76,6 +76,9 @@ img_hitMole = pygame.transform.scale(img_hitMole, (holeX, screenY/1.5))
 # init game
 the_game = whac_a_mole.whac_a_mole(screen, img_background, img_hammer, img_Mole, img_Hole, img_hitMole, img_hitHole, screenX, screenY, holeX, holeY)
 
+# whether this is player or the host
+Player = True
+
 # our main loop
 while running:
     for event in pygame.event.get():
@@ -85,31 +88,50 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
-    # mole 0
-    if mpr121[5].value or mpr121[4].value:
-        the_game.set_mole(0)
+    # player's side
+    if Player:
+        # mole 0
+        if mpr121[5].value or mpr121[4].value:
+            the_game.hit(0)
+        # mole 1
+        if mpr121[3].value or mpr121[2].value:
+            the_game.hit(1)
+        # mole 2
+        if mpr121[1].value or mpr121[0].value:
+            the_game.hit(2)
+        # mole 3
+        if mpr121[6].value or mpr121[7].value or mpr121[8].value:
+            the_game.hit(3)
+        # mole 4
+        if mpr121[9].value or mpr121[10].value or mpr121[11].value:
+            the_game.hit(4)
+
     else:
-        the_game.set_hole(0)
-    # mole 1
-    if mpr121[3].value or mpr121[2].value:
-        the_game.set_mole(1)
-    else:
-        the_game.set_hole(1)
-    # mole 2
-    if mpr121[1].value or mpr121[0].value:
-        the_game.set_mole(2)
-    else:
-        the_game.set_hole(2)
-    # mole 3
-    if mpr121[6].value or mpr121[7].value or mpr121[8].value:
-        the_game.set_mole(3)
-    else:
-        the_game.set_hole(3)
-    # mole 4
-    if mpr121[9].value or mpr121[10].value or mpr121[11].value:
-        the_game.set_mole(4)
-    else:
-        the_game.set_hole(4)
+        # mole 0
+        if mpr121[5].value or mpr121[4].value:
+            the_game.set_mole(0)
+        else:
+            the_game.set_hole(0)
+        # mole 1
+        if mpr121[3].value or mpr121[2].value:
+            the_game.set_mole(1)
+        else:
+            the_game.set_hole(1)
+        # mole 2
+        if mpr121[1].value or mpr121[0].value:
+            the_game.set_mole(2)
+        else:
+            the_game.set_hole(2)
+        # mole 3
+        if mpr121[6].value or mpr121[7].value or mpr121[8].value:
+            the_game.set_mole(3)
+        else:
+            the_game.set_hole(3)
+        # mole 4
+        if mpr121[9].value or mpr121[10].value or mpr121[11].value:
+            the_game.set_mole(4)
+        else:
+            the_game.set_hole(4)
 
 
     the_game.draw_game()
