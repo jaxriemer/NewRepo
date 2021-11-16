@@ -79,6 +79,8 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
+    the_game.draw_game()
+    the_game.mole(0)
     # mole 0
     if mpr121[5].value or mpr121[4].value:
         the_game.mole(0)
