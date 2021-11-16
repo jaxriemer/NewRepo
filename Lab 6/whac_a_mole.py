@@ -22,6 +22,7 @@ class whac_a_mole:
             self.board[i] = 0
 
     def set_mole(self, i):
+        print(i)
         if self.board[i] == 0:
             self.board[i] = 1
         print(board)
