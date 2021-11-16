@@ -79,33 +79,31 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
-    the_game.draw_game()
-    the_game.mole(0)
     # mole 0
     if mpr121[5].value or mpr121[4].value:
-        the_game.mole(0)
+        the_game.set_mole(0)
     else:
-        the_game.hole(0)
+        the_game.set_hole(0)
     # mole 1
     if mpr121[3].value or mpr121[2].value:
-        the_game.mole(1)
+        the_game.set_mole(1)
     else:
-        the_game.hole(1)
+        the_game.set_hole(1)
     # mole 2
     if mpr121[1].value or mpr121[0].value:
-        the_game.mole(2)
+        the_game.set_mole(2)
     else:
-        the_game.hole(2)
+        the_game.set_hole(2)
     # mole 3
     if mpr121[6].value or mpr121[7].value or mpr121[8].value:
-        the_game.mole(3)
+        the_game.set_mole(3)
     else:
-        the_game.hole(3)
+        the_game.set_hole(3)
     # mole 4
     if mpr121[9].value or mpr121[10].value or mpr121[11].value:
-        the_game.mole(4)
+        the_game.set_mole(4)
     else:
-        the_game.hole(4)
+        the_game.set_hole(4)
 
 
     the_game.draw_game()

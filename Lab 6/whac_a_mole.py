@@ -13,10 +13,10 @@ class whac_a_mole:
         self.imgX = imgX
         self.imgY = imgY
 
-    def mole(self, i):
+    def set_mole(self, i):
         self.board[i] = 1
 
-    def hole(self, i):
+    def set_hole(self, i):
         self.board[i] = 0
 
     def draw_mole(self, i, b):
