@@ -41,14 +41,16 @@ def handler(signum, frame):
 # hen sigint happens, do the handler callback function
 #signal.signal(signal.SIGINT, handler)
 
-# load assets
-cwd = os.getcwd()
-img_background = pygame.image.load(cwd + "/imgs/Background.png")
-
 # setup pygame
 pygame.init()
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+screenX, screenY = pygame.display.get_surface().get_size()
 running = True
+
+# load assets
+cwd = os.getcwd()
+img_background = pygame.image.load(cwd + "/imgs/Background.png")
+img_background = pygame.transform.scale(img_background, (screenX, screenY))
 
 # our main loop
 while running:
@@ -59,5 +61,5 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = Flase
 
-    screen.blit(img_background, pygame.display.get_surface().get_size())
+    screen.blit(img_background, (0, 0))
     pygame.display.update()
