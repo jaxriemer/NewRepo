@@ -120,12 +120,13 @@ the_game = whac_a_mole.whac_a_mole(screen, img_background, img_hammer, img_Mole,
 Player_set, Player_hit = False, False
 
 while not Player_set and not Player_hit:
-    draw.text((7, 7), "SET MOLE", fill="#FFFFFF")
-    draw.text((17, 7), "HIT MOLE", fill="#FFFFFF")
-    if not buttonB.value:
+    player_choice = input(">> Enter 1 if you want to set the mole and 2 if you want to hit the mole: ")
+    if player_choice == 2:
         Player_hit = True
-    if not buttonA.value:
+        print("You have chosen to hit the mole.")
+    if player_choice == 1:
         Player_set = True
+        print("You have chosen to set the mole.")
 
 # our main loop
 while running:
