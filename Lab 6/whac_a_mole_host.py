@@ -115,12 +115,15 @@ img_hitMole = pygame.transform.scale(img_hitMole, (holeX, screenY/1.5))
 the_game = whac_a_mole.whac_a_mole(screen, img_background, img_hammer, img_Mole, img_Hole, img_hitMole, img_hitHole, screenX, screenY, holeX, holeY)
 
 # ask the user to choose whether they want to set the mole or hit the mole
-draw.text((7, 7), "SET MOLE", fill="#FFFFFF")
-draw.text((17, 7), "HIT MOLE", fill="#FFFFFF")
-time.sleep(3)
-Player = False
-if not buttonB.value:
-    Player = True
+Player_set, Player_hit = False, False
+
+while not Player_set and not Player_hit:
+    draw.text((7, 7), "SET MOLE", fill="#FFFFFF")
+    draw.text((17, 7), "HIT MOLE", fill="#FFFFFF")
+    if not buttonB.value:
+        Player_hit = True
+    if not buttonA.value:
+        Player_set = True
 
 # our main loop
 while running:
@@ -132,7 +135,7 @@ while running:
                 running = False
 
     # player's side
-    if Player:
+    if Player_hit:
         hitting = [0,0,0,0,0]
         # mole 0
         if mpr121[5].value or mpr121[4].value:
