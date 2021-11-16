@@ -42,7 +42,7 @@ def handler(signum, frame):
 
 # setup pygame
 pygame.init()
-screen = pygame.display.set_mode((800, 800))
+screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 running = True
 
 # our main loop
@@ -50,3 +50,6 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    screen.fill((0, 100, 0))
+    pygame.display.update()
