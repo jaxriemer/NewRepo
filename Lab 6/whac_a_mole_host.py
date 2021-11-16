@@ -69,8 +69,10 @@ while running:
 
     screen.blit(img_background, (0, 0))
     screen.blit(img_Hole, (screenX / 2 - holeX / 2, screenY / 2 - holeY / 2))
-    screen.blit(img_Mole, (screenX / 2, screenY / 2))
+
     screen.blit(img_Hole, (screenX / 2 + holeX / 2, screenY / 2 - holeY / 2))
-    screen.blit(img_Mole, (screenX / 2 - holeX, screenY / 2))
+
     screen.blit(img_Mole, (screenX / 2 - holeX * 3 / 2, screenY / 2 - holeY / 2))
+    screen.blit(img_Mole, (screenX / 2, screenY / 2))
+    screen.blit(img_Mole, (screenX / 2 - holeX, screenY / 2))
     pygame.display.update()
