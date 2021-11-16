@@ -51,6 +51,10 @@ running = True
 cwd = os.getcwd()
 img_background = pygame.image.load(cwd + "/imgs/Background.png")
 img_background = pygame.transform.scale(img_background, (screenX, screenY))
+img_Mole = pygame.image.load(cwd + "/imgs/Mole.png")
+img_Mole = pygame.transform.scale(img_Mole, (screenX/5.3, screenY/2.25))
+img_Hole = pygame.image.load(cwd + "/imgs/Hole.png")
+img_Hole = pygame.transform.scale(img_Hole, (screenX/5.3, screenY/2.25))
 
 # our main loop
 while running:
@@ -59,7 +63,8 @@ while running:
             running = False
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
-                running = Flase
+                running = False
 
     screen.blit(img_background, (0, 0))
+    screen.blit(img_Hole, (screenX/2, screenY/2))
     pygame.display.update()
