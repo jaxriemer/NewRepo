@@ -121,10 +121,10 @@ Player_set, Player_hit = False, False
 
 while not Player_set and not Player_hit:
     player_choice = input(">> Enter 1 if you want to set the mole and 2 if you want to hit the mole: ")
-    if player_choice == 2:
+    if player_choice == "2":
         Player_hit = True
         print("You have chosen to hit the mole.")
-    if player_choice == 1:
+    if player_choice == "1":
         Player_set = True
         print("You have chosen to set the mole.")
 
