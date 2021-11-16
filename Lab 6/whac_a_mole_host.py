@@ -75,7 +75,7 @@ client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
 
-# client.loop_start()
+client.loop_start()
 
 # this lets us exit gracefully (close the connection to the broker)
 def handler(signum, frame):
