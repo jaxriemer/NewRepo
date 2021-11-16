@@ -33,6 +33,7 @@ class whac_a_mole:
             self.board[i] = 3
 
     def hit(self, i):
+        
         if 2 not in self.board and 3 not in self.board:
             if self.board[i] == 0:
                 self.hit_hole(i)
