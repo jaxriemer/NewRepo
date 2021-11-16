@@ -33,11 +33,9 @@ disp = st7789.ST7789(
 height = disp.width  # we swap height/width to rotate it to landscape!
 width = disp.height
 image = Image.new("RGB", (width, height))
-rotation = 90
-
 draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
-disp.image(image, rotation)
+disp.image(image)
 
 padding = -2
 top = padding
@@ -66,15 +64,12 @@ def on_connect(client, userdata, flags, rc):
 
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
-    message = msg.payload.decode('UTF-8')
-    print(f"topic: {msg.topic} msg: {message}")
-
     if msg.topic == 'IDD/colors':
         #parse color string
-        colors = tuple(map(lambda x: int(x), message.split(',')))
+        colors = list(map(int, msg.payload.decode('UTF-8').split(',')))
         print(f"topic: {msg.topic} msg: {message}")
-        draw.rectangle((0, 0, width, height), outline=0, fill=colors[:3])
-
+        draw.rectangle((0, 0, width, height), fill=colors[:3])
+        disp.image(image)
 # you can filter by topics
     # if msg.topic == 'IDD/some/other/topic': do thing
 
@@ -90,8 +85,7 @@ client.username_pw_set('idd', 'device@theFarm')
 client.on_connect = on_connect
 draw.text((70, 110), "Waiting for color input", font=font, fill="#FFFFFF")
 client.on_message = on_message
-disp.image(image, rotation)
-time.sleep(0.25)
+disp.image(image)
 
 #connect to the broker
 client.connect(
