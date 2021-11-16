@@ -180,7 +180,7 @@ while running:
 
     else:
         # mole 0
-        print(current_board)
+        #print(current_board)
         if mpr121[5].value or mpr121[4].value:
             the_game.set_mole(0)
         else:
