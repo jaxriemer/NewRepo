@@ -1,18 +1,24 @@
 import paho.mqtt.client as mqtt
 import uuid
 
-import digitalio
 import board
+import busio
+
+import digitalio
 from PIL import Image, ImageDraw, ImageFont
 import adafruit_rgb_display.st7789 as st7789
-import time
 
+# Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
 dc_pin = digitalio.DigitalInOut(board.D25)
 reset_pin = None
 
 # Config for display baudrate (default max is 24mhz):
 BAUDRATE = 64000000
+
+backlight = digitalio.DigitalInOut(board.D22)
+backlight.switch_to_output()
+backlight.value = True
 
 # Setup SPI bus using hardware SPI:
 spi = board.SPI()
@@ -30,28 +36,18 @@ disp = st7789.ST7789(
     y_offset=40,
 )
 
-height = disp.width  # we swap height/width to rotate it to landscape!
-width = disp.height
+height =  disp.height
+width = disp.width
 image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
-padding = -2
-top = padding
-bottom = height - padding
-x, y = 5, 5
-
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
-backlight = digitalio.DigitalInOut(board.D22)
-backlight.switch_to_output()
-backlight.value = True
-
 # the # wildcard means we subscribe to all subtopics of IDD
-topic = 'IDD/#'
+topic = 'IDD/colors'
 
 # some other examples
 # topic = 'IDD/a/fun/topic'
 
-#this is the callback that gets called once we connect to the broker. 
+#this is the callback that gets called once we connect to the broker.
 #we should add our subscribe functions here as well
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
@@ -62,15 +58,14 @@ def on_connect(client, userdata, flags, rc):
 
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
-    if msg.topic == 'IDD/colors':
-        #parse color string
+    print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
+    # you can filter by topics
+    if msg.topic == topic:
         colors = list(map(int, msg.payload.decode('UTF-8').split(',')))
-        print(f"topic: {msg.topic} msg: {message}")
         draw.rectangle((0, 0, width, height), fill=colors[:3])
         disp.image(image)
-# you can filter by topics
-    # if msg.topic == 'IDD/some/other/topic': do thing
 
+# if msg.topic == 'IDD/some/other/topic': do thing
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -83,7 +78,6 @@ client.username_pw_set('idd', 'device@theFarm')
 client.on_connect = on_connect
 draw.text((70, 110), "Waiting for color input", font=font, fill="#FFFFFF")
 client.on_message = on_message
-disp.image(image)
 
 #connect to the broker
 client.connect(
