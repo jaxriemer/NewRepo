@@ -99,6 +99,10 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/shooting_game.jpeg" height="400" />
 
+----------------
+
+![IMG_0584](https://user-images.githubusercontent.com/39501842/142068728-0043a3ae-07ba-4018-b153-f8fd5ad0be9e.jpg)
+
 
 ### Part C
 ### Streaming a Sensor
