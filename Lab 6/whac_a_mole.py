@@ -40,5 +40,5 @@ class whac_a_mole:
         self.screen.blit(self.background, (0, 0))
         i = 0
         for b in self.board:
-            draw_mole(i, b)
+            self.draw_mole(i, b)
             i += 1
