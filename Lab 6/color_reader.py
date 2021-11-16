@@ -63,7 +63,7 @@ def on_message(cleint, userdata, msg):
     print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
     # you can filter by topics
     if msg.topic == topic:
-        colors = list(map(int, msg.payload.decode('UTF-8').split(',')))
+        colors = tuple(map(int, msg.payload.decode('UTF-8').split(',')))
         draw.rectangle((0, 0, width, height), fill=colors[:3])
         disp.image(image)
 
