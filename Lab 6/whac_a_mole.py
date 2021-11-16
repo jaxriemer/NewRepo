@@ -18,7 +18,8 @@ class whac_a_mole:
         self.imgY = imgY
 
     def set_hole(self, i):
-        self.board[i] = 0
+        if self.board[i] == 1:
+            self.board[i] = 0
 
     def set_mole(self, i):
         if self.board[i] == 0:
@@ -36,6 +37,11 @@ class whac_a_mole:
                 self.hit_hole(i)
             if self.board[i] == 1:
                 self.hit_mole(i)
+
+    def reset_hit(self):
+        for b in self.board:
+            if b == 2 or b == 3:
+                b = 0
 
     def draw_mole(self, i, b):
         if b == 0:
