@@ -42,3 +42,11 @@ class whac_a_mole:
         for b in self.board:
             self.draw_mole(i, b)
             i += 1
+
+    def game_to_str(self):
+        return " ".join(str(b) for b in self.board)
+
+    def str_to_game(self, str):
+        game = str.split(" ")
+        game = [int(s) for s in game]
+        return game

@@ -9,6 +9,10 @@ import uuid
 import pygame
 import whac_a_mole
 
+import board
+import busio
+import adafruit_mpr121
+
 topic = 'IDD/WacAMole'
 
 def on_connect(client, userdata, flags, rc):
@@ -42,6 +46,10 @@ def handler(signum, frame):
 # hen sigint happens, do the handler callback function
 #signal.signal(signal.SIGINT, handler)
 
+# setup touch sensor
+i2c = busio.I2C(board.SCL, board.SDA)
+mpr121 = adafruit_mpr121.MPR121(i2c)
+
 # setup pygame
 pygame.init()
 screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -70,6 +78,33 @@ while running:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_ESCAPE:
                 running = False
+
+    # mole 0
+    if mpr121[5].value or mpr121[4].value:
+        the_game.mole(0)
+    else:
+        the_game.hole(0)
+    # mole 1
+    if mpr121[3].value or mpr121[2].value:
+        the_game.mole(1)
+    else:
+        the_game.hole(1)
+    # mole 2
+    if mpr121[1].value or mpr121[0].value:
+        the_game.mole(2)
+    else:
+        the_game.hole(2)
+    # mole 3
+    if mpr121[6].value or mpr121[7].value or mpr121[8].value:
+        the_game.mole(3)
+    else:
+        the_game.hole(3)
+    # mole 4
+    if mpr121[9].value or mpr121[10].value or mpr121[11].value:
+        the_game.mole(4)
+    else:
+        the_game.hole(4)
+
 
     the_game.draw_game()
 
