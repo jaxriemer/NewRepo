@@ -24,7 +24,6 @@ class whac_a_mole:
     def set_mole(self, i):
         if self.board[i] == 0:
             self.board[i] = 1
-        print(board)
 
     def hit_hole(self, i):
             self.board[i] = 2
