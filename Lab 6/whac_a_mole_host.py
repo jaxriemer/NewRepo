@@ -139,6 +139,7 @@ while running:
 
     # player's side
     if Player_hit:
+        print("current board:")
         print(current_board)
         hitting = [0,0,0,0,0]
         # mole 0
@@ -200,7 +201,6 @@ while running:
         else:
             the_game.set_hole(4)
 
-    print("game string")
     message = the_game.game_to_str()
     client.publish(topic, message)
 
