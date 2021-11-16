@@ -67,7 +67,7 @@ class whac_a_mole:
             if b == 2 or b == 3:
                 hit = True
             i += 1
-        if hit = False:
+        if hit == False:
             self.screen.blit(self.hammer, (self.x / 2, self.y / 2))
 
     def game_to_str(self):
