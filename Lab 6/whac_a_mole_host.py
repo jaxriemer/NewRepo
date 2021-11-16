@@ -5,6 +5,7 @@ import sys
 import os
 import paho.mqtt.client as mqtt
 import uuid
+import signal
 
 import pygame
 import whac_a_mole
@@ -44,7 +45,7 @@ def handler(signum, frame):
     exit (0)
 
 # hen sigint happens, do the handler callback function
-#signal.signal(signal.SIGINT, handler)
+signal.signal(signal.SIGINT, handler)
 
 # setup touch sensor
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -151,6 +152,8 @@ while running:
             the_game.set_hole(4)
 
     print("game string")
-    print(the_game.game_to_str())
+    message = the_game.game_to_str()
+    client.publish(topic, message)
+
     the_game.draw_game()
     pygame.display.update()
