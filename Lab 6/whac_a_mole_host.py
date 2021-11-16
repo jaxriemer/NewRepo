@@ -52,9 +52,8 @@ width = disp.width
 image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
 global current_board
-
+current_board = [0,0,0,0,0]
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic)
