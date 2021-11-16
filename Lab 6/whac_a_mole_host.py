@@ -52,6 +52,8 @@ width = disp.width
 image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic)
@@ -72,7 +74,7 @@ client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
 
-client.loop_start()
+# client.loop_start()
 
 # this lets us exit gracefully (close the connection to the broker)
 def handler(signum, frame):
@@ -81,7 +83,7 @@ def handler(signum, frame):
     exit (0)
 
 # hen sigint happens, do the handler callback function
-signal.signal(signal.SIGINT, handler)
+# signal.signal(signal.SIGINT, handler)
 
 # setup touch sensor
 i2c = busio.I2C(board.SCL, board.SDA)
@@ -136,6 +138,7 @@ while running:
 
     # player's side
     if Player_hit:
+
         hitting = [0,0,0,0,0]
         # mole 0
         if mpr121[5].value or mpr121[4].value:
