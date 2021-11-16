@@ -51,10 +51,12 @@ running = True
 cwd = os.getcwd()
 img_background = pygame.image.load(cwd + "/imgs/Background.png")
 img_background = pygame.transform.scale(img_background, (screenX, screenY))
+holeX = screenX/5.3
+holeY = screenY/2.25
 img_Mole = pygame.image.load(cwd + "/imgs/Mole.png")
-img_Mole = pygame.transform.scale(img_Mole, (screenX/5.3, screenY/2.25))
+img_Mole = pygame.transform.scale(img_Mole, (holeX, holeY))
 img_Hole = pygame.image.load(cwd + "/imgs/Hole.png")
-img_Hole = pygame.transform.scale(img_Hole, (screenX/5.3, screenY/2.25))
+img_Hole = pygame.transform.scale(img_Hole, (holeX, holeY))
 
 # our main loop
 while running:
@@ -66,5 +68,9 @@ while running:
                 running = False
 
     screen.blit(img_background, (0, 0))
-    screen.blit(img_Hole, (screenX/2, screenY/2))
+    screen.blit(img_Hole, (screenX / 2 - holeX / 2, screenY / 2 - holeY / 2))
+    screen.blit(img_Mole, (screenX / 2, screenY / 2))
+    screen.blit(img_Hole, (screenX / 2 + holeX / 2, screenY / 2 - holeY / 2))
+    screen.blit(img_Mole, (screenX / 2 - holeX, screenY / 2))
+    screen.blit(img_Mole, (screenX / 2 - holeX * 3 / 2, screenY / 2 - holeY / 2))
     pygame.display.update()
