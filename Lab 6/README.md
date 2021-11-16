@@ -169,7 +169,11 @@ Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-
 
 Find at least one class (more are okay) partner, and design a distributed application together based on the exercise we asked you to do in this lab.
 
-**\*\*\*1. Explain your design\*\*\*** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
+**\*\*\*1. Explain your design\*\*\*** 
+
+Whac-a-mole game
+
+ Whac-a-mole is a two players game in which one player use remote controller to decide the mole should surface at which hole and the other player needs to hit the surfaced mole. Our version is an improvement on the traditional whac-a-mole game, and two players can play competitively. 
 
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
 
