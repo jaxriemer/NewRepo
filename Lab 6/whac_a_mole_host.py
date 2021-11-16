@@ -53,7 +53,7 @@ mpr121 = adafruit_mpr121.MPR121(i2c)
 # setup pygame
 pygame.init()
 #screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
-screen = pygame.display.set_mode((400, 600))
+screen = pygame.display.set_mode((600, 400))
 screenX, screenY = pygame.display.get_surface().get_size()
 running = True
 
@@ -91,31 +91,37 @@ while running:
 
     # player's side
     if Player:
+        hitting = [0,0,0,0,0]
         # mole 0
         if mpr121[5].value or mpr121[4].value:
             the_game.hit(0)
         else:
-            the_game.reset_hit()
+            hitting[0] = 1
         # mole 1
         if mpr121[3].value or mpr121[2].value:
             the_game.hit(1)
         else:
-            the_game.reset_hit()
+            hitting[1] = 1
         # mole 2
         if mpr121[1].value or mpr121[0].value:
             the_game.hit(2)
         else:
-            the_game.reset_hit()
+            hitting[2] = 1
         # mole 3
         if mpr121[6].value or mpr121[7].value or mpr121[8].value:
             the_game.hit(3)
         else:
-            the_game.reset_hit()
+            hitting[3] = 1
         # mole 4
         if mpr121[9].value or mpr121[10].value or mpr121[11].value:
             the_game.hit(4)
         else:
+            hitting[4] = 1
+
+        # reset if not touching
+        if 0 not in hitting:
             the_game.reset_hit()
+
 
     else:
         # mole 0
