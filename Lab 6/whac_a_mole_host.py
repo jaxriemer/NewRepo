@@ -62,7 +62,7 @@ def on_message(cleint, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
         print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
-      current_board = list(map(int, msg.payload.decode('UTF-8').split(',')))
+        #current_board = list(map(int, msg.payload.decode('UTF-8').split(',')))
 
 
 client = mqtt.Client(str(uuid.uuid1()))
