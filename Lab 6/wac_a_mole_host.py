@@ -38,7 +38,7 @@ def handler(signum, frame):
     exit (0)
 
 # hen sigint happens, do the handler callback function
-signal.signal(signal.SIGINT, handler)
+#signal.signal(signal.SIGINT, handler)
 
 # setup pygame
 pygame.init()
