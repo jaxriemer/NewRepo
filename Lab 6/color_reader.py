@@ -58,27 +58,27 @@ topic = 'IDD/#'
 #this is the callback that gets called once we connect to the broker. 
 #we should add our subscribe functions here as well
 def on_connect(client, userdata, flags, rc):
-	print(f"connected with result code {rc}")
-	client.subscribe(topic)
-	# you can subsribe to as many topics as you'd like
-	# client.subscribe('some/other/topic')
+    print(f"connected with result code {rc}")
+    client.subscribe(topic)
+    # you can subsribe to as many topics as you'd like
+    # client.subscribe('some/other/topic')
 
 
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
-	message = msg.payload.decode('UTF-8')
-	print(f"topic: {msg.topic} msg: {message}")
+    message = msg.payload.decode('UTF-8')
+    print(f"topic: {msg.topic} msg: {message}")
 
-	if msg.topic == 'IDD/colors':
+    if msg.topic == 'IDD/colors':
         #parse color string
         colors = message.split(',')
         colors_int = [int(c) for c in colors]
         print(f"topic: {msg.topic} msg: {message}")
-		draw.rectangle((0, 0, width, height), outline=0, fill=(colors_int[0], colors_int[1], colors_int[2]))
-	# draw.text((70, 110), "Color received: ", font=font, fill="#FFFFFF")
+        draw.rectangle((0, 0, width, height), outline=0, fill=(colors_int[0], colors_int[1], colors_int[2]))
+    # draw.text((70, 110), "Color received: ", font=font, fill="#FFFFFF")
 
 # you can filter by topics
-	# if msg.topic == 'IDD/some/other/topic': do thing
+    # if msg.topic == 'IDD/some/other/topic': do thing
 
 
 # Every client needs a random ID
