@@ -53,6 +53,7 @@ image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 20)
+global current_board
 
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
@@ -61,8 +62,8 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
     # if a message is recieved on the colors topic, parse it and set the color
     if msg.topic == topic:
-        # TODO
-        st = 0
+      current_board = list(map(int, msg.payload.decode('UTF-8').split(',')))
+
 
 client = mqtt.Client(str(uuid.uuid1()))
 client.tls_set()
@@ -139,7 +140,7 @@ while running:
 
     # player's side
     if Player_hit:
-
+        print(current_board)
         hitting = [0,0,0,0,0]
         # mole 0
         if mpr121[5].value or mpr121[4].value:
@@ -174,6 +175,7 @@ while running:
 
     else:
         # mole 0
+        print(current_board)
         if mpr121[5].value or mpr121[4].value:
             the_game.set_mole(0)
         else:
