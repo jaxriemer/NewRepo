@@ -7,6 +7,7 @@ import paho.mqtt.client as mqtt
 import uuid
 
 import pygame
+import whac_a_mole
 
 topic = 'IDD/WacAMole'
 
@@ -58,6 +59,9 @@ img_Mole = pygame.transform.scale(img_Mole, (holeX, holeY))
 img_Hole = pygame.image.load(cwd + "/imgs/Hole.png")
 img_Hole = pygame.transform.scale(img_Hole, (holeX, holeY))
 
+# init game
+the_game = whac_a_mole.whac_a_mole(screen, img_background, img_Mole, img_Hole, screenX, screenY, holeX, holeY)
+
 # our main loop
 while running:
     for event in pygame.event.get():
@@ -67,12 +71,6 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
-    screen.blit(img_background, (0, 0))
-    screen.blit(img_Hole, (screenX / 2 - holeX / 2, screenY / 2 - holeY / 2))
+    the_game.draw_game()
 
-    screen.blit(img_Hole, (screenX / 2 + holeX / 2, screenY / 2 - holeY / 2))
-
-    screen.blit(img_Mole, (screenX / 2 - holeX * 3 / 2, screenY / 2 - holeY / 2))
-    screen.blit(img_Mole, (screenX / 2, screenY / 2))
-    screen.blit(img_Mole, (screenX / 2 - holeX, screenY / 2))
     pygame.display.update()
