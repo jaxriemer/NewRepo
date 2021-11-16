@@ -53,7 +53,7 @@ image = Image.new("RGB", (width, height))
 draw = ImageDraw.Draw(image)
 
 #global current_board
-cloud_board = "0 0 0 0 0"
+cloud_board
 
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
