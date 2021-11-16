@@ -4,7 +4,7 @@ import pygame
 class whac_a_mole:
     def __init__(self, screen, background, hammer, mole, hole, hitmole, hithole, x, y, imgX, imgY):
         # 0 hole, 1 mole, 2 hit hole, 3 hit mole
-        self.board = [1,1,1,1,1]
+        self.board = [0,0,0,0,0]
         self.screen = screen
         self.background = background
         self.hammer = hammer
