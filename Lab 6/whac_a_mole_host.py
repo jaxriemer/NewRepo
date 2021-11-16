@@ -145,5 +145,4 @@ while running:
 
 
     the_game.draw_game()
-
     pygame.display.update()
