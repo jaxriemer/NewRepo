@@ -180,20 +180,32 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **\*\*\*1. Explain your design\*\*\*** 
 
-Whac-a-mole game
+**Whac-a-mole game**
 
- Whac-a-mole is a two players game in which one player use remote controller to decide the mole should surface at which hole and the other player needs to hit the surfaced mole. Our version is an improvement on the traditional whac-a-mole game, and two players can play competitively. 
+ Whac-a-mole is a one player retro arcade game in which the arcade machine decides the position and timing for the mole to surface, while the player needs to hit the surfaced mole with the hammer. Our version is an improvement on the traditional whac-a-mole game, and introducing the second player who replaces the arcade machine and controls the moles. The two players can play competitively with two devices at different locations. 
 
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
 
-**\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/DeviceDiagram.jpg" height="500" />
 
-run to install pygame and image library 
+Two identical devices are needed for the game. Each device has a touch sensor that gathers inputs from the player. It adjusts the game stats based on the inputs and renders the game board with pygame through VNC. A string that consists of five integers is sent and received from MQTT, which represents the information about the status of the game. Each digit can be 0-3 which represents a hole, a mole, a hammer hitting a hole, and a hammer hitting a mole respectively. 
+
+A whac-a-mole class is created to turn the numbers into a game screen, display it, and control the inputs to update the game. It is stored in [whac_a_mole.py](whac_a_mole.py). The main algorithm that handles input and communication over MQTT is at [whac_a_mole_host.py](whac_a_mole_host.py). 
+
+Pygame and image library are needed for the game. Run the code below to install them:
 
     sudo pip3 install pygame
     sudo apt-get install -y libsdl2-image-2.0-0
 
+**\*\*\*3. Build a working prototype of the system.\*\*\*** Do think about the user interface: if someone encountered these bananas somewhere in the wild, would they know how to interact with them? Should they know what to expect?
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/DeviceSetup.jpg"/>
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/WhacAMoleDesign.png"/>
+
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
+
+[![whac-a-mole video](https://img.youtube.com/vi/cXkujgNt9Ig/0.jpg)](https://www.youtube.com/watch?v=cXkujgNt9Ig)
 
 <!--**\*\*\*5. BONUS (Wendy didn't approve this so you should probably ignore it)\*\*\*** get the whole class to run your code and make your distributed system BIGGER.-->
 
