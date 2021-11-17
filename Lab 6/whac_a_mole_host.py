@@ -65,7 +65,8 @@ def on_message(cleint, userdata, msg):
         #print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
         str = f"{msg.payload.decode('UTF-8')}"
         print(str)
-        cloud_board = str
+        #cloud_board = str
+        the_game.str_to_game(str)
         #current_board = list(map(int, msg.payload.decode('UTF-8').split(',')))
 
 
@@ -142,8 +143,8 @@ while running:
             if event.key == pygame.K_ESCAPE:
                 running = False
 
-    print(cloud_board)
-    the_game.str_to_game(cloud_board)
+    #print(cloud_board)
+    #the_game.str_to_game(cloud_board)
 
     # player's side
     if Player_hit:
