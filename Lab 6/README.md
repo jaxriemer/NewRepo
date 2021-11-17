@@ -166,7 +166,12 @@ You may ask "but what if I missed class?" Am I not admitted into the collective 
 Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-true-colornet.glitch.me/) and become one with the ColorNet on the inter-webs. Glitch is a great tool for prototyping sites, interfaces and web-apps that's worth taking some time to get familiar with if you have a chance. Its not super pertinent for the class but good to know either way. 
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
-
+The code for this part is in [color_reader.py](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/color_reader.py). 
+As shown in the screenshot on the left below, the color on the right was sent to MQTT, and as shown in the image on the right, the rgb code was read and displayed:
+<p float="left">
+  <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/part-d-sender.png" height="250" />
+  <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/part-d-reader.png" height="250">
+</p>
 
 ### Part E
 ### Make it your own
