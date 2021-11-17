@@ -1,3 +1,5 @@
+This lab is done collaboratively with Liqin He (lh553) and Xinning Fang (xf49)
+
 # Little Interactions Everywhere
 
 ## Prep
@@ -87,21 +89,31 @@ Once connected, you should be able to see all the messages under the IDD topic. 
 **\*\*\*Consider how you might use this messaging system on interactive devices, and draw/write down 5 ideas here.\*\*\***
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/remote_control.jpeg" height="450" />
 
+A remote control that helps the user control smart furnitures at his/her home. Button and sensor inputs are sent over the web and transformed into servo movement by a second device.
+
 ----------------
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/dog_surveillance.jpeg" height="400" />
+
+A dog surveillance system that uses computer vision to identify dogs' behaviors, and send the behavior class to the user who has a second device.
 
 ----------------
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/wac-a-mole.jpeg" height="400" />
 
+Whac-a-mole game that one user controls the moles while the other smashes them with a hammer. 
+
 ----------------
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/shooting_game.jpeg" height="400" />
 
+A shooting game where two players each control a aircraft and shoot each other. Location and shooting status will be sent over the web.
+
 ----------------
 
 ![IMG_0584](https://user-images.githubusercontent.com/39501842/142068728-0043a3ae-07ba-4018-b153-f8fd5ad0be9e.jpg)
+
+A real time voting system that gathers answers from all devices and present the total result. 
 
 
 ### Part C
@@ -127,6 +139,8 @@ Plug in the capacitive sensor board with the Qwiic connector. Use the alligator 
 <p>
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/part-c-twizzler.png" height="300" />
 </p>
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/MQTT twizzler.PNG" height="500" />
 
 We changed the name of the topic to "nek/twizzler", and when we ran the program, the subtopic was created with a message being sent to the topic indicating which sensor was touched. When we touched another sensor, the message would be overwritten by the latest sensor touched.
 
@@ -166,12 +180,16 @@ You may ask "but what if I missed class?" Am I not admitted into the collective 
 Of course not! You can go to [https://one-true-colornet.glitch.me/](https://one-true-colornet.glitch.me/) and become one with the ColorNet on the inter-webs. Glitch is a great tool for prototyping sites, interfaces and web-apps that's worth taking some time to get familiar with if you have a chance. Its not super pertinent for the class but good to know either way. 
 
 **\*\*\*Can you set up the script that can read the color anyone else publish and display it on your screen?\*\*\***
+
 The code for this part is in [color_reader.py](https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/color_reader.py). 
 As shown in the screenshot on the left below, the color on the right was sent to MQTT, and as shown in the image on the right, the rgb code was read and displayed:
+
 <p float="left">
   <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/part-d-sender.png" height="250" />
   <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/part-d-reader.png" height="250">
 </p>
+
+<img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/MQTT Color.PNG" height="500" />
 
 ### Part E
 ### Make it your own
@@ -182,13 +200,13 @@ Find at least one class (more are okay) partner, and design a distributed applic
 
 **Whac-a-mole game**
 
- Whac-a-mole is a one player retro arcade game in which the arcade machine decides the position and timing for the mole to surface, while the player needs to hit the surfaced mole with the hammer. Our version is an improvement on the traditional whac-a-mole game, and introducing the second player who replaces the arcade machine and controls the moles. The two players can play competitively with two devices at different locations. 
+Whac-a-mole is a one player retro arcade game in which the arcade machine decides the position and timing for the mole to surface, while the player needs to hit the surfaced mole with the hammer. Our version is an improvement on the traditional whac-a-mole game, and introducing the second player who replaces the arcade machine and controls the moles. The two players can play competitively with two devices at different locations. 
 
 **\*\*\*2. Diagram the architecture of the system.\*\*\*** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/DeviceDiagram.jpg" height="500" />
 
-Two identical devices are needed for the game. Each device has a touch sensor that gathers inputs from the player. It adjusts the game stats based on the inputs and renders the game board with pygame through VNC. A string that consists of five integers is sent and received from MQTT, which represents the information about the status of the game. Each digit can be 0-3 which represents a hole, a mole, a hammer hitting a hole, and a hammer hitting a mole respectively. 
+Two identical devices are needed for the game. Each device has a touch sensor that gathers inputs from the player. Upon start, users can first select their roles, whether to be the mole or the hammer. During the game, the device adjusts the game stats based on the inputs and renders the game board with pygame through VNC. A string that consists of five integers is sent and received from MQTT, which represents the information about the status of the game. Each digit can be 0-3 which represents a hole, a mole, a hammer hitting a hole, and a hammer hitting a mole respectively. 
 
 A whac-a-mole class is created to turn the numbers into a game screen, display it, and control the inputs to update the game. It is stored in [whac_a_mole.py](whac_a_mole.py). The main algorithm that handles input and communication over MQTT is at [whac_a_mole_host.py](whac_a_mole_host.py). 
 
@@ -202,6 +220,10 @@ Pygame and image library are needed for the game. Run the code below to install 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/DeviceSetup.jpg"/>
 
 <img src="https://github.com/AdamYuzhenZhang/Interactive-Lab-Hub/blob/Fall2021/Lab%206/imgs/WhacAMoleDesign.png"/>
+
+We built two prototypes with two laptops and two raspberry pis. We created a laser-cutted box for the pi so that the user can hold the pi like holding a game controller, and press the cutouts with fingers. The five holes on the box maps to the five mole holes in the game so it is easy for the users to understand the game quickly. 
+
+We also drew the interface with Figma and designed this retro arcade looking layout. And we designed the moles and the hammer to visualize the interactions. 
 
 **\*\*\*4. Document the working prototype in use.\*\*\*** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
 
