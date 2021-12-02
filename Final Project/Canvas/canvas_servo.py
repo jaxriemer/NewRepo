@@ -86,22 +86,22 @@ shadow_loc_deg = 0
 while True:
     # show shadow
     print("showing shadow")
-    servo_shadow.angle = 180
-    time.sleep(0.1)
+    servo_shadow.angle = 30
+    time.sleep(3)
 
     # hide shadow
     print("hiding shadow")
     servo_shadow.angle = 0
-    time.sleep(0.1)
+    time.sleep(3)
 
     # move shadow loc
-    print("shadow loc moving")
-    servo_shadow_loc.angle = shadow_loc_deg
-    if shadow_loc_deg <= 170:
-        shadow_loc_deg += 10
-    elif shadow_loc_deg >= 0:
-        shadow_loc_deg -= 10
-    time.sleep(0.1)
+    # print("shadow loc moving")
+    # servo_shadow_loc.angle = shadow_loc_deg
+    # if shadow_loc_deg <= 170:
+    #     shadow_loc_deg += 10
+    # elif shadow_loc_deg >= 0:
+    #     shadow_loc_deg -= 10
+    # time.sleep(3)
 
 
 
