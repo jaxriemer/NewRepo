@@ -75,8 +75,8 @@ client.loop_start()
 # TODO: retreive the eye condition on MQTT
 
 while True:
-
-    eye_movement(eye_status)
+    print(eye_status)
+    # eye_movement(eye_status)
 
 
 
