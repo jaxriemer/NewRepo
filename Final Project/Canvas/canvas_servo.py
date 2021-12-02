@@ -97,7 +97,10 @@ while True:
     # move shadow loc
     print("shadow loc moving")
     servo_shadow_loc.angle = shadow_loc_deg
-    shadow_loc_deg += 10
+    if shadow_loc_deg <= 170:
+        shadow_loc_deg += 10
+    elif shadow_loc_deg >= 0:
+        shadow_loc_deg -= 10
     time.sleep(0.1)
 
 
