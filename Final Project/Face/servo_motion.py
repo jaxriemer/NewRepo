@@ -114,7 +114,7 @@ while True:
     #         eye_vertical_degree = 0
     #         time.sleep(0.03)
 
-
+    time.sleep(0.03)
 
     eye_movement_lag += 1
     print(eye_movement_lag)
