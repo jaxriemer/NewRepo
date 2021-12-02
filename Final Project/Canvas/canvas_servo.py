@@ -94,8 +94,6 @@ while True:
     time.sleep(0.1)
 
     # move shadow loc
-    global shadow_loc_deg
-    shadow_loc_deg = 0
     servo_shadow_loc.angle = shadow_loc_deg
     shadow_loc_deg += 10
     time.sleep(0.1)
