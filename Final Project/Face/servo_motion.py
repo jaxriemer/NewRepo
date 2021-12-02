@@ -79,7 +79,6 @@ def eye_movement(condition):
 
 client.loop_start()
 
-
 eye_movement_lag = 0
 eye_horizontal_degree = 0
 eye_vertical_degree = 0
