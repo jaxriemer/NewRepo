@@ -1,12 +1,31 @@
 
-#This example is directly copied from the Tensorflow examples provided from the Teachable Machine.
-
 import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
 import cv2
 import sys
+import paho.mqtt.client as mqtt
+import uuid
 
+
+topic = 'IDD/face_motion'
+
+# Every client needs a random ID
+client = mqtt.Client(str(uuid.uuid1()))
+
+# configure network encryption etc
+client.tls_set()
+
+# this is the username and pw we have setup for the class
+client.username_pw_set('idd', 'device@theFarm')
+
+
+#connect to the broker
+client.connect(
+    'farlab.infosci.cornell.edu',
+    port=8883)
+
+client.loop_start()
 
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
@@ -30,7 +49,6 @@ else:
       webCam = True
    except:
       print("Unable to access webcam.")
-
 
 # Load the model
 model = tensorflow.keras.models.load_model('keras_model.h5')
@@ -64,6 +82,9 @@ while(True):
     # run the inference
     prediction = model.predict(data)
     print("I think its a:",labels[np.argmax(prediction)])
+
+    # TODO: send label to MQTT
+    client.publish(topic, labels[np.argmax(prediction)])
 
     if webCam:
         if sys.argv[-1] == "noWindow":

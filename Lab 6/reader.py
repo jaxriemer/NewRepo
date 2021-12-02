@@ -9,6 +9,7 @@ topic = 'IDD/#'
 
 #this is the callback that gets called once we connect to the broker. 
 #we should add our subscribe functions here as well
+
 def on_connect(client, userdata, flags, rc):
 	print(f"connected with result code {rc}")
 	client.subscribe(topic)
