@@ -13,6 +13,7 @@ from adafruit_servokit import ServoKit
 
 topic = 'IDD/face_motion'
 global eye_status
+eye_status = 'Not read'
 
 # # Set channels to the number of servo channels on your kit.
 # # There are 16 channels on the PCA9685 chip.
