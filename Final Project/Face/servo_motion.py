@@ -22,7 +22,7 @@ kit = ServoKit(channels=16)
 # Name and set up the servo according to the channel you are using.
 servo_eye = kit.servo[0]
 servo_eye_horizontal = kit.servo[1]
-servo_eye_verticel = kit.servo[2]
+servo_eye_vertical = kit.servo[2]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
@@ -79,12 +79,12 @@ def eye_movement(condition):
 
 client.loop_start()
 
-# TODO: retreive the eye condition on MQTT
-
 
 eye_movement_lag = 0
 eye_horizontal_degree = 0
 eye_vertical_degree = 0
+servo_eye_horizontal.angle = 0
+servo_eye_vertical.angle = 0
 
 while True:
     # print(eye_status)
@@ -111,7 +111,7 @@ while True:
             time.sleep(0.03)
 
         else:
-            servo_eye_verticel.angle = 0
+            servo_eye_vertical.angle = 0
             eye_vertical_degree = 0
             time.sleep(0.03)
 
