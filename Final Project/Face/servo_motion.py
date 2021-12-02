@@ -91,7 +91,7 @@ while True:
 
     # eye horizontal movement
 
-    if (eye_movement_lag % 500) == 0:
+    if (eye_movement_lag % 200) == 0:
         if eye_horizontal_degree == 0:
 
             servo_eye_horizontal.angle = 180
@@ -104,7 +104,7 @@ while True:
             time.sleep(0.03)
 
     # eye vertical movement
-    if (eye_movement_lag % 800) == 0:
+    if (eye_movement_lag % 300) == 0:
         if eye_vertical_degree == 0:
             servo_eye_vertical.angle = 180
             eye_vertical_degree = 180
