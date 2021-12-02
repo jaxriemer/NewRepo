@@ -87,7 +87,7 @@ servo_shadow.angle = 150
 while True:
     # show shadow
     print("showing shadow")
-    servo_shadow.angle = 100
+    servo_shadow.angle = 90
     time.sleep(3)
 
     # hide shadow
