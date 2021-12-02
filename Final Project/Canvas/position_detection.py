@@ -6,7 +6,8 @@ import sys
 import paho.mqtt.client as mqtt
 import uuid
 
-topic = 'IDD/canvas_motion'
+
+topic = 'IDD/face_motion'
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -16,6 +17,7 @@ client.tls_set()
 
 # this is the username and pw we have setup for the class
 client.username_pw_set('idd', 'device@theFarm')
+
 
 #connect to the broker
 client.connect(
@@ -58,6 +60,7 @@ for line in f.readlines():
         continue
     labels.append(line.split(' ')[1].strip())
 
+
 while(True):
     if webCam:
         ret, img = cap.read()
@@ -72,7 +75,6 @@ while(True):
 
     # Normalize the image
     normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
-
     # Load the image into the array
     data[0] = normalized_image_array
 
@@ -80,7 +82,7 @@ while(True):
     prediction = model.predict(data)
     print("I think its a:",labels[np.argmax(prediction)])
 
-    # send label to MQTT
+    # TODO: send label to MQTT
     client.publish(topic, labels[np.argmax(prediction)])
 
     if webCam:
