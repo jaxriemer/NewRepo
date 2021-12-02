@@ -12,7 +12,7 @@ import uuid
 from adafruit_servokit import ServoKit
 
 topic = 'IDD/face_motion'
-global eye_status
+# global eye_status
 eye_status = 'Not read'
 
 # # Set channels to the number of servo channels on your kit.
@@ -37,6 +37,7 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
 	# you can filter by topics
     if msg.topic == topic:
+        global eye_status
         eye_status = msg.payload.decode('UTF-8')
         print(eye_status)
 
