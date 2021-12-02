@@ -82,6 +82,7 @@ def shadow_movement():
 client.loop_start()
 
 shadow_loc_deg = 0
+servo_shadow.angle = 180
 
 while True:
     # show shadow
