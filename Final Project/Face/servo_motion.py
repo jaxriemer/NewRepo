@@ -36,7 +36,8 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
 	# you can filter by topics
     if msg.topic == topic:
-        eye_status = f"{msg.payload.decode('UTF-8')}"
+        eye_status = msg.payload.decode('UTF-8')
+        print(eye_status)
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
