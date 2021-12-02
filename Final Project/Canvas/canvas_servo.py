@@ -91,7 +91,7 @@ while True:
 
     # hide shadow
     print("hiding shadow")
-    servo_shadow = 0
+    servo_shadow.angle = 0
     time.sleep(0.1)
 
     # move shadow loc
