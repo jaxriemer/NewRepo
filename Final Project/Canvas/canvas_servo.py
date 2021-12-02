@@ -30,7 +30,6 @@ servo_shadow_loc = kit.servo[5]
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
 servo_shadow.set_pulse_width_range(500, 2500)
-servo_shadow_loc.set_pulse_width_Range(500,2500)
 
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
@@ -86,14 +85,17 @@ shadow_loc_deg = 0
 
 while True:
     # show shadow
+    print("showing shadow")
     servo_shadow.angle = 180
     time.sleep(0.1)
 
     # hide shadow
+    print("hiding shadow")
     servo_shadow = 0
     time.sleep(0.1)
 
     # move shadow loc
+    print("shadow loc moving")
     servo_shadow_loc.angle = shadow_loc_deg
     shadow_loc_deg += 10
     time.sleep(0.1)
