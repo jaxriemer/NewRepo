@@ -34,7 +34,7 @@ def on_connect(client, userdata, flags, rc):
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
 	# you can filter by topics
-	if msg.topic == topic:
+    if msg.topic == topic:
         str = f"{msg.payload.decode('UTF-8')}"
         eye_status = str
 
