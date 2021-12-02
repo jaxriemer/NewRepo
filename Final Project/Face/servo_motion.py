@@ -13,16 +13,16 @@ topic = 'IDD/face_motion'
 eye_status = 'close'
 
 
-# Set channels to the number of servo channels on your kit.
-# There are 16 channels on the PCA9685 chip.
-kit = ServoKit(channels=16)
-
-# Name and set up the servo according to the channel you are using.
-servo_eye = kit.servo[0]
-
-# Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
-# Each servo might be different, you can normally find this information in the servo datasheet
-servo_eye.set_pulse_width_range(500, 2500)
+# # Set channels to the number of servo channels on your kit.
+# # There are 16 channels on the PCA9685 chip.
+# kit = ServoKit(channels=16)
+#
+# # Name and set up the servo according to the channel you are using.
+# servo_eye = kit.servo[0]
+#
+# # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
+# # Each servo might be different, you can normally find this information in the servo datasheet
+# servo_eye.set_pulse_width_range(500, 2500)
 
 def on_connect(client, userdata, flags, rc):
 	print(f"connected with result code {rc}")
