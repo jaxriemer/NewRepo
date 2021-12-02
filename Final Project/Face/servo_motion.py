@@ -5,13 +5,14 @@ from PIL import Image, ImageOps
 import numpy as np
 import cv2
 import sys
+import paho.mqtt.client as mqtt
+import uuid
 
 # control servo to complete the cloth deliver function
 from adafruit_servokit import ServoKit
 
 topic = 'IDD/face_motion'
 eye_status = 'close'
-
 
 # # Set channels to the number of servo channels on your kit.
 # # There are 16 channels on the PCA9685 chip.
@@ -35,13 +36,14 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
 	# you can filter by topics
     if msg.topic == topic:
-        str = f"{msg.payload.decode('UTF-8')}"
-        eye_status = str
+        eye_status = f"{msg.payload.decode('UTF-8')}"
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
+
 # configure network encryption etc
 client.tls_set()
+
 # this is the username and pw we have setup for the class
 client.username_pw_set('idd', 'device@theFarm')
 
