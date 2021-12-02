@@ -7,6 +7,7 @@ import cv2
 import sys
 import paho.mqtt.client as mqtt
 import uuid
+import time
 
 # control servo to complete the cloth deliver function
 from adafruit_servokit import ServoKit
