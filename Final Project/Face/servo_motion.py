@@ -91,28 +91,29 @@ while True:
     # eye_movement(eye_status)
 
     # eye horizontal movement
-    # if (eye_movement_lag % 10000) == 0:
-    #     if eye_horizontal_degree == 0:
-    #         servo_eye_horizontal.angle = 180
-    #         eye_horizontal_degree = 180
-    #         time.sleep(0.03)
-    #
-    #     else:
-    #         servo_eye_horizontal.angle = 0
-    #         eye_horizontal_degree = 0
-    #         time.sleep(0.03)
-    #
-    # # eye vertical movement
-    # if (eye_movement_lag % 10000) == 0:
-    #     if eye_vertical_degree == 0:
-    #         servo_eye_vertical.angle = 180
-    #         eye_vertical_degree = 180
-    #         time.sleep(0.03)
-    #
-    #     else:
-    #         servo_eye_verticel.angle = 0
-    #         eye_vertical_degree = 0
-    #         time.sleep(0.03)
+
+    if (eye_movement_lag % 500) == 0:
+        if eye_horizontal_degree == 0:
+            servo_eye_horizontal.angle = 180
+            eye_horizontal_degree = 180
+            time.sleep(0.03)
+
+        else:
+            servo_eye_horizontal.angle = 0
+            eye_horizontal_degree = 0
+            time.sleep(0.03)
+
+    # eye vertical movement
+    if (eye_movement_lag % 800) == 0:
+        if eye_vertical_degree == 0:
+            servo_eye_vertical.angle = 180
+            eye_vertical_degree = 180
+            time.sleep(0.03)
+
+        else:
+            servo_eye_verticel.angle = 0
+            eye_vertical_degree = 0
+            time.sleep(0.03)
 
     time.sleep(0.03)
 
