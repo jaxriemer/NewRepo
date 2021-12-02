@@ -87,12 +87,12 @@ servo_shadow.angle = 150
 while True:
     # show shadow
     print("showing shadow")
-    servo_shadow.angle = 150
+    servo_shadow.angle = 100
     time.sleep(3)
 
     # hide shadow
     print("hiding shadow")
-    servo_shadow.angle = 180
+    servo_shadow.angle = 150
     time.sleep(3)
 
     # move shadow loc
