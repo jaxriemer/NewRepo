@@ -12,24 +12,24 @@ import time
 # control servo to complete the cloth deliver function
 from adafruit_servokit import ServoKit
 
-topic = 'IDD/user_face_motion'
-eye_status = 'Not read'
+topic = 'IDD/body_position'
+body_position = 'Not read'
 
 # # Set channels to the number of servo channels on your kit.
 # There are 16 channels on the PCA9685 chip.
 kit = ServoKit(channels=16)
 
 # Name and set up the servo according to the channel you are using.
-servo_eye = kit.servo[0]
-servo_eye_horizontal = kit.servo[1]
-servo_eye_vertical = kit.servo[2]
-
-servo_shadow = kit.servo[11]
-servo_shadow_loc = kit.servo[5]
+servo_upper_0 = kit.servo[0]
+servo_bottom_0 = kit.servo[1]
+servo_upper_1 = kit.servo[2]
+servo_bottom_1 = kit.servo[3]
+servo_upper_2 = kit.servo[4]
+servo_bottom_2 = kit.servo[5]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
-servo_shadow.set_pulse_width_range(500, 2500)
+# servo_shadow.set_pulse_width_range(500, 2500)
 
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
@@ -37,13 +37,12 @@ def on_connect(client, userdata, flags, rc):
     # you can subsribe to as many topics as you'd like
     # client.subscribe('some/other/topic')
 
-
 # this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
     # you can filter by topics
     if msg.topic == topic:
-        global eye_status
-        eye_status = msg.payload.decode('UTF-8')
+        global body_position
+        body_position = msg.payload.decode('UTF-8')
         # print(eye_status)
 
 # Every client needs a random ID
@@ -68,42 +67,82 @@ client.connect(
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
 
-def shadow_movement():
-    # TODO
-    open_deg = 180
-    close_deg = 0
+# def shadow_movement():
+#     # TODO
+#     open_deg = 180
+#     close_deg = 0
+#
+#     servo_eye.angle = open_deg
+#     time.sleep(0.03)
+#
+#     servo_eye.angle = close_deg
+#     time.sleep(0.03)
 
-    servo_eye.angle = open_deg
-    time.sleep(0.03)
+def push_shadow_tile(condition):
 
-    servo_eye.angle = close_deg
-    time.sleep(0.03)
+    show = 180
+    no_show = 0
+
+    if condition == 'left':
+        servo_upper_0.angle = show
+        servo_bottom_0.angle = show
+        servo_upper_1.angle = no_show
+        servo_bottom_1.angle = no_show
+        servo_upper_2.angle = no_show
+        servo_bottom_2.angle = no_show
+
+    elif condition == 'middle':
+        servo_upper_0.angle = no_show
+        servo_bottom_0.angle = no_show
+        servo_upper_1.angle = show
+        servo_bottom_1.angle = show
+        servo_upper_2.angle = no_show
+        servo_bottom_2.angle = no_show
+
+    elif condition == 'right':
+        servo_upper_0.angle = no_show
+        servo_bottom_0.angle = no_show
+        servo_upper_1.angle = no_show
+        servo_bottom_1.angle = no_show
+        servo_upper_2.angle = show
+        servo_bottom_2.angle = show
+
+    else:
+        servo_upper_0.angle = no_show
+        servo_bottom_0.angle = no_show
+        servo_upper_1.angle = no_show
+        servo_bottom_1.angle = no_show
+        servo_upper_2.angle = no_show
+        servo_bottom_2.angle = no_show
+
+
 
 client.loop_start()
 
-shadow_loc_deg = 0
-servo_shadow.angle = 150
-
+# shadow_loc_deg = 0
+# servo_shadow.angle = 150
 
 while True:
-    # show shadow
-    print("showing shadow")
-    servo_shadow.angle = 90
-    time.sleep(3)
-
-    # hide shadow
-    # print("hiding shadow")
-    # servo_shadow.angle = 150
+    print(body_position)
+    push_shadow_tile(body_position)
+    # # show shadow
+    # print("showing shadow")
+    # servo_shadow.angle = 90
     # time.sleep(3)
-
-    # move shadow loc
-    print("shadow loc moving")
-    servo_shadow_loc.angle = shadow_loc_deg
-    if shadow_loc_deg <= 170:
-        shadow_loc_deg += 10
-    elif shadow_loc_deg >= 0:
-        shadow_loc_deg -= 10
-    time.sleep(3)
+    #
+    # # hide shadow
+    # # print("hiding shadow")
+    # # servo_shadow.angle = 150
+    # # time.sleep(3)
+    #
+    # # move shadow loc
+    # print("shadow loc moving")
+    # servo_shadow_loc.angle = shadow_loc_deg
+    # if shadow_loc_deg <= 170:
+    #     shadow_loc_deg += 10
+    # elif shadow_loc_deg >= 0:
+    #     shadow_loc_deg -= 10
+    # time.sleep(3)
 
 
 

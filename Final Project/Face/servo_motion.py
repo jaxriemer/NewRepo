@@ -64,7 +64,6 @@ client.connect(
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
-
 def eye_movement(condition):
     # check this later
     open_deg = 180

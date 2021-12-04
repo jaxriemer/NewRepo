@@ -7,7 +7,7 @@ import paho.mqtt.client as mqtt
 import uuid
 
 
-topic = 'IDD/face_motion'
+topic = 'IDD/body_position'
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -55,6 +55,7 @@ model = tensorflow.keras.models.load_model('keras_model.h5')
 # Load Labels:
 labels=[]
 f = open("labels.txt", "r")
+
 for line in f.readlines():
     if(len(line)<1):
         continue
@@ -82,7 +83,7 @@ while(True):
     prediction = model.predict(data)
     print("I think its a:",labels[np.argmax(prediction)])
 
-    # TODO: send label to MQTT
+    # send the predicted body position to MQTT
     client.publish(topic, labels[np.argmax(prediction)])
 
     if webCam:
