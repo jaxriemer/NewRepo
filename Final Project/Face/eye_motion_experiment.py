@@ -34,8 +34,8 @@ eyebrow_servo_servo = kit.servo[3]
 servo_eye.set_pulse_width_range(500, 2500)
 
 def on_connect(client, userdata, flags, rc):
-	print(f"connected with result code {rc}")
-	client.subscribe(topic_face)
+    print(f"connected with result code {rc}")
+    client.subscribe(topic_face)
     client.subscribe(topic_body)
 	# you can subsribe to as many topics as you'd like
 	# client.subscribe('some/other/topic')
@@ -89,7 +89,7 @@ def eyeball_movement(body_pos):
         servo_eye_horizontal.angle= 0
 
     elif body_pos == 'middle':
-        servo_eye_horizontal.angle = 45
+        servo_eye_horizontal.angle = 45p
 
     elif body_pos == 'background':
         servo_eye_horizontal.angle = 90
