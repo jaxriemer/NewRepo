@@ -101,11 +101,11 @@ def eyeball_movement(body_pos):
 def face_talking(cue):
 
     if cue == "greet":
-        greet_sound = AudioSegment.from_file("greet.m4a")
+        greet_sound = AudioSegment.from_file("voice_package/greet.m4a")
         play(greet_sound)
 
     elif cue == "moved":
-        moving_reaction = AudioSegment.from_file("moving.m4a")
+        moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
         play(moving_reaction)
 
 
