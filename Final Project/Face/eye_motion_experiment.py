@@ -74,16 +74,14 @@ client.connect(
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
 def eyelid_movement(status):
+    eyelid_upper_servo.angle = 30
+    eyelid_lower_servo.angle = 0
 
-    open_deg = 180
-    close_deg = 0
+    time.sleep(1)
 
-    if condition == 'open':
-        servo_eye.angle = open_deg
-        time.sleep(0.03)
-    else:
-        servo_eye.angle = close_deg
-        time.sleep(0.03)
+    eyelid_upper_servo.angle = 3
+    eyelid_lower_servo.angle = 30
+    time.sleep(1)
 
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
