@@ -12,7 +12,7 @@ from pydub.playback import play
 # control servo to complete the cloth deliver function
 from adafruit_servokit import ServoKit
 
-topic_hand_gesture = 'IDD/face_hand_gesture'
+topic_hand_gesture = 'IDD/oneteam/face_hand_gesture'
 hand_gesture = 'not recieved'
 
 def on_connect(client, userdata, flags, rc):
