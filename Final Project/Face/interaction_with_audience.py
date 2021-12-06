@@ -57,8 +57,8 @@ client.connect(
 
 client.loop_start()
 
-def face_interaction(cue):
-    if cue == "greet":
+def face_interaction(hand_gesture):
+    if cue == "handwaving":
         greet_sound = AudioSegment.from_file("voice_package/greeting.m4a")
         play(greet_sound)
 
@@ -66,14 +66,18 @@ def face_interaction(cue):
         moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
         play(moving_reaction)
 
+    elif cue == "heart":
+        moving_reaction = AudioSegment.from_file("voice_package/heart.m4a")
+        play(moving_reaction)
+
+    elif cue == "secret":
+        moving_reaction = AudioSegment.from_file("voice_package/finger.m4a")
+        play(moving_reaction)
+
 while True:
+
     print(hand_gesture)
-
-    if hand_gesture == 'handwaving':
-        face_interaction('greet')
-
-    elif hand_gesture == 'secret':
-        face_interaction('moved')
+    face_interaction(hand_gesture)
 
 
 
