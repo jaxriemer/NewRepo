@@ -74,14 +74,15 @@ client.connect(
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
 def eyelid_movement(status):
-    print("upper eyelid open")
+    print("eye open")
     eyelid_upper_servo.angle =30
-    print("lower eyelid open")
     eyelid_lower_servo.angle = 0
 
     time.sleep(2)
+
+    print("eye close")
     eyelid_upper_servo.angle = 3
-    # eyelid_lower_servo.angle = 0
+    eyelid_lower_servo.angle = 30
     time.sleep(2)
 
 def eyeball_movement(body_pos):
