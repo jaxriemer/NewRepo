@@ -24,6 +24,7 @@ def on_connect(client, userdata, flags, rc):
 # this is the callback that gets called each time a message is recieved
 def on_message(cleint, userdata, msg):
 	# you can filter by topics
+    print('here')
     if msg.topic == topic_hand_gesture:
         global hand_gesture
         hand_gesture = msg.payload.decode('UTF-8')
