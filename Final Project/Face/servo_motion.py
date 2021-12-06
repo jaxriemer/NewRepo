@@ -84,10 +84,11 @@ eye_vertical_degree = 0
 servo_eye_horizontal.angle = 0
 servo_eye_vertical.angle = 0
 
+
+
 while True:
     print(eye_status)
     eye_movement(eye_status)
-
     # eye horizontal movement
 
     if (eye_movement_lag % 200) == 0:
