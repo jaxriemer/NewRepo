@@ -14,6 +14,7 @@ from adafruit_servokit import ServoKit
 
 topic_face = 'IDD/face_motion'
 topic_body = 'IDD/body_position'
+
 eye_status = 'not receiving'
 body_pos = 'not receiving'
 
@@ -22,10 +23,11 @@ body_pos = 'not receiving'
 kit = ServoKit(channels=16)
 
 # Name and set up the servo according to the channel you are using.
-servo_eye = kit.servo[0]
-servo_eye_horizontal = kit.servo[1]
-servo_eye_vertical = kit.servo[2]
-
+eye_vertical_servo= kit.servo[4]
+eye_horizontal_servo = kit.servo[1]
+eyelid_upper_servo = kit.servo[2]
+eyelid_lower_servo = kit.servo[0]
+eyebrow_servo_servo = kit.servo[3]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
@@ -84,7 +86,6 @@ def eyelid_movement(status):
         time.sleep(0.03)
 
 def eyeball_movement(body_pos):
-
     #TODO: determine the correct angle
     if body_pos == 'left':
         servo_eye_horizontal.angle= 0
@@ -97,17 +98,16 @@ def eyeball_movement(body_pos):
 
     else:
         servo_eye_horizontal.angle = 90
-
-def face_talking(cue):
-
-    if cue == "greet":
-        greet_sound = AudioSegment.from_file("voice_package/greet.m4a")
-        play(greet_sound)
-
-    elif cue == "moved":
-        moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
-        play(moving_reaction)
-
+#
+# def face_talking(cue):
+#
+#     if cue == "greet":
+#         greet_sound = AudioSegment.from_file("voice_package/greet.m4a")
+#         play(greet_sound)
+#
+#     elif cue == "moved":
+#         moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
+#         play(moving_reaction)
 
 
 client.loop_start()
@@ -126,16 +126,16 @@ while True:
     print(eye_status)
     print(body_pos)
 
-    if body_pos != 'background' and greeted == False:
-        face_talking('greet')
-        greeted = True
+    # if body_pos != 'background' and greeted == False:
+    #     face_talking('greet')
+    #     greeted = True
 
     eyelid_movement(eye_status)
     eyeball_movement(body_pos)
 
-    if time_counter%50 == 0 and commented_walking == False:
-        face_talking('moved')
-        commented_walking = True
+    # if time_counter%50 == 0 and commented_walking == False:
+    #     face_talking('moved')
+    #     commented_walking = True
     # eye horizontal movement
     #
     # if (eye_movement_lag % 200) == 0:

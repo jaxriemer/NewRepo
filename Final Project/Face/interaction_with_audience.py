@@ -27,6 +27,7 @@ def on_message(cleint, userdata, msg):
     if msg.topic == topic_hand_gesture:
         global hand_gesture
         hand_gesture = msg.payload.decode('UTF-8')
+        print(hand_gesture)
 
     # if msg.topic == topic_body:
     #     global body_pos
