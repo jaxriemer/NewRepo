@@ -33,7 +33,7 @@ else:
 
 
 # Load the model
-model = tensorflow.keras.models.load_model('keras_model.h5')
+model = tensorflow.keras.models.load_model('body_pos_model.h5')
 
 # Load Labels:
 labels=[]
