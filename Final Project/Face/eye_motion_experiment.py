@@ -130,12 +130,12 @@ while True:
     # eyelid_movement(eye_status)
     eyeball_movement("left")
     time.sleep(2)
-    eyeball_movement("right")
-    time.sleep(2)
-    eyeball_movement("middle")
-    time.sleep(2)
-    eyeball_movement("background")
-    time.sleep(2)
+    # eyeball_movement("right")
+    # time.sleep(2)
+    # eyeball_movement("middle")
+    # time.sleep(2)
+    # eyeball_movement("background")
+    # time.sleep(2)
 
     # if time_counter%50 == 0 and commented_walking == False:
     #     face_talking('moved')
