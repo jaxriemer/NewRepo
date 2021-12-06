@@ -128,7 +128,8 @@ while True:
     #     greeted = True
 
     # eyelid_movement(eye_status)
-    eyeball_movement("right")
+    # eyeball_movement("right")
+    eye_horizontal_servo.angle = 0
     time.sleep(2)
     # eyeball_movement("right")
     # time.sleep(2)
