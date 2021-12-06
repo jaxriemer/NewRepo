@@ -128,7 +128,7 @@ while True:
     #     greeted = True
 
     # eyelid_movement(eye_status)
-    eyeball_movement("left")
+    eyeball_movement("right")
     time.sleep(2)
     # eyeball_movement("right")
     # time.sleep(2)
