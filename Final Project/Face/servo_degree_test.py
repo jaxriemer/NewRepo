@@ -19,10 +19,10 @@ servo.set_pulse_width_range(500, 2500)
 while True:
     try:
         # Set the servo to 180 degree position
-        servo.angle = 180
+        eyebrow_servo_servo.angle = 60
         time.sleep(0.27)
         # Set the servo to 0 degree position
-        servo.angle = 0
+        eyebrow_servo_servo.angle = 90
         time.sleep(0.27)
 
     except KeyboardInterrupt:
@@ -34,7 +34,7 @@ while True:
 
     """
     eyelid_upper:
-    open
+    open 
     close
     
     eyelid_lower: 

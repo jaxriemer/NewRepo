@@ -24,6 +24,7 @@ def on_connect(client, userdata, flags, rc):
 # this is the callback that gets called each time a message is recieved
 def on_message(cleint, userdata, msg):
 	# you can filter by topics
+    print('here')
     if msg.topic == topic_hand_gesture:
         global hand_gesture
         hand_gesture = msg.payload.decode('UTF-8')
@@ -54,25 +55,29 @@ client.connect(
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
-def face_interaction(cue):
-    if cue == "greet":
+client.loop_start()
+
+def face_interaction(hand_gesture):
+    if hand_gesture == "handwaving":
         greet_sound = AudioSegment.from_file("voice_package/greeting.m4a")
         play(greet_sound)
 
-    elif cue == "moved":
+    elif hand_gesture == "moved":
         moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
         play(moving_reaction)
 
+    elif hand_gesture == "heart":
+        moving_reaction = AudioSegment.from_file("voice_package/heart.m4a")
+        play(moving_reaction)
+
+    elif hand_gesture == "secret":
+        moving_reaction = AudioSegment.from_file("voice_package/finger.m4a")
+        play(moving_reaction)
 
 while True:
 
     print(hand_gesture)
-
-    if hand_gesture == 'handwaving':
-        face_interaction('greet')
-
-    elif hand_gesture == 'secret':
-        face_interaction('moved')
+    face_interaction(hand_gesture)
 
 
 
