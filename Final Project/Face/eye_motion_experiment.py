@@ -75,7 +75,7 @@ client.connect(
 
 def eyelid_movement(status):
     print("upper eyelid open")
-    eyelid_upper_servo.angle = 25
+    eyelid_upper_servo.angle = 50
     print("lower eyelid open")
     eyelid_lower_servo.angle = 0
 
