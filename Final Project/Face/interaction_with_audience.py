@@ -13,6 +13,7 @@ from pydub.playback import play
 from adafruit_servokit import ServoKit
 
 topic_hand_gesture = 'IDD/face_hand_gesture'
+hand_gesture = 'not recieved'
 
 def on_connect(client, userdata, flags, rc):
 	print(f"connected with result code {rc}")
@@ -24,12 +25,12 @@ def on_connect(client, userdata, flags, rc):
 def on_message(cleint, userdata, msg):
 	# you can filter by topics
     if msg.topic == topic_hand_gesture:
-        global eye_status
-        eye_status = msg.payload.decode('UTF-8')
+        global hand_gesture
+        hand_gesture = msg.payload.decode('UTF-8')
 
-    if msg.topic == topic_body:
-        global body_pos
-        body_pos = msg.payload.decode('UTF-8')
+    # if msg.topic == topic_body:
+    #     global body_pos
+    #     body_pos = msg.payload.decode('UTF-8')
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -64,8 +65,13 @@ def face_interaction(cue):
 
 while True:
 
-    face_interaction('greet')
-    face_interaction('moved')
+    print(hand_gesture)
+
+    if hand_gesture == 'handwaving':
+        face_interaction('greet')
+
+    elif hand_gesture == 'secret':
+        face_interaction('moved')
 
 
 
