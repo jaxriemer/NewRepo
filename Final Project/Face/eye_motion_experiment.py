@@ -89,7 +89,7 @@ def eyeball_movement(body_pos):
         servo_eye_horizontal.angle= 0
 
     elif body_pos == 'middle':
-        servo_eye_horizontal.angle = 45p
+        servo_eye_horizontal.angle = 45
 
     elif body_pos == 'background':
         servo_eye_horizontal.angle = 90
