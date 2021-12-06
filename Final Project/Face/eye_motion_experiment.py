@@ -114,8 +114,8 @@ time_counter = 0
 eye_horizontal_degree = 0
 eye_vertical_degree = 0
 
-servo_eye_horizontal.angle = 90
-servo_eye_vertical.angle = 90
+eye_horizontal_servo.angle = 90
+eye_vertical_servo.angle = 90
 
 greeted = False
 commented_walking = False
