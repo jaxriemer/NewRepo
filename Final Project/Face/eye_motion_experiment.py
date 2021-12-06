@@ -82,7 +82,7 @@ def eyelid_movement(status):
 
     print("eye close")
     eyelid_upper_servo.angle = 3
-    eyelid_lower_servo.angle = 50
+    eyelid_lower_servo.angle = 90
     time.sleep(2)
 
 def eyeball_movement(body_pos):
