@@ -88,13 +88,13 @@ def eyelid_movement(status):
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':
-        eye_horizontal_servo.angle= 0
+        eye_horizontal_servo.angle= 85
 
     elif body_pos == 'middle':
         eye_horizontal_servo.angle = 45
 
-    elif body_pos == 'background':
-        eye_horizontal_servo.angle = 90
+    elif body_pos == 'right':
+        eye_horizontal_servo.angle = 0
 
     else:
         eye_horizontal_servo.angle = 90
@@ -127,8 +127,15 @@ while True:
     #     face_talking('greet')
     #     greeted = True
 
-    eyelid_movement(eye_status)
-    # eyeball_movement(body_pos)
+    # eyelid_movement(eye_status)
+    eyeball_movement("left")
+    time.sleep(2)
+    eyeball_movement("right")
+    time.sleep(2)
+    eyeball_movement("middle")
+    time.sleep(2)
+    eyeball_movement("background")
+    time.sleep(2)
 
     # if time_counter%50 == 0 and commented_walking == False:
     #     face_talking('moved')
