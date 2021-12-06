@@ -34,26 +34,26 @@ while True:
 
     """
     eyelid_upper:
-    open 
-    close
+    open:30
+    close:3
     
     eyelid_lower: 
     open
     close
     
     eyebrow:
-    open
-    close
+    open: 25
+    close: 0
     
     
     eye_horizotal:
-    left
-    right
+    left: 85
+    right: 0
     
     
     eye_vertical:
-    top
-    bottom:
+    top:40
+    bottom:5
     
     """
 
