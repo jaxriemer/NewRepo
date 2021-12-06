@@ -129,7 +129,7 @@ while True:
 
     # eyelid_movement(eye_status)
     # eyeball_movement("right")
-    eye_horizontal_servo.angle = 85
+    eye_horizontal_servo.angle = 120
     time.sleep(2)
     # eyeball_movement("right")
     # time.sleep(2)
