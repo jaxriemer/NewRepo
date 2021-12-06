@@ -55,6 +55,8 @@ client.connect(
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
+client.loop_start()
+
 def face_interaction(cue):
     if cue == "greet":
         greet_sound = AudioSegment.from_file("voice_package/greeting.m4a")
@@ -64,9 +66,7 @@ def face_interaction(cue):
         moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
         play(moving_reaction)
 
-
 while True:
-
     print(hand_gesture)
 
     if hand_gesture == 'handwaving':
