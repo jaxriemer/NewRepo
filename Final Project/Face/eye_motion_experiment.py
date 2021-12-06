@@ -86,16 +86,16 @@ def eyelid_movement(status):
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':
-        servo_eye_horizontal.angle= 0
+        eye_horizontal_servo.angle= 0
 
     elif body_pos == 'middle':
-        servo_eye_horizontal.angle = 45
+        eye_horizontal_servo.angle = 45
 
     elif body_pos == 'background':
-        servo_eye_horizontal.angle = 90
+        eye_horizontal_servo.angle = 90
 
     else:
-        servo_eye_horizontal.angle = 90
+        eye_horizontal_servo.angle = 90
 #
 # def face_talking(cue):
 #
