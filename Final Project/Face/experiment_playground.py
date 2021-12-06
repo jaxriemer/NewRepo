@@ -6,7 +6,7 @@ import sys
 import paho.mqtt.client as mqtt
 import uuid
 
-topic = 'IDD/face_motion'
+topic = 'IDD/face_hand_gesture'
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
