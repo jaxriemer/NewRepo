@@ -54,7 +54,7 @@ from pydub.playback import play
 
 def face_interaction(cue):
     if cue == "greet":
-        greet_sound = AudioSegment.from_file("greet.m4a")
+        greet_sound = AudioSegment.from_file("greeting.m4a")
         play(greet_sound)
 
     elif cue == "moved":
