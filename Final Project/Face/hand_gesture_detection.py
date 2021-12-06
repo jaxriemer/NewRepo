@@ -17,7 +17,7 @@ client.tls_set()
 # this is the username and pw we have setup for the class
 client.username_pw_set('idd', 'device@theFarm')
 
-#connect to the broker
+#connect to the brokerh
 client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
