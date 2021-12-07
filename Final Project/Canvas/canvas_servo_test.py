@@ -139,9 +139,7 @@ while True:
         # servo_bottom_2.angle = 0
 
         servo_test.angle = 0
-
         time.sleep(0.5)
-
         break
 
 
