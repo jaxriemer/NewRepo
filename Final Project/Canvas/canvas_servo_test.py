@@ -105,28 +105,6 @@ def push_shadow_tile(condition):
 
             time.sleep(sleep_time)
 
-def all_back():
-
-    show_add = -3
-    no_show_add = 3
-    outside = 5
-    inside = 175
-    sleep_time = 0.02
-
-    while servo_upper_0.angle < inside or servo_upper_1.angle < inside or servo_upper_2.angle < inside:
-        servo_upper_2.angle += no_show_add
-        servo_bottom_2.angle += no_show_add
-
-        if servo_upper_1.angle < inisde:
-            servo_upper_1.angle += no_show_add
-            servo_bottom_1.angle += no_show_add
-
-        if servo_upper_0.angle < inisde:
-            servo_upper_0.angle += no_show_add
-            servo_bottom_0.angle += no_show_add
-
-        time.sleep(sleep_time)
-
 
 servo_upper_0.angle = 165
 servo_bottom_0.angle = 165
@@ -136,52 +114,9 @@ servo_upper_2.angle = 165
 servo_bottom_2.angle = 165
 
 while True:
-    # for pos in body_position:
-    #     push_shadow_tile(pos)
 
-        # # Set the servo to degree position
-        # while servo_upper_0.angle < outside:
-        #     servo_upper_0.angle += 1
-        #     time.sleep(0.05)
-        #
-        # while servo_upper_0.angle > inside:
-        #     servo_upper_0.angle += -1
-        #     time.sleep(0.05)
     try:
-        # # Set the servo to 180 degree position
-        # print('pushing out')
-        # while servo_upper_0.angle > outside:
-        #     servo_upper_0.angle += show_add
-        #     time.sleep(0.02)
-        #     print(servo_upper_0.angle)
-        #
-        # print('pulling in')
-        # while servo_upper_0.angle < inside:
-        #     servo_upper_0.angle += no_show_add
-        #     time.sleep(0.02)
-        #     print(servo_upper_0.angle)
 
-        # while servo_bottom_0.angle > outside:
-        #     servo_bottom_0.angle += show_add
-        #     time.sleep(0.02)
-        #     print(servo_bottom_0.angle)
-        #
-        # print('pulling in')
-        # while servo_bottom_0.angle < inside:
-        #     servo_bottom_0.angle += no_show_add
-        #     time.sleep(0.02)
-        #     print(servo_bottom_0.angle)
-
-        # while servo_upper_2.angle > outside:
-        #     servo_upper_2.angle += show_add
-        #     time.sleep(0.02)
-        #     print(servo_upper_2.angle)
-        #
-        # print('pulling in')
-        # while servo_upper_2.angle < inside:
-        #     servo_upper_2.angle += no_show_add
-        #     time.sleep(0.02)
-        #     print(servo_upper_2.angle)
         print("pushing left")
         push_shadow_tile('left')
         print("pushing middle")
