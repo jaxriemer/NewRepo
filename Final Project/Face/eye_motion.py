@@ -70,38 +70,38 @@ def eyelid_movement(eyelid_movement):
     # lag1 = random.randint(2, 5)
     # lag2 = random.randint(2, 5)
 
+    if eyelid_movement == "closed" or eyelid_movement == "wink":
+        print("eye close")
+        eyelid_upper_servo.angle = 3
+        eyelid_lower_servo.angle = 80
+        # print("ready to sleep for " + str(lag2) + " seconds")
+        time.sleep(1)
+
     if eyelid_movement == "open" or eyelid_movement == "wink":
         print("eye open")
-        eyelid_upper_servo.angle =30
-        eyelid_lower_servo.angle = 25
+        eyelid_upper_servo.angle = 30
+        eyelid_lower_servo.angle = 3
         # print("ready to sleep for " + str(lag1) + " seconds")
         time.sleep(1)
 
-    if eyelid_movement == "closed" or eyelid_movement == "wink":
-        print("eye close")
-        eyelid_upper_servo.angle = 10
-        eyelid_lower_servo.angle = 3
-        # print("ready to sleep for " + str(lag2) + " seconds")
-        time.sleep(1)
-
-    if eyelid_movement == 'smile':
-        print("eye smile")
-        eyelid_upper_servo.angle = 30
-        eyelid_lower_servo.angle = 3
-        # print("ready to sleep for " + str(lag2) + " seconds")
-        time.sleep(1)
+    # if eyelid_movement == 'smile':
+    #     print("eye smile")
+    #     eyelid_upper_servo.angle = 30
+    #     eyelid_lower_servo.angle = 100
+    #     # print("ready to sleep for " + str(lag2) + " seconds")
+    #     time.sleep(1)
 
 
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':
-        eye_horizontal_servo.angle= 85
+        eye_horizontal_servo.angle = 78
         time.sleep(1)
     elif body_pos == 'right':
         eye_horizontal_servo.angle = 0
         time.sleep(1)
     else:
-        eye_horizontal_servo.angle = 40
+        eye_horizontal_servo.angle = 39
         time.sleep(1)
 
 
@@ -116,13 +116,11 @@ while True:
 
         eyeball_movement(body_pos)
 
-        if time_counter%500 == 0:
+        if time_counter%10 == 0:
             eyelid_movement('wink')
 
-        if time_counter%800 == 0:
-            eyelid_movement('smile')
-
         time_counter += 1
+        print(time_counter)
 
     except KeyboardInterrupt:
 
