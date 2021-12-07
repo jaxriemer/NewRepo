@@ -73,29 +73,29 @@ def face_interaction(hand_gesture):
         moving_reaction = AudioSegment.from_file("voice_package/secret.m4a")
         play(moving_reaction)
 
-said_hi = False
-said_heart = False
-said_thumb_down = False
-said_secret = False
+said_hi = 0
+said_heart = 0
+said_thumb_down = 0
+said_secret = 0
 
 
 while True:
 
-    if said_hi == False and hand_gesture == 'handwaving':
-        face_interaction(hand_gesture)
-        said_hi == True
+    if said_hi == 0 and hand_gesture == 'handwaving':
+        face_interaction('handwaving')
+        said_hi += 1
 
-    elif said_heart == False and hand_gesture == 'heart':
-        face_interaction(hand_gesture)
-        said_heart == True
+    elif said_thumb_down == 0 and hand_gesture == 'thumb_down':
+        face_interaction('thumb_down')
+        said_thumb_down += 1
 
-    elif said_thumb_down == False and hand_gesture == 'thumb_down':
-        face_interaction(hand_gesture)
-        said_thumb_down == True
+    elif said_secret == 0 and hand_gesture == 'secret':
+        face_interaction('secret')
+        said_secret += 1
 
-    elif said_secret == False and hand_gesture == 'secret':
-        face_interaction(hand_gesture)
-        said_secret == True
+    elif said_heart == 0 and hand_gesture == 'heart':
+        face_interaction('heart')
+        said_heart += 1
 
 
 
