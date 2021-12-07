@@ -26,7 +26,7 @@ while True:
         # time.sleep(3)
 
         # Set the servo to 0 degree position
-        eye_vertical_servo.angle = 30
+        eye_vertical_servo.angle = 60
         time.sleep(3)
         eye_vertical_servo.angle = 5
         time.sleep(3)
