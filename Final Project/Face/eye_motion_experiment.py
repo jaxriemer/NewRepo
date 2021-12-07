@@ -8,6 +8,7 @@ import uuid
 import time
 from pydub import AudioSegment
 from pydub.playback import play
+import random
 
 # control servo to complete the cloth deliver function
 from adafruit_servokit import ServoKit
@@ -73,32 +74,35 @@ client.connect(
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
-def eyelid_movement(status):
+def eyelid_movement():
+    lag1 = random.randint(2, 5)
+    lag2 = random.randint(2, 5)
+
     print("eye open")
     eyelid_upper_servo.angle =30
     eyelid_lower_servo.angle = 3
-
-    time.sleep(2)
+    print("ready to sleep for " + str(lag1) + " seconds")
+    time.sleep(lag1)
 
     print("eye close")
     eyelid_upper_servo.angle = 3
     eyelid_lower_servo.angle = 90
-    time.sleep(2)
+    print("ready to sleep for " + str(lag2) + " seconds")
+    time.sleep(lag2)
 
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':
-        eye_horizontal_servo.angle= 85
-
-    elif body_pos == 'middle':
-        eye_horizontal_servo.angle = 45
-
+        eye_horizontal_servo.angle= 100
+        time.sleep(2)
     elif body_pos == 'right':
         eye_horizontal_servo.angle = 0
-
+        time.sleep(2)
     else:
-        eye_horizontal_servo.angle = 90
-#
+        eye_horizontal_servo.angle = 50
+        time.sleep(2)
+
+
 # def face_talking(cue):
 #
 #     if cue == "greet":
@@ -127,16 +131,8 @@ while True:
     #     face_talking('greet')
     #     greeted = True
 
-    # eyelid_movement(eye_status)
+    eyelid_movement()
     # eyeball_movement("right")
-    eye_horizontal_servo.angle = 100
-    time.sleep(2)
-    # eyeball_movement("right")
-    # time.sleep(2)
-    # eyeball_movement("middle")
-    # time.sleep(2)
-    # eyeball_movement("background")
-    # time.sleep(2)
 
     # if time_counter%50 == 0 and commented_walking == False:
     #     face_talking('moved')
