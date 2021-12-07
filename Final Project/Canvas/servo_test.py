@@ -38,7 +38,7 @@ while True:
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
         eyelid_upper_servo.angle = 0
-        eyelid_lower_servo.angle = 25
+        eyelid_lower_servo.angle = 120
         eye_horizontal_servo.angle = 39
         time.sleep(1)
 
