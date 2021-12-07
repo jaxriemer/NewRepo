@@ -117,10 +117,14 @@ def eyebrow_motion(pos):
         time.sleep(1)
 
 def roll_eye():
+    eyebrow_motion('middle')
+    eyelid_movement('open')
     eye_vertical_servo.angle = 180
     time.sleep(1)
     eye_vertical_servo.angle = 6
     time.sleep(1)
+    eyelid_movement('wink')
+
 
 client.loop_start()
 
@@ -133,13 +137,21 @@ while True:
 
         eyeball_movement(body_pos)
 
-
+        # wink
         if time_counter % 6 == 0:
             eyelid_movement('wink')
 
+        # frown
         if time_counter % 8 == 0:
             eyebrow_motion('right')
             eyebrow_motion('middle')
+
+        # look up and down
+        if time_counter % 10 == 0:
+            eye_vertical_servo.angle = 100
+            time.sleep(1)
+            eye_vertical_servo.angle = 6
+            time.sleep(1)
 
         time_counter += 1
         print(time_counter)
