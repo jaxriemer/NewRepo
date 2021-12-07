@@ -199,8 +199,13 @@ while True:
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
-        all_back
-        time.sleep(1)
+
+        servo_upper_0.angle = 180
+        servo_bottom_0.angle = 180
+        servo_upper_1.angle = 180
+        servo_bottom_1.angle = 180
+        servo_upper_2.angle = 180
+        servo_bottom_2.angle = 180
         break
 
 
