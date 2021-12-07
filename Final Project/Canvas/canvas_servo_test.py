@@ -106,13 +106,14 @@ servo_upper_0 = kit.servo[0]
 #             time.sleep(sleep_time)
 
 print(servo_upper_0.angle)
+servo_upper_0.angle = 0
 
 while True:
     # for pos in body_position:
     #     push_shadow_tile(pos)
 
-    outside = 179
-    inside = 1
+    outside = 175
+    inside = 5
     show_add = 3
     no_show_add = -3
 
