@@ -125,6 +125,7 @@ while True:
         #     servo_upper_0.angle += -1
         #     time.sleep(0.05)
         servo_test.angle = 0
+        print('here')
         time.sleep(3)
         servo_test.angle = 180
 
