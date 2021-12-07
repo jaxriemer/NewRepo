@@ -93,7 +93,6 @@ def eyelid_movement(eyelid_movement):
 
 
 def eyeball_movement(body_pos):
-    #TODO: determine the correct angle
     if body_pos == 'left':
         eye_horizontal_servo.angle = 78
         time.sleep(1)
@@ -131,6 +130,7 @@ while True:
     try:
 
         eyeball_movement(body_pos)
+
 
         if time_counter%10 == 0:
             eyelid_movement('wink')
