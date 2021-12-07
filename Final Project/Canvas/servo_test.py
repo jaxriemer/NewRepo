@@ -25,7 +25,7 @@ while True:
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
         servo.angle = 3
-        time.sleep(1
+        time.sleep(1)
 
         break
 
