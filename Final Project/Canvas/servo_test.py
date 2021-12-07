@@ -25,6 +25,7 @@ while True:
 
         eyelid_upper_servo.angle = 30
         eyelid_lower_servo.angle = 80
+        eye_vertical_servo.angle = 80
         time.sleep(3)
         # eye_horizontal_servo.angle = 39
         # time.sleep(3)
