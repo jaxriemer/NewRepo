@@ -1,4 +1,0 @@
-0 middle
-1 left
-2 right
-3 background
