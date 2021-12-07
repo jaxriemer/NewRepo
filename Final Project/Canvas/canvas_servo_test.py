@@ -23,9 +23,9 @@ kit = ServoKit(channels=16)
 servo_upper_0 = kit.servo[0]
 servo_bottom_0 = kit.servo[1]
 servo_upper_1 = kit.servo[2]
-# servo_bottom_1 = kit.servo[3]
-# servo_upper_2 = kit.servo[4]
-# servo_bottom_2 = kit.servo[5]
+servo_bottom_1 = kit.servo[3]
+servo_upper_2 = kit.servo[4]
+servo_bottom_2 = kit.servo[5]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
@@ -152,6 +152,8 @@ while True:
         #     time.sleep(0.02)
         #     print(servo_bottom_0.angle)
 
+        servo_upper_1 = servo_bottom_1
+
         while servo_upper_1.angle > outside:
             servo_upper_1.angle += show_add
             time.sleep(0.02)
@@ -169,6 +171,7 @@ while True:
         servo_upper_0.angle = 180
         servo_bottom_0.angle = 180
         servo_upper_1.angle = 180
+
         time.sleep(1)
         break
 
