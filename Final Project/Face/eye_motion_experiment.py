@@ -74,27 +74,27 @@ client.connect(
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
 def eyelid_movement(status):
-    print("upper eyelid open")
-    eyelid_upper_servo.angle = 50
-    print("lower eyelid open")
+    print("eye open")
+    eyelid_upper_servo.angle =30
+    eyelid_lower_servo.angle = 3
+
     time.sleep(2)
-    eyelid_lower_servo.angle = 0
 
-
+    print("eye close")
     eyelid_upper_servo.angle = 3
-    # eyelid_lower_servo.angle = 0
-    # time.sleep(2)
+    eyelid_lower_servo.angle = 90
+    time.sleep(2)
 
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':
-        eye_horizontal_servo.angle= 0
+        eye_horizontal_servo.angle= 85
 
     elif body_pos == 'middle':
         eye_horizontal_servo.angle = 45
 
-    elif body_pos == 'background':
-        eye_horizontal_servo.angle = 90
+    elif body_pos == 'right':
+        eye_horizontal_servo.angle = 0
 
     else:
         eye_horizontal_servo.angle = 90
@@ -127,8 +127,16 @@ while True:
     #     face_talking('greet')
     #     greeted = True
 
-    eyelid_movement(eye_status)
-    # eyeball_movement(body_pos)
+    # eyelid_movement(eye_status)
+    # eyeball_movement("right")
+    eye_horizontal_servo.angle = 100
+    time.sleep(2)
+    # eyeball_movement("right")
+    # time.sleep(2)
+    # eyeball_movement("middle")
+    # time.sleep(2)
+    # eyeball_movement("background")
+    # time.sleep(2)
 
     # if time_counter%50 == 0 and commented_walking == False:
     #     face_talking('moved')
