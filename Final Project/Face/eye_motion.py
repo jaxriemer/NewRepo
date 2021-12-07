@@ -73,7 +73,7 @@ def eyelid_movement(eyelid_movement):
     if eyelid_movement == "closed" or eyelid_movement == "wink":
         print("eye close")
         eyelid_upper_servo.angle = 3
-        eyelid_lower_servo.angle = 100
+        eyelid_lower_servo.angle = 80
         # print("ready to sleep for " + str(lag2) + " seconds")
         time.sleep(1)
 
