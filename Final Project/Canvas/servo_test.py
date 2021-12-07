@@ -18,15 +18,15 @@ eyebrow_servo_servo = kit.servo[3]
 while True:
     try:
         # Set the servo to 180 degree position
-        eyebrow_servo_servo.angle = 85
+        eye_horizontal_servo.angle = 85
         time.sleep(3)
         # Set the servo to 0 degree position
-        eyebrow_servo_servo.angle = 0
+        eye_horizontal_servo.angle = 0
         time.sleep(3)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
-        eyebrow_servo_servo.angle = 0
+        eye_horizontal_servo.angle = 0
         time.sleep(1)
 
         break
