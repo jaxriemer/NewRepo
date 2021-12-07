@@ -14,7 +14,6 @@ eyebrow_servo_servo = kit.servo[3]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
-servo.set_pulse_width_range(500, 2500)
 
 while True:
     try:
