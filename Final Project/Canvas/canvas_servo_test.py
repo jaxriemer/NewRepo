@@ -91,7 +91,7 @@ def push_shadow_tile(condition):
             time.sleep(sleep_time)
 
     else:
-        while servo_upper_2.angle < inside:
+        while servo_upper_0.angle < inside or servo_upper_1.angle < inside or servo_upper_2.angle < inside:
             servo_upper_2.angle += no_show_add
             servo_bottom_2.angle += no_show_add
 
@@ -104,6 +104,29 @@ def push_shadow_tile(condition):
                 servo_bottom_0.angle += no_show_add
 
             time.sleep(sleep_time)
+
+def all_back():
+
+    show_add = -3
+    no_show_add = 3
+    outside = 5
+    inside = 175
+    sleep_time = 0.02
+
+    while servo_upper_0.angle < inside or servo_upper_1.angle < inside or servo_upper_2.angle < inside:
+        servo_upper_2.angle += no_show_add
+        servo_bottom_2.angle += no_show_add
+
+        if servo_upper_1.angle < inisde:
+            servo_upper_1.angle += no_show_add
+            servo_bottom_1.angle += no_show_add
+
+        if servo_upper_0.angle < inisde:
+            servo_upper_0.angle += no_show_add
+            servo_bottom_0.angle += no_show_add
+
+        time.sleep(sleep_time)
+
 
 servo_upper_0.angle = 165
 servo_bottom_0.angle = 165
@@ -176,13 +199,7 @@ while True:
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
-        servo_upper_0.angle = 180
-        servo_bottom_0.angle = 180
-        servo_upper_1.angle = 180
-        servo_bottom_1.angle = 180
-        servo_upper_2.angle =180
-        servo_bottom_2.angle = 180
-
+        all_back
         time.sleep(1)
         break
 
