@@ -26,9 +26,9 @@ while True:
         # time.sleep(3)
 
         # Set the servo to 0 degree position
-        eyebrow_servo_servo.angle = 40
+        eyebrow_servo_servo.angle = 35
         time.sleep(3)
-        eyebrow_servo_servo.angle = 5
+        eyebrow_servo_servo.angle = 0
         time.sleep(3)
 
     except KeyboardInterrupt:
@@ -36,7 +36,7 @@ while True:
         eyelid_upper_servo.angle = 0
         eyelid_lower_servo.angle = 40
         eye_horizontal_servo.angle = 39
-        eyebrow_servo_servo.angle = 5
+        eyebrow_servo_servo.angle = 0
         time.sleep(1)
 
         break
