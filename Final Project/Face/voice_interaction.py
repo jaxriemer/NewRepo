@@ -78,9 +78,7 @@ said_heart = 0
 said_thumb_down = 0
 said_secret = 0
 
-
 while True:
-
     if said_hi == 0 and hand_gesture == 'handwaving':
         face_interaction('handwaving')
         said_hi += 1
