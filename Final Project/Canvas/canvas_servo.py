@@ -76,7 +76,7 @@ def push_shadow_tile(condition):
 
         print('pushing left')
         # push postion 0 out, pull others in.
-        while servo_upper_0.angle > outside or servo_upper_1 < inside \
+        while servo_upper_0.angle > outside or servo_upper_1.angle < inside \
                 or servo_upper_2.angle < inside:
             if servo_upper_0.angle > outside:
                 servo_upper_0.angle += show_add
