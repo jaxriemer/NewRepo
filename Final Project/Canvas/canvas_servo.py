@@ -154,7 +154,7 @@ while True:
 
     try:
         print(body_position)
-        # push_shadow_tile(body_position)
+        push_shadow_tile(body_position)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
