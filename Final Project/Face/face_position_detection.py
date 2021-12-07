@@ -50,11 +50,11 @@ else:
       print("Unable to access webcam.")
 
 # Load the model
-model = tensorflow.keras.models.load_model('body_pos_model.h5')
+model = tensorflow.keras.models.load_model('model/body_pos_model.h5')
 
 # Load Labels:
 labels=[]
-f = open("body_pos_labels.txt", "r")
+f = open("model/body_pos_labels.txt", "r")
 
 for line in f.readlines():
     if(len(line)<1):
