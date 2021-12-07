@@ -21,7 +21,7 @@ kit = ServoKit(channels=16)
 
 # # Name and set up the servo according to the channel you are using.
 servo_upper_0 = kit.servo[0]
-# servo_bottom_0 = kit.servo[1]
+servo_bottom_0 = kit.servo[1]
 # servo_upper_1 = kit.servo[2]
 # servo_bottom_1 = kit.servo[3]
 # servo_upper_2 = kit.servo[4]
@@ -138,6 +138,17 @@ while True:
             servo_upper_0.angle += no_show_add
             time.sleep(0.02)
             print(servo_upper_0.angle)
+
+        while servo_bottom_0.angle > outside:
+            servo_bottom_0.angle += show_add
+            time.sleep(0.02)
+            print(servo_bottom_0.angle)
+
+        print('pulling in')
+        while servo_bottom_0.angle < inside:
+            servo_bottom_0.angle += no_show_add
+            time.sleep(0.02)
+            print(servo_bottom_0.angle)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
