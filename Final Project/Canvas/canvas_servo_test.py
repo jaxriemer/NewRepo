@@ -19,13 +19,15 @@ body_position = 'Not read'
 # There are 16 channels on the PCA9685 chip.
 kit = ServoKit(channels=16)
 
-# Name and set up the servo according to the channel you are using.
-servo_upper_0 = kit.servo[0]
-servo_bottom_0 = kit.servo[1]
-servo_upper_1 = kit.servo[2]
-servo_bottom_1 = kit.servo[3]
-servo_upper_2 = kit.servo[4]
-servo_bottom_2 = kit.servo[5]
+# # Name and set up the servo according to the channel you are using.
+# servo_upper_0 = kit.servo[0]
+# servo_bottom_0 = kit.servo[1]
+# servo_upper_1 = kit.servo[2]
+# servo_bottom_1 = kit.servo[3]
+# servo_upper_2 = kit.servo[4]
+# servo_bottom_2 = kit.servo[5]
+
+servo_test = kit.servo[0]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
@@ -114,14 +116,16 @@ while True:
     inside = 0
 
     try:
-        # Set the servo to degree position
-        while servo_upper_0.angle < outside:
-            servo_upper_0.angle += 1
-            time.sleep(0.05)
+        # # Set the servo to degree position
+        # while servo_upper_0.angle < outside:
+        #     servo_upper_0.angle += 1
+        #     time.sleep(0.05)
+        #
+        # while servo_upper_0.angle > inside:
+        #     servo_upper_0.angle += -1
+        #     time.sleep(0.05)
+        servo_test.angle = 0
 
-        while servo_upper_0.angle > inside:
-            servo_upper_0.angle += -1
-            time.sleep(0.05)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position

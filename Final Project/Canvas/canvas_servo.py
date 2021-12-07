@@ -116,7 +116,6 @@ def push_shadow_tile(condition):
         servo_bottom_2.angle = no_show
 
 
-
 client.loop_start()
 
 # shadow_loc_deg = 0
