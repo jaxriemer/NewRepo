@@ -13,7 +13,7 @@ from pydub.playback import play
 from adafruit_servokit import ServoKit
 
 topic_hand_gesture = 'IDD/oneteam/face_hand_gesture'
-hand_gesture = 'not recieved'
+hand_gesture = 'not received'
 
 def on_connect(client, userdata, flags, rc):
 	print(f"connected with result code {rc}")
@@ -24,7 +24,6 @@ def on_connect(client, userdata, flags, rc):
 # this is the callback that gets called each time a message is recieved
 def on_message(cleint, userdata, msg):
 	# you can filter by topics
-    print('here')
     if msg.topic == topic_hand_gesture:
         global hand_gesture
         hand_gesture = msg.payload.decode('UTF-8')
@@ -74,30 +73,24 @@ def face_interaction(hand_gesture):
         moving_reaction = AudioSegment.from_file("voice_package/finger.m4a")
         play(moving_reaction)
 
+said_hi = 0
+said_heart = 0
+
+
+
 while True:
 
-    print(hand_gesture)
-    face_interaction(hand_gesture)
+    if said_hi == 0 and hand_gesture == 'handwaving':
 
+        print(hand_gesture)
+        face_interaction(hand_gesture)
+        said_hi += 1
 
+    elif said_heart == 0 and hand_gesture == 'heart':
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        print(hand_gesture)
+        face_interaction(hand_gesture)
+        said_heart += 1
 
 
 
