@@ -141,34 +141,34 @@ while True:
         #     time.sleep(0.02)
         #     print(servo_upper_0.angle)
 
-        while servo_bottom_0.angle > outside:
-            servo_bottom_0.angle += show_add
-            time.sleep(0.02)
-            print(servo_bottom_0.angle)
-
-        print('pulling in')
-        while servo_bottom_0.angle < inside:
-            servo_bottom_0.angle += no_show_add
-            time.sleep(0.02)
-            print(servo_bottom_0.angle)
-
-        # while servo_upper_1.angle > outside:
-        #     servo_upper_1.angle += show_add
+        # while servo_bottom_0.angle > outside:
+        #     servo_bottom_0.angle += show_add
         #     time.sleep(0.02)
-        #     print(servo_upper_1.angle)
+        #     print(servo_bottom_0.angle)
         #
         # print('pulling in')
-        # while servo_upper_1.angle < inside:
-        #     servo_upper_1.angle += no_show_add
+        # while servo_bottom_0.angle < inside:
+        #     servo_bottom_0.angle += no_show_add
         #     time.sleep(0.02)
-        #     print(servo_upper_1.angle)
+        #     print(servo_bottom_0.angle)
+
+        while servo_upper_1.angle > outside:
+            servo_upper_1.angle += show_add
+            time.sleep(0.02)
+            print(servo_upper_1.angle)
+
+        print('pulling in')
+        while servo_upper_1.angle < inside:
+            servo_upper_1.angle += no_show_add
+            time.sleep(0.02)
+            print(servo_upper_1.angle)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
 
         servo_upper_0.angle = 180
         servo_bottom_0.angle = 180
-        servo_upper_1 = 180
+        servo_upper_1.angle = 180
         time.sleep(1)
         break
 
