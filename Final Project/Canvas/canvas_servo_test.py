@@ -105,13 +105,14 @@ servo_bottom_2 = kit.servo[5]
 #
 #             time.sleep(sleep_time)
 
-servo_upper_1 = servo_upper_2
-
 print(servo_upper_0.angle)
-servo_upper_0.angle = 0
-servo_bottom_0.angle = 0
-servo_upper_1.angle = 0
-servo_bottom_1.angle = 0
+
+servo_upper_0.angle = 180
+servo_bottom_0.angle = 180
+servo_upper_1.angle = 180
+servo_bottom_1.angle = 180
+servo_upper_2.angle =180
+servo_bottom_2.angle = 180
 
 while True:
     # for pos in body_position:
@@ -155,25 +156,25 @@ while True:
         #     time.sleep(0.02)
         #     print(servo_bottom_0.angle)
 
-
-        while servo_upper_1.angle > outside:
-            servo_upper_1.angle += show_add
+        while servo_upper_2.angle > outside:
+            servo_upper_2.angle += show_add
             time.sleep(0.02)
-            print(servo_upper_1.angle)
+            print(servo_upper_2.angle)
 
         print('pulling in')
-        while servo_upper_1.angle < inside:
-            servo_upper_1.angle += no_show_add
+        while servo_upper_2.angle < inside:
+            servo_upper_2.angle += no_show_add
             time.sleep(0.02)
-            print(servo_upper_1.angle)
+            print(servo_upper_2.angle)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
-
         servo_upper_0.angle = 180
         servo_bottom_0.angle = 180
         servo_upper_1.angle = 180
         servo_bottom_1.angle = 180
+        servo_upper_2.angle =180
+        servo_bottom_2.angle = 180
 
         time.sleep(1)
         break
