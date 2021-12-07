@@ -82,7 +82,7 @@ def eyelid_movement(eyelid_movement):
         eyelid_upper_servo.angle = 30
         eyelid_lower_servo.angle = 3
         # print("ready to sleep for " + str(lag1) + " seconds")
-        time.sleep6(1)
+        time.sleep(1)
 
     # if eyelid_movement == 'smile':
     #     print("eye smile")
