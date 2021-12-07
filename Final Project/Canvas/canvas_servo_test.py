@@ -128,6 +128,7 @@ while True:
 
         servo_test.angle = 180
         print('degree to 180')
+        print(servo_test.angle)
         time.sleep(3)
         servo_test.angle = 0
         print('degree to 0')
