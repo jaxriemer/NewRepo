@@ -14,7 +14,7 @@ import random
 from adafruit_servokit import ServoKit
 
 topic_body = 'IDD/oneteam/face_body_position'
-topic_hand = 'IDD/oneteam/face_body_position'
+topic_hand = 'IDD/oneteam/face_hand_gesture'
 
 body_pos = 'not receiving'
 hand_gesture = 'not receiving'
