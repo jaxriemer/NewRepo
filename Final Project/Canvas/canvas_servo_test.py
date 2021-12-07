@@ -105,6 +105,8 @@ servo_bottom_2 = kit.servo[5]
 #
 #             time.sleep(sleep_time)
 
+servo_upper_1 = servo_upper_2
+
 print(servo_upper_0.angle)
 servo_upper_0.angle = 0
 servo_bottom_0.angle = 0
@@ -153,7 +155,6 @@ while True:
         #     time.sleep(0.02)
         #     print(servo_bottom_0.angle)
 
-        servo_upper_1 = servo_bottom_1
 
         while servo_upper_1.angle > outside:
             servo_upper_1.angle += show_add
