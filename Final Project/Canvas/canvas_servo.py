@@ -76,9 +76,11 @@ def push_shadow_tile(condition):
 
         print('pushing left')
         # push postion 0 out, pull others in.
-        while servo_upper_0.angle > outside:
-            servo_upper_0.angle += show_add
-            servo_bottom_0.angle += show_add
+        while servo_upper_0.angle > outside or servo_upper_1 < inside \
+                or servo_upper_2.angle < inside:
+            if servo_upper_0.angle > outside:
+                servo_upper_0.angle += show_add
+                servo_bottom_0.angle += show_add
 
             if servo_upper_1.angle < inside:
                 servo_upper_1.angle += no_show_add
@@ -89,14 +91,16 @@ def push_shadow_tile(condition):
                 servo_bottom_2.angle += no_show_add
 
             #time.sleep(sleep_time)
-        time.sleep(5)
+        time.sleep(2)
 
     elif condition == 'middle':
 
         print('pushing middle')
-        while servo_upper_1.angle > outside:
-            servo_upper_1.angle += show_add
-            servo_bottom_1.angle += show_add
+        while servo_upper_1.angle > outside or servo_upper_0.angle < inside \
+                or servo_upper_2.angle < inside:
+            if servo_upper_1.angle > outside:
+                servo_upper_1.angle += show_add
+                servo_bottom_1.angle += show_add
 
             if servo_upper_0.angle < inside:
                 servo_upper_0.angle += no_show_add
@@ -106,14 +110,16 @@ def push_shadow_tile(condition):
                 servo_upper_2.angle += no_show_add
                 servo_bottom_2.angle += no_show_add
             #time.sleep(sleep_time)
-        time.sleep(5)
+        time.sleep(2)
 
     elif condition == 'right':
 
         print('pushing right')
-        while servo_upper_2.angle > outside:
-            servo_upper_2.angle += show_add
-            servo_bottom_2.angle += show_add
+        while servo_upper_2.angle > outside or servo_upper_1.angle < inside\
+                or servo_upper_0.angle < inside:
+            if servo_upper_2.angle > outside:
+                servo_upper_2.angle += show_add
+                servo_bottom_2.angle += show_add
 
             if servo_upper_1.angle < inside:
                 servo_upper_1.angle += no_show_add
@@ -124,14 +130,15 @@ def push_shadow_tile(condition):
                 servo_bottom_0.angle += no_show_add
 
             #time.sleep(sleep_time)
-        time.sleep(5)
+        time.sleep(2)
 
     else:
 
         print('all going back')
         while servo_upper_0.angle < inside or servo_upper_1.angle < inside or servo_upper_2.angle < inside:
-            servo_upper_2.angle += no_show_add
-            servo_bottom_2.angle += no_show_add
+            if servo_upper_2.angle < inside:
+                servo_upper_2.angle += no_show_add
+                servo_bottom_2.angle += no_show_add
 
             if servo_upper_1.angle < inside:
                 servo_upper_1.angle += no_show_add
@@ -142,7 +149,7 @@ def push_shadow_tile(condition):
                 servo_bottom_0.angle += no_show_add
 
             #time.sleep(sleep_time)
-        time.sleep(5)
+        time.sleep(2)
 
 client.loop_start()
 
