@@ -104,6 +104,16 @@ def eyeball_movement(body_pos):
         eye_horizontal_servo.angle = 39
         time.sleep(1)
 
+def eyebrow_motion(pos):
+    if pos == 'left':
+        eyebrow_servo_servo.angle = 30
+        time.sleep(1)
+    elif pos == 'right':
+        eyebrow_servo_servo.angle = 0
+        time.sleep(1)
+    else:
+        eyebrow_servo_servo.angle = 15
+        time.sleep(1)
 
 client.loop_start()
 
@@ -127,7 +137,7 @@ while True:
         # Once interrupted, set the servo back to 0 degree position
         eyelid_movement('closed')
         eyeball_movement('middle')
-
+        eyebrow_motion('middle')
         time.sleep(0.5)
 
         break
