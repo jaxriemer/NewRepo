@@ -17,6 +17,7 @@ while True:
         # Set the servo to 180 degree position
         servo.angle = 180
         time.sleep(0.27)
+        print(servo.angle)
         # Set the servo to 0 degree position
         servo.angle = 0
         time.sleep(0.27)
@@ -25,5 +26,6 @@ while True:
         # Once interrupted, set the servo back to 0 degree position
         servo.angle = 0
         time.sleep(0.5)
+        print(servo.angle)
         break
 
