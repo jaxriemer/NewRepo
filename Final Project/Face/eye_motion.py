@@ -70,6 +70,13 @@ def eyelid_movement(eyelid_movement):
     # lag1 = random.randint(2, 5)
     # lag2 = random.randint(2, 5)
 
+    if eyelid_movement == "closed" or eyelid_movement == "wink":
+        print("eye close")
+        eyelid_upper_servo.angle = 0
+        eyelid_lower_servo.angle = 100
+        # print("ready to sleep for " + str(lag2) + " seconds")
+        time.sleep(1)
+
     if eyelid_movement == "open" or eyelid_movement == "wink":
         print("eye open")
         eyelid_upper_servo.angle = 30
@@ -77,19 +84,12 @@ def eyelid_movement(eyelid_movement):
         # print("ready to sleep for " + str(lag1) + " seconds")
         time.sleep6(1)
 
-    if eyelid_movement == "closed" or eyelid_movement == "wink":
-        print("eye close")
-        eyelid_upper_servo.angle = 0
-        eyelid_lower_servo.angle = 3
-        # print("ready to sleep for " + str(lag2) + " seconds")
-        time.sleep(1)
-
-    if eyelid_movement == 'smile':
-        print("eye smile")
-        eyelid_upper_servo.angle = 30
-        eyelid_lower_servo.angle = 100
-        # print("ready to sleep for " + str(lag2) + " seconds")
-        time.sleep(1)
+    # if eyelid_movement == 'smile':
+    #     print("eye smile")
+    #     eyelid_upper_servo.angle = 30
+    #     eyelid_lower_servo.angle = 100
+    #     # print("ready to sleep for " + str(lag2) + " seconds")
+    #     time.sleep(1)
 
 
 def eyeball_movement(body_pos):
@@ -119,8 +119,8 @@ while True:
         if time_counter%500 == 0:
             eyelid_movement('wink')
 
-        if time_counter%800 == 0:
-            eyelid_movement('smile')
+        # if time_counter%800 == 0:
+        #     eyelid_movement('smile')
 
         time_counter += 1
 
