@@ -85,8 +85,8 @@ def push_shadow_tile(condition):
                 servo_bottom_1.angle += no_show_add
 
             if servo_upper_0.angle < inside:
-                servo_upper_0.angle += show_add
-                servo_bottom_0.angle += show_add
+                servo_upper_0.angle += no_show_add
+                servo_bottom_0.angle += no_show_add
 
             time.sleep(sleep_time)
 
