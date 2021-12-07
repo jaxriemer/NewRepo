@@ -23,8 +23,8 @@ servo_upper_0 = kit.servo[0]
 servo_bottom_0 = kit.servo[1]
 servo_upper_1 = kit.servo[2]
 servo_bottom_1 = kit.servo[3]
-servo_upper_2 = kit.servo[4]
-servo_bottom_2 = kit.servo[5]
+servo_upper_2 = kit.servo[12]
+servo_bottom_2 = kit.servo[13]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
