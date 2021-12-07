@@ -160,6 +160,14 @@ while True:
         print(body_position)
         push_shadow_tile(body_position)
 
+
+        print(servo_upper_0)
+        print(servo_bottom_0)
+        print(servo_upper_1)
+        print(servo_bottom_1)
+        print(servo_upper_2)
+        print(servo_bottom_2)
+
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
         servo_upper_0.angle = 180
