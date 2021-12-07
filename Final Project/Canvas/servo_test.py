@@ -37,7 +37,7 @@ while True:
         eyelid_upper_servo.angle = 30
         eyelid_lower_servo.angle = 3
         time.sleep(3)
-        eye_vertical_servo.angle = 20
+        eye_vertical_servo.angle = 30
         time.sleep(3)
 
     except KeyboardInterrupt:
