@@ -113,18 +113,16 @@ while True:
     # for pos in body_position:
     #     push_shadow_tile(pos)
 
-    # outside = 180
-    #
-    # while servo_upper_0.angle < outside:
-    #     servo_upper_0.angle += 10
+    outside = 180
 
-    print(servo_upper_0.angle)
-    print(servo_bottom_0.angle)
-    print(servo_upper_1.angle)
-    print(servo_bottom_1.angle)
-    print(servo_upper_2.angle)
-    print(servo_bottom_2.angle)
-    print("--"*10)
+    while servo_upper_0.angle < outside:
+        servo_upper_0.angle += 10
+        time.sleep(0.5)
+
+    while servo_upper_0.angle > 0:
+        servo_upper_0.angle += -10
+        time.sleep(0.5)
+
 
 
 
