@@ -9,11 +9,10 @@ import paho.mqtt.client as mqtt
 import uuid
 import time
 
-# control servo to complete the cloth deliver function
 from adafruit_servokit import ServoKit
-
-topic = 'IDD/body_position'
-body_position = 'Not read'
+#
+# topic = 'IDD/body_position'
+# body_position = 'Not read'
 
 # # Set channels to the number of servo channels on your kit.
 # There are 16 channels on the PCA9685 chip.
@@ -36,76 +35,76 @@ servo_test = kit.servo[0]
 
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
-
-body_position = ['left','middle','right']
-
-def push_shadow_tile(condition):
-    show_add = 1
-    no_show_add = -1
-
-    outside = 180
-    inisde = 0
-
-    sleep_time = 0.02
-
-    if condition == 'left':
-        while servo_upper_0.angle < outside:
-            servo_upper_0.angle += show_add
-            servo_bottom_0.angle += show_add
-
-            if servo_upper_1.angle > inisde:
-                servo_upper_1.angle += no_show_add
-                servo_bottom_1.angle += no_show_add
-
-            if servo_upper_2.angle > inisde:
-                servo_upper_2.angle += no_show_add
-                servo_bottom_2.angle += no_show_add
-
-            time.sleep(sleep_time)
-
-    elif condition == 'middle':
-        while servo_upper_1.angle < outside:
-            servo_upper_1.angle += show_add
-            servo_bottom_1.angle += show_add
-
-            if servo_upper_0.angle >= inisde:
-                servo_upper_0.angle += no_show_add
-                servo_bottom_0.angle += no_show_add
-
-            if servo_upper_2.angle >= inisde:
-                servo_upper_2.angle += no_show_add
-                servo_bottom_2.angle += no_show_add
-            time.sleep(sleep_time)
-
-    elif condition == 'right':
-        while servo_upper_2.angle < outside:
-            servo_upper_2.angle += no_show_add
-            servo_bottom_2.angle += no_show_add
-
-            if servo_upper_1.angle > inisde:
-                servo_upper_1.angle += no_show_add
-                servo_bottom_1.angle += no_show_add
-
-            if servo_upper_0.angle > inisde:
-                servo_upper_0.angle += show_add
-                servo_bottom_0.angle += show_add
-
-            time.sleep(sleep_time)
-
-    else:
-        while servo_upper_2.angle > inside:
-            servo_upper_2.angle += no_show_add
-            servo_bottom_2.angle += no_show_add
-
-            if servo_upper_1.angle > inisde:
-                servo_upper_1.angle += no_show_add
-                servo_bottom_1.angle += no_show_add
-
-            if servo_upper_0.angle > inisde:
-                servo_upper_0.angle += show_add
-                servo_bottom_0.angle += show_add
-
-            time.sleep(sleep_time)
+#
+# body_position = ['left','middle','right']
+#
+# def push_shadow_tile(condition):
+#     show_add = 1
+#     no_show_add = -1
+#
+#     outside = 180
+#     inisde = 0
+#
+#     sleep_time = 0.02
+#
+#     if condition == 'left':
+#         while servo_upper_0.angle < outside:
+#             servo_upper_0.angle += show_add
+#             servo_bottom_0.angle += show_add
+#
+#             if servo_upper_1.angle > inisde:
+#                 servo_upper_1.angle += no_show_add
+#                 servo_bottom_1.angle += no_show_add
+#
+#             if servo_upper_2.angle > inisde:
+#                 servo_upper_2.angle += no_show_add
+#                 servo_bottom_2.angle += no_show_add
+#
+#             time.sleep(sleep_time)
+#
+#     elif condition == 'middle':
+#         while servo_upper_1.angle < outside:
+#             servo_upper_1.angle += show_add
+#             servo_bottom_1.angle += show_add
+#
+#             if servo_upper_0.angle >= inisde:
+#                 servo_upper_0.angle += no_show_add
+#                 servo_bottom_0.angle += no_show_add
+#
+#             if servo_upper_2.angle >= inisde:
+#                 servo_upper_2.angle += no_show_add
+#                 servo_bottom_2.angle += no_show_add
+#             time.sleep(sleep_time)
+#
+#     elif condition == 'right':
+#         while servo_upper_2.angle < outside:
+#             servo_upper_2.angle += no_show_add
+#             servo_bottom_2.angle += no_show_add
+#
+#             if servo_upper_1.angle > inisde:
+#                 servo_upper_1.angle += no_show_add
+#                 servo_bottom_1.angle += no_show_add
+#
+#             if servo_upper_0.angle > inisde:
+#                 servo_upper_0.angle += show_add
+#                 servo_bottom_0.angle += show_add
+#
+#             time.sleep(sleep_time)
+#
+#     else:
+#         while servo_upper_2.angle > inside:
+#             servo_upper_2.angle += no_show_add
+#             servo_bottom_2.angle += no_show_add
+#
+#             if servo_upper_1.angle > inisde:
+#                 servo_upper_1.angle += no_show_add
+#                 servo_bottom_1.angle += no_show_add
+#
+#             if servo_upper_0.angle > inisde:
+#                 servo_upper_0.angle += show_add
+#                 servo_bottom_0.angle += show_add
+#
+#             time.sleep(sleep_time)
 
 
 while True:
@@ -124,10 +123,12 @@ while True:
         # while servo_upper_0.angle > inside:
         #     servo_upper_0.angle += -1
         #     time.sleep(0.05)
+
         servo_test.angle = 0
-        print('here')
+        print('degree to 0')
         time.sleep(3)
         servo_test.angle = 180
+        print('degree to 180')
 
 
     except KeyboardInterrupt:
@@ -141,6 +142,7 @@ while True:
 
         servo_test.angle = 0
         time.sleep(0.5)
+
         break
 
 
