@@ -17,6 +17,7 @@ from adafruit_servokit import ServoKit
 # # Set channels to the number of servo channels on your kit.
 # There are 16 channels on the PCA9685 chip.
 kit = ServoKit(channels=16)
+servo.set_pulse_width_range(500, 2500)
 
 # # Name and set up the servo according to the channel you are using.
 # servo_upper_0 = kit.servo[0]
@@ -124,11 +125,11 @@ while True:
         #     servo_upper_0.angle += -1
         #     time.sleep(0.05)
 
-        servo_test.angle = 0
-        print('degree to 0')
-        time.sleep(3)
         servo_test.angle = 180
         print('degree to 180')
+        time.sleep(3)
+        servo_test.angle = 0
+        print('degree to 0')
 
 
     except KeyboardInterrupt:
