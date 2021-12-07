@@ -73,7 +73,7 @@ def eyelid_movement(eyelid_movement):
     if eyelid_movement == "open" or eyelid_movement == "wink":
         print("eye open")
         eyelid_upper_servo.angle = 30
-        eyelid_lower_servo.angle = 25
+        eyelid_lower_servo.angle = 3
         # print("ready to sleep for " + str(lag1) + " seconds")
         time.sleep6(1)
 
@@ -84,12 +84,12 @@ def eyelid_movement(eyelid_movement):
         # print("ready to sleep for " + str(lag2) + " seconds")
         time.sleep(1)
 
-    # if eyelid_movement == 'smile':
-    #     print("eye smile")
-    #     eyelid_upper_servo.angle = 30
-    #     eyelid_lower_servo.angle = 3
-    #     # print("ready to sleep for " + str(lag2) + " seconds")
-    #     time.sleep(1)
+    if eyelid_movement == 'smile':
+        print("eye smile")
+        eyelid_upper_servo.angle = 30
+        eyelid_lower_servo.angle = 100
+        # print("ready to sleep for " + str(lag2) + " seconds")
+        time.sleep(1)
 
 
 def eyeball_movement(body_pos):
