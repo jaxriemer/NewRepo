@@ -14,8 +14,10 @@ import random
 from adafruit_servokit import ServoKit
 
 topic_body = 'IDD/oneteam/face_body_position'
+topic_hand = 'IDD/oneteam/face_body_position'
 
 body_pos = 'not receiving'
+hand_gesture = 'not receiving'
 
 # # Set channels to the number of servo channels on your kit.
 # There are 16 channels on the PCA9685 chip.
@@ -35,6 +37,7 @@ eyebrow_servo_servo = kit.servo[3]
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic_body)
+    client.subscribe(topic_hand)
 	# you can subsribe to as many topics as you'd like
 	# client.subscribe('some/other/topic')
 
@@ -46,6 +49,10 @@ def on_message(cleint, userdata, msg):
     if msg.topic == topic_body:
         global body_pos
         body_pos = msg.payload.decode('UTF-8')
+
+    if msg.topic == topic_hand:
+        global hand_gesture
+        hand_gesture = msg.payload.decode('UTF-8')
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
