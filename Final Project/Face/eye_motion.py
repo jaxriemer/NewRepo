@@ -123,6 +123,7 @@ while True:
         #     eyelid_movement('smile')
 
         time_counter += 1
+        print(time_counter)
 
     except KeyboardInterrupt:
 
