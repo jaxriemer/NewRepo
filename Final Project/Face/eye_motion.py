@@ -95,13 +95,13 @@ def eyelid_movement(eyelid_movement):
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':
-        eye_horizontal_servo.angle= 85
+        eye_horizontal_servo.angle = 78
         time.sleep(1)
     elif body_pos == 'right':
         eye_horizontal_servo.angle = 0
         time.sleep(1)
     else:
-        eye_horizontal_servo.angle = 40
+        eye_horizontal_servo.angle = 39
         time.sleep(1)
 
 
