@@ -112,10 +112,10 @@ while True:
     # for pos in body_position:
     #     push_shadow_tile(pos)
 
-    outside = 175
-    inside = 5
-    show_add = 10
-    no_show_add = -10
+    outside = 5
+    inside = 175
+    show_add = -10
+    no_show_add = 10
 
         # # Set the servo to degree position
         # while servo_upper_0.angle < outside:
@@ -128,21 +128,21 @@ while True:
     try:
         # Set the servo to 180 degree position
         print('pushing out')
-        while servo_upper_0.angle < outside:
+        while servo_upper_0.angle > outside:
             servo_upper_0.angle += show_add
-            time.sleep(0.05)
+            time.sleep(0.02)
             print(servo_upper_0.angle)
+
 
         print('pulling in')
-        while servo_upper_0.angle > inside:
+        while servo_upper_0.angle < inside:
             servo_upper_0.angle += no_show_add
-            time.sleep(0.05)
+            time.sleep(0.02)
             print(servo_upper_0.angle)
-
-
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
+
         servo_upper_0.angle = 0
         time.sleep(1)
         break
