@@ -115,6 +115,12 @@ def eyebrow_motion(pos):
         eyebrow_servo_servo.angle = 15
         time.sleep(1)
 
+def roll_eye():
+    eye_vertical_servo.angle = 180
+    time.sleep(1)
+    eye_vertical_servo.angle = 6
+    time.sleep(1)
+
 client.loop_start()
 
 time_counter = 0
@@ -138,6 +144,7 @@ while True:
         eyelid_movement('closed')
         eyeball_movement('middle')
         eyebrow_motion('middle')
+        eye_vertical_servo.angle = 6
         time.sleep(0.5)
 
         break
