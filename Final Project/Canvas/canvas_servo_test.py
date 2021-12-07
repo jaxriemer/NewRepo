@@ -159,12 +159,18 @@ while True:
         #     servo_upper_2.angle += no_show_add
         #     time.sleep(0.02)
         #     print(servo_upper_2.angle)
-
+        print("pushing left")
         push_shadow_tile('left')
+        print("pushing middle")
         push_shadow_tile('middle')
+        print("pushing right")
         push_shadow_tile('right')
+
+        print("pushing left")
         push_shadow_tile('left')
+        print("pushing middle")
         push_shadow_tile('middle')
+        print("pushing right")
         push_shadow_tile('right')
 
 
