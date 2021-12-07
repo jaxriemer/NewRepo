@@ -62,7 +62,7 @@ def face_interaction(hand_gesture):
         play(greet_sound)
 
     elif hand_gesture == "thumb_down":
-        moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
+        moving_reaction = AudioSegment.from_file("voice_package/thumb_down.m4a")
         play(moving_reaction)
 
     elif hand_gesture == "heart":
@@ -70,7 +70,7 @@ def face_interaction(hand_gesture):
         play(moving_reaction)
 
     elif hand_gesture == "secret":
-        moving_reaction = AudioSegment.from_file("voice_package/finger.m4a")
+        moving_reaction = AudioSegment.from_file("voice_package/secret.m4a")
         play(moving_reaction)
 
 said_hi = 0
