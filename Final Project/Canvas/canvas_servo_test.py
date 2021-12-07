@@ -38,10 +38,13 @@ servo_bottom_2 = kit.servo[5]
 body_position = ['left','middle','right']
 
 def push_shadow_tile(condition):
-    show_add = 10
-    no_show_add = -10
+    show_add = 1
+    no_show_add = -1
+
     outside = 180
     inisde = 0
+
+    sleep_time = 0.02
 
     if condition == 'left':
         while servo_upper_0.angle < outside:
@@ -56,7 +59,7 @@ def push_shadow_tile(condition):
                 servo_upper_2.angle += no_show_add
                 servo_bottom_2.angle += no_show_add
 
-            time.sleep(0.2)
+            time.sleep(sleep_time)
 
     elif condition == 'middle':
         while servo_upper_1.angle < outside:
@@ -70,7 +73,7 @@ def push_shadow_tile(condition):
             if servo_upper_2.angle >= inisde:
                 servo_upper_2.angle += no_show_add
                 servo_bottom_2.angle += no_show_add
-            time.sleep(0.2)
+            time.sleep(sleep_time)
 
     elif condition == 'right':
         while servo_upper_2.angle < outside:
@@ -85,7 +88,7 @@ def push_shadow_tile(condition):
                 servo_upper_0.angle += show_add
                 servo_bottom_0.angle += show_add
 
-            time.sleep(0.2)
+            time.sleep(sleep_time)
 
     else:
         while servo_upper_2.angle > inside:
@@ -100,29 +103,37 @@ def push_shadow_tile(condition):
                 servo_upper_0.angle += show_add
                 servo_bottom_0.angle += show_add
 
-            time.sleep(0.2)
+            time.sleep(sleep_time)
 
-
-servo_upper_0.angle = 0
-servo_bottom_0.angle = 0
-servo_upper_1.angle = 0
-servo_bottom_1.angle = 0
-servo_upper_2.angle = 0
-servo_bottom_2.angle = 0
 
 while True:
     # for pos in body_position:
     #     push_shadow_tile(pos)
 
     outside = 180
+    inside = 0
 
-    while servo_upper_0.angle < outside:
-        servo_upper_0.angle += 10
-        time.sleep(0.5)
+    try:
+        # Set the servo to degree position
+        while servo_upper_0.angle < outside:
+            servo_upper_0.angle += 1
+            time.sleep(0.05)
 
-    while servo_upper_0.angle > 0:
-        servo_upper_0.angle += -10
+        while servo_upper_0.angle > inside:
+            servo_upper_0.angle += -1
+            time.sleep(0.05)
+
+    except KeyboardInterrupt:
+        # Once interrupted, set the servo back to 0 degree position
+        servo_upper_0.angle = 0
+        servo_bottom_0.angle = 0
+        servo_upper_1.angle = 0
+        servo_bottom_1.angle = 0
+        servo_upper_2.angle = 0
+        servo_bottom_2.angle = 0
+
         time.sleep(0.5)
+        break
 
 
 
