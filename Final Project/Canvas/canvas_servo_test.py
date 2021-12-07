@@ -109,6 +109,7 @@ print(servo_upper_0.angle)
 servo_upper_0.angle = 0
 servo_bottom_0.angle = 0
 servo_upper_1.angle = 0
+servo_bottom_1.angle = 0
 
 while True:
     # for pos in body_position:
@@ -171,6 +172,7 @@ while True:
         servo_upper_0.angle = 180
         servo_bottom_0.angle = 180
         servo_upper_1.angle = 180
+        servo_bottom_1.angle = 180
 
         time.sleep(1)
         break
