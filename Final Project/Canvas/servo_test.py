@@ -19,12 +19,12 @@ while True:
         time.sleep(3)
         print(servo.angle)
         # Set the servo to 0 degree position
-        servo.angle = 5
+        servo.angle = 10
         time.sleep(3)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
-        servo.angle = 5
+        servo.angle = 10
         time.sleep(1)
 
         break
