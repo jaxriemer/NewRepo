@@ -88,7 +88,8 @@ def push_shadow_tile(condition):
                 servo_upper_2.angle += no_show_add
                 servo_bottom_2.angle += no_show_add
 
-            time.sleep(sleep_time)
+            #time.sleep(sleep_time)
+        time.sleep(5)
 
     elif condition == 'middle':
 
@@ -104,7 +105,8 @@ def push_shadow_tile(condition):
             if servo_upper_2.angle < inside:
                 servo_upper_2.angle += no_show_add
                 servo_bottom_2.angle += no_show_add
-            time.sleep(sleep_time)
+            #time.sleep(sleep_time)
+        time.sleep(5)
 
     elif condition == 'right':
 
@@ -121,7 +123,8 @@ def push_shadow_tile(condition):
                 servo_upper_0.angle += no_show_add
                 servo_bottom_0.angle += no_show_add
 
-            time.sleep(sleep_time)
+            #time.sleep(sleep_time)
+        time.sleep(5)
 
     else:
 
@@ -138,7 +141,8 @@ def push_shadow_tile(condition):
                 servo_upper_0.angle += no_show_add
                 servo_bottom_0.angle += no_show_add
 
-            time.sleep(sleep_time)
+            #time.sleep(sleep_time)
+        time.sleep(5)
 
 client.loop_start()
 
