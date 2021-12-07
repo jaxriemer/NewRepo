@@ -36,13 +36,13 @@ eyebrow_servo_servo = kit.servo[3]
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(topic_body)
-	# you can subsribe to as many topics as you'd like
-	# client.subscribe('some/other/topic')
+    # you can subsribe to as many topics as you'd like
+    # client.subscribe('some/other/topic')
 
 
 # this is the callback that gets called each time a message is recieved
 def on_message(cleint, userdata, msg):
-	# you can filter by topics
+    # you can filter by topics
 
     if msg.topic == topic_body:
         global body_pos
@@ -90,13 +90,13 @@ def eyelid_movement(movement):
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':
-        eye_horizontal_servo.angle= 85
+        eye_horizontal_servo.angle= 100
         time.sleep(1)
     elif body_pos == 'right':
         eye_horizontal_servo.angle = 0
         time.sleep(1)
     else:
-        eye_horizontal_servo.angle = 40
+        eye_horizontal_servo.angle = 50
         time.sleep(1)
 
 
@@ -119,7 +119,7 @@ while True:
 
     try:
         # Set the servo to 180 degree position
-        eye_horizontal_servo.angle = 85
+        eye_horizontal_servo.angle = 100
         time.sleep(3)
         # Set the servo to 0 degree position
         eye_horizontal_servo.angle = 0
@@ -129,7 +129,7 @@ while True:
 
         # Once interrupted, set the servo back to 0 degree position
         eye_vertical_servo.angle = 22
-        eye_horizontal_servo.angle = 40
+        eye_horizontal_servo.angle = 50
         eyelid_upper_servo.angle = 10
         eyelid_lower_servo.angle = 3
         eyebrow_servo_servo.angle = 0
