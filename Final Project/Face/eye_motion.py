@@ -92,7 +92,6 @@ def eyelid_movement(eyelid_movement):
         time.sleep(1)
 
 
-
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':

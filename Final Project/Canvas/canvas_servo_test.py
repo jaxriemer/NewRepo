@@ -114,8 +114,8 @@ while True:
 
     outside = 5
     inside = 175
-    show_add = -10
-    no_show_add = 10
+    show_add = -5
+    no_show_add = 5
 
         # # Set the servo to degree position
         # while servo_upper_0.angle < outside:
@@ -132,7 +132,6 @@ while True:
             servo_upper_0.angle += show_add
             time.sleep(0.02)
             print(servo_upper_0.angle)
-
 
         print('pulling in')
         while servo_upper_0.angle < inside:
