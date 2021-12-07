@@ -1,4 +1,5 @@
-0 handwaving
+0 background
 1 heart
 2 secret
-3 no_gesture
+3 thumb_down
+4 handwaving

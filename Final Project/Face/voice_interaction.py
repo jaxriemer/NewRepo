@@ -61,7 +61,7 @@ def face_interaction(hand_gesture):
         greet_sound = AudioSegment.from_file("voice_package/greeting.m4a")
         play(greet_sound)
 
-    elif hand_gesture == "moved":
+    elif hand_gesture == "thumb_down":
         moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
         play(moving_reaction)
 
@@ -77,20 +77,10 @@ said_hi = 0
 said_heart = 0
 
 
-
 while True:
+    face_interaction(hand_gesture)
 
-    if said_hi == 0 and hand_gesture == 'handwaving':
 
-        print(hand_gesture)
-        face_interaction(hand_gesture)
-        said_hi += 1
-
-    elif said_heart == 0 and hand_gesture == 'heart':
-
-        print(hand_gesture)
-        face_interaction(hand_gesture)
-        said_heart += 1
 
 
 
