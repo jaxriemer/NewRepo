@@ -67,33 +67,34 @@ client.connect(
 
 
 def eyelid_movement(eyelid_movement):
-    # lag1 = random.randint(2, 5)
-    # lag2 = random.randint(2, 5)
-
     if eyelid_movement == "closed" or eyelid_movement == "wink":
         print("eye close")
         eyelid_upper_servo.angle = 3
         eyelid_lower_servo.angle = 80
-        # print("ready to sleep for " + str(lag2) + " seconds")
         time.sleep(1)
 
     if eyelid_movement == "open" or eyelid_movement == "wink":
         print("eye open")
         eyelid_upper_servo.angle = 30
         eyelid_lower_servo.angle = 3
-        # print("ready to sleep for " + str(lag1) + " seconds")
         time.sleep(1)
 
-    # if eyelid_movement == 'smile':
-    #     print("eye smile")
-    #     eyelid_upper_servo.angle = 30
-    #     eyelid_lower_servo.angle = 100
-    #     # print("ready to sleep for " + str(lag2) + " seconds")
-    #     time.sleep(1)
+    if eyelid_movement == 'smile':
+        print("eye smile")
+        eyelid_upper_servo.angle = 30
+        eyelid_lower_servo.angle = 80
+        eye_vertical_servo.angle = 80
+        time.sleep(1)
+
+    if eyelid_movement == 'surprise':
+        print("eye surprise")
+        eyelid_upper_servo.angle = 30
+        eyelid_lower_servo.angle = 3
+        eyebrow_servo_servo.angle = 30
+        time.sleep(1)
 
 
 def eyeball_movement(body_pos):
-    #TODO: determine the correct angle
     if body_pos == 'left':
         eye_horizontal_servo.angle = 78
         time.sleep(1)
@@ -116,10 +117,14 @@ def eyebrow_motion(pos):
         time.sleep(1)
 
 def roll_eye():
+    eyebrow_motion('middle')
+    eyelid_movement('open')
     eye_vertical_servo.angle = 180
     time.sleep(1)
     eye_vertical_servo.angle = 6
     time.sleep(1)
+    eyelid_movement('wink')
+
 
 client.loop_start()
 
@@ -132,8 +137,21 @@ while True:
 
         eyeball_movement(body_pos)
 
-        if time_counter%10 == 0:
+        # wink
+        if time_counter % 6 == 0:
             eyelid_movement('wink')
+
+        # frown
+        if time_counter % 8 == 0:
+            eyebrow_motion('right')
+            eyebrow_motion('middle')
+
+        # look up and down
+        if time_counter % 10 == 0:
+            eye_vertical_servo.angle = 100
+            time.sleep(1)
+            eye_vertical_servo.angle = 6
+            time.sleep(1)
 
         time_counter += 1
         print(time_counter)
