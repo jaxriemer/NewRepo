@@ -128,7 +128,7 @@ def roll_eye():
     eyelid_movement('open')
     eye_vertical_servo.angle = 180
     time.sleep(1)
-    eye_vertical_servo.angle = 6
+    eye_vertical_servo.angle = 30
     time.sleep(1)
     eyelid_movement('wink')
 
@@ -169,7 +169,7 @@ while True:
         eyelid_movement('closed')
         eyeball_movement('middle')
         eyebrow_motion('middle')
-        eye_vertical_servo.angle = 6
+        eye_vertical_servo.angle = 30
         time.sleep(0.5)
 
         break
