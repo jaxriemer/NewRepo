@@ -38,8 +38,8 @@ body_position = ['left','middle','right']
 
 def push_shadow_tile(condition):
 
-    show_add = -4
-    no_show_add = 4
+    show_add = -3
+    no_show_add = 3
     outside = 5
     inside = 175
     sleep_time = 0.02
