@@ -6,7 +6,11 @@ from adafruit_servokit import ServoKit
 kit = ServoKit(channels=16)
 
 # Name and set up the servo according to the channel you are using.
-servo = kit.servo[2]
+eye_vertical_servo= kit.servo[4]
+eye_horizontal_servo = kit.servo[1]
+eyelid_upper_servo = kit.servo[2]
+eyelid_lower_servo = kit.servo[0]
+eyebrow_servo_servo = kit.servo[3]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
@@ -15,17 +19,44 @@ servo.set_pulse_width_range(500, 2500)
 while True:
     try:
         # Set the servo to 180 degree position
-        servo.angle = 30
+        eyelid_lower_servo.angle = 30
         time.sleep(3)
-        print(servo.angle)
         # Set the servo to 0 degree position
-        servo.angle = 10
+        eyelid_lower_servo.angle = 10
         time.sleep(3)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
-        servo.angle = 10
+        eyelid_lower_servo.angle = 10
         time.sleep(1)
 
         break
+
+
+"""
+
+eyelid_upper:
+    open:30
+    close:10
+    
+    eyelid_lower: 
+    open
+    close
+    
+    eyebrow:
+    open: 25
+    close: 0
+    
+    
+    eye_horizotal:
+    left: 85
+    right: 0
+    
+    
+    eye_vertical:
+    top:40
+    bottom:5
+
+
+"""
 
