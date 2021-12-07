@@ -66,7 +66,7 @@ client.connect(
     port=8883)
 
 
-def eyelid_movement(movement):
+def eyelid_movement(eyelid_movement):
     # lag1 = random.randint(2, 5)
     # lag2 = random.randint(2, 5)
 
