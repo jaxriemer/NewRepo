@@ -18,7 +18,7 @@ eyebrow_servo_servo = kit.servo[3]
 while True:
     try:
         # Set the servo to 180 degree position
-        eye_horizontal_servo.angle = 70
+        eye_horizontal_servo.angle = 78
         time.sleep(3)
         eye_horizontal_servo.angle = 35
         time.sleep(3)
