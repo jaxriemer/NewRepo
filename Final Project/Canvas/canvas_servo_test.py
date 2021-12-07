@@ -103,12 +103,13 @@ def push_shadow_tile(condition):
             time.sleep(0.2)
 
 
-# servo_upper_0.angle = 0
-# servo_bottom_0.angle = 0
-# servo_upper_1.angle = 0
-# servo_bottom_1.angle = 0
-# servo_upper_2.angle = no_show
-# servo_bottom_2.angle = no_show
+servo_upper_0.angle = 0
+servo_bottom_0.angle = 0
+servo_upper_1.angle = 0
+servo_bottom_1.angle = 0
+servo_upper_2.angle = 0
+servo_bottom_2.angle = 0
+
 while True:
     # for pos in body_position:
     #     push_shadow_tile(pos)
