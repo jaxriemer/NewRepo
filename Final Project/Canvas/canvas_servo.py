@@ -70,7 +70,7 @@ def push_shadow_tile(condition):
     no_show_add = 3
     outside = 5
     inside = 175
-    sleep_time = 0.02
+    sleep_time = 0.2
 
     if condition == 'left':
 
