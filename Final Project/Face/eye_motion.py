@@ -15,7 +15,6 @@ from adafruit_servokit import ServoKit
 
 topic_body = 'IDD/oneteam/face_body_position'
 
-eye_status = 'not receiving'
 body_pos = 'not receiving'
 
 # # Set channels to the number of servo channels on your kit.
@@ -66,8 +65,6 @@ client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
 
-# this is blocking. to see other ways of dealing with the loop
-#  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
 def eyelid_movement(movement):
     # lag1 = random.randint(2, 5)
@@ -87,6 +84,7 @@ def eyelid_movement(movement):
         # print("ready to sleep for " + str(lag2) + " seconds")
         time.sleep(1)
 
+
 def eyeball_movement(body_pos):
     #TODO: determine the correct angle
     if body_pos == 'left':
@@ -100,39 +98,27 @@ def eyeball_movement(body_pos):
         time.sleep(1)
 
 
-# def face_talking(cue):
-#
-#     if cue == "greet":
-#         greet_sound = AudioSegment.from_file("voice_package/greet.m4a")
-#         play(greet_sound)
-#
-#     elif cue == "moved":
-#         moving_reaction = AudioSegment.from_file("voice_package/moving.m4a")
-#         play(moving_reaction)
-
 client.loop_start()
 
 time_counter = 0
 eyelid_open = False
+eyelid_movement('open')
 
 while True:
-
     try:
-        # Set the servo to 180 degree position
-        eye_horizontal_servo.angle = 85
-        time.sleep(3)
-        # Set the servo to 0 degree position
-        eye_horizontal_servo.angle = 0
-        time.sleep(3)
+
+        eyeball_movement(body_pos)
+
+        if time_counter%500 == 0:
+            eyelid_movement('wink')
+
+        time_counter += 1
 
     except KeyboardInterrupt:
 
         # Once interrupted, set the servo back to 0 degree position
-        eye_vertical_servo.angle = 22
-        eye_horizontal_servo.angle = 40
-        eyelid_upper_servo.angle = 10
-        eyelid_lower_servo.angle = 3
-        eyebrow_servo_servo.angle = 0
+        eyelid_movement('closed')
+        eyeball_movement('middle')
 
         time.sleep(0.5)
 
