@@ -41,7 +41,7 @@ eyelid_upper:
     close 3
     
     eyebrow:
-    open: 25
+    open: 30
     close: 0
     
     
