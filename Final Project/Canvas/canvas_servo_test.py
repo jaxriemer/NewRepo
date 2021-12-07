@@ -105,7 +105,7 @@ servo_upper_0 = kit.servo[0]
 #
 #             time.sleep(sleep_time)
 
-print(servo_upper_0)
+print(servo_upper_0.angle)
 
 while True:
     # for pos in body_position:
@@ -113,8 +113,8 @@ while True:
 
     outside = 179
     inside = 1
-    show_add = 1
-    no_show_add = -1
+    show_add = 3
+    no_show_add = -3
 
         # # Set the servo to degree position
         # while servo_upper_0.angle < outside:
@@ -126,11 +126,12 @@ while True:
         #     time.sleep(0.05)
     try:
         # Set the servo to 180 degree position
+        print('pushing out')
         while servo_upper_0.angle < outside:
             servo_upper_0.angle += show_add
             time.sleep(0.05)
 
-
+        print('pulling in')
         while servo_upper_0.angle > inside:
             servo_upper_0.angle += no_show_add
             time.sleep(0.05)
