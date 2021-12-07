@@ -17,7 +17,7 @@ from adafruit_servokit import ServoKit
 # # Set channels to the number of servo channels on your kit.
 # There are 16 channels on the PCA9685 chip.
 kit = ServoKit(channels=16)
-servo.set_pulse_width_range(500, 2500)
+
 
 # # Name and set up the servo according to the channel you are using.
 # servo_upper_0 = kit.servo[0]
@@ -28,6 +28,7 @@ servo.set_pulse_width_range(500, 2500)
 # servo_bottom_2 = kit.servo[5]
 
 servo_test = kit.servo[0]
+servo_test.set_pulse_width_range(500, 2500)
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
