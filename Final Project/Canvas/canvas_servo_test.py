@@ -116,7 +116,7 @@ while True:
     outside = 180
     inside = 0
 
-    try:
+
         # # Set the servo to degree position
         # while servo_upper_0.angle < outside:
         #     servo_upper_0.angle += 1
@@ -126,27 +126,13 @@ while True:
         #     servo_upper_0.angle += -1
         #     time.sleep(0.05)
 
-        servo_test.angle = 170
-        print('degree to 180')
-        print(servo_test.angle)
-        time.sleep(3)
-        servo_test.angle = 2
-        print('degree to 0')
-
-
-    except KeyboardInterrupt:
-        # # Once interrupted, set the servo back to 0 degree position
-        # servo_upper_0.angle = 0
-        # servo_bottom_0.angle = 0
-        # servo_upper_1.angle = 0
-        # servo_bottom_1.angle = 0
-        # servo_upper_2.angle = 0
-        # servo_bottom_2.angle = 0
-
-        servo_test.angle = 0
-        time.sleep(0.5)
-
-        break
+    servo_test.angle = 180
+    print('degree to 180')
+    print(servo_test.angle)
+    time.sleep(3)
+    servo_test.angle = 0
+    print(servo_test.angle)
+    print('degree to 0')
 
 
 
