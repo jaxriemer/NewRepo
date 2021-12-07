@@ -48,11 +48,11 @@ else:
       print("Unable to access webcam.")
 
 # Load the model
-model = tensorflow.keras.models.load_model('eyelid_status_model.h5')
+model = tensorflow.keras.models.load_model('model/eyelid_status_model.h5')
 
 # Load Labels:
 labels=[]
-f = open("eyelid_status_labels.txt", "r")
+f = open("model/eyelid_status_labels.txt", "r")
 for line in f.readlines():
     if(len(line)<1):
         continue

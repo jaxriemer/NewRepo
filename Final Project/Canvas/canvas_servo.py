@@ -12,7 +12,7 @@ import time
 # control servo to complete the cloth deliver function
 from adafruit_servokit import ServoKit
 
-topic = 'IDD/body_position'
+topic = 'IDD/oneteam/canvas_body_position'
 body_position = 'Not read'
 
 # # Set channels to the number of servo channels on your kit.

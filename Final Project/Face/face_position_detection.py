@@ -6,7 +6,8 @@ import sys
 import paho.mqtt.client as mqtt
 import uuid
 
-topic = 'IDD/oneteam/face_hand_gesture'
+
+topic = 'IDD/oneteam/face_body_position'
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -17,7 +18,8 @@ client.tls_set()
 # this is the username and pw we have setup for the class
 client.username_pw_set('idd', 'device@theFarm')
 
-#connect to the brokerh
+
+#connect to the broker
 client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
@@ -48,15 +50,17 @@ else:
       print("Unable to access webcam.")
 
 # Load the model
-model = tensorflow.keras.models.load_model('model/hand_gesture_model.h5')
+model = tensorflow.keras.models.load_model('body_pos_model.h5')
 
 # Load Labels:
 labels=[]
-f = open("model/hand_gesture_labels.txt", "r")
+f = open("body_pos_labels.txt", "r")
+
 for line in f.readlines():
     if(len(line)<1):
         continue
     labels.append(line.split(' ')[1].strip())
+
 
 while(True):
     if webCam:
@@ -72,7 +76,6 @@ while(True):
 
     # Normalize the image
     normalized_image_array = (image_array.astype(np.float32) / 127.0) - 1
-
     # Load the image into the array
     data[0] = normalized_image_array
 
@@ -80,7 +83,7 @@ while(True):
     prediction = model.predict(data)
     print("I think its a:",labels[np.argmax(prediction)])
 
-    # send label to MQTT
+    # send the predicted body position to MQTT
     client.publish(topic, labels[np.argmax(prediction)])
 
     if webCam:

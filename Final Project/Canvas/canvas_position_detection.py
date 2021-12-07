@@ -7,7 +7,7 @@ import paho.mqtt.client as mqtt
 import uuid
 
 
-topic = 'IDD/body_position'
+topic = 'IDD/oneteam/canvas_body_position'
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
