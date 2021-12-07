@@ -107,6 +107,7 @@ servo_bottom_0 = kit.servo[1]
 
 print(servo_upper_0.angle)
 servo_upper_0.angle = 0
+servo_bottom_0.angle = 0
 
 while True:
     # for pos in body_position:
