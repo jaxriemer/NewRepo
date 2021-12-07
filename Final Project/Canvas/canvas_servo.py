@@ -130,11 +130,11 @@ def push_shadow_tile(condition):
             servo_upper_2.angle += no_show_add
             servo_bottom_2.angle += no_show_add
 
-            if servo_upper_1.angle < inisde:
+            if servo_upper_1.angle < inside:
                 servo_upper_1.angle += no_show_add
                 servo_bottom_1.angle += no_show_add
 
-            if servo_upper_0.angle < inisde:
+            if servo_upper_0.angle < inside:
                 servo_upper_0.angle += no_show_add
                 servo_bottom_0.angle += no_show_add
 
@@ -154,7 +154,7 @@ while True:
 
     try:
         print(body_position)
-        # push_shadow_tile(body_position)
+        push_shadow_tile(body_position)
 
     except KeyboardInterrupt:
         # Once interrupted, set the servo back to 0 degree position
