@@ -1,5 +1,3 @@
-# servo motion
-
 import tensorflow.keras
 from PIL import Image, ImageOps
 import numpy as np
@@ -24,8 +22,8 @@ servo_upper_0 = kit.servo[0]
 servo_bottom_0 = kit.servo[1]
 servo_upper_1 = kit.servo[2]
 servo_bottom_1 = kit.servo[3]
-servo_upper_2 = kit.servo[4]
-servo_bottom_2 = kit.servo[5]
+servo_upper_2 = kit.servo[12]
+servo_bottom_2 = kit.servo[13]
 
 # Set the pulse width range of your servo for PWM control of rotating 0-180 degree (min_pulse, max_pulse)
 # Each servo might be different, you can normally find this information in the servo datasheet
@@ -43,7 +41,7 @@ def on_message(cleint, userdata, msg):
     if msg.topic == topic:
         global body_position
         body_position = msg.payload.decode('UTF-8')
-        # print(eye_status)
+
 
 # Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
@@ -66,82 +64,107 @@ client.connect(
 # this is blocking. to see other ways of dealing with the loop
 #  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 
-
-# def shadow_movement():
-#     # TODO
-#     open_deg = 180
-#     close_deg = 0
-#
-#     servo_eye.angle = open_deg
-#     time.sleep(0.03)
-#
-#     servo_eye.angle = close_deg
-#     time.sleep(0.03)
-
 def push_shadow_tile(condition):
 
-    show = 180
-    no_show = 0
+    show_add = -3
+    no_show_add = 3
+    outside = 5
+    inside = 175
+    sleep_time = 0.02
 
     if condition == 'left':
-        servo_upper_0.angle = show
-        servo_bottom_0.angle = show
-        servo_upper_1.angle = no_show
-        servo_bottom_1.angle = no_show
-        servo_upper_2.angle = no_show
-        servo_bottom_2.angle = no_show
+
+        print('pushing left')
+        # push postion 0 out, pull others in.
+        while servo_upper_0.angle > outside:
+            servo_upper_0.angle += show_add
+            servo_bottom_0.angle += show_add
+
+            if servo_upper_1.angle < inside:
+                servo_upper_1.angle += no_show_add
+                servo_bottom_1.angle += no_show_add
+
+            if servo_upper_2.angle < inside:
+                servo_upper_2.angle += no_show_add
+                servo_bottom_2.angle += no_show_add
+
+            time.sleep(sleep_time)
 
     elif condition == 'middle':
-        servo_upper_0.angle = no_show
-        servo_bottom_0.angle = no_show
-        servo_upper_1.angle = show
-        servo_bottom_1.angle = show
-        servo_upper_2.angle = no_show
-        servo_bottom_2.angle = no_show
+
+        print('pushing middle')
+        while servo_upper_1.angle > outside:
+            servo_upper_1.angle += show_add
+            servo_bottom_1.angle += show_add
+
+            if servo_upper_0.angle < inside:
+                servo_upper_0.angle += no_show_add
+                servo_bottom_0.angle += no_show_add
+
+            if servo_upper_2.angle < inside:
+                servo_upper_2.angle += no_show_add
+                servo_bottom_2.angle += no_show_add
+            time.sleep(sleep_time)
 
     elif condition == 'right':
-        servo_upper_0.angle = no_show
-        servo_bottom_0.angle = no_show
-        servo_upper_1.angle = no_show
-        servo_bottom_1.angle = no_show
-        servo_upper_2.angle = show
-        servo_bottom_2.angle = show
+
+        print('pushing right')
+        while servo_upper_2.angle > outside:
+            servo_upper_2.angle += show_add
+            servo_bottom_2.angle += show_add
+
+            if servo_upper_1.angle < inside:
+                servo_upper_1.angle += no_show_add
+                servo_bottom_1.angle += no_show_add
+
+            if servo_upper_0.angle < inside:
+                servo_upper_0.angle += no_show_add
+                servo_bottom_0.angle += no_show_add
+
+            time.sleep(sleep_time)
 
     else:
-        servo_upper_0.angle = no_show
-        servo_bottom_0.angle = no_show
-        servo_upper_1.angle = no_show
-        servo_bottom_1.angle = no_show
-        servo_upper_2.angle = no_show
-        servo_bottom_2.angle = no_show
 
+        print('all going back')
+        while servo_upper_0.angle < inside or servo_upper_1.angle < inside or servo_upper_2.angle < inside:
+            servo_upper_2.angle += no_show_add
+            servo_bottom_2.angle += no_show_add
+
+            if servo_upper_1.angle < inisde:
+                servo_upper_1.angle += no_show_add
+                servo_bottom_1.angle += no_show_add
+
+            if servo_upper_0.angle < inisde:
+                servo_upper_0.angle += no_show_add
+                servo_bottom_0.angle += no_show_add
+
+            time.sleep(sleep_time)
 
 client.loop_start()
 
-# shadow_loc_deg = 0
-# servo_shadow.angle = 150
+servo_upper_0.angle = 165
+servo_bottom_0.angle = 165
+servo_upper_1.angle = 165
+servo_bottom_1.angle = 165
+servo_upper_2.angle = 165
+servo_bottom_2.angle = 165
+
 
 while True:
-    print(body_position)
-    push_shadow_tile(body_position)
-    # # show shadow
-    # print("showing shadow")
-    # servo_shadow.angle = 90
-    # time.sleep(3)
-    #
-    # # hide shadow
-    # # print("hiding shadow")
-    # # servo_shadow.angle = 150
-    # # time.sleep(3)
-    #
-    # # move shadow loc
-    # print("shadow loc moving")
-    # servo_shadow_loc.angle = shadow_loc_deg
-    # if shadow_loc_deg <= 170:
-    #     shadow_loc_deg += 10
-    # elif shadow_loc_deg >= 0:
-    #     shadow_loc_deg -= 10
-    # time.sleep(3)
+
+    try:
+        print(body_position)
+        # push_shadow_tile(body_position)
+
+    except KeyboardInterrupt:
+        # Once interrupted, set the servo back to 0 degree position
+        servo_upper_0.angle = 180
+        servo_bottom_0.angle = 180
+        servo_upper_1.angle = 180
+        servo_bottom_1.angle = 180
+        servo_upper_2.angle = 180
+        servo_bottom_2.angle = 180
+        break
 
 
 
