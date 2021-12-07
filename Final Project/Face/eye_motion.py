@@ -116,7 +116,7 @@ while True:
 
         eyeball_movement(body_pos)
 
-        if time_counter%500 == 0:
+        if time_counter%10 == 0:
             eyelid_movement('wink')
 
         # if time_counter%800 == 0:
