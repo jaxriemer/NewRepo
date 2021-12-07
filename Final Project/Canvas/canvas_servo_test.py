@@ -45,8 +45,8 @@ def push_shadow_tile(condition):
 
     if condition == 'left':
         while servo_upper_0.angle < outside:
-                servo_upper_0.angle += show_add
-                servo_bottom_0.angle += show_add
+            servo_upper_0.angle += show_add
+            servo_bottom_0.angle += show_add
 
             if servo_upper_1.angle > inisde:
                 servo_upper_1.angle += no_show_add
