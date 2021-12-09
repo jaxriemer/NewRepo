@@ -148,6 +148,8 @@ while True:
         time.sleep(1)
         eyeball_movement('left')
         eyebrow_motion('right')
+        time.sleep(0.5)
+        eyeball_movement('right')
         time.sleep(1)
         eyeball_movement('middle')
         eyebrow_motion('middle')
