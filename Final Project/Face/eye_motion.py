@@ -95,7 +95,7 @@ def eyelid_movement(eyelid_movement):
 
     if eyelid_movement == 'surprise':
         print("eye surprise")
-        eyebrow_motion(pos)
+        eyebrow_motion('left')
         eyelid_upper_servo.angle = 30
         eyelid_lower_servo.angle = 3
         eyebrow_servo_servo.angle = 30
@@ -142,6 +142,8 @@ eyelid_movement('open')
 
 while True:
     try:
+        eyelid_movement('surprise')
+        time.sleep(1)
         eyeball_movement('middle')
         time.sleep(1)
         eyeball_movement('left')
@@ -154,8 +156,7 @@ while True:
         time.sleep(1)
         eyelid_movement('smile')
         time.sleep(1)
-        eyelid_movement('surprise')
-        time.sleep(1)
+
 
 
 
