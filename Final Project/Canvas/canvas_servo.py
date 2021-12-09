@@ -164,8 +164,17 @@ servo_bottom_2.angle = 165
 while True:
 
     try:
-        print(body_position)
-        push_shadow_tile(body_position)
+
+
+        # print(body_position)
+        push_shadow_tile('middle')
+        time.sleep(2)
+        push_shadow_tile('left')
+        time.sleep(2)
+        push_shadow_tile('middle')
+        time.sleep(2)
+        push_shadow_tile('right')
+
 
 
         print(servo_upper_0.angle)
