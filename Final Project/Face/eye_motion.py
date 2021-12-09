@@ -142,26 +142,43 @@ eyelid_movement('open')
 while True:
     try:
 
-        eyeball_movement(body_pos)
+        eyeball_movement('left')
+        time.sleep(1)
+        eyeball_movement('middle')
+        time.sleep(1)
+        eyeball_movement('right')
+        time.sleep(1)
+        eyeball_movement('left')
+        time.sleep(1)
+        eyelid_movement('wink')
+        time.sleep(1)
+        eyelid_movement('smile')
+        time.sleep(1)
+        eyelid_movement('surprise')
+        time.sleep(1)
 
-        # wink
-        if time_counter % 6 == 0:
-            eyelid_movement('wink')
 
-        # frown
-        if time_counter % 8 == 0:
-            eyebrow_motion('right')
-            eyebrow_motion('middle')
 
-        # look up and down
-        if time_counter % 10 == 0:
-            eye_vertical_servo.angle = 100
-            time.sleep(1)
-            eye_vertical_servo.angle = 6
-            time.sleep(1)
-
-        time_counter += 1
-        print(time_counter)
+        # eyeball_movement(body_pos)
+        #
+        # # wink
+        # if time_counter % 6 == 0:
+        #     eyelid_movement('wink')
+        #
+        # # frown
+        # if time_counter % 8 == 0:
+        #     eyebrow_motion('right')
+        #     eyebrow_motion('middle')
+        #
+        # # look up and down
+        # if time_counter % 10 == 0:
+        #     eye_vertical_servo.angle = 100
+        #     time.sleep(1)
+        #     eye_vertical_servo.angle = 6
+        #     time.sleep(1)
+        #
+        # time_counter += 1
+        # print(time_counter)
 
     except KeyboardInterrupt:
 
