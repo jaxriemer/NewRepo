@@ -141,7 +141,8 @@ eyelid_movement('open')
 
 while True:
     try:
-
+        eyeball_movement('middle')
+        time.sleep(1)
         eyeball_movement('left')
         time.sleep(1)
         eyeball_movement('middle')
