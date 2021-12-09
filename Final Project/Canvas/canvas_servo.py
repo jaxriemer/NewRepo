@@ -66,11 +66,11 @@ client.connect(
 
 def push_shadow_tile(condition):
 
-    show_add = -3
-    no_show_add = 3
+    show_add = -5
+    no_show_add = 5
     outside = 5
     inside = 175
-    sleep_time = 0.2
+    sleep_time = 0.1
 
     if condition == 'left':
 
