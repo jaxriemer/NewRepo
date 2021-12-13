@@ -27,6 +27,7 @@ are the original design of how servos were placed on both the canvas and the int
 
 ![input settings](Pics/Drawing3.jpg?raw=true)
 ![input settings](Pics/Drawing4.jpg?raw=true)
+![input settings](Pics/OriginalDesign.JPG?raw=true)
 ![input settings](Pics/Drawing6.jpg?raw=true)
 ![input settings](Pics/Drawing7.jpg?raw=true)
 
@@ -37,10 +38,17 @@ terms of the canvas and one for the hand gesture the user was making. When the c
 and predicted which position the user was at, the prediction was sent to the corresponding channel via MQTT. The pi in 
 charge of the canvas then read the position from the channel and rotated the servos that slid different shadow components 
 forward and backward. At the meantime, the pi that was used to control the interactive Van Gogh would read the position 
-of the user and moved the eyeballs to make him look at the user. Similarly, the camera that detected the user’s hand 
+of the user and moved the eyeballs to make him look at the user. 
+![input settings](Pics/Interaction_Portrait.png?raw=true) 
+![input settings](Pics/Interaction_Canvas.png?raw=true)
+
+
+Similarly, the camera that detected the user’s hand 
 gesture would predict which gesture the user made given the trained model and sent the prediction to MQTT. The pi that 
 controlled the interactive Van Gogh then got the prediction and would play the corresponding audio responding to the hand 
 gesture the user made with different facial expressions.
+![input settings](Pics/GestureRecognition.png?raw=true)
+
 
 We spent some time looking for the angles each servo needed to rotate given different conditions, including:
 - Open and close of eyelids of the interactive Van Gogh
