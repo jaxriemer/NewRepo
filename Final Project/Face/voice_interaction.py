@@ -79,21 +79,29 @@ said_thumb_down = 0
 said_secret = 0
 
 while True:
-    if said_hi == 0 and hand_gesture == 'handwaving':
-        face_interaction('handwaving')
-        said_hi += 1
+    # if said_hi == 0 and hand_gesture == 'handwaving':
+    #     face_interaction('handwaving')
+    #     said_hi += 1
+    #
+    # elif said_thumb_down == 0 and hand_gesture == 'thumb_down':
+    #     face_interaction('thumb_down')
+    #     said_thumb_down += 1
+    #
+    # elif said_secret == 0 and hand_gesture == 'secret':
+    #     face_interaction('secret')
+    #     said_secret += 1
+    #
+    # elif said_heart == 0 and hand_gesture == 'heart':
+    #     face_interaction('heart')
+    #     said_heart += 1
 
-    elif said_thumb_down == 0 and hand_gesture == 'thumb_down':
-        face_interaction('thumb_down')
-        said_thumb_down += 1
+    face_interaction('handwaving')
+    time.sleep(2)
+    face_interaction('thumb_down')
+    time.sleep(2)
+    face_interaction('heart')
 
-    elif said_secret == 0 and hand_gesture == 'secret':
-        face_interaction('secret')
-        said_secret += 1
 
-    elif said_heart == 0 and hand_gesture == 'heart':
-        face_interaction('heart')
-        said_heart += 1
 
 
 
