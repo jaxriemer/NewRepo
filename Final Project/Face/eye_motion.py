@@ -144,15 +144,9 @@ while True:
     try:
         eyelid_movement('surprise')
         time.sleep(1)
-        eyeball_movement('middle')
+        eyeball_movement(body_pos)
         time.sleep(1)
-        eyeball_movement('left')
         eyebrow_motion('right')
-        time.sleep(0.5)
-        eyeball_movement('right')
-        time.sleep(1)
-        eyeball_movement('middle')
-        eyebrow_motion('middle')
         time.sleep(1)
         eyeball_movement('right')
         time.sleep(1)
@@ -160,9 +154,6 @@ while True:
         time.sleep(1)
         eyelid_movement('smile')
         time.sleep(1)
-
-
-
 
         # eyeball_movement(body_pos)
         #

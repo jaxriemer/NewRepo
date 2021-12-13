@@ -166,15 +166,9 @@ while True:
     try:
 
 
-        # print(body_position)
-        push_shadow_tile('middle')
-        time.sleep(2)
-        push_shadow_tile('left')
-        time.sleep(2)
-        push_shadow_tile('middle')
-        time.sleep(2)
-        push_shadow_tile('right')
-
+        print(body_position)
+        push_shadow_tile(body_position)
+        time.sleep(0.5)
 
 
         print(servo_upper_0.angle)
