@@ -1,7 +1,7 @@
 # Jackson Riemerschmid's-Lab-Hub
 for [Interactive Device Design](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/)
 
-Please place links here to the README.md's for each of your labs here:
+Links to the README.md's for each lab here:
 
 [Lab 1. Staging Interaction](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/cc166c88782bce7a3f303388a0852655cc4dcd4e/Lab%201/README.md)
 
