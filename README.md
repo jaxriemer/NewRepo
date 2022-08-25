@@ -3,7 +3,7 @@ for [Interactive Device Design](https://github.com/FAR-Lab/Developing-and-Design
 
 Please place links here to the README.md's for each of your labs here:
 
-[Lab 1. Staging Interaction]([Interactive-Lab-Hub/Lab 1/README.md/](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/cc166c88782bce7a3f303388a0852655cc4dcd4e/Lab%201/README.md))
+[Lab 1. Staging Interaction](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/cc166c88782bce7a3f303388a0852655cc4dcd4e/Lab%201/README.md)
 
 [Lab 2. Interactive Prototyping: The Clock of Pi](Lab%202/)
 
