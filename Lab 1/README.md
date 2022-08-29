@@ -77,39 +77,28 @@ Storyboards are a tool for visually exploring a users interaction with a device.
 
 Present your ideas to the other people in your breakout room (or in small groups). You can just get feedback from one another or you can work together on the other parts of the lab.
 
-\*\***Summarize feedback you got here.**\*\*
-
-Originally for my storyboard I did not include fingers on the hands of my users. When I had 
+Originally for my storyboard I did not include fingers on the hands of my users. This made it difficult for my teammates to discern what the third panel of my storyboard was conveying. By adding fingers to my drawing, the context of the drawing became clearer.
 
 
 ## Part B. Act out the Interaction
 
-Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it. 
+Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it.
 
-\*\***Are there things that seemed better on paper than acted out?**\*\*
-
-\*\***Are there new ideas that occur to you or your collaborators that come up from the acting?**\*\*
-
+On paper my interaction did not originally include any additional sensor. When acting out the interaction, it became clear that I would need some measurement to map the color to. This lead me to the idea of using a person's heartrate to map a color to the device.
 
 ## Part C. Prototype the device
 
-You will be using your smartphone as a stand-in for the device you are prototyping. You will use the browser of your smart phone to act as a “light” and use a remote control interface to remotely change the light on that device. 
+Feedback on tinkerbelle:
 
-Code for the "Tinkerbelle" tool, and instructions for setting up the server and your phone are [here](https://github.com/FAR-Lab/tinkerbelle).
-
-We invented this tool for this lab! 
-
-If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
-
-\*\***Give us feedback on Tinkerbelle.**\*\*
-
-I liked how to the tinkerbelle lab allows for us to focus on the interaction portion of design. By reverting all the backend workings to the computer controlling the light, I did not have to think so much on how I would design addition sensors and actuators.
+I liked how to the tinkerbelle lab allows for us to focus on the interaction portion of design. By reverting all the backend workings to the computer controlling the light, I did not have to think so much on how I would design additional sensors and actuators. This also prevented me from worrying to much about how I would program the device to complete the interaction.
 
 
 ## Part D. Wizard the device
 Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
 
 \*\***Include your first attempts at recording the set-up video here.**\*\*
+![Watch the video](https://youtu.be/BuCfwMebbIc)
+
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
