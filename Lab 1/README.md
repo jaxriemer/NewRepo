@@ -75,8 +75,6 @@ Storyboards are a tool for visually exploring a users interaction with a device.
 
 ![My Image](/Lab1/Screenshot 2022-08-28 212843.png)
 
-![My Image]()
-
 
 \*\***Include pictures of your storyboards here**\*\*
 
