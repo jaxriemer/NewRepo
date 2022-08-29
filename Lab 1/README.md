@@ -75,11 +75,11 @@ Storyboards are a tool for visually exploring a users interaction with a device.
 
 ![images](./images/Storyboard.jpg)
 
-\*\***Include pictures of your storyboards here**\*\*
-
 Present your ideas to the other people in your breakout room (or in small groups). You can just get feedback from one another or you can work together on the other parts of the lab.
 
 \*\***Summarize feedback you got here.**\*\*
+
+Originally for my storyboard I did not include fingers on the hands of my users. When I had 
 
 
 ## Part B. Act out the Interaction
@@ -102,6 +102,8 @@ We invented this tool for this lab!
 If you run into technical issues with this tool, you can also use a light switch, dimmer, etc. that you can can manually or remotely control.
 
 \*\***Give us feedback on Tinkerbelle.**\*\*
+
+I liked how to the tinkerbelle lab allows for us to focus on the interaction portion of design. By reverting all the backend workings to the computer controlling the light, I did not have to think so much on how I would design addition sensors and actuators.
 
 
 ## Part D. Wizard the device
