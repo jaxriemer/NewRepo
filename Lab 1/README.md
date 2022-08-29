@@ -98,7 +98,7 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 \*\***Include your first attempts at recording the set-up video here.**\*\*
 
-[![First Attempt](./images/First_attempt.jpg)](https://youtu.be/BuCfwMebbIc)
+[![images](./images/First_attempt.jpg)](https://youtu.be/BuCfwMebbIc)
 
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
