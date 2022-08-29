@@ -100,6 +100,7 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 [![images](./images/First_attempt.jpg)](https://youtu.be/BuCfwMebbIc)
 
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/BuCfwMebbIc/0.jpg)](https://www.youtube.com/watch?v=BuCfwMebbIc)
 
 Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
 
