@@ -66,10 +66,10 @@ Players: user, audience, performers, security
 Activity: Performers are playing music, audience is listening and reacting to music, user is communicating emotions to other users/audience members and performers.
 
 Goals: 
-user - Give realtime feedback of personal experience of performance.
-audience - Enjoy performance and visually see the heartrate responses of users.
-performers - Give audience a good experience.
-security - Keep everyone safe.
+User - Give realtime feedback of personal experience of performance.
+Audience - Enjoy performance and visually see the heartrate responses of users.
+Performers - Give audience a good experience.
+Security - Keep everyone safe.
 
 Storyboards are a tool for visually exploring a users interaction with a device. They are a fast and cheap method to understand user flow, and iterate on a design before attempting to build on it. Take some time to read through this explanation of [storyboarding in UX design](https://www.smashingmagazine.com/2017/10/storyboarding-ux-design/). Sketch seven storyboards of the interactions you are planning. **It does not need to be perfect**, but must get across the behavior of the interactive device and the other characters in the scene. 
 
