@@ -98,7 +98,7 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/BuCfwMebbIc/0.jpg)](https://www.youtube.com/watch?v=BuCfwMebbIc)
 
-Now, hange the goal within the same setting, and update the interaction with the paper prototype. 
+Now, change the goal within the same setting, and update the interaction with the paper prototype. 
 
 \*\***Show the follow-up work here.**\*\*
 
@@ -109,13 +109,22 @@ Only now should you start worrying about what the device should look like. Devel
 
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
+![images](./images/Costume1.jpg)
+
+
+![images](./images/Costume2.jpg)
+
+
+![images](./images/Costume3.jpg)
+
+
 \*\***Include sketches of what your devices might look like here.**\*\*
 
 \*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
 
 
 ## Part F. Record
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/zE4qMLqsH2k/0.jpg)](https://www.youtube.com/watch?v=zE4qMLqsH2k)
+[![Prototyped Video](https://img.youtube.com/vi/zE4qMLqsH2k/0.jpg)](https://www.youtube.com/watch?v=zE4qMLqsH2k)
 
 
 \*\***Please indicate anyone you collaborated with on this Lab.**\*\*
