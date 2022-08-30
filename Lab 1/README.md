@@ -78,12 +78,14 @@ Security - Keep everyone safe.
 ![images](./images/Storyboard.jpg)
 
 **Summarize feedback you got here.**
+
 Originally for my storyboard I did not include fingers on the hands of my users. This made it difficult for my teammates to discern what the third panel of my storyboard was conveying. By adding fingers to my drawing, the context of the drawing became clearer.
 
 
 ## Part B. Act out the Interaction
 **Are there things that seemed better on paper than acted out?**
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
+
 On paper my interaction did not originally include any additional sensors. When acting out the interaction, it became clear that I would need some measurement to map the color to. This lead me to the idea of using a person's heartrate to map a color to the device.
 
 ## Part C. Prototype the device
@@ -95,9 +97,11 @@ I liked how to the tinkerbelle lab allows for us to focus on the interaction por
 ## Part D. Wizard the device
 
 **Include your first attempts at recording the set-up video here.**
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/BuCfwMebbIc/0.jpg)](https://www.youtube.com/watch?v=BuCfwMebbIc)
 
 **Show the follow-up work here.**
+
 New Goal is to have the median heartrate response display on the stage of performers:
 ![images](./images/Second_Attempt.jpg)
 
