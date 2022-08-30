@@ -100,8 +100,7 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 Now, change the goal within the same setting, and update the interaction with the paper prototype. 
 
-New Goal is to have the median heartrate response display on the stage of performers.
-![image](https://user-images.githubusercontent.com/70165427/187334232-2fc48205-eeac-4615-bd26-b7cdec211bca.png)
+New Goal is to have the median heartrate response display on the stage of performers:
 
 ![images](./images/Second_Attempt.jpg)
 
@@ -131,10 +130,7 @@ In the third design, the device is worn on the head with a lantern shade. This a
 ## Part F. Record
 [![Prototyped Video](https://img.youtube.com/vi/zE4qMLqsH2k/0.jpg)](https://www.youtube.com/watch?v=zE4qMLqsH2k)
 
-
-\*\***Please indicate anyone you collaborated with on this Lab.**\*\*
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
-
+I worked with Sam Willenson to enact my prototype design and collaborated on how to stage the scene. Mariia Dobko gave me feedback on my storyboard (see storboard section.)
 
 
 # Staging Interaction, Part 2 
