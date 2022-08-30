@@ -84,7 +84,7 @@ Originally for my storyboard I did not include fingers on the hands of my users.
 
 Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it.
 
-On paper my interaction did not originally include any additional sensor. When acting out the interaction, it became clear that I would need some measurement to map the color to. This lead me to the idea of using a person's heartrate to map a color to the device.
+On paper my interaction did not originally include any additional sensors. When acting out the interaction, it became clear that I would need some measurement to map the color to. This lead me to the idea of using a person's heartrate to map a color to the device.
 
 ## Part C. Prototype the device
 
