@@ -128,9 +128,11 @@ In the third design, the device is worn on the head with a lantern shade. This a
 
 ## Part F. Record
 **Take a video of your prototyped interaction.**
+
 [![Prototyped Video](https://img.youtube.com/vi/zE4qMLqsH2k/0.jpg)](https://www.youtube.com/watch?v=zE4qMLqsH2k)
 
 **Please indicate anyone you collaborated with on this Lab.**
+
 I worked with Sam Willenson to act-out my prototype design and collaborated on how to stage the scene. Mariia Dobko gave me feedback on my storyboard (see storboard section.)
 
 
