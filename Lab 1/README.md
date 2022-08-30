@@ -100,8 +100,10 @@ Take a little time to set up the wizarding set-up that allows for someone to rem
 
 Now, change the goal within the same setting, and update the interaction with the paper prototype. 
 
-\*\***Show the follow-up work here.**\*\*
+New Goal is to have the median heartrate response display on the stage of performers.
+![image](https://user-images.githubusercontent.com/70165427/187334232-2fc48205-eeac-4615-bd26-b7cdec211bca.png)
 
+![images](./images/Second_Attempt.jpg)
 
 ## Part E. Costume the device
 
