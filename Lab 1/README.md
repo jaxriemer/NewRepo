@@ -133,7 +133,7 @@ In the third design, the device is worn on the head with a lantern shade. This a
 
 **Please indicate anyone you collaborated with on this Lab.**
 
-I worked with Sam Willenson to act-out my prototype design and collaborated on how to stage the scene. Mariia Dobko gave me feedback on my storyboard (see storboard section.)
+I worked with Sam Willenson to act-out my prototype design and collaborated on how to stage the scene. Mariia Dobko gave me feedback on my storyboard (see storyboard section.)
 
 
 # Staging Interaction, Part 2 
