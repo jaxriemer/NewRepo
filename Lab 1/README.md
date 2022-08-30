@@ -75,7 +75,7 @@ Performers - Give audience a good experience.
 
 Security - Keep everyone safe.
 
-![images](./images/Storyboard.jpg | width = 1080)
+![images](./images/Storyboard.jpg)
 
 **Summarize feedback you got here.**
 
