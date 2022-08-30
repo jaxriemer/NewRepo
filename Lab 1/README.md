@@ -109,18 +109,21 @@ Only now should you start worrying about what the device should look like. Devel
 
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
+Costume 1
+
 ![images](./images/Costume1.jpg)
+
+This first design has the user wear the device around their neck. Although this allows for a hands-free experience and allows the user to dance, it is susceptible to overheating.
 
 
 ![images](./images/Costume2.jpg)
 
+The second design allows for the user to wear the device on their back. It allows for a hands free experience. It also allows others to view the device colors from the rear. This design is still susceptible to overheating.
+
 
 ![images](./images/Costume3.jpg)
 
-
-\*\***Include sketches of what your devices might look like here.**\*\*
-
-\*\***What concerns or opportunitities are influencing the way you've designed the device to look?**\*\*
+In the third design, the device is worn on the head with a lantern shade. This allows for the device to light up the lantern and is more ideal for lowlight settings. The placement on the head makes the light more visible by others the previous two designs, but introduces a risk of the device getting damaged. Additionally the problem of overheating is not as great of an issue, although this aspect can still be improved upon. 
 
 
 ## Part F. Record
