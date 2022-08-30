@@ -57,7 +57,7 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 ## Part A. Plan 
 
-To stage an interaction with your interactive device, think about:
+**Describe your setting, players, activity and goals here.**
 
 Setting: Outside during a concert.
 
@@ -75,44 +75,35 @@ Performers - Give audience a good experience.
 
 Security - Keep everyone safe.
 
-Storyboards are a tool for visually exploring a users interaction with a device. They are a fast and cheap method to understand user flow, and iterate on a design before attempting to build on it. Take some time to read through this explanation of [storyboarding in UX design](https://www.smashingmagazine.com/2017/10/storyboarding-ux-design/). Sketch seven storyboards of the interactions you are planning. **It does not need to be perfect**, but must get across the behavior of the interactive device and the other characters in the scene. 
-
 ![images](./images/Storyboard.jpg)
 
-Present your ideas to the other people in your breakout room (or in small groups). You can just get feedback from one another or you can work together on the other parts of the lab.
-
+**Summarize feedback you got here.**
 Originally for my storyboard I did not include fingers on the hands of my users. This made it difficult for my teammates to discern what the third panel of my storyboard was conveying. By adding fingers to my drawing, the context of the drawing became clearer.
 
 
 ## Part B. Act out the Interaction
-
-Try physically acting out the interaction you planned. For now, you can just pretend the device is doing the things you’ve scripted for it.
-
+**Are there things that seemed better on paper than acted out?**
+**Are there new ideas that occur to you or your collaborators that come up from the acting?**
 On paper my interaction did not originally include any additional sensors. When acting out the interaction, it became clear that I would need some measurement to map the color to. This lead me to the idea of using a person's heartrate to map a color to the device.
 
 ## Part C. Prototype the device
-
-Feedback on tinkerbelle:
+**Give us feedback on Tinkerbelle.**
 
 I liked how to the tinkerbelle lab allows for us to focus on the interaction portion of design. By reverting all the backend workings to the computer controlling the light, I did not have to think so much on how I would design additional sensors and actuators. This also prevented me from worrying to much about how I would program the device to complete the interaction.
 
 
 ## Part D. Wizard the device
-Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
 
+**Include your first attempts at recording the set-up video here.**
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/BuCfwMebbIc/0.jpg)](https://www.youtube.com/watch?v=BuCfwMebbIc)
 
-Now, change the goal within the same setting, and update the interaction with the paper prototype. 
-
+**Show the follow-up work here.**
 New Goal is to have the median heartrate response display on the stage of performers:
-
 ![images](./images/Second_Attempt.jpg)
 
 ## Part E. Costume the device
-
-Only now should you start worrying about what the device should look like. Develop three costumes so that you can use your phone as this device.
-
-Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
+**Include sketches of what your device might look like here.**
+**What concerns or opportunitities are influencing the way you've designed the device to look?**
 
 Costume 1
 
@@ -132,9 +123,11 @@ In the third design, the device is worn on the head with a lantern shade. This a
 
 
 ## Part F. Record
+**Take a video of your prototyped interaction.**
 [![Prototyped Video](https://img.youtube.com/vi/zE4qMLqsH2k/0.jpg)](https://www.youtube.com/watch?v=zE4qMLqsH2k)
 
-I worked with Sam Willenson to enact my prototype design and collaborated on how to stage the scene. Mariia Dobko gave me feedback on my storyboard (see storboard section.)
+**Please indicate anyone you collaborated with on this Lab.**
+I worked with Sam Willenson to act-out my prototype design and collaborated on how to stage the scene. Mariia Dobko gave me feedback on my storyboard (see storboard section.)
 
 
 # Staging Interaction, Part 2 
