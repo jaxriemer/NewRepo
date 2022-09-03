@@ -159,3 +159,5 @@ Do last week’s assignment again, but this time:
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
 
 I will slightly be altering the goal of my device. For this iteration of my device a
+
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YqRf_tA6ODs/0.jpg)](https://www.youtube.com/watch?v=YqRf_tA6ODs)
