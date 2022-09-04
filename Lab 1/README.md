@@ -143,18 +143,13 @@ This describes the second week's work for this lab activity.
 
 ## Prep (to be done before Lab on Wednesday)
 
-You will be assigned three partners from another group. Go to their github pages, view their videos, and provide them with reactions, suggestions & feedback: explain to them what you saw happening in their video. Guess the scene and the goals of the character. Ask them about anything that wasn’t clear. 
-
 \*\***Summarize feedback from your partners here.**\*\*
 
+My partner Grace Nho mentioned a product that is similar to my concept. Kpop fans will carry lightsticks at performances to display their support for a certain group. Each lightstick has colors and a design specific to a particular group. Fans will show use their lightsticks throughout all performance. Consequently, people are able to visually see where fans of a particular group are.
+
+Grace's insight gave me the idea to integrate a display in my design that shows the heartrate responses of sections of users, by location in the crowd. This gives a visual map of the "vibes" of the audience, and allows users to move to parts of the crowd that better suit the experience they wish to have.
+
 ## Make it your own
-
-Do last week’s assignment again, but this time: 
-1) It doesn’t have to (just) use light, 
-2) You can use any modality (e.g., vibration, sound) to prototype the behaviors! Again, be creative! Feel free to fork and modify the tinkerbell code! 
-3) We will be grading with an emphasis on creativity. 
-
-## Part A. Plan 
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
 
