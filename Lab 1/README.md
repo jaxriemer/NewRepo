@@ -160,4 +160,6 @@ Do last week’s assignment again, but this time:
 
 I will slightly be altering the goal of my device. For this iteration of my device a
 
+![images](./images/Storyboard2.jpg)
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YqRf_tA6ODs/0.jpg)](https://www.youtube.com/watch?v=YqRf_tA6ODs)
