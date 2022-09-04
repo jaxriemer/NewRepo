@@ -145,7 +145,7 @@ This describes the second week's work for this lab activity.
 
 \*\***Summarize feedback from your partners here.**\*\*
 
-My partner Grace Nho mentioned a product that is similar to my concept. Kpop fans will carry lightsticks at performances to display their support for a certain group. Each lightstick has colors and a design specific to a particular group. Fans will show use their lightsticks throughout all performance. Consequently, people are able to visually see where fans of a particular group are.
+My partner Grace Nho mentioned a product that is similar to my concept. She told me that Kpop fans will carry lightsticks at performances to display their support for a certain group. Each lightstick has color schemes and a design specific to a particular group. Fans will show use their lightsticks throughout all performance. Consequently, people are able to visually see where fans of a particular group are.
 
 Grace's insight gave me the idea to integrate a display in my design that shows the heartrate responses of sections of users, by location in the crowd. This gives a visual map of the "vibes" of the audience, and allows users to move to parts of the crowd that better suit the experience they wish to have.
 
