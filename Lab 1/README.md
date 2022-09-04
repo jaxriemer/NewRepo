@@ -158,8 +158,11 @@ Do last week’s assignment again, but this time:
 
 \*\***Document everything here. (Particularly, we would like to see the storyboard and video, although photos of the prototype are also great.)**\*\*
 
-I will slightly be altering the goal of my device. For this iteration of my device a
+I will slightly be altering the goal of my device. For this iteration of my device I integrated a display showing the average heartrate of users by section in the crowd. This is in addition to the wristbands for each user, that show an individual's heartrate through color. The wristband will also have the capability of haptic vibration to signal to the audience when the next performance is about to begin. An optional feature is to also vibrate the wristband, pulsing to the tempo of the music.
 
 ![images](./images/Storyboard2.jpg)
 
+
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YqRf_tA6ODs/0.jpg)](https://www.youtube.com/watch?v=YqRf_tA6ODs)
+
+This prototype video uses LEDs as a stand-in for the display on the stage. An Arduino Uno was used to program the individual LEDs. A DC motor was used to simulate the vibrations of the wristband. The color changes of the wristband are not shown in this prototype video, however, the first prototype video above depicts the same color-changing functionality of the wristband.
