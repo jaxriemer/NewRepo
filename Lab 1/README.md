@@ -160,4 +160,10 @@ I will slightly be altering the goal of my device. For this iteration of my devi
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YqRf_tA6ODs/0.jpg)](https://www.youtube.com/watch?v=YqRf_tA6ODs)
 
+Interactions Depicted:
+1. Lights on, mapped to audience heartrate. Crowd murmurs in anticipation.
+2. Lights go out, wristband vibrates. Audience knows the show is about to start and cheer.
+3. Lights flicker as the performers enter the stage.
+4. Music begins and lights pulse to the temp of the music.
+
 This prototype video uses LEDs as a stand-in for the display on the stage. An Arduino Uno was used to program the individual LEDs. A DC motor was used to simulate the vibrations of the wristband. The color changes of the wristband are not shown in this prototype video, however, the first prototype video above depicts the same color-changing functionality of the wristband.
