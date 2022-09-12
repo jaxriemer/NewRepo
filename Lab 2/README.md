@@ -188,7 +188,7 @@ Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/2r1qmZqJbys/0.jpg)](https://www.youtube.com/watch?v=2r1qmZqJbys)
+
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
 
@@ -209,7 +209,7 @@ After that, Git will ask you to login to your GitHub account to push the updates
 ## Make a short video of your modified barebones PiClock
 
 \*\*\***Take a video of your PiClock.**\*\*\*
-
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/2r1qmZqJbys/0.jpg)](https://www.youtube.com/watch?v=2r1qmZqJbys)
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 
