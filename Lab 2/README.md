@@ -188,7 +188,7 @@ Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www
 
 **We strongly discourage and will reject the results of literal digital or analog clock display.**
 
-
+[Verplanck Diagram]![images](./images/Verplank.jpg)
 
 \*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
 
