@@ -220,7 +220,7 @@ I made some modifications to the interaction in my Verplanck Diagram to stage th
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
-
+![Further Interactions](./images/Interactions.jpg)
 
 # Prep for Part 2
 
