@@ -216,7 +216,7 @@ After that, Git will ask you to login to your GitHub account to push the updates
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/2r1qmZqJbys/0.jpg)](https://www.youtube.com/watch?v=2r1qmZqJbys)
 
 
-The clock shows the passage of time through different mealtimes. The idea is that our bodies, themselves, are machines that have a biological clock. By using the mealtimes as a form of time-keeping, the user is also more in-tune with their hunger.
+I made some modifications to the interaction in my Verplanck Diagram to stage the interaction in the video above. The clock shows the passage of time through different mealtimes. The idea is that our bodies, themselves, are machines that have a biological clock. By using the mealtimes as a form of time-keeping, the user is also more in-tune with their hunger.
 
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
