@@ -80,12 +80,47 @@ disp.image(image)
 #current_datetime = datetime.strftime("%m/%d/%Y %H:%M:%S")
 current_datetime = datetime.today()
 current_time = datetime.strftime(current_datetime, '%H')
-s = current_datetime.replace(hour =7,minute=0,second=0)
+current_datetime = current_datetime.replace(hour =22,minute=0,second=0) #To simulate prototype
+s1 = current_datetime.replace(hour =7,minute=0,second=0)
+s2 = current_datetime.replace(hour =8,minute=0,second=0)
+s3 = current_datetime.replace(hour =9,minute=0,second=0)
+s4 = current_datetime.replace(hour =11,minute=0,second=0)
+s5 = current_datetime.replace(hour =13,minute=0,second=0)
+s6 = current_datetime.replace(hour =17,minute=0,second=0)
+s7 = current_datetime.replace(hour =22,minute=0,second=0)
 
-# Display morning image when it is before 7am
-if datetime.strftime(current_datetime, '%H') < datetime.strftime(s, '%H'):
-    image = Image.open("apple.jpg")
 
+# Display sleeping image when it is before 7am
+if datetime.strftime(current_datetime, '%H') <= datetime.strftime(s1, '%H'):
+    image = Image.open("sleep.jpg")
+
+# Display coffee image when after 7 am and before 8am
+if  datetime.strftime(s1, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s2, '%H'):
+    image = Image.open("coffee.JPG")
+
+# Display breakfast image when after 8 am and before 9am
+if  datetime.strftime(s2, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s3, '%H'):
+    image = Image.open("breakfast.jpg")
+
+# Display snack image when after 9am and before 11am
+if  datetime.strftime(s3, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s4, '%H'):
+    image = Image.open("sandwich.jpg")
+
+# Display lunch image when after 11 am and before 1pm
+if  datetime.strftime(s4, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s5, '%H'):
+    image = Image.open("sandwich.jpg")
+
+# Display snack image when after 1pm and before 5pm
+if  datetime.strftime(s5, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s6, '%H'):
+    image = Image.open("trailmix.jpg")
+
+# Display dinner image when after 5pm and before 10pm
+if  datetime.strftime(s6, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s7, '%H'):
+    image = Image.open("dinner.jpg")
+
+# Display sleep image when after 10pm
+if datetime.strftime(s7, '%H') <= datetime.strftime(current_datetime, '%H'):
+    image = Image.open("sleep.jpg")
 
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -93,7 +128,7 @@ backlight.value = True
 
 
 # Scale the image to the smaller screen dimension
-image_ratio = image.width / image.height
+image_ratio = (image.width / image.height)/2
 screen_ratio = width / height
 if screen_ratio < image_ratio:
     scaled_width = image.width * height // image.height
