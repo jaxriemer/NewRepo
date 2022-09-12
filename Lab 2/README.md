@@ -188,17 +188,14 @@ Can you make time interactive? You can look in `screen_test.py` for examples for
 
 Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www.billverplank.com/IxDSketchBook.pdf)!
 
-**We strongly discourage and will reject the results of literal digital or analog clock display.**
-
 ![Verplank Diagram](./images/Verplank.jpg)
 
 The concept of this device is to use a measure time as the time elapsed between breaks. The display shows a bar displaying a countdown of the maximum time allowed for working. As the bar goes down from full, pictures of different food items will be displayed at various intervals. The first interval will display an apple (as seen in the diagram above.) This indicates that the user may take a "snack-size" break at that time. If the user forgoes the break and continues working, they will reach the second interval where a sandwich will be displayed. This indicates that user may take a "small-meal". If the user decides to keep working, they will reach the third interval where a roasted turkey will be displayed. The bar will also be empty at this point. This signals to the user that they must take a "meal" break before continuing their work.
 
 One button will be used to initiate a work session. Another button is used to start and end breaks. If a break is taken before the bar is empty, the user pushes the button and the bar goes back to full.
 
-\*\*\***A copy of your code should be in your Lab 2 Github repo.**\*\*\*
 
-[copy of code](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/96c9f862c1d08e4791d3aa452051d89cb06a94ee/Lab%202/screen_prototype.py)
+[Copy of Code](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/96c9f862c1d08e4791d3aa452051d89cb06a94ee/Lab%202/screen_prototype.py)
 
 After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
 
@@ -214,7 +211,6 @@ After that, Git will ask you to login to your GitHub account to push the updates
 ## Part F. 
 ## Make a short video of your modified barebones PiClock
 
-\*\*\***Take a video of your PiClock.**\*\*\*
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/2r1qmZqJbys/0.jpg)](https://www.youtube.com/watch?v=2r1qmZqJbys)
 
 
