@@ -69,8 +69,7 @@ while True:
     # Create time object
     current_time = time.strftime("%m/%d/%Y %H:%M:%S")
 
-    y = top
-    draw.text((x, y), current_time, font=font, fill="#FFFFFF")
+    draw.text((50, 50), current_time, font=font, fill="#FFFFFF")
 
     # Display image.
     disp.image(image, rotation)
