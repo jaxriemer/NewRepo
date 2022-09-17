@@ -76,73 +76,77 @@ draw = ImageDraw.Draw(image)
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 disp.image(image)
 
-# Get current time
-#current_datetime = datetime.strftime("%m/%d/%Y %H:%M:%S")
-current_datetime = datetime.today()
-current_time = datetime.strftime(current_datetime, '%H')
-#current_datetime = current_datetime.replace(hour =22,minute=0,second=0) #To simulate prototype
-s1 = current_datetime.replace(hour =7,minute=0,second=0)
-s2 = current_datetime.replace(hour =8,minute=0,second=0)
-s3 = current_datetime.replace(hour =9,minute=0,second=0)
-s4 = current_datetime.replace(hour =11,minute=0,second=0)
-s5 = current_datetime.replace(hour =13,minute=0,second=0)
-s6 = current_datetime.replace(hour =17,minute=0,second=0)
-s7 = current_datetime.replace(hour =22,minute=0,second=0)
+# creating new Image object
+img = Image.new('RGB', (135, 240), (125, 125, 125))
+draw = ImageDraw.Draw(img)
+
+draw.rectangle(
+   (0,240,240,200),
+   fill = (0,0,255),
+   outline=(0, 0, 0))
 
 
-# Display sleeping image when it is before 7am
-if datetime.strftime(current_datetime, '%H') <= datetime.strftime(s1, '%H'):
-    image = Image.open("sleep.jpg")
+draw = ImageDraw.Draw(img)
 
-# Display coffee image when after 7 am and before 8am
-if  datetime.strftime(s1, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s2, '%H'):
-    image = Image.open("coffee.JPG")
-
-# Display breakfast image when after 8 am and before 9am
-if  datetime.strftime(s2, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s3, '%H'):
-    image = Image.open("breakfast.jpg")
-
-# Display snack image when after 9am and before 11am
-if  datetime.strftime(s3, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s4, '%H'):
-    image = Image.open("sandwich.jpg")
-
-# Display lunch image when after 11 am and before 1pm
-if  datetime.strftime(s4, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s5, '%H'):
-    image = Image.open("sandwich.jpg")
-
-# Display snack image when after 1pm and before 5pm
-if  datetime.strftime(s5, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s6, '%H'):
-    image = Image.open("trailmix.jpg")
-
-# Display dinner image when after 5pm and before 10pm
-if  datetime.strftime(s6, '%H') < datetime.strftime(current_datetime, '%H') <= datetime.strftime(s7, '%H'):
-    image = Image.open("dinner.jpg")
-
-# Display sleep image when after 10pm
-if datetime.strftime(s7, '%H') <= datetime.strftime(current_datetime, '%H'):
-    image = Image.open("sleep.jpg")
-
-backlight = digitalio.DigitalInOut(board.D22)
-backlight.switch_to_output()
-backlight.value = True
+draw.rectangle(
+   (4,236,132,204),
+   fill=(255, 0, 0),
+   outline=(0, 0, 0))
 
 
-# Scale the image to the smaller screen dimension
-image_ratio = (image.width / image.height)/2
-screen_ratio = width / height
-if screen_ratio < image_ratio:
-    scaled_width = image.width * height // image.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image.height * width // image.width
-image = image.resize((scaled_width, scaled_height), Image.BICUBIC)
 
-# Crop and center the image
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image = image.crop((x, y, x + width, y + height))
+# decrement energy level
+# Main loop:
 
-# Display image.
-disp.image(image)
+button_count = 0
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+disp.image(img)
 
+button_count = 2
+
+if button_count == 1:
+    draw = ImageDraw.Draw(img)
+    draw.rectangle(
+        (4,236,25,204),
+        fill = (125, 125, 125),
+        outline = (0, 0, 0))
+
+if button_count == 2:
+    draw = ImageDraw.Draw(img)
+    draw.rectangle(
+        (4,236,50,204),
+        fill = (125, 125, 125),
+        outline = (0, 0, 0))
+
+if button_count == 3:
+    draw = ImageDraw.Draw(img)
+    draw.rectangle(
+        (4,236,75,204),
+        fill = (125, 125, 125),
+        outline = (0, 0, 0))
+
+if button_count == 4:
+    draw = ImageDraw.Draw(img)
+    draw.rectangle(
+        (4,236,100,204),
+        fill = (125, 125, 125),
+        outline = (0, 0, 0))
+
+if button_count == 5:
+    draw = ImageDraw.Draw(img)
+    draw.rectangle(
+        (4,236,125,204),
+        fill = (125, 125, 125),
+        outline = (0, 0, 0))
+
+if button_count == 6:
+    draw = ImageDraw.Draw(img)
+    draw.rectangle(
+        (4,236,150,204),
+        fill = (125, 125, 125),
+        outline = (0, 0, 0))
+
+disp.image(img)
