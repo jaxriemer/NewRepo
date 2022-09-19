@@ -72,85 +72,111 @@ draw.rectangle(
 button_count = 0
 disp.image(img)
 
-BUTTON_PIN = 16
+
+# BUTTON PIN-SETUP
+START_BUTTON_PIN = 16
+BREAK_BUTTON_PIN = 26
 GPIO.setmode(GPIO.BCM)
+GPIO.setup(START_BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(BREAK_BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-GPIO.setup(BUTTON_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-
+#CREATE COUNTDOWN
 rotation = 90
+def countdown(t):
+   print('Start of countdown loop')
+   # print(continue_countdown)
+   while (t and GPIO.input(BREAK_BUTTON_PIN) != GPIO.LOW):
+      mins, secs = divmod(t, 60)
+      timer = '{:02d}:{:02d}'.format(mins, secs)
+      print(timer, end="\r")
+      time.sleep(1)
+      t -= 1  
+      if GPIO.input(BREAK_BUTTON_PIN) == GPIO.LOW:
+         # continue_countdown = False
+         print('Stop countdown')
+         return
+
+   # if continue_countdown == False:
+   #    print('Exit function')
+   #    # print(continue_countdown)
+   #    return
+# input time in seconds
+# t = 2 
+# function call
+# countdown(int(t))
+
+def countdown_image_sequence():
+   print('Button is pressed')
+   countdown(int(5))
+   draw = ImageDraw.Draw(img)
+   draw.rectangle(
+   (4,236,25,204),
+   fill = (125, 125, 125),
+   outline = (0, 0, 0))
+   disp.image(img)
+
+   countdown(int(5))
+   draw = ImageDraw.Draw(img)
+   draw.rectangle(
+   (4,236,50,204),
+   fill = (125, 125, 125),
+   outline = (0, 0, 0))
+   disp.image(img)
+
+   countdown(int(5))
+   draw = ImageDraw.Draw(img)
+   draw.rectangle(
+   (4,236,75,204),
+   fill = (125, 125, 125),
+   outline = (0, 0, 0))
+   disp.image(img)
+
+   countdown(int(5))
+   draw = ImageDraw.Draw(img)
+   draw.rectangle(
+   (4,236,100,204),
+   fill = (125, 125, 125),
+   outline = (0, 0, 0))
+   disp.image(img)
+
+   countdown(int(5))
+   draw = ImageDraw.Draw(img)
+   draw.rectangle(
+   (4,236,125,204),
+   fill = (125, 125, 125),
+   outline = (0, 0, 0))
+   disp.image(img)
+
+   countdown(int(5))
+   draw = ImageDraw.Draw(img)
+   draw.rectangle(
+   (4,236,150,204),
+   fill = (125, 125, 125),
+   outline = (0, 0, 0))
+   disp.image(img)
 
 try:
    while True:
-      time.sleep(0.1)
-      if GPIO.input(BUTTON_PIN) == GPIO.LOW:
-         print('Button is pressed')
-         button_count = button_count + 1
-         # if button_count == 1:
-         #    draw = ImageDraw.Draw(img)
-         #    draw.rectangle(
-         #    (4,236,25,204),
-         #    fill = (125, 125, 125),
-         #    outline = (0, 0, 0))
+      if GPIO.input(START_BUTTON_PIN) == GPIO.LOW: #Check if user has started countdown
+         countdown_image_sequence()
+         # if button_count > 1: 
+         # # if button_count > 6:
+         #    print('STOP')
+         #    # Draw a black filled box to clear the image.
+         #    draw.rectangle((0, 0, width, height), outline=0, fill=0)
          #    disp.image(img)
 
-         # if button_count == 2:
-         #    draw = ImageDraw.Draw(img)
-         #    draw.rectangle(
-         #    (4,236,50,204),
-         #    fill = (125, 125, 125),
-         #    outline = (0, 0, 0))
-         #    disp.image(img)
+         #    # Load a TTF Font
+         #    font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
+         #    # Draw Some Text
+         #    text = "Take a Break!"
+         #    (font_width, font_height) = font.getsize(text)
+         #    draw.text((width//2 - font_width//2, height//2 - font_height//2),
+         #    text, font=font, fill=(255, 255, 0))
+         #    img_rotate = img.rotate(90)
+         #    disp.image(img_rotate)
+   else:
+      print('Button is not pressed')
 
-         # if button_count == 3:
-         #    draw = ImageDraw.Draw(img)
-         #    draw.rectangle(
-         #    (4,236,75,204),
-         #    fill = (125, 125, 125),
-         #    outline = (0, 0, 0))
-         #    disp.image(img)
-
-         # if button_count == 4:
-         #    draw = ImageDraw.Draw(img)
-         #    draw.rectangle(
-         #    (4,236,100,204),
-         #    fill = (125, 125, 125),
-         #    outline = (0, 0, 0))
-         #    disp.image(img)
-
-         # if button_count == 5:
-         #    draw = ImageDraw.Draw(img)
-         #    draw.rectangle(
-         #    (4,236,125,204),
-         #    fill = (125, 125, 125),
-         #    outline = (0, 0, 0))
-         #    disp.image(img)
-
-         # if button_count == 6:
-         #    draw = ImageDraw.Draw(img)
-         #    draw.rectangle(
-         #    (4,236,150,204),
-         #    fill = (125, 125, 125),
-         #    outline = (0, 0, 0))
-         #    disp.image(img)
-
-         if button_count > 1: 
-         # if button_count > 6:
-            print('STOP')
-            # Draw a black filled box to clear the image.
-            draw.rectangle((0, 0, width, height), outline=0, fill=0)
-            disp.image(img)
-
-            # Load a TTF Font
-            font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
-            # Draw Some Text
-            text = "Take a Break!"
-            (font_width, font_height) = font.getsize(text)
-            draw.text((width//2 - font_width//2, height//2 - font_height//2),
-            text, font=font, fill=(255, 255, 0))
-            img_rotate = img.rotate(90)
-            disp.image(img_rotate)
-
-      else:
-         print('Button is not pressed')
 except KeyboardInterrupt:
    GPIO.cleanup()
