@@ -7,69 +7,9 @@ For our first Pi project, we will pay homage to the [timekeeping devices of old]
 
 It is worth spending a little time thinking about how you mark time, and what would be useful in a clock of your own design.
 
-**Please indicate anyone you collaborated with on this Lab here.**
-Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+**Please indicate anyone you collaborated with on this Lab here.** 
 
 Sam Willenson and Grace Nho helped me with part D of the lab and with setting up Virtual Source Code. Additionally, they gave me feedback when ideating potential projects.
-
-## Prep
-
-Lab Prep is extra long this week. Make sure to start this early for lab on Thursday.
-
-1. ### Set up your Lab 2 Github
-
-Before the start of lab Thursday, [pull changes from the Interactive Lab Hub](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/blob/2021Fall/readings/Submitting%20Labs.md#to-pull-lab-updates) so that you have your own copy of Lab 2 on your own lab hub.
-
-
-  If you are organizing your Lab Hub through folder in local machine, go to terminal, cd into your Interactive-Lab-Hub folder and run:
-
-  ```
-  Interactive-Lab-Hub $ git remote add upstream https://github.com/FAR-Lab/Interactive-Lab-Hub.git
-  Interactive-Lab-Hub $ git pull upstream Fall2022
-  ```
-  
-  The reason why we are adding a upstream with **course lab-hub** instead of yours is because the local Interactive-Lab-Hub folder is linked with your own git repo already. Try typing ``git remote -v`` and you should see there is the origin branch with your own git repo. We here add the upstream to get latest updates from the teaching team by pulling the **course lab-hub** to your local machine. After your local folder got the latest updates, push them to your remote git repo by running:
-  
-  ```
-  Interactive-Lab-Hub $ git add .
-  Interactive-Lab-Hub $ git commit -m "message"
-  Interactive-Lab-Hub $ git push
-  ```
-  Your local and remote should now be up to date with the most recent files.
-
-
-2. ### Get Kit and Inventory Parts
-Prior to the lab session on Thursday, taken inventory of the kit parts that you have, and note anything that is missing:
-
-***Update your [parts list inventory](partslist.md)***
-
-3. ### Prepare your Pi for lab this week
-[Follow these instructions](prep.md) to download and burn the image for your Raspberry Pi before lab Thursday.
-
-
-
-
-## Overview
-For this assignment, you are going to 
-
-A) [Connect to your Pi](#part-a)  
-
-B) [Try out cli_clock.py](#part-b) 
-
-C) [Set up your RGB display](#part-c)
-
-D) [Try out clock_display_demo](#part-d) 
-
-E) [Modify the code to make the display your own](#part-e)
-
-F) [Make a short video of your modified barebones PiClock](#part-f)
-
-G) [Sketch and brainstorm further interactions and features you would like for your clock for Part 2.](#part-g)
-
-## The Report
-This readme.md page in your own repository should be edited to include the work you have done. You can delete everything but the headers and the sections between the \*\*\***stars**\*\*\*. Write the answers to the questions under the starred sentences. Include any material that explains what you did in this lab hub folder, and link it in the readme.
-
-Labs are due on Mondays. Make sure this page is linked to on your main class hub page.
 
 ## Part A. 
 ### Connect to your Pi
