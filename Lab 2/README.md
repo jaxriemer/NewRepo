@@ -1,23 +1,11 @@
 # Interactive Prototyping: The Clock of Pi
 **NAMES OF COLLABORATORS HERE**
 
-Does it feel like time is moving strangely during this semester?
-
-For our first Pi project, we will pay homage to the [timekeeping devices of old](https://en.wikipedia.org/wiki/History_of_timekeeping_devices) by making simple clocks.
-
-It is worth spending a little time thinking about how you mark time, and what would be useful in a clock of your own design.
-
 **Please indicate anyone you collaborated with on this Lab here.** 
 
 Sam Willenson and Grace Nho helped me with part D of the lab and with setting up Virtual Source Code. Additionally, they gave me feedback when ideating potential projects.
 
 ### Modify the barebones clock to make it your own
-
-Does time have to be linear?  How do you measure a year? [In daylights? In midnights? In cups of coffee?](https://www.youtube.com/watch?v=wsj15wPpjLY)
-
-Can you make time interactive? You can look in `screen_test.py` for examples for how to use the buttons.
-
-Please sketch/diagram your clock idea. (Try using a [Verplank digram](http://www.billverplank.com/IxDSketchBook.pdf)!
 
 ![Verplank Diagram](./images/Verplank.jpg)
 
@@ -27,16 +15,6 @@ One button will be used to initiate a work session. Another button is used to st
 
 
 [Copy of Code](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/96c9f862c1d08e4791d3aa452051d89cb06a94ee/Lab%202/screen_prototype.py)
-
-After you edit and work on the scripts for Lab 2, the files should be upload back to your own GitHub repo! You can push to your personal github repo by adding the files here, commiting and pushing.
-
-```
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 2 $ git add .
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 2 $ git commit -m 'your commit message here'
-(circuitpython) pi@ixe00:~/Interactive-Lab-Hub/Lab 2 $ git push
-```
-
-After that, Git will ask you to login to your GitHub account to push the updates online, you will be asked to provide your GitHub user name and password. Remember to use the "Personal Access Tokens" you set up in Part A as the password instead of your account one! Go on your GitHub repo with your laptop, you should be able to see the updated files from your Pi!
 
 
 ## Part F. 
@@ -50,13 +28,6 @@ I made some modifications to the interaction in my Verplanck Diagram to stage th
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 ![Further Interactions](./images/Interactions.jpg)
-
-# Prep for Part 2
-
-1. Pick up remaining parts for kit on Thursday lab class. Check the updated [parts list inventory](partslist.md) and let the TA know if there is any part missing.
-  
-
-2. Look at and give feedback on the Part G. for at least 2 other people in the class (and get 2 people to comment on your Part G!)
 
 # Lab 2 Part 2
 
