@@ -29,9 +29,11 @@ I made some modifications to the interaction in my Verplanck Diagram to stage th
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
 ![Further Interactions](./images/Interactions.jpg)
 
-# Lab 2 Part 2
+Feedback: 
 
+# Lab 2 Part 2
 ![Storyboard](./images/Storyboard2.jpg)
 
 For this iteration of my design, I decided to integrate a countdown feature that is displayed by a bar. The countdown is initiated by a "start" button. As time passes, the bar level will decrease. Once the bar is empty, a message is displayed to the user "Take a Break!". The user may also decide to take a break at any point by pressing the "break" button. When the user returns from their break, they can press the "start" button and the countdown will restart with the bar full.
+
 
