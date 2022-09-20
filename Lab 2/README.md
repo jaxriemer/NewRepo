@@ -36,4 +36,5 @@ Feedback:
 
 For this iteration of my design, I decided to integrate a countdown feature that is displayed by a bar. The countdown is initiated by a "start" button. As time passes, the bar level will decrease. Once the bar is empty, a message is displayed to the user "Take a Break!". The user may also decide to take a break at any point by pressing the "break" button. When the user returns from their break, they can press the "start" button and the countdown will restart with the bar full.
     # Prototyped Interaction
+
 [![Interaction Video](https://img.youtube.com/vi/nXo52tuIFYo/0.jpg)](https://www.youtube.com/watch?v=nXo52tuIFYo)
