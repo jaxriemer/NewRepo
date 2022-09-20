@@ -31,6 +31,9 @@ I made some modifications to the interaction in my Verplanck Diagram to stage th
 
 Feedback: 
 
+
+![Feedback Ideation](./images/Feedback_Ideation.heif)
+
 # Lab 2 Part 2
 ![Storyboard](./images/Storyboard2.jpg)
 
