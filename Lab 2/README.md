@@ -31,6 +31,8 @@ I made some modifications to the interaction in my Verplanck Diagram to stage th
 
 Feedback: 
 
+I was given feedback by Sam Willenson to use a botton to toggle between different food options. Each food option would have a different gain associated to it, which would fill up the status bar correspondingly. Below is a rough sketch of the sequencing and interaction:
+
 
 ![Feedback Ideation](./images/Feedback_Ideation.jpg)
 
@@ -41,3 +43,9 @@ For this iteration of my design, I decided to integrate a countdown feature that
 ## Prototyped Interaction
 
 [![Interaction Video](https://img.youtube.com/vi/nXo52tuIFYo/0.jpg)](https://www.youtube.com/watch?v=nXo52tuIFYo)
+
+Feedback:
+
+Sam was also able to give me insightful feedback on this iteration of my device. One major improvement would be to increase the resolution of the status bar so that the decrement of color is more gradual. This would also allow the user more frequent feedback as to how much time has passed.
+
+Some other problems were the sizing of the "Take a Break!" message and the interaction with the momentary switches. The break message was too small and for future iterations I would increase the font size. The momentary switches to initiate and restart the countdown timer were finnicky. The buttons had to be pressed for a specific range of time to work properly. For future iterations I would include a debounce functionality either through hardware or software means.
