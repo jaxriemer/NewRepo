@@ -44,6 +44,8 @@ For this iteration of my design, I decided to integrate a countdown feature that
 
 [![Interaction Video](https://img.youtube.com/vi/nXo52tuIFYo/0.jpg)](https://www.youtube.com/watch?v=nXo52tuIFYo)
 
+[Copy of Code](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/Fall2022/Lab%202/Prototype_2)
+
 Feedback:
 
 Sam was also able to give me insightful feedback on this iteration of my device. One major improvement would be to increase the resolution of the status bar so that the decrement of color is more gradual. This would also allow the user more frequent feedback as to how much time has passed.
