@@ -148,7 +148,7 @@ try:
             disp.image(img)
             
             print('Button is pressed')
-            countdown(int(5))
+            countdown(int(2))
             if GPIO.input(BREAK_BUTTON_PIN) == GPIO.HIGH:
                 draw = ImageDraw.Draw(img)
                 draw.rectangle(
@@ -157,7 +157,7 @@ try:
                 outline = (0, 0, 0))
                 disp.image(img)
 
-            countdown(int(5))
+            countdown(int(2))
             if GPIO.input(BREAK_BUTTON_PIN) == GPIO.HIGH:
                 draw = ImageDraw.Draw(img)
                 draw.rectangle(
@@ -166,7 +166,7 @@ try:
                 outline = (0, 0, 0))
                 disp.image(img)
 
-            countdown(int(5))
+            countdown(int(2))
             if GPIO.input(BREAK_BUTTON_PIN) == GPIO.HIGH:  
                 draw = ImageDraw.Draw(img)
                 draw.rectangle(
@@ -175,7 +175,7 @@ try:
                 outline = (0, 0, 0))
                 disp.image(img)
         
-            countdown(int(5))
+            countdown(int(2))
             if GPIO.input(BREAK_BUTTON_PIN) == GPIO.HIGH:
                 draw = ImageDraw.Draw(img)
                 draw.rectangle(
@@ -184,7 +184,7 @@ try:
                 outline = (0, 0, 0))
                 disp.image(img)
 
-            countdown(int(5))
+            countdown(int(2))
             if GPIO.input(BREAK_BUTTON_PIN) == GPIO.HIGH:
                 draw = ImageDraw.Draw(img)
                 draw.rectangle(
@@ -193,7 +193,7 @@ try:
                 outline = (0, 0, 0))
                 disp.image(img)
 
-            countdown(int(5))
+            countdown(int(2))
             if GPIO.input(BREAK_BUTTON_PIN) == GPIO.HIGH:
                 draw = ImageDraw.Draw(img)
                 draw.rectangle(
