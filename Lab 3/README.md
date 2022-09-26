@@ -82,6 +82,8 @@ Write out what you imagine the dialogue to be. Use cards, post-its, or whatever 
 
 \*\***Please describe and document your process.**\*\*
 
+First I tried mapping out the potential responses using post-it notes. This allowed me to move responses around as needed. I then made a higher-fidelity flowchart to help me understand all the possible answers.
+
 
 ### Acting out the dialogue
 
