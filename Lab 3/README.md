@@ -6,18 +6,6 @@ In this lab, we want you to design interaction with a speech-enabled device--som
 
 We will focus on **audio** as the main modality for interaction to start; these general techniques can be extended to **video**, **haptics** or other interactive mechanisms in the second part of the Lab.
 
-
-## Part 1.
-
-### Replace your ```vosk_demo_mic.sh``` file
-We changed some scripts so that they would be compatible with your respective web cameras. Make sure you've pulled the updates from the class GitHub! We will be replacing the ```vosk_demo_mic.sh``` file in the speech2text folders in your pis.
-
-If you have the ***[IMISES Web Camera](https://www.amazon.com/Microphone-Speaker-Balance-Conference-Streaming/dp/B0B7B7SYSY/ref=sr_1_3?keywords=webcam%2Bwith%2Bmicrophone%2Band%2Bspeaker&qid=1663090960&s=electronics&sprefix=webcam%2Bwith%2Bmicrophone%2Band%2Bsp%2Celectronics%2C123&sr=1-3&th=1)***, run this command from your terminal:
-
-```
-cp -f ~/Interactive-Lab-Hub/Lab\ 3/IMISES-replacement.sh ~/speech2text/vosk_demo_mic.sh 
-```
-
 ### Text to Speech 
 
 In this part of lab, we are going to start peeking into the world of audio on your Pi! 
@@ -39,11 +27,11 @@ pi@ixe00:~/text2speech $ cat festival_demo.sh
 echo "Just what do you think you're doing, Dave?" | festival --tts
 ```
 
-Now, you might wonder what exactly is a `.sh` file? Typically, a `.sh` file is a shell script which you can execute in a terminal. The example files we offer here are for you to figure out the ways to play with audio on your Pi!
 
 You can also play audio files directly with `aplay filename`. Try typing `aplay lookdave.wav`.
 
 \*\***Write your own shell file to use your favorite of these TTS engines to have your Pi greet you by name.**\*\*
+
 [Copy of Greeting Code](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/ead7e63efcec7a87054451f91adcf42d267afe03/Lab%203/name_demo.sh)
 
 Bonus: If this topic is very exciting to you, you can try out this new TTS system we recently learned about: https://github.com/rhasspy/larynx
@@ -57,6 +45,8 @@ In particular, look at `test_words.py` and make sure you understand how the voca
 One thing you might need to pay attention to is the audio input setting of Pi. Since you are plugging the USB cable of your webcam to your Pi at the same time to act as speaker, the default input might be set to the webcam microphone, which will not be working for recording.
 
 \*\***Write your own shell file that verbally asks for a numerical based input (such as a phone number, zipcode, number of pets, etc) and records the answer the respondent provides.**\*\*
+
+[Copy of Info Prompt Code](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/733f5fa33417b18b12e3b5e159a439a9e4ea6e6f/Lab%203/info_prompt.sh)
 
 ### Serving Pages
 
