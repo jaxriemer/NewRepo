@@ -35,7 +35,9 @@ First I tried mapping out the potential responses using post-it notes. This allo
 
 Find a partner, and *without sharing the script with your partner* try out the dialogue you've designed, where you (as the device designer) act as the device you are designing.  Please record this interaction (for example, using Zoom's record feature).
 
-[![Prototyped Interaction](https://youtu.be/UjkFnLXkSMU)]
+
+[![Prototyped Interaction](https://img.youtube.com/vi/UjkFnLXkSMU/0.jpg)](https://www.youtube.com/watch?v=UjkFnLXkSMU)
+
 
 \*\***Describe if the dialogue seemed different than what you imagined when it was acted out, and how.**\*\*
 
