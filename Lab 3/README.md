@@ -103,7 +103,7 @@ System
 
 Controller System Setup
 
-![Setup](./images/Setup.jpg)
+![Setup](./images/Setup.heif)
 
 
 Demonstration of System and Controller
