@@ -90,7 +90,27 @@ The system should:
 
 
 *Include videos or screencaptures of both the system and the controller.*
+
+Controller
+
+![Controller](./images/Controller.heif)
+
+
+System
+
+![System](./images/TopDown.heif)
+
+
+Controller System Setup
+
+![Setup](./images/Setup.jpg)
+
+
+Demonstration of System and Controller
 [![Demo](https://img.youtube.com/vi/z_1L-zxTjU0/0.jpg)](https://youtube.com/shorts/z_1L-zxTjU0)
+
+
+
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
