@@ -93,17 +93,17 @@ The system should:
 
 Controller
 
-![Controller](./images/Controller.heif)
+![Controller](./images/Controller.jpg)
 
 
 System
 
-![System](./images/TopDown.heif)
+![System](./images/TopDown.jpg)
 
 
 Controller System Setup
 
-![Setup](./images/Setup.heif)
+![Setup](./images/Setup.jpg)
 
 
 Demonstration of System and Controller
