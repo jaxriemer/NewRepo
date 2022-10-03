@@ -61,6 +61,7 @@ For Part 2, you will redesign the interaction with the speech-enabled device usi
 There should be greater flexibility in the input provided by the user. There are different ways that a user may describe orientation and position. It is important to take this into account. Additionally, it would be helpful to display this information to the user in real-time. Also providing a unit of measurements (angle degrees for example) would allow for clearer communication between the robot and user, and increased precision of positioning.
 
 2. What are other modes of interaction _beyond speech_ that you might also use to clarify how to interact?
+
 A proximity sensor could be added to detect when the user is in front of the device. This would ensure the user is present for the interaction.
 
 3. Make a new storyboard, diagram and/or script based on these reflections.
