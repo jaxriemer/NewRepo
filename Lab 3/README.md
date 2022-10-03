@@ -96,11 +96,6 @@ Controller
 ![Controller](./images/Controller.jpg)
 
 
-System
-
-![System](./images/TopDown.jpg)
-
-
 Controller System Setup
 
 ![Setup](./images/Setup.jpg)
