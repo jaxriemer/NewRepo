@@ -125,7 +125,7 @@ The servo controlling the rotation worked well. The system could use more motors
 
 ### What worked well about the controller and what didn't?
 
-The controller was good in precisely adjusting the location. However, the potentiometer used had a poor connection in the wires which caused the positional values outputted to the servo to bouncing around. This caused the system to shake back and forth (it actually looked kind of funny and that the flower pot was 'angry'.)
+The controller was good in precisely adjusting the location. However, the potentiometer used had a poor connection in the wires which caused the positional values outputted to the servo to bounce around. This caused the system to shake back and forth (it actually looked kind of funny and that the flower pot was 'angry'.)
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
