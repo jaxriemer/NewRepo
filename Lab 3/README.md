@@ -112,21 +112,27 @@ Demonstration of System and Controller
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
 
+Prototyped Interaction
+
+[![Demo](https://img.youtube.com/vi/4vvSDb5REmY/0.jpg)](https://youtube.com/shorts/4vvSDb5REmY)
+
+
 Answer the following:
 
 ### What worked well about the system and what didn't?
-\*\**your answer here*\*\*
+
+The servo controlling the rotation worked well. The system could use more motors to allow for more degrees of freedom.
 
 ### What worked well about the controller and what didn't?
 
-\*\**your answer here*\*\*
+The controller was good in precisely adjusting the location. However, the potentiometer used had a poor connection in the wires which caused the positional values outputted to the servo to bouncing around. This caused the system to shake back and forth (it actually looked kind of funny and that the flower pot was 'angry'.)
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
 
-\*\**your answer here*\*\*
+There needs to be a standard of direction and orientation established through a display. Otherwise, it is too confusing to the user as to what command to give to have the desired execution.
 
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 
-\*\**your answer here*\*\*
+This could be used to track the frequency of the plant being moved. With the addition of a proximity sensor, the system could capture when the user is close-by. If a capacitance sensor is used in the soil the system could also track how frequently the user waters their plant. 
 
