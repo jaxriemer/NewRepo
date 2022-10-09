@@ -18,10 +18,11 @@ Usually, sensors need to positioned in specific locations or orientations to mak
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
+The sketches raise the question of the placement of the sensor to make it the most effective and also intuitive for the user. Additionally, the housing must be large enough to house the RPi.
 
 **\*\*\*Pick one of these designs to prototype.\*\*\***
 
-
+I will be further developing the concept for a brightness controller that is mapped to the distance of a hand from the top base plate. The brightness will be displayed by the oled screen.
 
 
 ### Part D
@@ -37,21 +38,69 @@ Your kit includes these [SparkFun Qwiic OLED screens](https://www.sparkfun.com/p
 
 **\*\*\*What are some things these sketches raise as questions? What do you need to physically prototype to understand how to anwer those questions?\*\*\***
 
-
+One question that comes up is the size of the base needed to house the Raspberry Pi. It is also important to consider how everything will connect. Additionally, access to the RPi is needed to reprogram the RPi.
 
 
 **\*\*\*Pick one of these display designs to integrate into your prototype.\*\*\***
 
-
+I will prototype the final sketch.
 
 
 **\*\*\*Explain the rationale for the design.\*\*\*** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
+
+The design should map the display in a way that is intuitive for the user. By placing the OLED display vertically, it matches the vertical motion of the users hand to adjust the brightness. The recessed design of the top base plate, should ideally minimize any potential noise from unintended motion in the peripherals of the sensor. There also must be access points for connections and to remove the RasPi.
+
+For prototyping, I will make my design larger to ensure it is compatible with my components. For future iterations, I can then optimize the size for form while knowing the layout needed to have proper connections.
 
 Build a cardbord prototype of your design.
 
 **\*\*\*Document your rough prototype.\*\*\***
 
+![Outline](./images/Outline_1.heic)
+![Outline2](./images/Outline_3.heic)
 
+Outline the components for the main housing of the RPi and distance sensor.
+
+
+![IsoSketch](./images/IsoSketch.heic)
+
+![Top Sketch](./images/TopSketch.heic)
+
+
+Create unwrapped sketch of housing and transfer to cardboard.
+
+
+![Outline](./image/Circle_1.heic)
+
+
+![Cut 1](./images/Circle_2)
+
+![Cut Copy](./images/Circle_4)
+
+
+Outline circles for main housing and cut.
+
+
+![Strip](./images/Outline_Cardboard)
+
+1[Strip Cut](./images/Strip_2.heic)
+
+
+Create strip to connect top and buttom circles.
+
+
+![Strip Score](./iamges/StripScore_2.heic)
+
+![Circle Score](./images/CircleScore.heic)\
+
+![Connect top and strip](./images/StripScore_2.heic)
+
+Score the top circle and connecting strip and connect.
+
+![Assemble 1](./images/Assemble_1.heic)
+
+
+Assemble.
 
 
 LAB PART 2
