@@ -9,7 +9,7 @@ Links to the README.md's for each lab here:
 
 [Lab 3. Chatterboxes](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/Fall2022/Lab%203/README.md)
 
-[Lab 4. Ph-UI!!!](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/5a82cba7bc1b0509230a89b47371e53afbaebd90/Lab%204/README.md)
+[Lab 4. Ph-UI!!!](https://github.com/jaxriemer/Interactive-Lab-Hub/tree/Fall2022/Lab%204#readme)
 
 [Lab 5. Observant Systems](https://github.com/jaxriemer/Interactive-Lab-Hub/blob/5a82cba7bc1b0509230a89b47371e53afbaebd90/Lab%205/README.md)
 
