@@ -56,21 +56,23 @@ Build a cardbord prototype of your design.
 
 **\*\*\*Document your rough prototype.\*\*\***
 
+Outline the components for the main housing of the RPi and distance sensor.
+
 ![Outline](./images/Outline_1.jpg)
 ![Outline2](./images/Outline_3.jpg)
 
-Outline the components for the main housing of the RPi and distance sensor.
 
+Create unwrapped sketch of housing and transfer to cardboard.
 
 ![IsoSketch](./images/IsoSketch.jpg)
 
 ![Top Sketch](./images/TopSketch.jpg)
 
 
-Create unwrapped sketch of housing and transfer to cardboard.
 
+Outline circles for main housing and cut.
 
-![Outline](./image/Circle_1.jpg)
+![Outline](./images/Circle_1.jpg)
 
 
 ![Cut 1](./images/Circle_2.jpg)
@@ -78,16 +80,14 @@ Create unwrapped sketch of housing and transfer to cardboard.
 ![Cut Copy](./images/Circle_4.jpg)
 
 
-Outline circles for main housing and cut.
-
+Create strip to connect top and buttom circles.
 
 ![Strip](./images/Outline_Cardboard.jpg)
 
 1[Strip Cut](./images/Strip_2.jpg)
 
 
-Create strip to connect top and buttom circles.
-
+Score the top circle and connecting strip and connect.
 
 ![Strip Score](./iamges/StripScore_2.jpg)
 
@@ -95,12 +95,11 @@ Create strip to connect top and buttom circles.
 
 ![Connect top and strip](./images/StripScore_2.jpg)
 
-Score the top circle and connecting strip and connect.
+
+Assemble.
 
 ![Assemble 1](./images/Assemble_1.jpg)
 
-
-Assemble.
 
 
 LAB PART 2
