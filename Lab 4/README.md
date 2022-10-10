@@ -89,7 +89,7 @@ Create strip to connect top and buttom circles.
 
 Score the top circle and connecting strip and connect.
 
-![Strip Score](./iamges/StripScore_2.jpg)
+![Strip Score](./images/StripScore_1.jpg)
 
 ![Circle Score](./images/CircleScore.jpg)
 
