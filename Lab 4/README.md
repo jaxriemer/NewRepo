@@ -100,6 +100,11 @@ Assemble.
 
 ![Assemble 1](./images/Assemble_1.jpg)
 
+![Final1](./images/Final1.jpg)
+
+![Final2](./images/Final2.jpg)
+
+![Final3](./images/Final3.jpg)
 
 
 LAB PART 2
