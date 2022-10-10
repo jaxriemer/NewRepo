@@ -84,7 +84,7 @@ Create strip to connect top and buttom circles.
 
 ![Strip](./images/Outline_Cardboard.jpg)
 
-1[Strip Cut](./images/Strip_2.jpg)
+![Strip Cut](./images/Strip_2.jpg)
 
 
 Score the top circle and connecting strip and connect.
