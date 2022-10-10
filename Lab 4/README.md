@@ -56,48 +56,48 @@ Build a cardbord prototype of your design.
 
 **\*\*\*Document your rough prototype.\*\*\***
 
-![Outline](./images/Outline_1.heic)
-![Outline2](./images/Outline_3.heic)
+![Outline](./images/Outline_1.jpg)
+![Outline2](./images/Outline_3.jpg)
 
 Outline the components for the main housing of the RPi and distance sensor.
 
 
-![IsoSketch](./images/IsoSketch.heic)
+![IsoSketch](./images/IsoSketch.jpg)
 
-![Top Sketch](./images/TopSketch.heic)
+![Top Sketch](./images/TopSketch.jpg)
 
 
 Create unwrapped sketch of housing and transfer to cardboard.
 
 
-![Outline](./image/Circle_1.heic)
+![Outline](./image/Circle_1.jpg)
 
 
-![Cut 1](./images/Circle_2)
+![Cut 1](./images/Circle_2.jpg)
 
-![Cut Copy](./images/Circle_4)
+![Cut Copy](./images/Circle_4.jpg)
 
 
 Outline circles for main housing and cut.
 
 
-![Strip](./images/Outline_Cardboard)
+![Strip](./images/Outline_Cardboard.jpg)
 
-1[Strip Cut](./images/Strip_2.heic)
+1[Strip Cut](./images/Strip_2.jpg)
 
 
 Create strip to connect top and buttom circles.
 
 
-![Strip Score](./iamges/StripScore_2.heic)
+![Strip Score](./iamges/StripScore_2.jpg)
 
-![Circle Score](./images/CircleScore.heic)\
+![Circle Score](./images/CircleScore.jpg)
 
-![Connect top and strip](./images/StripScore_2.heic)
+![Connect top and strip](./images/StripScore_2.jpg)
 
 Score the top circle and connecting strip and connect.
 
-![Assemble 1](./images/Assemble_1.heic)
+![Assemble 1](./images/Assemble_1.jpg)
 
 
 Assemble.
