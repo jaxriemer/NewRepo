@@ -66,7 +66,7 @@ Create unwrapped sketch of housing and transfer to cardboard.
 
 ![IsoSketch](./images/IsoSketch.jpg)
 
-![Top Sketch](./images/TopSketch.jpg)
+![Top Sketch](./images/Outline_Cardboard.jpg)
 
 
 
